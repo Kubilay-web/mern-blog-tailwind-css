@@ -13,6 +13,9 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useNavigate } from "react-router-dom";
 
+// Import to strip HTML tags
+import DOMPurify from "dompurify";
+
 export default function CreatePost() {
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
@@ -58,6 +61,7 @@ export default function CreatePost() {
       console.log(error);
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -82,6 +86,13 @@ export default function CreatePost() {
       setPublishError("Something went wrong");
     }
   };
+
+  // Strip HTML tags from ReactQuill content
+  const handleContentChange = (value) => {
+    const cleanText = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] }); // Remove all HTML tags
+    setFormData({ ...formData, content: cleanText });
+  };
+
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
       <h1 className="text-center text-3xl my-7 font-semibold">Create a post</h1>
@@ -103,6 +114,7 @@ export default function CreatePost() {
             }
           >
             <option value="uncategorized">Select a category</option>
+            <option value="nextjs">Genel</option>
             <option value="javascript">JavaScript</option>
             <option value="reactjs">React.js</option>
             <option value="nextjs">Next.js</option>
@@ -147,9 +159,7 @@ export default function CreatePost() {
           placeholder="Write something..."
           className="h-72 mb-12"
           required
-          onChange={(value) => {
-            setFormData({ ...formData, content: value });
-          }}
+          onChange={handleContentChange}
         />
         <Button type="submit" gradientDuoTone="purpleToPink">
           Publish

@@ -5,7 +5,16 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
 import { signoutSuccess } from "../redux/user/userSlice";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import "../../src/css/bootstrap.min.css";
+import "../../src/css/font-awesome.min.css";
+import "../../src/css/Hamburgers.css";
+import "../../src/css/owl.carousel.css";
+import "../../src/css/owl.theme.default.css";
+import "../../src/css/plyr.css";
+import "../../src/css/tema.css";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -48,79 +57,269 @@ export default function Header() {
     navigate(`/search?${searchQuery}`);
   };
 
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const dropdownRef = useRef(null);
+
+  const handleDropdownToggle = (dropdownName) => {
+    setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setOpenDropdown(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <Navbar className="border-b-2">
-      <Link
-        to="/"
-        className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
-      >
-        <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
-          Sahand's
-        </span>
-        Blog
-      </Link>
-      <form onSubmit={handleSubmit}>
-        <TextInput
-          type="text"
-          placeholder="Search..."
-          rightIcon={AiOutlineSearch}
-          className="hidden lg:inline"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </form>
-      <Button className="w-12 h-10 lg:hidden" color="gray" pill>
-        <AiOutlineSearch />
-      </Button>
-      <div className="flex gap-2 md:order-2">
-        <Button
-          className="w-12 h-10 hidden sm:inline"
-          color="gray"
-          pill
-          onClick={() => dispatch(toggleTheme())}
+    <>
+      <Navbar className="border-b-2">
+        <Link
+          to="/"
+          className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
         >
-          {theme === "light" ? <FaSun /> : <FaMoon />}
+          <img
+            src="https://www.peramuzesi.org.tr/assetsv2/img/logos/PM-2023logo-tr.svg"
+            alt="logo"
+            className="w-[360px] h-auto" // Genişlik ve yükseklik otomatik ayarlanır
+          />
+        </Link>
+
+        <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+          <AiOutlineSearch />
         </Button>
-        {currentUser ? (
-          <Dropdown
-            arrowIcon={false}
-            inline
-            label={
-              <Avatar alt="user" img={currentUser.profilePicture} rounded />
-            }
+        <div className="flex gap-2 md:order-2">
+          {/* <Button
+            className="w-12 h-10 hidden sm:inline"
+            color="gray"
+            pill
+            onClick={() => dispatch(toggleTheme())}
           >
-            <Dropdown.Header>
-              <span className="block text-sm">@{currentUser.username}</span>
-              <span className="block text-sm font-medium truncate">
-                {currentUser.email}
-              </span>
-            </Dropdown.Header>
-            <Link to={"/dashboard?tab=profile"}>
-              <Dropdown.Item>Profile</Dropdown.Item>
+            {theme === "light" ? <FaSun /> : <FaMoon />}
+          </Button> */}
+          <form onSubmit={handleSubmit}>
+            <TextInput
+              type="text"
+              placeholder="Search..."
+              rightIcon={AiOutlineSearch}
+              className="hidden lg:inline"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </form>
+          {currentUser ? (
+            <Dropdown
+              arrowIcon={false}
+              inline
+              label={
+                <Avatar alt="user" img={currentUser.profilePicture} rounded />
+              }
+            >
+              <Dropdown.Header>
+                <span className="block text-sm">@{currentUser.username}</span>
+                <span className="block text-sm font-medium truncate">
+                  {currentUser.email}
+                </span>
+              </Dropdown.Header>
+              <Link to={"/dashboard?tab=profile"}>
+                <Dropdown.Item>Profile</Dropdown.Item>
+              </Link>
+              <Dropdown.Divider />
+              <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+            </Dropdown>
+          ) : (
+            <Link to="/sign-in">
+              <Button gradientDuoTone="purpleToBlue" outline>
+                Sign In
+              </Button>
             </Link>
-            <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
-          </Dropdown>
-        ) : (
-          <Link to="/sign-in">
-            <Button gradientDuoTone="purpleToBlue" outline>
-              Sign In
-            </Button>
-          </Link>
-        )}
-        <Navbar.Toggle />
-      </div>
-      <Navbar.Collapse>
-        <Navbar.Link active={path === "/"} as={"div"}>
-          <Link to="/">Home</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === "/about"} as={"div"}>
-          <Link to="/about">About</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === "/projects"} as={"div"}>
-          <Link to="/projects">Projects</Link>
-        </Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
+          )}
+          <Navbar.Toggle />
+        </div>
+      </Navbar>
+
+      <nav
+        className="flex justify-center ml-auto mb-3 navbar navbar-expand-lg navbar-light bg-white border-top border-bottom border-dark sticky-top navbarheight ptnew-0"
+        style={{ zIndex: 1 }}
+      >
+        <div id="navbarsExample09" ref={dropdownRef}>
+          <ul className="navbar-nav gap-4 mr-auto justify-content-between w-100 text-uppercase">
+            <li className="nav-item dropdown position-static">
+              <a
+                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                href="#"
+                onClick={() => handleDropdownToggle("ZİYARET")}
+              >
+                ZİYARET
+              </a>
+              {openDropdown === "ZİYARET" && (
+                <div className="dropdown-menu show">
+                  <Link className="dropdown-item" to="/">
+                    ZİYARETİNİZİ PLANLAYIN
+                  </Link>
+                  <Link className="dropdown-item" to="/">
+                    HAKKIMIZDA
+                  </Link>
+                  <Link className="dropdown-item" to="/">
+                    ARTSHOP
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            <li className="nav-item dropdown position-static">
+              <a
+                className="nav-link font-weight-bolder nav-link22"
+                href="/Ajanda"
+              >
+                AJANDA
+              </a>
+            </li>
+
+            <li className="nav-item dropdown position-static">
+              <a
+                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                href="#"
+                onClick={() => handleDropdownToggle("SANAT")}
+              >
+                SANAT
+              </a>
+
+              {openDropdown === "SANAT" && (
+                <div className="dropdown-menu show">
+                  <Link className="dropdown-item" to="/">
+                    GÜNCEL SERGİLER
+                  </Link>
+                  <Link className="dropdown-item" to="/sergiler">
+                    KOLEKSİYONLAR
+                  </Link>
+                  <Link className="dropdown-item" to="/sergiler">
+                    PROJELER
+                  </Link>
+                  <Link className="dropdown-item" to="/sergiler">
+                    DİJİTAL SERGİLER
+                  </Link>
+                  <Link className="dropdown-item" to="/sergiler">
+                    GEÇMİŞ SERGİLER
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            <li className="nav-item dropdown position-static">
+              <a
+                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                href="#"
+                onClick={() => handleDropdownToggle("PERA ÖĞRENME")}
+              >
+                PERA ÖĞRENME
+              </a>
+
+              {openDropdown === "PERA ÖĞRENME" && (
+                <div className="dropdown-menu show">
+                  <Link className="dropdown-item" to="/egitim-programlari">
+                    GÜNCEL PROGRAMLAR
+                  </Link>
+                  <Link className="dropdown-item" to="/workshoplar">
+                    GEÇMİŞ PROGRAMLAR
+                  </Link>
+                  <Link className="dropdown-item" to="/workshoplar">
+                    PERA ÖĞRENME HAKKINDA
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            <li className="nav-item dropdown position-static">
+              <a
+                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                href="#"
+                onClick={() => handleDropdownToggle("PERA FİLM")}
+              >
+                PERA FİLM
+              </a>
+
+              {openDropdown === "PERA FİLM" && (
+                <div className="dropdown-menu show">
+                  <Link className="dropdown-item" to="/film-programlari">
+                    GÜNCEL PROGRAMLAR
+                  </Link>
+                  <Link className="dropdown-item" to="/film-gosterimleri">
+                    GEÇMİŞ PROGRAMLAR
+                  </Link>
+                  <Link className="dropdown-item" to="/film-gosterimleri">
+                    PERA FİLM HAKKINDA
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            <li className="nav-item dropdown position-static">
+              <a
+                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                href="#"
+                onClick={() => handleDropdownToggle("YAYINLAR")}
+              >
+                YAYINLAR
+              </a>
+
+              {openDropdown === "YAYINLAR" && (
+                <div className="dropdown-menu show">
+                  <Link className="dropdown-item" to="/yayinlar">
+                    TÜM YAYINLAR
+                  </Link>
+                  <Link className="dropdown-item" to="/makaleler">
+                    SÜRELİ SERGİ KATALOGLARI
+                  </Link>
+                  <Link className="dropdown-item" to="/makaleler">
+                    KOLEKSİYON KATALOGLARI
+                  </Link>
+                  <Link className="dropdown-item" to="/makaleler">
+                    SEMPOZYUM DİZİSİ
+                  </Link>
+                  <Link className="dropdown-item" to="/makaleler">
+                    KÜÇÜK KİTAPLAR DİZİSİ
+                  </Link>
+                  <Link className="dropdown-item" to="/makaleler">
+                    DİJİTAL YAYINLAR
+                  </Link>
+                  <Link className="dropdown-item" to="/makaleler">
+                    SUNA VE İNAN KIRAÇ VAKFI YAYINLARI
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            <li className="nav-item">
+              <a
+                className="nav-link font-weight-bolder nav-link22"
+                href="/Blog"
+              >
+                KEŞFET!
+              </a>
+            </li>
+          </ul>
+          <div className="topMenuRight text-right">
+            <a
+              className="pl-2 menu-logo-not-scrolled"
+              href="/"
+              title="Anasayfa"
+            >
+              <img src="images/PM-2023logo-tr.svg" alt="Pera Müzesi Logo" />
+            </a>
+            <p className="menu-dates-not-scrolled">
+              <span className="todaydate">30 Ekim Çarşamba</span>
+              <span className="todaynote">Ziyaret Saatleri: 10.00 - 19.00</span>
+            </p>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }
