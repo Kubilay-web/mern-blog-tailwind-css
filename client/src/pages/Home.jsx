@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import PostCard from "../components/PostCard";
-
+import { Carousel } from "@material-tailwind/react";
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [index, setIndex] = useState(0);

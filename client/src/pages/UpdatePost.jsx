@@ -1,6 +1,8 @@
 import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import DOMPurify from "dompurify"; // Ensure DOMPurify is imported
+
 import {
   getDownloadURL,
   getStorage,
@@ -83,17 +85,23 @@ export default function UpdatePost() {
       console.log(error);
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Sanitize the content to remove HTML tags
+      const sanitizedContent = DOMPurify.sanitize(formData.content, {
+        ALLOWED_TAGS: [],
+      });
+
       const res = await fetch(
-        `/api/post/updatepost/${formData._id}/${currentUser._id}`,
+        `/api/post/updatepost/${postId}/${currentUser._id}`,
         {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({ ...formData, content: sanitizedContent }), // Use sanitized content
         }
       );
       const data = await res.json();
@@ -110,6 +118,7 @@ export default function UpdatePost() {
       setPublishError("Something went wrong");
     }
   };
+
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
       <h1 className="text-center text-3xl my-7 font-semibold">Update post</h1>
