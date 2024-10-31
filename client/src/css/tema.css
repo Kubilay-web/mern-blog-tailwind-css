@@ -70,21 +70,21 @@ html {
 
 .navbar-light .navbar-nav .nav-link,
 .dropdown-item {
-  color: #333333;
-  font-size: 20px;
+  color: #333333 !important;
+  font-size: 19px !important;
   font-family: "Raleway", sans-serif;
   /* margin: 13px; */
   /*  font-weight: 600 !important;<!-- Menü yazıları için-->*/
 }
 
 .dropdown-item:hover {
-  font-weight: bolder;
-  color: #e30313;
-  background-color: white; /*<!-- dropdown alt menünun üzerine gelince olacaklar -->*/
+  font-weight: bolder !important;
+  color: #e30313 !important;
+  background-color: white !important; /*<!-- dropdown alt menünun üzerine gelince olacaklar -->*/
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #e30313; /*Eski Kodlanan renk-> #cd767b; */ /*<!-- Menü linklerinin üzerine gelince kırmızı olması için-->*/
+  color: #e30313 !important; /*Eski Kodlanan renk-> #cd767b; */ /*<!-- Menü linklerinin üzerine gelince kırmızı olması için-->*/
 }
 
 .nav-link22 {
