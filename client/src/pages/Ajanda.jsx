@@ -158,6 +158,7 @@ export default function Ajanda() {
                 Kategoriler
               </button>
             </div>
+
             <div className="col-12">
               <div className="collapse multi-collapse" id="categoryMenu">
                 <div className="card card-body text-right border-0">

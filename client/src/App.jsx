@@ -26,6 +26,9 @@ import Projeler from "./pages/Projeler";
 import DijitalSergi from "./pages/DijitalSergi";
 import GecmisSergi from "./pages/GecmisSergi";
 import OgrenmeGuncel from "./pages/OgrenmeGuncel";
+import OgrenmeGecmis from "./pages/OgrenmeGecmis";
+import OgrenmeHakkinda from "./pages/OgrenmeHakkinda";
+import Film from "./pages/Film";
 
 export default function App() {
   return (
@@ -44,6 +47,14 @@ export default function App() {
         <Route path="/sergi/dijital-sergiler" element={<DijitalSergi />} />
         <Route path="/sergi/gecmis-yillar" element={<GecmisSergi />} />
         <Route path="/pera-ogrenme" element={<OgrenmeGuncel />} />
+        <Route
+          path="/pera-ogrenme/gecmis-programlar"
+          element={<OgrenmeGecmis />}
+        />
+        <Route path="/pera-ogrenme-hakkinda" element={<OgrenmeHakkinda />} />
+
+        <Route path="/film" element={<Film />} />
+
         <Route path="/sergi" element={<Sergi />} />
         <Route path="/Ajanda" element={<Ajanda />} />
         <Route path="/pera-muzesi-hakkinda" element={<Hakkimizda />} />

@@ -234,10 +234,13 @@ export default function Header() {
                   <Link className="dropdown-item" to="/pera-ogrenme">
                     GÜNCEL PROGRAMLAR
                   </Link>
-                  <Link className="dropdown-item" to="/workshoplar">
+                  <Link
+                    className="dropdown-item"
+                    to="/pera-ogrenme/gecmis-programlar"
+                  >
                     GEÇMİŞ PROGRAMLAR
                   </Link>
-                  <Link className="dropdown-item" to="/workshoplar">
+                  <Link className="dropdown-item" to="/pera-ogrenme-hakkinda">
                     PERA ÖĞRENME HAKKINDA
                   </Link>
                 </div>
