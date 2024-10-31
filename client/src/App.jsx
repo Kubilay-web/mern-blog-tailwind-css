@@ -16,6 +16,11 @@ import UpdatePost from "./pages/UpdatePost";
 import PostPage from "./pages/PostPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Search from "./pages/Search";
+import Ziyaret from "./pages/Ziyaret";
+import Hakkimizda from "./pages/Hakkimizda";
+import Artshop from "./pages/Artshop";
+import Ajanda from "./pages/Ajanda";
+import Sergi from "./pages/Sergi";
 
 export default function App() {
   return (
@@ -27,6 +32,11 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/ziyaret" element={<Ziyaret />} />
+        <Route path="/artshop" element={<Artshop />} />
+        <Route path="/sergi" element={<Sergi />} />
+        <Route path="/Ajanda" element={<Ajanda />} />
+        <Route path="/pera-muzesi-hakkinda" element={<Hakkimizda />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
         <Route element={<PrivateRoute />}>
