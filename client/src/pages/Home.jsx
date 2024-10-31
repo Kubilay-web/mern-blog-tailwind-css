@@ -66,12 +66,59 @@ export default function Home({ data }) {
         {posts && posts.length > 0 && (
           <div className="flex justify-center mt-3 gap-3 flex-wrap">
             <div className="flex justify-center mt-3 gap-3 flex-wrap">
-              {posts.map((post) => (
+              {posts.slice(0, 6).map((post) => (
                 <PostCard key={post._id} post={post} />
               ))}
             </div>
           </div>
         )}
+      </div>
+
+      <div class="col-lg-12 col-md-6">
+        <a
+          href="https://www.peramuzesi.org.tr/etkinlik/324-constantinus%E2%80%99un-secimi-ve-yeni-roma%E2%80%99nin-kurulusu/6451"
+          target="_self"
+          class="no-link"
+        >
+          <div class="card mb-4 border-0 flex justify-center align-items-center">
+            <img
+              class="bd-placeholder-img card-img-top"
+              width="1070px"
+              height="auto"
+              src="/images/Home/324-banner-tr.jpg"
+              alt="Constantinus’un Seçimi ve Yeni Roma’nın Kuruluşu"
+            />
+          </div>
+        </a>
+      </div>
+
+      <div className="flex justify-center mt-3 flex-wrap">
+        {posts && posts.length > 0 && (
+          <div className="flex justify-center mt-3 gap-3 flex-wrap">
+            <div className="flex justify-center mt-3 gap-3 flex-wrap">
+              {posts.slice(6, 8).map((post) => (
+                <PostCard key={post._id} post={post} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div class="col-lg-12 col-md-6">
+        <a
+          href="https://www.peramuzesi.org.tr/etkinlik/324-constantinus%E2%80%99un-secimi-ve-yeni-roma%E2%80%99nin-kurulusu/6451"
+          target="_self"
+          class="no-link"
+        >
+          <div class="card mb-4 border-0 flex justify-center align-items-center">
+            <img
+              class="bd-placeholder-img card-img-top"
+              width="1070px"
+              height="auto"
+              src="/images/Home/0000724_artshop-05.jpeg"
+            />
+          </div>
+        </a>
       </div>
     </div>
   );

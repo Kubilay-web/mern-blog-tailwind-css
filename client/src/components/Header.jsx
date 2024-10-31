@@ -77,6 +77,11 @@ export default function Header() {
     };
   }, []);
 
+  // Dropdown'ı sayfa değiştiğinde kapatmak için
+  useEffect(() => {
+    setOpenDropdown(null);
+  }, [location.pathname]); // Sayfa değiştiğinde çalışır
+
   return (
     <>
       <Navbar className="border-b-2">
@@ -202,10 +207,10 @@ export default function Header() {
                   <Link className="dropdown-item" to="/koleksiyon">
                     KOLEKSİYONLAR
                   </Link>
-                  <Link className="dropdown-item" to="/sergiler">
+                  <Link className="dropdown-item" to="/projeler">
                     PROJELER
                   </Link>
-                  <Link className="dropdown-item" to="/sergiler">
+                  <Link className="dropdown-item" to="/sergi/dijital-sergiler">
                     DİJİTAL SERGİLER
                   </Link>
                   <Link className="dropdown-item" to="/sergiler">

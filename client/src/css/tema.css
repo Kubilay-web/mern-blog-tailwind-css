@@ -2184,3 +2184,10 @@ div.carousel.carousel-slider {
 .carousel img {
   pointer-events: none; /* Resimlerin fare olaylarını almasını engeller */
 }
+
+.card-img-top {
+  width: 1070px !important;
+  height: auto !important;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}

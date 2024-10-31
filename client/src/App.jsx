@@ -22,6 +22,8 @@ import Artshop from "./pages/Artshop";
 import Ajanda from "./pages/Ajanda";
 import Sergi from "./pages/Sergi";
 import Koleksiyon from "./pages/Koleksiyon";
+import Projeler from "./pages/Projeler";
+import DijitalSergi from "./pages/DijitalSergi";
 
 export default function App() {
   return (
@@ -36,6 +38,8 @@ export default function App() {
         <Route path="/ziyaret" element={<Ziyaret />} />
         <Route path="/artshop" element={<Artshop />} />
         <Route path="/koleksiyon" element={<Koleksiyon />} />
+        <Route path="/projeler" element={<Projeler />} />
+        <Route path="/sergi/dijital-sergiler" element={<DijitalSergi />} />
         <Route path="/sergi" element={<Sergi />} />
         <Route path="/Ajanda" element={<Ajanda />} />
         <Route path="/pera-muzesi-hakkinda" element={<Hakkimizda />} />
