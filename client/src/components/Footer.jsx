@@ -8,7 +8,7 @@ import "../../src/css/tema.css";
 
 export default function FooterCom() {
   return (
-    <div className="footer-background pb-lg-3">
+    <div className="footer-background pb-lg-3" style={{ zIndex: -99 }}>
       <div className="container">
         <div className="row" style={{ height: 30 }} />
         <div className="row">
@@ -134,7 +134,7 @@ export default function FooterCom() {
                   >
                     E-BÜLTENE ÜYE OLMAK İSTİYORUM
                   </h2>
-                  <div className="input-group mb-3">
+                  <div className="input-group mb-3" style={{ zIndex: 0 }}>
                     <input
                       type="email"
                       className="form-control"

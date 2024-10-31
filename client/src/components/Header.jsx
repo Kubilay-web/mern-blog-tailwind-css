@@ -199,7 +199,7 @@ export default function Header() {
                   <Link className="dropdown-item" to="/sergi">
                     GÜNCEL SERGİLER
                   </Link>
-                  <Link className="dropdown-item" to="/sergiler">
+                  <Link className="dropdown-item" to="/koleksiyon">
                     KOLEKSİYONLAR
                   </Link>
                   <Link className="dropdown-item" to="/sergiler">
