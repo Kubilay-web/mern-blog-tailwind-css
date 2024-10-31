@@ -16,7 +16,7 @@ export default function DijitalSergi() {
               <div className="hidden">
                 <img
                   className="pera-logo component state2 state1-to-state2"
-                  src="images/PM-2023logo-tr.svg"
+                  src="/images/DijitalSergi/PM-2023logo-tr.svg"
                   alt="Pera Müzesi Logo"
                 />
               </div>
@@ -31,7 +31,7 @@ export default function DijitalSergi() {
                 style={{ margin: "2px 0 0 0" }}
               >
                 <img
-                  src="images/iconLang.png"
+                  src="/images/DijitalSergi/iconLang.png"
                   style={{ width: "25px", margin: "4px 0 0 0" }}
                 />
               </a>
@@ -44,7 +44,10 @@ export default function DijitalSergi() {
                   placeholder="Arama..."
                 />
                 <a href="#" id="btnSrchDesktop" className="search_icon btnSrch">
-                  <img src="images/iconSearch.png" style={{ width: "25px" }} />
+                  <img
+                    src="/images/DijitalSergi/iconSearch.png"
+                    style={{ width: "25px" }}
+                  />
                 </a>
               </div>
             </div>
@@ -95,7 +98,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202406-3d-ters-yuz.jpg"
+                      src="/images/DijitalSergi/202406-3d-ters-yuz.jpg"
                       alt="Ters Yüz PƎRⱯ"
                     />
                   </a>
@@ -115,7 +118,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202312-3d-tam-yerinden.jpg"
+                      src="/images/DijitalSergi/202312-3d-tam-yerinden.jpg"
                       alt="Tam Yerinden"
                     />
                   </a>
@@ -135,7 +138,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202312-3d-gelecek-hatiralari.jpg"
+                      src="/images/DijitalSergi/202312-3d-gelecek-hatiralari.jpg"
                       alt="Gelecek Hatıraları"
                     />
                   </a>
@@ -155,7 +158,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202308-3d-isabel-munoz.jpg"
+                      src="/images/DijitalSergi/202308-3d-isabel-munoz.jpg"
                       alt="Isabel Muñoz"
                     />
                   </a>
@@ -175,7 +178,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202302-zamana-istanbul.jpg"
+                      src="/images/DijitalSergi/202302-zamana-istanbul.jpg"
                       alt="Zamana İstanbul"
                     />
                   </a>
@@ -195,7 +198,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202302-paulo-rego.jpg"
+                      src="/images/DijitalSergi/202302-paulo-rego.jpg"
                       alt="Paula Rego"
                     />
                   </a>
@@ -215,7 +218,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202205-vesimdiiyihaberler.jpg"
+                      src="/images/DijitalSergi/202205-vesimdiiyihaberler.jpg"
                       alt="Ve Şimdi İyi Haberler"
                     />
                   </a>
@@ -238,7 +241,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202203-istanbulda-bu-ne-bizantinizm.jpg"
+                      src="/images/DijitalSergi/202203-istanbulda-bu-ne-bizantinizm.jpg"
                       alt="İstanbul'dan Bizans'a"
                     />
                   </a>
@@ -261,7 +264,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202202-istanbuldan-bizansa-digital.jpg"
+                      src="/images/DijitalSergi/202202-istanbuldan-bizansa-digital.jpg"
                       alt="İstanbul'dan Bizans'a"
                     />
                   </a>
@@ -281,7 +284,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/202201-yarina-notlar-digital.jpg"
+                      src="/images/DijitalSergi/202201-yarina-notlar-digital.jpg"
                       alt="Yarına Notlar"
                     />
                   </a>
@@ -301,7 +304,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/yuzlesme-digital.jpg"
+                      src="/images/DijitalSergi/yuzlesme-digital.jpg"
                       alt="Yüzleşme"
                     />
                   </a>
@@ -324,7 +327,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/etel-adnan-cover-dijital-sergi.jpg"
+                      src="/images/DijitalSergi/etel-adnan-cover-dijital-sergi.jpg"
                       alt="Etel Adnan"
                     />
                   </a>
@@ -344,7 +347,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/zevk-meselesi-dijital-sergi.jpg"
+                      src="/images/DijitalSergi/zevk-meselesi-dijital-sergi.jpg"
                       alt="Zevk Meselesi"
                     />
                   </a>
@@ -364,7 +367,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/cc-dijital-sergi.jpg"
+                      src="/images/DijitalSergi/cc-dijital-sergi.jpg"
                       alt="Kristal Berraklığı"
                     />
                   </a>
@@ -384,7 +387,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-minyatur.jpg"
+                      src="/images/DijitalSergi/digital-minyatur.jpg"
                       alt="Minyatür 2.0"
                     />
                   </a>
@@ -404,7 +407,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-bir-ruyanin.jpg"
+                      src="/images/DijitalSergi/digital-bir-ruyanin.jpg"
                       alt="Bir Rüyanın İnşası"
                     />
                   </a>
@@ -428,7 +431,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-kesisen-dunyalar.jpg"
+                      src="/images/DijitalSergi/digital-kesisen-dunyalar.jpg"
                       alt="Kesişen Dünyalar"
                     />
                   </a>
@@ -452,7 +455,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/osman-hamdi-bey-dijital-sergi.jpg"
+                      src="/images/DijitalSergi/osman-hamdi-bey-dijital-sergi.jpg"
                       alt="Osman Hamdi Bey"
                     />
                   </a>
@@ -475,7 +478,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/anadolu-agirlik-ve-olculeri-dijital-sergi.jpg"
+                      src="/images/DijitalSergi/anadolu-agirlik-ve-olculeri-dijital-sergi.jpg"
                       alt="Anadolu Ağırlık ve Ölçüleri"
                     />
                   </a>
@@ -495,7 +498,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-aavo-new-03.jpg"
+                      src="/images/DijitalSergi/digital-aavo-new-03.jpg"
                       alt="Ağırlık ve Ölçü Sanatı"
                     />
                   </a>
@@ -515,7 +518,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/kahve-molasi-dijital-sergi.jpg"
+                      src="/images/DijitalSergi/kahve-molasi-dijital-sergi.jpg"
                       alt="Kahve Molası"
                     />
                   </a>
@@ -539,7 +542,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-duvarlarin-dili.jpg"
+                      src="/images/DijitalSergi/digital-duvarlarin-dili.jpg"
                       alt="Duvarların Dili"
                     />
                   </a>
@@ -561,7 +564,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-imparatorluktan-portreler.jpg"
+                      src="/images/DijitalSergi/digital-imparatorluktan-portreler.jpg"
                       alt="İmparatorluktan Portreler"
                     />
                   </a>
@@ -583,7 +586,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-duslerin-kenti.jpg"
+                      src="/images/DijitalSergi/digital-duslerin-kenti.jpg"
                       alt="Düşlerin Kenti"
                     />
                   </a>
@@ -608,7 +611,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-anadolu-agirlik.jpg"
+                      src="/images/DijitalSergi/digital-anadolu-agirlik.jpg"
                       alt="Suna ve İnan Kıraç Vakfı Anadolu Ağırlık ve Ölçüleri Koleksiyonu"
                     />
                   </a>
@@ -633,7 +636,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-kutahya-cini.jpg"
+                      src="/images/DijitalSergi/digital-kutahya-cini.jpg"
                       alt="Kütahya Çini ve Seramikleri"
                     />
                   </a>
@@ -657,7 +660,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-yaz-yaz-yaz-2019.jpg"
+                      src="/images/DijitalSergi/digital-yaz-yaz-yaz-2019.jpg"
                       alt="Yaz Yaz Yaz 2019"
                     />
                   </a>
@@ -679,7 +682,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-yaz-yaz-yaz-2018.jpg"
+                      src="/images/DijitalSergi/digital-yaz-yaz-yaz-2018.jpg"
                       alt="Yaz Yaz Yaz 2018"
                     />
                   </a>
@@ -701,7 +704,7 @@ export default function DijitalSergi() {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="images/digital-yaz-yaz-yaz-2017.jpg"
+                      src="/images/DijitalSergi/digital-yaz-yaz-yaz-2017.jpg"
                       alt="Yaz Yaz Yaz 2017"
                     />
                   </a>

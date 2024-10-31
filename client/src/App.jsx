@@ -24,6 +24,8 @@ import Sergi from "./pages/Sergi";
 import Koleksiyon from "./pages/Koleksiyon";
 import Projeler from "./pages/Projeler";
 import DijitalSergi from "./pages/DijitalSergi";
+import GecmisSergi from "./pages/GecmisSergi";
+import OgrenmeGuncel from "./pages/OgrenmeGuncel";
 
 export default function App() {
   return (
@@ -40,6 +42,8 @@ export default function App() {
         <Route path="/koleksiyon" element={<Koleksiyon />} />
         <Route path="/projeler" element={<Projeler />} />
         <Route path="/sergi/dijital-sergiler" element={<DijitalSergi />} />
+        <Route path="/sergi/gecmis-yillar" element={<GecmisSergi />} />
+        <Route path="/pera-ogrenme" element={<OgrenmeGuncel />} />
         <Route path="/sergi" element={<Sergi />} />
         <Route path="/Ajanda" element={<Ajanda />} />
         <Route path="/pera-muzesi-hakkinda" element={<Hakkimizda />} />

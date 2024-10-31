@@ -213,7 +213,7 @@ export default function Header() {
                   <Link className="dropdown-item" to="/sergi/dijital-sergiler">
                     DİJİTAL SERGİLER
                   </Link>
-                  <Link className="dropdown-item" to="/sergiler">
+                  <Link className="dropdown-item" to="/sergi/gecmis-yillar">
                     GEÇMİŞ SERGİLER
                   </Link>
                 </div>
@@ -231,7 +231,7 @@ export default function Header() {
 
               {openDropdown === "PERA ÖĞRENME" && (
                 <div className="dropdown-menu show">
-                  <Link className="dropdown-item" to="/egitim-programlari">
+                  <Link className="dropdown-item" to="/pera-ogrenme">
                     GÜNCEL PROGRAMLAR
                   </Link>
                   <Link className="dropdown-item" to="/workshoplar">
