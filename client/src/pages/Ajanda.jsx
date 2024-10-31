@@ -1,4 +1,5 @@
 import React from "react";
+import Calendar from "./Calendar";
 
 export default function Ajanda() {
   return (
@@ -89,7 +90,7 @@ export default function Ajanda() {
       <div className="container first-row">
         <div id="loading" className="row">
           <div className="col-12 d-flex justify-content-center py-5 align-items-center">
-            <span className="pl-2">Yükleniyor ...</span>
+            <Calendar />
           </div>
         </div>
         <div
