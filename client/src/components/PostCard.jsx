@@ -22,14 +22,9 @@ export default function PostCard({ post }) {
     //   </div>
     // </div>
 
-    <div className="col-lg-4 col-md-6">
-      <a
-        href="https://www.peramuzesi.org.tr/film/gunah-tohumu/4671/3533"
-        target="_self"
-        className="no-link"
-      >
+    <div className="col-lg-3 col-md-4 col-sm-12 mb-4">
+      <Link to={`/post/${post.slug}`}>
         <div className="card mb-4 border-0">
-          {/*shadow-sm eklenince güzel duruyor*/}
           <img
             className="bd-placeholder-img card-img-top"
             width="100%"
@@ -41,7 +36,7 @@ export default function PostCard({ post }) {
             <p className="card-text">{post.content}</p>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

@@ -62,10 +62,10 @@ export default function Home({ data }) {
         </Carousel>
       </div>
 
-      <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
+      <div className="flex justify-center mt-3 flex-wrap">
         {posts && posts.length > 0 && (
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-wrap gap-4">
+          <div className="flex justify-center mt-3 gap-3 flex-wrap">
+            <div className="flex justify-center mt-3 gap-3 flex-wrap">
               {posts.map((post) => (
                 <PostCard key={post._id} post={post} />
               ))}
