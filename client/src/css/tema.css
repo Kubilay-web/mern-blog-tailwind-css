@@ -2152,3 +2152,35 @@ ul.navbar-nav {
 .dropdown-menu.show {
   display: block;
 }
+
+p.carousel-status {
+  display: none !important;
+}
+
+.carousel .thumbs-wrapper {
+  display: none !important;
+}
+
+div.carousel.carousel-slider {
+  max-width: 1070px;
+  height: auto;
+  margin: auto;
+}
+
+.carousel {
+  cursor: grab; /* Farenin işaretçisini "grab" (tut) olarak değiştirir */
+}
+
+.carousel:active {
+  cursor: grabbing; /* Tıklama sırasında işaretçiyi "grabbing" (tutuyor) olarak değiştirir */
+}
+
+.carousel {
+  user-select: none; /* Resimlerin seçilmesini engeller */
+  -webkit-user-select: none; /* Safari için */
+  -moz-user-select: none; /* Firefox için */
+}
+
+.carousel img {
+  pointer-events: none; /* Resimlerin fare olaylarını almasını engeller */
+}
