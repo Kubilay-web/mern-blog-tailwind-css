@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Koleksiyon() {
+  const [posts, setPosts] = useState([]);
+  const [index, setIndex] = useState(0);
+  const category = "Koleksiyon";
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error("Failed to fetch posts:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts(category, setPosts);
+  }, [category]);
+
   return (
     <div>
       <div>
@@ -60,147 +80,80 @@ export default function Koleksiyon() {
           <div className="row">
             <div className="col-md-12 mt-3">
               <div className="row">
-                <div className="col-md-12 fs-40" style={{}}>
-                  <h1 id="Collections" className="BitcraftLang" />
+                <div
+                  className="col-md-12 fs-40"
+                  style={{ fontFamily: '"Raleway"' }}
+                >
+                  <h1 id="Collections" className="BitcraftLang">
+                    Koleksiyonlar
+                  </h1>
                 </div>
               </div>
             </div>
-            <div className="col-md-12 mt-3">
-              <div className="row">
-                <div
-                  className="col-lg-6 mt-3  col-md-6"
-                  style={{ margin: "0 0 30px 0" }}
-                >
-                  <div className="card mb-0 border-0">
-                    {/*shadow-sm eklenince güzel duruyor*/}
-                    <a href="/koleksiyon/oryantalist-resim-koleksiyonu/1">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        height="100%"
-                        src="/images/Koleksiyon/cover-oryantalist.jpg"
-                        alt="Oryantalist Resim Koleksiyonu"
-                      />
-                    </a>
-                    <div className="card-body">
-                      <h3 className="card-title">
-                        Oryantalist Resim Koleksiyonu
-                      </h3>
-                      <p className="card-text" />
-                      <p>
-                        Suna ve İnan Kıraç Vakfı’nın, konusunda ülkemizin en
-                        zengin koleksiyonlarından biri olan Oryantalist Resim
-                        Koleksiyonu, 17. yüzyıldan 20. yüzyıl başlarına uzanan
-                        bir dönemde, Avrupalı ressamların özellikle Osmanlı
-                        dünyasını ve Türkiye coğrafyasını betimleyen eserlerinin
-                        yanı sıra, Osmanlı sanatçılarının bu dönemdeki
-                        karşılıklı etkileşimini yansıtan eserlerini de
-                        barındırmaktadır.
-                      </p>
-                      <p />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="col-lg-6 mt-3  col-md-6"
-                  style={{ margin: "0 0 30px 0" }}
-                >
-                  <div className="card mb-0 border-0">
-                    {/*shadow-sm eklenince güzel duruyor*/}
-                    <a href="/koleksiyon/anadolu-agirlik-ve-olculeri-koleksiyonu/2">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        height="100%"
-                        src="/images/Koleksiyon/cover-anadoluagirlik.jpg"
-                        alt="Anadolu Ağırlık ve Ölçüleri Koleksiyonu"
-                      />
-                    </a>
-                    <div className="card-body">
-                      <h3 className="card-title">
-                        Anadolu Ağırlık ve Ölçüleri Koleksiyonu
-                      </h3>
-                      <p className="card-text" />
-                      <p>
-                        Suna ve İnan Kıraç’ın ilk kez 1980’lerde oluşturmaya
-                        başladıkları Anadolu Ağırlık ve Ölçüleri Koleksiyonu
-                        prehistorik dönem, Klasik Dönem, Beylikler ve Osmanlı
-                        Dönemi ile Erken Cumhuriyet dönemi başta olmak üzere
-                        Anadolu’nun ev sahipliği yaptığı birçok uygarlığa ait
-                        10.000 civarında objeye ev sahipliği yapmaktadır.
-                      </p>
-                      <p />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="col-lg-6 mt-3  col-md-6"
-                  style={{ margin: "0 0 30px 0" }}
-                >
-                  <div className="card mb-0 border-0">
-                    {/*shadow-sm eklenince güzel duruyor*/}
-                    <a href="/koleksiyon/kutahya-cini-ve-seramikleri-koleksiyonu/3">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        height="100%"
-                        src="/images/Koleksiyon/cover-kutahya.jpg"
-                        alt="Kütahya Çini ve Seramikleri Koleksiyonu"
-                      />
-                    </a>
-                    <div className="card-body">
-                      <h3 className="card-title">
-                        Kütahya Çini ve Seramikleri Koleksiyonu
-                      </h3>
-                      <p className="card-text" />
-                      <p>
-                        Suna ve İnan Kıraç Vakfı Kütahya Çini ve Seramikleri
-                        Koleksiyonu, 1980’li yıllarda Suna Kıraç’ın arzusu
-                        üzerine toplanmaya başlanmış ve yıllar içinde genişleyip
-                        zenginleşerek günümüze ulaşmıştır.
-                      </p>
-                      <p />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="col-lg-6 mt-3  col-md-6"
-                  style={{ margin: "0 0 30px 0" }}
-                >
-                  <div className="card mb-0 border-0">
-                    {/*shadow-sm eklenince güzel duruyor*/}
-                    <a href="/koleksiyon/koleksiyonlarimizi-3-boyutlu-kesfedin/25">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        height="100%"
-                        src="/images/Koleksiyon/cover-3d.jpg"
-                        alt="Koleksiyonlarımızı 3 Boyutlu Keşfedin!"
-                      />
-                    </a>
-                    <div className="card-body">
-                      <h3 className="card-title">
-                        Koleksiyonlarımızı 3 Boyutlu Keşfedin!
-                      </h3>
-                      <p className="card-text" />
-                      <p>
-                        Suna ve İnan Kıraç Vakfı koleksiyonlarından fotogrametri
-                        tekniğiyle taranmış bir seçki 3 boyutlu olarak
-                        sunuluyor.
-                      </p>
-                      <p />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12 mt-3">
-                  <p className="border-bottom border-secondary" />
-                </div>
+
+            <div className="container">
+              <div className="row pt-7">
+                {posts && posts.length > 0 ? (
+                  posts.slice(0, 1000).map((post, index) => {
+                    let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
+
+                    if (index === 0) {
+                      // İlk kart 4'lük (yarım genişlik)
+                      colClass = "col-lg-6";
+                    } else if (index === 1) {
+                      // İkinci kart 8'lik (tam genişlik)
+                      colClass = "col-lg-6 col-md-12";
+                    }
+
+                    if (index === 2) {
+                      // İlk kart 4'lük (yarım genişlik)
+                      colClass = "col-lg-6";
+                    } else if (index === 3) {
+                      // İkinci kart 8'lik (tam genişlik)
+                      colClass = "col-lg-6 col-md-12";
+                    }
+
+                    return (
+                      <div key={post._id} className={`${colClass} mb-4`}>
+                        <a
+                          href={`/post/${post.slug}`}
+                          target="_self"
+                          className="no-link"
+                        >
+                          <div className="card mb-4 border-0">
+                            <img
+                              className="bd-placeholder-img card-img-top"
+                              width="100%"
+                              src={post.image}
+                              alt={post.altText}
+                            />
+                            <div className="card-body">
+                              <h3 className="card-title">{post.title}</h3>
+                              <p className="card-text">{post.content}</p>
+                              <div className="d-flex justify-content-between align-items-center">
+                                <small className="text-muted">
+                                  {post.author}
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <p>No posts available</p>
+                )}
               </div>
             </div>
+
             <div className="col-md-12 mt-3">
               <div className="row">
                 <div className="col-md-6 mb-4" style={{}}>
-                  <b id="CIKolSer" className="BitcraftLang fs-40" />
+                  <b id="CIKolSer" className="BitcraftLang fs-40">
+                    Koleksiyon Sergileri
+                  </b>
+
                   <a href="/sergi/liste/2">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -211,7 +164,9 @@ export default function Koleksiyon() {
                   </a>
                 </div>
                 <div className="col-md-6 mb-4" style={{}}>
-                  <b id="CIGecKolSer" className="BitcraftLang fs-40" />
+                  <b id="CIGecKolSer" class="BitcraftLang fs-40">
+                    Geçmiş Koleksiyon Sergileri
+                  </b>
                   <a href="/sergi/gecmis-koleksiyon-sergileri/1">
                     <img
                       className="bd-placeholder-img card-img-top"
