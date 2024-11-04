@@ -89,7 +89,11 @@ export default function Home({ data }) {
 
               return (
                 <div key={post._id} className={`${colClass} mb-4`}>
-                  <a href={post.link} target="_self" className="no-link">
+                  <a
+                    href={`/post/${post.slug}`}
+                    target="_self"
+                    className="no-link"
+                  >
                     <div className="card mb-4 border-0">
                       <img
                         className="bd-placeholder-img card-img-top"
