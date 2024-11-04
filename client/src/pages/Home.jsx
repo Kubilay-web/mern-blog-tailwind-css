@@ -62,7 +62,69 @@ export default function Home({ data }) {
         </Carousel>
       </div>
 
-      <div className="flex justify-center mt-3 flex-wrap">
+      <div className="container">
+        <div className="row pt-7">
+          {posts && posts.length > 0 ? (
+            posts.slice(0, 1000).map((post, index) => {
+              let colClass = "col-lg-4 col-md-6"; // Varsayılan üçlü düzen
+
+              if (index === 0) {
+                // İlk kart 4'lük (yarım genişlik)
+                colClass = "col-lg-4";
+              } else if (index === 1) {
+                // İkinci kart 8'lik (tam genişlik)
+                colClass = "col-lg-8 col-md-12";
+              }
+
+              if (index === 2) {
+                // İlk kart 4'lük (yarım genişlik)
+                colClass = "col-lg-4";
+              } else if (index === 3) {
+                // İkinci kart 8'lik (tam genişlik)
+                colClass = "col-lg-8 col-md-12";
+              }
+
+              return (
+                <div key={post._id} className={`${colClass} mb-4`}>
+                  <a href={post.link} target="_self" className="no-link">
+                    <div className="card mb-4 border-0">
+                      <img
+                        className="bd-placeholder-img card-img-top"
+                        width="100%"
+                        src={post.image}
+                        alt={post.altText}
+                      />
+                      <div className="card-body">
+                        <h3 className="card-title">{post.title}</h3>
+                        <p className="card-text">{post.content}</p>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <small className="text-muted">{post.author}</small>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              );
+            })
+          ) : (
+            <p>No posts available</p>
+          )}
+        </div>
+      </div>
+
+      {/* <div className="flex justify-center mt-3 flex-wrap">
+        {posts && posts.length > 0 && (
+          <div className="flex justify-center mt-3 gap-3 flex-wrap">
+            <div className="flex justify-center mt-3 gap-3 flex-wrap">
+              {posts.slice(9, 12).map((post) => (
+                <PostCard key={post._id} post={post} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div> */}
+
+      {/* <div className="flex justify-center mt-3 flex-wrap">
         {posts && posts.length > 0 && (
           <div className="flex justify-center mt-3 gap-3 flex-wrap">
             <div className="flex justify-center mt-3 gap-3 flex-wrap">
@@ -72,7 +134,7 @@ export default function Home({ data }) {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
 
       <div class="col-lg-12 col-md-6">
         <a
@@ -92,7 +154,7 @@ export default function Home({ data }) {
         </a>
       </div>
 
-      <div className="flex justify-center mt-3 flex-wrap">
+      {/* <div className="flex justify-center mt-3 flex-wrap">
         {posts && posts.length > 0 && (
           <div className="flex justify-center mt-3 gap-3 flex-wrap">
             <div className="flex justify-center mt-3 gap-3 flex-wrap">
@@ -102,7 +164,7 @@ export default function Home({ data }) {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
 
       <div class="col-lg-12 col-md-6">
         <a
