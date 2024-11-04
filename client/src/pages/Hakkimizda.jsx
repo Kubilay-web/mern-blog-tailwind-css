@@ -311,7 +311,7 @@ export default function Hakkimizda() {
                       </button>
                     </div>
                   </div>
-                </form>{" "}
+                </form>
                 <div style={{ "font-size": "10px", "padding-top": "10px" }}>
                   <p>
                     Bize iletmiş olduğunuz bilgilerde aşağıda sıralanan özel

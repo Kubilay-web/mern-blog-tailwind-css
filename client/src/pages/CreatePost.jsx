@@ -115,6 +115,7 @@ export default function CreatePost() {
           >
             <option value="uncategorized">Select a category</option>
             <option value="Genel">Genel</option>
+            <option value="Genel">Süreli Sergiler</option>
             <option value="javascript">JavaScript</option>
             <option value="reactjs">React.js</option>
             <option value="nextjs">Next.js</option>

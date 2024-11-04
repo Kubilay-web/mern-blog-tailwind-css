@@ -82,7 +82,7 @@ export const getPostsByCategory = async (req, res, next) => {
     }
 
     const startIndex = parseInt(req.query.startIndex) || 0;
-    const limit = parseInt(req.query.limit) || 60; // Varsayılan limit 30
+    const limit = parseInt(req.query.limit) || 60; // Varsayılan limit 60
 
     const posts = await Post.find({
       category, // Belirtilen category'e göre filtreleme yapılıyor
@@ -96,7 +96,7 @@ export const getPostsByCategory = async (req, res, next) => {
         ],
       }),
     })
-      .sort({ createdAt: 1 }) // Artan sıraya göre (en eski postlar önce)
+      .sort({ createdAt: -1 }) // En son eklenen postlar en üstte olacak şekilde sıralama
       .skip(startIndex)
       .limit(limit);
 

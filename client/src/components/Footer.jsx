@@ -122,7 +122,7 @@ export default function FooterCom() {
                 </ul>
               </div>
               <div className="col-md-5 col-sm-4 col-xs-12 col-lg-5 float-left order-1 plnew2">
-                <form action="/e-bulten-kayit" method="post">
+                <form action="/subscribe" method="post">
                   <input
                     name="__RequestVerificationToken"
                     type="hidden"
@@ -153,7 +153,7 @@ export default function FooterCom() {
                       </button>
                     </div>
                   </div>
-                </form>{" "}
+                </form>
               </div>
             </div>
             <hr />

@@ -76,7 +76,7 @@ export default function Home({ data }) {
                 colClass = "col-lg-4";
               } else if (index === 1) {
                 // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-8 col-md-12";
+                colClass = "col-lg-4 col-md-12";
               }
 
               if (index === 2) {
@@ -84,7 +84,7 @@ export default function Home({ data }) {
                 colClass = "col-lg-4";
               } else if (index === 3) {
                 // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-8 col-md-12";
+                colClass = "col-lg-4 col-md-12";
               }
 
               return (
