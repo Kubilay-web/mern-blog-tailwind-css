@@ -258,13 +258,13 @@ export default function Header() {
 
               {openDropdown === "PERA FİLM" && (
                 <div className="dropdown-menu show">
-                  <Link className="dropdown-item" to="/film-programlari">
+                  <Link className="dropdown-item" to="/film">
                     GÜNCEL PROGRAMLAR
                   </Link>
-                  <Link className="dropdown-item" to="/film-gosterimleri">
+                  <Link className="dropdown-item" to="/film/gecmis-programlar">
                     GEÇMİŞ PROGRAMLAR
                   </Link>
-                  <Link className="dropdown-item" to="/film-gosterimleri">
+                  <Link className="dropdown-item" to="/pera-film-hakkinda">
                     PERA FİLM HAKKINDA
                   </Link>
                 </div>
@@ -285,22 +285,22 @@ export default function Header() {
                   <Link className="dropdown-item" to="/yayinlar">
                     TÜM YAYINLAR
                   </Link>
-                  <Link className="dropdown-item" to="/makaleler">
+                  <Link className="dropdown-item" to="/yayinlar/2">
                     SÜRELİ SERGİ KATALOGLARI
                   </Link>
-                  <Link className="dropdown-item" to="/makaleler">
+                  <Link className="dropdown-item" to="/yayinlar/3">
                     KOLEKSİYON KATALOGLARI
                   </Link>
-                  <Link className="dropdown-item" to="/makaleler">
+                  <Link className="dropdown-item" to="/yayinlar/14">
                     SEMPOZYUM DİZİSİ
                   </Link>
-                  <Link className="dropdown-item" to="/makaleler">
+                  <Link className="dropdown-item" to="/yayinlar/15">
                     KÜÇÜK KİTAPLAR DİZİSİ
                   </Link>
-                  <Link className="dropdown-item" to="/makaleler">
+                  <Link className="dropdown-item" to="/yayinlar/13">
                     DİJİTAL YAYINLAR
                   </Link>
-                  <Link className="dropdown-item" to="/makaleler">
+                  <Link className="dropdown-item" to="/yayinlar/20">
                     SUNA VE İNAN KIRAÇ VAKFI YAYINLARI
                   </Link>
                 </div>

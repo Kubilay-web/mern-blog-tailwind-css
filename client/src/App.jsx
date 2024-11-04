@@ -29,6 +29,16 @@ import OgrenmeGuncel from "./pages/OgrenmeGuncel";
 import OgrenmeGecmis from "./pages/OgrenmeGecmis";
 import OgrenmeHakkinda from "./pages/OgrenmeHakkinda";
 import Film from "./pages/Film";
+import FilmGecmis from "./pages/FilmGecmis";
+import FilmHakkinda from "./pages/FilmHakkinda";
+import Yayin from "./pages/Yayin";
+import Yayin2 from "./pages/Yayin2";
+import Yayin3 from "./pages/Yayin3";
+import Yayin14 from "./pages/Yayin14";
+import Yayin15 from "./pages/Yayin15";
+import Yayin13 from "./pages/Yayin13";
+import Yayin20 from "./pages/Yayin20";
+import Blog from "./pages/Blog";
 
 export default function App() {
   return (
@@ -54,6 +64,17 @@ export default function App() {
         <Route path="/pera-ogrenme-hakkinda" element={<OgrenmeHakkinda />} />
 
         <Route path="/film" element={<Film />} />
+        <Route path="/film/gecmis-programlar" element={<FilmGecmis />} />
+        <Route path="/pera-film-hakkinda" element={<FilmHakkinda />} />
+
+        <Route path="/yayinlar" element={<Yayin />} />
+        <Route path="/yayinlar/2" element={<Yayin2 />} />
+        <Route path="/yayinlar/3" element={<Yayin3 />} />
+        <Route path="/yayinlar/13" element={<Yayin13 />} />
+        <Route path="/yayinlar/14" element={<Yayin14 />} />
+        <Route path="/yayinlar/15" element={<Yayin15 />} />
+        <Route path="/yayinlar/20" element={<Yayin20 />} />
+        <Route path="/Blog" element={<Blog />} />
 
         <Route path="/sergi" element={<Sergi />} />
         <Route path="/Ajanda" element={<Ajanda />} />
