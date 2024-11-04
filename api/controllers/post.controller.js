@@ -72,6 +72,45 @@ export const getposts = async (req, res, next) => {
   }
 };
 
+export const getPostsByCategory = async (req, res, next) => {
+  try {
+    const { category } = req.query;
+
+    // `category` zorunlu hale getirildi
+    if (!category) {
+      return res.status(400).json({ message: "Category parametresi gerekli" });
+    }
+
+    const startIndex = parseInt(req.query.startIndex) || 0;
+    const limit = parseInt(req.query.limit) || 60; // Varsayılan limit 30
+
+    const posts = await Post.find({
+      category, // Belirtilen category'e göre filtreleme yapılıyor
+      ...(req.query.userId && { userId: req.query.userId }),
+      ...(req.query.slug && { slug: req.query.slug }),
+      ...(req.query.postId && { _id: req.query.postId }),
+      ...(req.query.searchTerm && {
+        $or: [
+          { title: { $regex: req.query.searchTerm, $options: "i" } },
+          { content: { $regex: req.query.searchTerm, $options: "i" } },
+        ],
+      }),
+    })
+      .sort({ createdAt: 1 }) // Artan sıraya göre (en eski postlar önce)
+      .skip(startIndex)
+      .limit(limit);
+
+    const totalPosts = await Post.countDocuments({ category }); // Belirtilen category'e göre toplam post sayısını al
+
+    res.status(200).json({
+      posts,
+      totalPosts,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const deletepost = async (req, res, next) => {
   if (!req.user.isAdmin || req.user.id !== req.params.userId) {
     return next(errorHandler(403, "You are not allowed to delete this post"));

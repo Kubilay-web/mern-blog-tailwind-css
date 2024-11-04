@@ -8,6 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function Home({ data }) {
   const [posts, setPosts] = useState([]);
   const [index, setIndex] = useState(0);
+  const category = "Genel"; // Buraya istediğiniz kategoriyi yazın.
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
@@ -15,12 +16,14 @@ export default function Home({ data }) {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch("/api/post/getPosts");
+      const res = await fetch(
+        `/api/post/getposts/category?category=${category}`
+      );
       const data = await res.json();
       setPosts(data.posts);
     };
     fetchPosts();
-  }, []);
+  }, [category]);
 
   const images = [
     "https://res.cloudinary.com/demo/image/upload/v1652345767/docs/demo_image2.jpg",
