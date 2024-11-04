@@ -1,6 +1,33 @@
 import { useEffect, useState } from "react";
 
 export default function Sergi() {
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+  const [index, setIndex] = useState(0);
+  const category = "Süreli Sergiler"; // Buraya istediğiniz kategoriyi yazın.
+  const category2 = "Koleksiyon Sergileri";
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error("Failed to fetch posts:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts(category, setPosts);
+    fetchPosts(category2, setPosts2);
+  }, [category, category2]);
+
   return (
     <div>
       <style
@@ -59,73 +86,63 @@ export default function Sergi() {
               </div>
             </div>
           </div>
-          <div className="col-md-12 mt-2">
-            <div className="row">
-              <div className="col-lg-6 col-md-6 mb-3">
-                <div className="card mb-1 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/sergi/hesaplar-ve-tesadufler/1304">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      width="100%"
-                      height="100%"
-                      src="/images/Sergi/vera-1.jpg"
-                      alt="Hesaplar ve Tesadüfler"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Hesaplar ve Tesadüfler</h3>
-                    <p className="card-text">
-                      Dóra Maurer, Vera Molnár, Gizella Rákóczy <br />{" "}
-                      Macaristan Ulusal Bankası Koleksiyonu'ndan Algoritma
-                      Sanatı
-                    </p>
-                    <p className="card-text">19 Eylül 2024 - 26 Ocak 2025 </p>
-                    <p className="card-text" />
-                    <p>
-                      <em>Hesaplar ve Tesadüfler,</em> algoritma sanatının öncü
-                      isimlerinden Vera Molnár, Dóra Maurer ve Gizella
-                      Rákóczy'nin Macaristan Ulusal Bankası Koleksiyonu'nda yer
-                      alan eserlerini bir araya getiriyor. Sergi, Molnár’ın
-                      bilgisayar sanatı üzerindeki önemli etkisine odaklanırken,
-                      Maurer ve Rákóczy'nin sanatsal pratiklerinin algoritma ve
-                      matematiğin entegrasyonu ile soyutlamanın sınırlarını
-                      genişletmesinin de izini sürüyor.
-                    </p>
-                    <p />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 mb-3">
-                <div className="card mb-1 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/sergi/vera-molnar’in-izinde/1306">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      width="100%"
-                      height="100%"
-                      src="/images/Sergi/vera-molnarin-izinde-1.jpg"
-                      alt="Vera Molnár’ın İzinde"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Vera Molnár’ın İzinde</h3>
-                    <p className="card-text" />
-                    <p className="card-text">19 Eylül 2024 - 26 Ocak 2025 </p>
-                    <p className="card-text" />
-                    <p>
-                      <em>Vera Molnár’ın İzinde</em>, bilgisayar sanatının
-                      öncüleri arasında yer alan sanatçı Vera Molnár’ın
-                      pratiğine yakından bir bakış sunuyor, onun üretimlerinden
-                      esinlenen güncel sanatçıların yapıtlarını bir araya
-                      getiriyor.
-                    </p>
-                    <p />
-                  </div>
-                </div>
-              </div>
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts && posts.length > 0 ? (
+                posts.slice(0, 1000).map((post, index) => {
+                  let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
+
+                  if (index === 0) {
+                    // İlk kart 4'lük (yarım genişlik)
+                    colClass = "col-lg-6";
+                  } else if (index === 1) {
+                    // İkinci kart 8'lik (tam genişlik)
+                    colClass = "col-lg-6 col-md-12";
+                  }
+
+                  if (index === 2) {
+                    // İlk kart 4'lük (yarım genişlik)
+                    colClass = "col-lg-6";
+                  } else if (index === 3) {
+                    // İkinci kart 8'lik (tam genişlik)
+                    colClass = "col-lg-6 col-md-12";
+                  }
+
+                  return (
+                    <div key={post._id} className={`${colClass} mb-4`}>
+                      <a
+                        href={`/post/${post.slug}`}
+                        target="_self"
+                        className="no-link"
+                      >
+                        <div className="card mb-4 border-0">
+                          <img
+                            className="bd-placeholder-img card-img-top"
+                            width="100%"
+                            src={post.image}
+                            alt={post.altText}
+                          />
+                          <div className="card-body">
+                            <h3 className="card-title">{post.title}</h3>
+                            <p className="card-text">{post.content}</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small className="text-muted">
+                                {post.author}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  );
+                })
+              ) : (
+                <p>No posts available</p>
+              )}
             </div>
           </div>
+
           <div className="col-md-12 mt-1">
             <p className="border-bottom border-secondary" />
           </div>
@@ -139,135 +156,63 @@ export default function Sergi() {
               </div>
             </div>
           </div>
-          <div className="col-md-12 mt-2">
-            <div className="row">
-              <div className="col-lg-6 col-md-6 mb-3">
-                <div className="card mb-1 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/sergi/kesisen-dunyalar/77">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      width="100%"
-                      height="100%"
-                      src="/images/Sergi/kesisen-dunyalar-5.jpeg"
-                      alt="Kesişen Dünyalar"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Kesişen Dünyalar</h3>
-                    <p className="card-text">Elçiler ve Ressamlar</p>
-                    <p className="card-text"></p>
-                    <p className="card-text" />
-                    <p>
-                      Osmanlı, erken dönemlerinden itibaren Avrupa devletleriyle
-                      yoğun ilişkiler kurmuş, Batılılar için kimi zaman korkuyla
-                      karışık bir merakla yanı başlarındaki bu büyük askeri
-                      gücün ve siyasi otoritenin kaynağı olan devleti daha
-                      yakından tanıma ve anlama çabası politik bir gereklilik
-                      olarak ortaya çıkmıştır. Farklı kültürlerin bu
-                      karşılaşması kuşkusuz en kalıcı ürünlerini sanat alanında
-                      vermiştir.
-                    </p>
-                    <p />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 mb-3">
-                <div className="card mb-1 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/sergi/kahve-molasi/160">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      width="100%"
-                      height="100%"
-                      src="/images/Sergi/kahve-molasi-1.jpg"
-                      alt="Kahve Molası"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Kahve Molası</h3>
-                    <p className="card-text">
-                      Kütahya Çini ve Seramiklerinde Kahvenin Serüveni
-                    </p>
-                    <p className="card-text"></p>
-                    <p className="card-text" />
-                    <p>
-                      “Sihirli Meyve” olarak Etiyopya’da keşfedilen ve 15.
-                      yüzyılda Yemen’den Osmanlı topraklarına ulaşan kahve, kısa
-                      zamanda yaygınlaşmış, itibarlı bir içecek olarak sarayda
-                      ve zengin evlerinde yerini almış, etrafında ritüeller
-                      şekillenmeye başlamış ve sosyal hayatın gelişmesinde
-                      önemli bir rol oynamıştır.�&nbsp;
-                    </p>
-                    <p />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 mb-3">
-                <div className="card mb-1 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/sergi/osman-hamdi-bey/194">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      width="100%"
-                      height="100%"
-                      src="/images/Sergi/osman-hamdi-bey-kaplumbaga-terbiyecisi-ust.jpg"
-                      alt="Osman Hamdi Bey"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Osman Hamdi Bey</h3>
-                    <p className="card-text">
-                      Suna ve İnan Kıraç Vakfı Koleksiyonu'ndan yapıtlarıyla
-                      yaşamı ve sanatı
-                    </p>
-                    <p className="card-text"></p>
-                    <p className="card-text" />
-                    <p>
-                      Osman Hamdi Bey, Tanzimat Dönemi’nin yetiştirdiği bir
-                      Osmanlı aydını; resim, arkeoloji, müzecilik, sanat eğitimi
-                      gibi kültür-sanat yaşamının farklı alanlarında, bir ömre
-                      ancak sığdırılabilecek zenginlikte ve çeşitlilikte
-                      katkıları olmuş bir kişilik.
-                    </p>
-                    <p />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 mb-3">
-                <div className="card mb-1 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/sergi/agirlik-ve-olcu-sanati/1271">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      width="100%"
-                      height="100%"
-                      src="/images/Sergi/aavo-new-03.jpg"
-                      alt="Ağırlık ve Ölçü Sanatı"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Ağırlık ve Ölçü Sanatı</h3>
-                    <p className="card-text">
-                      Suna ve İnan Kıraç Vakfı Anadolu Ağırlık ve Ölçüleri
-                      Koleksiyonu{" "}
-                    </p>
-                    <p className="card-text"></p>
-                    <p className="card-text" />
-                    <p>
-                      Dünyayı bir avuç birimle�&nbsp;ölçmeye çalışmak onu zihnen
-                      inşa edebilmeyi de beraberinde getirdi. Keşfin ölçüsü
-                      mitlere karıştıkça, ölçmek ve tartmak fiziksel bir
-                      deneyimin ötesinde bilimin, kâinatın ve bilinenin ötesini
-                      merak eden insanın, kendini ifade etme becerisinin önemli
-                      bir aracı oldu.�&nbsp;
-                    </p>
-                    <p />
-                  </div>
-                </div>
-              </div>
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts2 && posts.length > 0 ? (
+                posts2.slice(0, 1000).map((post2, index) => {
+                  let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
+
+                  if (index === 0) {
+                    // İlk kart 4'lük (yarım genişlik)
+                    colClass = "col-lg-6";
+                  } else if (index === 1) {
+                    // İkinci kart 8'lik (tam genişlik)
+                    colClass = "col-lg-6 col-md-12";
+                  }
+
+                  if (index === 2) {
+                    // İlk kart 4'lük (yarım genişlik)
+                    colClass = "col-lg-6";
+                  } else if (index === 3) {
+                    // İkinci kart 8'lik (tam genişlik)
+                    colClass = "col-lg-6 col-md-12";
+                  }
+
+                  return (
+                    <div key={post2._id} className={`${colClass} mb-4`}>
+                      <a
+                        href={`/post/${post2.slug}`}
+                        target="_self"
+                        className="no-link"
+                      >
+                        <div className="card mb-4 border-0">
+                          <img
+                            className="bd-placeholder-img card-img-top"
+                            width="100%"
+                            src={post2.image}
+                            alt={post2.altText}
+                          />
+                          <div className="card-body">
+                            <h3 className="card-title">{post2.title}</h3>
+                            <p className="card-text">{post2.content}</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small className="text-muted">
+                                {post2.author}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  );
+                })
+              ) : (
+                <p>No posts available</p>
+              )}
             </div>
           </div>
+
           <div className="col-md-12 mt-1">
             <p className="border-bottom border-secondary" />
           </div>
@@ -278,8 +223,11 @@ export default function Sergi() {
                   <b
                     id="DigitalExhibitions"
                     className="BitcraftLang fs-40 mb-2"
-                    style={{ "font-family": "'Raleway'" }}
-                  />
+                    style={{ fontFamily: '"Raleway"' }}
+                  >
+                    Dijital Sergiler
+                  </b>
+
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/sergi/dijital-sergiler">
                     <img
@@ -295,8 +243,11 @@ export default function Sergi() {
                   <b
                     id="PastExhibitions"
                     className="BitcraftLang fs-40 mb-2"
-                    style={{ "font-family": "'Raleway'" }}
-                  />
+                    style={{ fontFamily: '"Raleway"' }}
+                  >
+                    Geçmiş Sergiler
+                  </b>
+
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/sergi/gecmis-yillar">
                     <img
