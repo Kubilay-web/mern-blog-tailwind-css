@@ -5,8 +5,27 @@ import "../../src/css/owl.carousel.css";
 import "../../src/css/owl.theme.default.css";
 import "../../src/css/plyr.css";
 import "../../src/css/tema.css";
+import axios from "axios";
+import { useState } from "react";
 
 export default function FooterCom() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("/api/subscribe/newsletter", { email });
+      setMessage(response.data.message);
+    } catch (error) {
+      if (error.response) {
+        setMessage(error.response.data.message);
+      } else {
+        setMessage("An error occurred. Please try again.");
+      }
+    }
+  };
+
   return (
     <div className="footer-background pb-lg-3" style={{ zIndex: -99 }}>
       <div className="container">
@@ -122,27 +141,16 @@ export default function FooterCom() {
                 </ul>
               </div>
               <div className="col-md-5 col-sm-4 col-xs-12 col-lg-5 float-left order-1 plnew2">
-                <form action="/subscribe" method="post">
-                  <input
-                    name="__RequestVerificationToken"
-                    type="hidden"
-                    defaultValue="3OX7wPm5pPfuHyTWFZhg37xrRqJUGnLoRsg6cPSEMFBmUYi2BV7hWaPus4c6-ggHbXcm-_Q5mtW8Dh4Q4LGYditRFcdJXrG0mGvSZB_VBpY1"
-                  />{" "}
-                  <h2
-                    className="font-weight-bold"
-                    style={{ fontSize: 14, color: "#333333" }}
-                  >
-                    E-BÜLTENE ÜYE OLMAK İSTİYORUM
-                  </h2>
+                <form onSubmit={handleSubmit}>
                   <div className="input-group mb-3" style={{ zIndex: 0 }}>
                     <input
                       type="email"
                       className="form-control"
-                      name="email"
-                      id="email"
                       placeholder="E-Posta Adresiniz"
                       aria-label="E-Posta Adresiniz"
-                      aria-describedby="basic-addon2"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                     <div className="input-group-append">
                       <button
@@ -154,6 +162,7 @@ export default function FooterCom() {
                     </div>
                   </div>
                 </form>
+                {message && <p>{message}</p>}
               </div>
             </div>
             <hr />

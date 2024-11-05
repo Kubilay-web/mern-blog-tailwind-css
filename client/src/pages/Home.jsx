@@ -60,7 +60,7 @@ export default function Home({ data }) {
           draggable={true}
           infiniteLoop={true}
           autoPlay={false}
-          emulateTouch={false}
+          emulateTouch={true}
         >
           {carosuels.map((carouselItem, index) => (
             <div
