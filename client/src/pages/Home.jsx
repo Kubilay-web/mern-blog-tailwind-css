@@ -38,11 +38,11 @@ export default function Home({ data }) {
     fetchImages();
   }, [category]);
 
-  const images = [
-    "https://res.cloudinary.com/demo/image/upload/v1652345767/docs/demo_image2.jpg",
-    "https://res.cloudinary.com/demo/image/upload/v1652366604/docs/demo_image5.jpg",
-    "https://res.cloudinary.com/demo/image/upload/v1652345874/docs/demo_image1.jpg",
-  ];
+  // const images = [
+  //   "https://res.cloudinary.com/demo/image/upload/v1652345767/docs/demo_image2.jpg",
+  //   "https://res.cloudinary.com/demo/image/upload/v1652366604/docs/demo_image5.jpg",
+  //   "https://res.cloudinary.com/demo/image/upload/v1652345874/docs/demo_image1.jpg",
+  // ];
 
   return (
     <div>
@@ -55,22 +55,26 @@ export default function Home({ data }) {
             height: "420px",
             margin: "0 auto",
           }}
-          showThumbs={false} // Thumbnail resimleri gizle
-          swipeable={true} // Kaydırma desteği
-          draggable={true} // Fare ile sürükleme desteği
-          infiniteLoop={true} // Sonsuz döngü
-          autoPlay={false} // Otomatik oynatma
-          emulateTouch={true} // Fare ile sürükleme desteğini etkinleştir
+          showThumbs={false}
+          swipeable={true}
+          draggable={true}
+          infiniteLoop={true}
+          autoPlay={false}
+          emulateTouch={false}
         >
           {carosuels.map((carouselItem, index) => (
-            <div key={index} style={{ height: "420px", overflow: "hidden" }}>
+            <div
+              key={index}
+              style={{ height: "420px", width: "100%", overflow: "hidden" }}
+            >
               <img
-                alt="sample_file"
+                alt={`carousel_image_${index}`} // Alternatif metin
                 src={carouselItem.imageURL}
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
+                  transition: "opacity 0.5s ease-in-out", // Görsel geçişi için
                 }}
               />
             </div>
