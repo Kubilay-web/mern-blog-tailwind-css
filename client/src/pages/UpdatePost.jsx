@@ -28,8 +28,8 @@ export default function UpdatePost() {
   const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
-    try {
-      const fetchPost = async () => {
+    const fetchPost = async () => {
+      try {
         const res = await fetch(`/api/post/getposts?postId=${postId}`);
         const data = await res.json();
         if (!res.ok) {
@@ -41,15 +41,15 @@ export default function UpdatePost() {
           setPublishError(null);
           setFormData(data.posts[0]);
         }
-      };
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
 
-      fetchPost();
-    } catch (error) {
-      console.log(error.message);
-    }
+    fetchPost();
   }, [postId]);
 
-  const handleUpdloadImage = async () => {
+  const handleUploadImage = async () => {
     try {
       if (!file) {
         setImageUploadError("Please select an image");
@@ -89,12 +89,12 @@ export default function UpdatePost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Sanitize the content to remove HTML tags
+      // Sanitize the content to allow only <br> tags for spacing
       const sanitizedContent = DOMPurify.sanitize(formData.content, {
-        ALLOWED_TAGS: [],
+        ALLOWED_TAGS: ["br"], // Allow only <br> tags for spacing
       });
       const sanitizedBlogContent = DOMPurify.sanitize(formData.blogContent, {
-        ALLOWED_TAGS: [],
+        ALLOWED_TAGS: ["br", "p"], // Allow only <br> tags for spacing
       });
 
       const res = await fetch(
@@ -167,7 +167,7 @@ export default function UpdatePost() {
             gradientDuoTone="purpleToBlue"
             size="sm"
             outline
-            onClick={handleUpdloadImage}
+            onClick={handleUploadImage}
             disabled={imageUploadProgress}
           >
             {imageUploadProgress ? (
