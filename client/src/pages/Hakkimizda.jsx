@@ -1,6 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function Hakkimizda() {
+  const [nameSurname, setNameSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [feedbackType, setFeedbackType] = useState(""); // 'success' or 'fail'
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post("/api/form/contact", {
+        NameSurname: nameSurname,
+        Email: email,
+        Message: message,
+      });
+
+      setFeedbackMessage(response.data.message);
+      setFeedbackType("success");
+
+      // Clear input fields
+      setNameSurname("");
+      setEmail("");
+      setMessage("");
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        setFeedbackMessage("");
+        setFeedbackType("");
+      }, 3000);
+    } catch (error) {
+      setFeedbackMessage("Failed to send. Please try again.");
+      setFeedbackType("fail");
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        setFeedbackMessage("");
+        setFeedbackType("");
+      }, 3000);
+    }
+  };
+
   return (
     <div>
       <style
@@ -245,26 +287,17 @@ export default function Hakkimizda() {
                 <p />
               </div>
               <div className="col-md-6 col-sm-12 pb-2">
-                <form
-                  action="/pera-muzesi-hakkinda"
-                  className="form"
-                  method="post"
-                >
-                  <input
-                    name="__RequestVerificationToken"
-                    type="hidden"
-                    defaultValue="QjXUOzXl2PTFoiG_jrLCrvjNITzQud2hIUfQAm9zzsBZirE21NvMNLaXmDOGKzSWW4vjMksaZfflFN56zYKx6IH3AiJ4Xpo00aDr0ag3o3A1"
-                  />{" "}
-                  <h5>İletişim Formu</h5>
+                <form onSubmit={handleSubmit} className="form">
                   <div className="form-group">
                     <input
                       className="form-control"
                       id="NameSurname"
                       name="NameSurname"
                       placeholder="Adınız Soyadınız"
-                      required="required"
+                      required
                       type="text"
-                      defaultValue
+                      value={nameSurname}
+                      onChange={(e) => setNameSurname(e.target.value)}
                     />
                   </div>
                   <div className="form-group">
@@ -273,45 +306,41 @@ export default function Hakkimizda() {
                       id="Email"
                       name="Email"
                       placeholder="E-Posta Adresiniz"
-                      required="required"
+                      required
                       type="email"
-                      defaultValue
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="form-group">
                     <textarea
                       className="form-control"
-                      cols={20}
                       id="Message"
                       name="Message"
                       placeholder="Mesajınız"
-                      required="required"
+                      required
                       rows={3}
-                      defaultValue={""}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     />
                   </div>
-                  <div className="col-12">
-                    <div className="row align-items-center justify-content-between">
-                      <div
-                        className="g-recaptcha"
-                        data-theme="light"
-                        data-sitekey="6LfllQkUAAAAAKkDXPBkhn6XqB3o1_wV_Q1m9OhL"
-                      />
-                      <span
-                        className="field-validation-valid"
-                        data-valmsg-for="IsCaptchaValid"
-                        data-valmsg-replace="true"
-                      />
-                      <button
-                        type="submit"
-                        className="btn btn-outline-secondary px-4 ml-auto"
-                        style={{ "border-radius": "40px" }}
-                      >
-                        Gönder
-                      </button>
-                    </div>
-                  </div>
+                  <button
+                    type="submit"
+                    className="btn btn-outline-secondary px-4 ml-auto"
+                    style={{ borderRadius: "40px" }}
+                  >
+                    Gönder
+                  </button>
                 </form>
+                {feedbackMessage && (
+                  <div
+                    className={`alert alert-${
+                      feedbackType === "success" ? "success" : "danger"
+                    } mt-3`}
+                  >
+                    {feedbackMessage}
+                  </div>
+                )}
                 <div style={{ "font-size": "10px", "padding-top": "10px" }}>
                   <p>
                     Bize iletmiş olduğunuz bilgilerde aşağıda sıralanan özel
