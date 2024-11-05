@@ -17,13 +17,22 @@ export default function FooterCom() {
     try {
       const response = await axios.post("/api/subscribe/newsletter", { email });
       setMessage(response.data.message);
+      resetForm();
     } catch (error) {
       if (error.response) {
         setMessage(error.response.data.message);
       } else {
         setMessage("An error occurred. Please try again.");
       }
+      resetForm();
     }
+  };
+
+  const resetForm = () => {
+    setEmail("");
+    setTimeout(() => {
+      setMessage("");
+    }, 3000); // 3 seconds
   };
 
   return (
