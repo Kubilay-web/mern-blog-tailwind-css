@@ -93,6 +93,9 @@ export default function UpdatePost() {
       const sanitizedContent = DOMPurify.sanitize(formData.content, {
         ALLOWED_TAGS: [],
       });
+      const sanitizedBlogContent = DOMPurify.sanitize(formData.blogContent, {
+        ALLOWED_TAGS: [],
+      });
 
       const res = await fetch(
         `/api/post/updatepost/${postId}/${currentUser._id}`,
@@ -101,9 +104,14 @@ export default function UpdatePost() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, content: sanitizedContent }), // Use sanitized content
+          body: JSON.stringify({
+            ...formData,
+            content: sanitizedContent, // Use sanitized content
+            blogContent: sanitizedBlogContent, // Use sanitized blog content
+          }),
         }
       );
+
       const data = await res.json();
       if (!res.ok) {
         setPublishError(data.message);
@@ -185,11 +193,22 @@ export default function UpdatePost() {
         <ReactQuill
           theme="snow"
           value={formData.content}
-          placeholder="Write something..."
+          placeholder="Write caption..."
           className="h-72 mb-12"
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
+          }}
+        />
+
+        <ReactQuill
+          theme="snow"
+          value={formData.blogContent}
+          placeholder="Write blogContent..."
+          className="h-72 mb-12"
+          required
+          onChange={(value) => {
+            setFormData({ ...formData, blogContent: value });
           }}
         />
         <Button type="submit" gradientDuoTone="purpleToPink">
