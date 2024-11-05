@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
-import { set } from "mongoose";
 
 export default function DashPosts() {
   const { currentUser } = useSelector((state) => state.user);
@@ -11,6 +10,14 @@ export default function DashPosts() {
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState("");
+
+  // Filter state
+  const [filters, setFilters] = useState({
+    title: "",
+    category: "",
+    date: "",
+  });
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -71,10 +78,57 @@ export default function DashPosts() {
     }
   };
 
+  // Handle filter input changes
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilters({ ...filters, [name]: value });
+  };
+
+  // Filtered posts based on filters
+  const filteredPosts = userPosts.filter((post) => {
+    const titleMatch = post.title
+      .toLowerCase()
+      .includes(filters.title.toLowerCase());
+    const categoryMatch = post.category
+      .toLowerCase()
+      .includes(filters.category.toLowerCase());
+    const dateMatch = filters.date
+      ? new Date(post.updatedAt).toLocaleDateString() ===
+        new Date(filters.date).toLocaleDateString()
+      : true;
+
+    return titleMatch && categoryMatch && dateMatch;
+  });
+
   return (
     <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
+          <div className="mb-4">
+            <input
+              type="text"
+              name="title"
+              placeholder="Filter by title"
+              value={filters.title}
+              onChange={handleFilterChange}
+              className="mr-2 p-2 border border-gray-300 rounded"
+            />
+            <input
+              type="text"
+              name="category"
+              placeholder="Filter by category"
+              value={filters.category}
+              onChange={handleFilterChange}
+              className="mr-2 p-2 border border-gray-300 rounded"
+            />
+            <input
+              type="date"
+              name="date"
+              value={filters.date}
+              onChange={handleFilterChange}
+              className="mr-2 p-2 border border-gray-300 rounded"
+            />
+          </div>
           <Table hoverable className="shadow-md">
             <Table.Head>
               <Table.HeadCell>Date updated</Table.HeadCell>
@@ -86,8 +140,8 @@ export default function DashPosts() {
                 <span>Edit</span>
               </Table.HeadCell>
             </Table.Head>
-            {userPosts.map((post) => (
-              <Table.Body className="divide-y">
+            {filteredPosts.map((post) => (
+              <Table.Body className="divide-y" key={post._id}>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell>
                     {new Date(post.updatedAt).toLocaleDateString()}
