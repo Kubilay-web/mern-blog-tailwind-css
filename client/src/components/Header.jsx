@@ -307,13 +307,46 @@ export default function Header() {
               )}
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a
                 className="nav-link font-weight-bolder nav-link22"
                 href="/Blog"
               >
                 KEŞFET!
               </a>
+            </li> */}
+
+            <li className="nav-item dropdown position-static">
+              <a
+                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                href="#"
+                onClick={() => handleDropdownToggle("KEŞFET")}
+              >
+                KEŞFET
+              </a>
+
+              {openDropdown === "KEŞFET" && (
+                <div className="dropdown-menu show">
+                  <Link className="dropdown-item" to="/Blog">
+                    ÇAĞDAŞ TARİH
+                  </Link>
+                  <Link className="dropdown-item" to="/Blog">
+                    KÜLTÜR / SANAT / MÜZİK
+                  </Link>
+                  <Link className="dropdown-item" to="/Blog">
+                    GÖÇ VE GÖÇ HAREKETLERİ
+                  </Link>
+                  <Link className="dropdown-item" to="/Blog">
+                    TARİH
+                  </Link>
+                  <Link className="dropdown-item" to="/Blog">
+                    TARİHSEL VE ÇAĞDAŞ KİŞİLİKLER
+                  </Link>
+                  <Link className="dropdown-item" to="/Blog">
+                    SOYKIRIM VE SOYKIRIM ARAŞTIRMALARI
+                  </Link>
+                </div>
+              )}
             </li>
           </ul>
           <div className="topMenuRight text-right">

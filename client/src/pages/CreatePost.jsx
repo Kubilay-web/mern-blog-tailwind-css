@@ -1,6 +1,11 @@
-import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useState } from "react";
+import { Button, FileInput, Select, TextInput, Alert } from "flowbite-react";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { useNavigate } from "react-router-dom";
+import DOMPurify from "dompurify";
 import {
   getDownloadURL,
   getStorage,
@@ -8,13 +13,6 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-import { useState } from "react";
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import { useNavigate } from "react-router-dom";
-
-// Import to strip HTML tags
-import DOMPurify from "dompurify";
 
 export default function CreatePost() {
   const [file, setFile] = useState(null);
@@ -22,10 +20,9 @@ export default function CreatePost() {
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
-
   const navigate = useNavigate();
 
-  const handleUpdloadImage = async () => {
+  const handleUploadImage = async () => {
     try {
       if (!file) {
         setImageUploadError("Please select an image");
@@ -77,20 +74,23 @@ export default function CreatePost() {
         setPublishError(data.message);
         return;
       }
-
-      if (res.ok) {
-        setPublishError(null);
-        navigate(`/post/${data.slug}`);
-      }
+      setPublishError(null);
+      navigate(`/post/${data.slug}`);
     } catch (error) {
       setPublishError("Something went wrong");
     }
   };
 
-  // Strip HTML tags from ReactQuill content
+  // Strip HTML tags from ReactQuill content for `content`
   const handleContentChange = (value) => {
-    const cleanText = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] }); // Remove all HTML tags
+    const cleanText = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
     setFormData({ ...formData, content: cleanText });
+  };
+
+  // Strip HTML tags from ReactQuill content for `blogContent`
+  const handleBlogContentChange = (value) => {
+    const cleanText = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
+    setFormData({ ...formData, blogContent: cleanText });
   };
 
   return (
@@ -131,7 +131,7 @@ export default function CreatePost() {
             gradientDuoTone="purpleToBlue"
             size="sm"
             outline
-            onClick={handleUpdloadImage}
+            onClick={handleUploadImage}
             disabled={imageUploadProgress}
           >
             {imageUploadProgress ? (
@@ -156,10 +156,17 @@ export default function CreatePost() {
         )}
         <ReactQuill
           theme="snow"
-          placeholder="Write something..."
+          placeholder="Write caption..."
           className="h-72 mb-12"
           required
           onChange={handleContentChange}
+        />
+        <ReactQuill
+          theme="snow"
+          placeholder="Write blog content..."
+          className="h-72 mb-12"
+          required
+          onChange={handleBlogContentChange}
         />
         <Button type="submit" gradientDuoTone="purpleToPink">
           Publish

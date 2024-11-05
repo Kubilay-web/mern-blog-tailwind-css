@@ -10,6 +10,10 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    blogContent: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,

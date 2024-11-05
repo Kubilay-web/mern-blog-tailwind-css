@@ -24,14 +24,6 @@ export default function Koleksiyon() {
   return (
     <div>
       <div>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          &lt;iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-KMJKPWQ"
-          height="0" width="0"
-          style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <style
           dangerouslySetInnerHTML={{
             __html:
