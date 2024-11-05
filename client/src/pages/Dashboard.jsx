@@ -35,7 +35,7 @@ export default function Dashboard() {
       {/* dashboard comp */}
       {tab === "dash" && <DashboardComp />}
       {/* dashboard comp */}
-      {tab === "Carousel" && <CarouselComp />}
+      {tab === "carousel" && <CarouselComp />}
     </div>
   );
 }

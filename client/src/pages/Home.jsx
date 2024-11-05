@@ -5,8 +5,10 @@ import PostCard from "../components/PostCard";
 import "../css/tema.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import axios from "axios";
 export default function Home({ data }) {
   const [posts, setPosts] = useState([]);
+  const [carosuels, setCarousels] = useState([]); // Resimlerin state'i
   const [index, setIndex] = useState(0);
   const category = "Genel"; // Buraya istediğiniz kategoriyi yazın.
 
@@ -22,7 +24,18 @@ export default function Home({ data }) {
       const data = await res.json();
       setPosts(data.posts);
     };
+
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get("/api/carousel/getAllImage");
+        setCarousels(response.data);
+      } catch (error) {
+        console.error("Error fetching images", error);
+      }
+    };
+
     fetchPosts();
+    fetchImages();
   }, [category]);
 
   const images = [
@@ -49,11 +62,11 @@ export default function Home({ data }) {
           autoPlay={false} // Otomatik oynatma
           emulateTouch={true} // Fare ile sürükleme desteğini etkinleştir
         >
-          {images.map((URL, index) => (
+          {carosuels.map((carouselItem, index) => (
             <div key={index} style={{ height: "420px", overflow: "hidden" }}>
               <img
                 alt="sample_file"
-                src={URL}
+                src={carouselItem.imageURL}
                 style={{
                   width: "100%",
                   height: "100%",

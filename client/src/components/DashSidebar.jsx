@@ -97,6 +97,15 @@ export default function DashSidebar() {
                   Comments
                 </Sidebar.Item>
               </Link>
+              <Link to="/dashboard?tab=carousel">
+                <Sidebar.Item
+                  active={tab === "carousel"}
+                  icon={HiAnnotation}
+                  as="div"
+                >
+                  Carousel
+                </Sidebar.Item>
+              </Link>
             </>
           )}
 
