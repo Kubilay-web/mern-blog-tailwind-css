@@ -82,6 +82,10 @@ export default function Header() {
     setOpenDropdown(null);
   }, [location.pathname]); // Sayfa değiştiğinde çalışır
 
+  const handleLinkClick = () => {
+    setOpenDropdown(null);
+  };
+
   return (
     <>
       <Navbar className="border-b-2">
@@ -165,15 +169,24 @@ export default function Header() {
               </a>
               {openDropdown === "ZİYARET" && (
                 <div className="dropdown-menu show">
-                  <Link className="dropdown-item" to="/ziyaret">
+                  <Link
+                    className="dropdown-item"
+                    to="/ziyaret"
+                    onClick={handleLinkClick}
+                  >
                     ZİYARETİNİZİ PLANLAYIN
                   </Link>
-                  <Link className="dropdown-item" to="/pera-muzesi-hakkinda">
+                  <Link
+                    className="dropdown-item"
+                    to="/pera-muzesi-hakkinda"
+                    onClick={handleLinkClick}
+                  >
                     HAKKIMIZDA
                   </Link>
                   <Link
                     className="dropdown-item"
                     to="https://artshop.peramuzesi.org.tr/"
+                    onClick={handleLinkClick}
                   >
                     ARTSHOP
                   </Link>
@@ -201,19 +214,39 @@ export default function Header() {
 
               {openDropdown === "SANAT" && (
                 <div className="dropdown-menu show">
-                  <Link className="dropdown-item" to="/sergi">
+                  <Link
+                    className="dropdown-item"
+                    to="/sergi"
+                    onClick={handleLinkClick}
+                  >
                     GÜNCEL SERGİLER
                   </Link>
-                  <Link className="dropdown-item" to="/koleksiyon">
+                  <Link
+                    className="dropdown-item"
+                    to="/koleksiyon"
+                    onClick={handleLinkClick}
+                  >
                     KOLEKSİYONLAR
                   </Link>
-                  <Link className="dropdown-item" to="/projeler">
+                  <Link
+                    className="dropdown-item"
+                    to="/projeler"
+                    onClick={handleLinkClick}
+                  >
                     PROJELER
                   </Link>
-                  <Link className="dropdown-item" to="/sergi/dijital-sergiler">
+                  <Link
+                    className="dropdown-item"
+                    to="/sergi/dijital-sergiler"
+                    onClick={handleLinkClick}
+                  >
                     DİJİTAL SERGİLER
                   </Link>
-                  <Link className="dropdown-item" to="/sergi/gecmis-yillar">
+                  <Link
+                    className="dropdown-item"
+                    to="/sergi/gecmis-yillar"
+                    onClick={handleLinkClick}
+                  >
                     GEÇMİŞ SERGİLER
                   </Link>
                 </div>
@@ -231,16 +264,25 @@ export default function Header() {
 
               {openDropdown === "PERA ÖĞRENME" && (
                 <div className="dropdown-menu show">
-                  <Link className="dropdown-item" to="/pera-ogrenme">
+                  <Link
+                    className="dropdown-item"
+                    to="/pera-ogrenme"
+                    onClick={handleLinkClick}
+                  >
                     GÜNCEL PROGRAMLAR
                   </Link>
                   <Link
                     className="dropdown-item"
                     to="/pera-ogrenme/gecmis-programlar"
+                    onClick={handleLinkClick}
                   >
                     GEÇMİŞ PROGRAMLAR
                   </Link>
-                  <Link className="dropdown-item" to="/pera-ogrenme-hakkinda">
+                  <Link
+                    className="dropdown-item"
+                    to="/pera-ogrenme-hakkinda"
+                    onClick={handleLinkClick}
+                  >
                     PERA ÖĞRENME HAKKINDA
                   </Link>
                 </div>
@@ -258,13 +300,25 @@ export default function Header() {
 
               {openDropdown === "PERA FİLM" && (
                 <div className="dropdown-menu show">
-                  <Link className="dropdown-item" to="/film">
+                  <Link
+                    className="dropdown-item"
+                    to="/film"
+                    onClick={handleLinkClick}
+                  >
                     GÜNCEL PROGRAMLAR
                   </Link>
-                  <Link className="dropdown-item" to="/film/gecmis-programlar">
+                  <Link
+                    className="dropdown-item"
+                    to="/film/gecmis-programlar"
+                    onClick={handleLinkClick}
+                  >
                     GEÇMİŞ PROGRAMLAR
                   </Link>
-                  <Link className="dropdown-item" to="/pera-film-hakkinda">
+                  <Link
+                    className="dropdown-item"
+                    to="/pera-film-hakkinda"
+                    onClick={handleLinkClick}
+                  >
                     PERA FİLM HAKKINDA
                   </Link>
                 </div>
@@ -282,25 +336,53 @@ export default function Header() {
 
               {openDropdown === "YAYINLAR" && (
                 <div className="dropdown-menu show">
-                  <Link className="dropdown-item" to="/yayinlar">
+                  <Link
+                    className="dropdown-item"
+                    to="/yayinlar"
+                    onClick={handleLinkClick}
+                  >
                     TÜM YAYINLAR
                   </Link>
-                  <Link className="dropdown-item" to="/yayinlar/2">
+                  <Link
+                    className="dropdown-item"
+                    to="/yayinlar/2"
+                    onClick={handleLinkClick}
+                  >
                     SÜRELİ SERGİ KATALOGLARI
                   </Link>
-                  <Link className="dropdown-item" to="/yayinlar/3">
+                  <Link
+                    className="dropdown-item"
+                    to="/yayinlar/3"
+                    onClick={handleLinkClick}
+                  >
                     KOLEKSİYON KATALOGLARI
                   </Link>
-                  <Link className="dropdown-item" to="/yayinlar/14">
+                  <Link
+                    className="dropdown-item"
+                    to="/yayinlar/14"
+                    onClick={handleLinkClick}
+                  >
                     SEMPOZYUM DİZİSİ
                   </Link>
-                  <Link className="dropdown-item" to="/yayinlar/15">
+                  <Link
+                    className="dropdown-item"
+                    to="/yayinlar/15"
+                    onClick={handleLinkClick}
+                  >
                     KÜÇÜK KİTAPLAR DİZİSİ
                   </Link>
-                  <Link className="dropdown-item" to="/yayinlar/13">
+                  <Link
+                    className="dropdown-item"
+                    to="/yayinlar/13"
+                    onClick={handleLinkClick}
+                  >
                     DİJİTAL YAYINLAR
                   </Link>
-                  <Link className="dropdown-item" to="/yayinlar/20">
+                  <Link
+                    className="dropdown-item"
+                    to="/yayinlar/20"
+                    onClick={handleLinkClick}
+                  >
                     SUNA VE İNAN KIRAÇ VAKFI YAYINLARI
                   </Link>
                 </div>
@@ -327,22 +409,46 @@ export default function Header() {
 
               {openDropdown === "KEŞFET" && (
                 <div className="dropdown-menu show">
-                  <Link className="dropdown-item" to="/Blog">
+                  <Link
+                    className="dropdown-item"
+                    to="/Blog"
+                    onClick={handleLinkClick}
+                  >
                     ÇAĞDAŞ TARİH
                   </Link>
-                  <Link className="dropdown-item" to="/Blog">
+                  <Link
+                    className="dropdown-item"
+                    to="/Blog"
+                    onClick={handleLinkClick}
+                  >
                     KÜLTÜR / SANAT / MÜZİK
                   </Link>
-                  <Link className="dropdown-item" to="/Blog">
+                  <Link
+                    className="dropdown-item"
+                    to="/Blog"
+                    onClick={handleLinkClick}
+                  >
                     GÖÇ VE GÖÇ HAREKETLERİ
                   </Link>
-                  <Link className="dropdown-item" to="/Blog">
+                  <Link
+                    className="dropdown-item"
+                    to="/Blog"
+                    onClick={handleLinkClick}
+                  >
                     TARİH
                   </Link>
-                  <Link className="dropdown-item" to="/Blog">
+                  <Link
+                    className="dropdown-item"
+                    to="/Blog"
+                    onClick={handleLinkClick}
+                  >
                     TARİHSEL VE ÇAĞDAŞ KİŞİLİKLER
                   </Link>
-                  <Link className="dropdown-item" to="/Blog">
+                  <Link
+                    className="dropdown-item"
+                    to="/Blog"
+                    onClick={handleLinkClick}
+                  >
                     SOYKIRIM VE SOYKIRIM ARAŞTIRMALARI
                   </Link>
                 </div>
