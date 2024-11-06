@@ -629,6 +629,7 @@
 
 import { useEffect, useState } from "react";
 import { useCalendarApp, ScheduleXCalendar } from "@schedule-x/react";
+import "../css/tema.css";
 import {
   createViewDay,
   createViewMonthAgenda,
@@ -653,7 +654,7 @@ function Calendar() {
       events: [
         {
           id: "1",
-          title: "Event 1",
+          title: "dddddddddddddddddddddddddddddddddddddddddddddddddddddd", // Long title
           start: "2024-11-06",
           end: "2024-11-06",
         },
