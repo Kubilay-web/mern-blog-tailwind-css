@@ -8,6 +8,7 @@ import commentRoutes from "./routes/comment.route.js";
 import carouselRoutes from "./routes/carousel.route.js";
 import subscribeRoutes from "./routes/subscribe.route.js";
 import contactRoutes from "./routes/contact.route.js";
+import eventRoutes from "./routes/event.route.js";
 
 import cookieParser from "cookie-parser";
 import path from "path";
@@ -36,6 +37,7 @@ app.use("/api/comment", commentRoutes);
 app.use("/api/carousel", carouselRoutes);
 app.use("/api/subscribe", subscribeRoutes);
 app.use("/api/form", contactRoutes);
+app.use("/api/calendar", eventRoutes);
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
