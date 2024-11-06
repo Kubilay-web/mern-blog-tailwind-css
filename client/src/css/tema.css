@@ -2203,3 +2203,31 @@ div.carousel.carousel-slider {
   text-overflow: ellipsis; /* Taşan metin için üç nokta ekler */
   word-wrap: break-word; /* Kelimelerin taşmasını engeller, gerektiğinde kelimeyi böler */
 }
+
+.sx-react-calendar-wrapper {
+  width: 1200px !;
+  max-width: 100vw !important;
+  height: 800px !important;
+  max-height: 90vh !important;
+}
+
+.sx__event.sx__month-grid-event.sx__month-grid-cell {
+  grid-row: 1;
+  width: calc(100% - 9px);
+  border-left: 4px solid var(--sx-color-primary);
+  color: var(--sx-color-on-primary-container);
+  background-color: var(--sx-color-primary-container);
+  white-space: normal !important; /* Metnin sarmasını sağlar */
+  overflow: hidden !important; /* Taşan metni gizler */
+  text-overflow: ellipsis !important; /* Taşan metin için üç nokta ekler */
+  word-wrap: break-word !important; /* Kelimelerin taşmasını engeller, gerektiğinde kelimeyi böler */
+  height: auto !important;
+}
+
+.sx__month-grid-event-title {
+  white-space: normal !important; /* Metnin sarmasını sağlar */
+  overflow: hidden !important; /* Taşan metni gizler */
+  text-overflow: ellipsis !important; /* Taşan metin için üç nokta ekler */
+  word-wrap: break-word !important; /* Kelimelerin taşmasını engeller, gerektiğinde kelimeyi böler */
+  height: auto !important;
+}
