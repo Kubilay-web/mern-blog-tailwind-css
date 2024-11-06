@@ -627,7 +627,7 @@
 
 // export default Calendar;
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useCalendarApp, ScheduleXCalendar } from "@schedule-x/react";
 import "../css/tema.css";
 import {
@@ -637,11 +637,14 @@ import {
   createViewWeek,
 } from "@schedule-x/calendar";
 import { createEventsServicePlugin } from "@schedule-x/events-service";
-
+import { createEventModalPlugin } from "@schedule-x/event-modal"; // Modal plugin
 import "@schedule-x/theme-default/dist/index.css";
 
 function Calendar() {
-  const plugins = [createEventsServicePlugin()];
+  const plugins = [
+    createEventsServicePlugin(),
+    createEventModalPlugin(), // Add the modal plugin here
+  ];
 
   const calendar = useCalendarApp(
     {
@@ -654,9 +657,10 @@ function Calendar() {
       events: [
         {
           id: "1",
-          title: "dddddddddddddddddddddddddddddddddddddddddddddddddddddd", // Long title
+          title: "Long Event Title Example",
           start: "2024-11-06",
           end: "2024-11-06",
+          description: "This is an event with a long title.",
         },
       ],
     },
