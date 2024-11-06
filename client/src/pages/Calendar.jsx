@@ -294,6 +294,7 @@
 // export default Calendar;
 
 import React, { useState, useEffect } from "react";
+import axios from "axios"; // Axios import edildi
 
 const MONTH_NAMES = [
   "January",
@@ -316,32 +317,17 @@ const Calendar = () => {
   const [year, setYear] = useState(new Date().getFullYear());
   const [noOfDays, setNoOfDays] = useState([]);
   const [blankDays, setBlankDays] = useState([]);
-  const [events, setEvents] = useState([
-    {
-      event_date: new Date(2020, 3, 1),
-      event_title: "April Fool's Day",
-      event_theme: "blue",
-    },
-    {
-      event_date: new Date(2020, 3, 10),
-      event_title: "Birthday",
-      event_theme: "red",
-    },
-    {
-      event_date: new Date(2020, 3, 16),
-      event_title: "Upcoming Event",
-      event_theme: "green",
-    },
-  ]);
+  const [events, setEvents] = useState([]); // Başlangıçta boş dizi
 
   const [eventTitle, setEventTitle] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [eventTheme, setEventTheme] = useState("blue");
   const [openEventModal, setOpenEventModal] = useState(false);
-  const [hoveredEvent, setHoveredEvent] = useState(null); // Hovered event state
+  const [hoveredEvent, setHoveredEvent] = useState(null);
 
   useEffect(() => {
     getNoOfDays();
+    fetchEvents(); // Sayfa yüklendiğinde etkinlikleri al
   }, [month, year]);
 
   const isToday = (date) => {
@@ -355,20 +341,37 @@ const Calendar = () => {
     setEventDate(new Date(year, month, date).toDateString());
   };
 
-  const addEvent = () => {
+  const addEvent = async () => {
     if (eventTitle === "") return;
-    setEvents([
-      ...events,
-      {
-        event_date: eventDate,
-        event_title: eventTitle,
-        event_theme: eventTheme,
-      },
-    ]);
-    setEventTitle("");
-    setEventDate("");
-    setEventTheme("blue");
-    setOpenEventModal(false);
+
+    // Yeni etkinliği POST isteği ile ekleme
+    const newEvent = {
+      event_date: eventDate,
+      event_title: eventTitle,
+      event_theme: eventTheme,
+    };
+
+    try {
+      // POST isteği ile yeni etkinliği ekliyoruz
+      await axios.post("/api/calendar/events", newEvent);
+      setEvents([...events, newEvent]); // Etkinliği state'e ekliyoruz
+      setEventTitle("");
+      setEventDate("");
+      setEventTheme("blue");
+      setOpenEventModal(false);
+    } catch (error) {
+      console.error("Etkinlik eklenirken bir hata oluştu:", error);
+    }
+  };
+
+  const fetchEvents = async () => {
+    try {
+      // GET isteği ile etkinlikleri alıyoruz
+      const response = await axios.get("/api/calendar/events");
+      setEvents(response.data); // Sunucudan alınan etkinlik verisini state'e set ediyoruz
+    } catch (error) {
+      console.error("Etkinlikler alınırken bir hata oluştu:", error);
+    }
   };
 
   const getNoOfDays = () => {
@@ -397,9 +400,7 @@ const Calendar = () => {
               type="button"
               className="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 items-center"
               disabled={month === 0}
-              onClick={() => {
-                setMonth(month - 1);
-              }}
+              onClick={() => setMonth(month - 1)}
             >
               <svg
                 className="h-6 w-6 text-gray-500 inline-flex leading-none"
@@ -420,9 +421,7 @@ const Calendar = () => {
               type="button"
               className="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-gray-200 p-1"
               disabled={month === 11}
-              onClick={() => {
-                setMonth(month + 1);
-              }}
+              onClick={() => setMonth(month + 1)}
             >
               <svg
                 className="h-6 w-6 text-gray-500 inline-flex leading-none"
@@ -491,8 +490,8 @@ const Calendar = () => {
                     .map((event, index) => (
                       <div
                         key={index}
-                        onMouseEnter={() => setHoveredEvent(event)} // Show hover modal
-                        onMouseLeave={() => setHoveredEvent(null)} // Hide hover modal
+                        onMouseEnter={() => setHoveredEvent(event)}
+                        onMouseLeave={() => setHoveredEvent(null)}
                         className={`px-2 py-1 rounded-lg mt-1 overflow-hidden border ${
                           event.event_theme === "blue"
                             ? "border-blue-200 text-blue-800 bg-blue-100"
@@ -517,10 +516,10 @@ const Calendar = () => {
                               top: "100%",
                               left: "50%",
                               transform: "translate(-50%, 10px)",
-                              width: "100%", // %100 genişlik yapıyoruz, ardından max-width ile sınırlıyoruz
-                              maxWidth: "300px", // Modalın maksimum genişliği
-                              maxHeight: "200px", // Maksimum yükseklik
-                              overflowY: "auto", // Uzun içerikler için kaydırma
+                              width: "100%",
+                              maxWidth: "300px",
+                              maxHeight: "200px",
+                              overflowY: "auto",
                             }}
                           >
                             <p
