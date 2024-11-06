@@ -106,6 +106,16 @@ export default function DashSidebar() {
                   Carousel
                 </Sidebar.Item>
               </Link>
+
+              <Link to="/dashboard?tab=events">
+                <Sidebar.Item
+                  active={tab === "events"}
+                  icon={HiAnnotation}
+                  as="div"
+                >
+                  Events
+                </Sidebar.Item>
+              </Link>
             </>
           )}
 

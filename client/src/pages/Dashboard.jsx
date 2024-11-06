@@ -7,6 +7,7 @@ import DashUsers from "../components/DashUsers";
 import DashComments from "../components/DashComments";
 import DashboardComp from "../components/DashboardComp";
 import CarouselComp from "../components/CarouselComp";
+import DashEvents from "../components/DashEvents";
 
 export default function Dashboard() {
   const location = useLocation();
@@ -36,6 +37,8 @@ export default function Dashboard() {
       {tab === "dash" && <DashboardComp />}
       {/* dashboard comp */}
       {tab === "carousel" && <CarouselComp />}
+
+      {tab === "events" && <DashEvents />}
     </div>
   );
 }
