@@ -24,36 +24,6 @@ export default function Ajanda() {
               </div>
             </a>
           </div>
-          {/*header rightside*/}
-          <div className="col-lg-4 col-md-5 d-none d-md-block align-self-center">
-            <div className="float-right ">
-              <a
-                className="float-left langField"
-                href="https://www.peramuseum.org/"
-                style={{ margin: "2px 0 0 0" }}
-              >
-                <img
-                  src="/images/Ajanda/iconLang.png"
-                  style={{ width: "25px", margin: "4px 0 0 0" }}
-                />
-              </a>
-              <div className="searchbar float-left">
-                <input
-                  className="search_input txtSrch1"
-                  id="srchBox"
-                  type="text"
-                  name="txtSrch1"
-                  placeholder="Arama..."
-                />
-                <a href="#" id="btnSrchDesktop" className="search_icon btnSrch">
-                  <img
-                    src="/images/Ajanda/iconSearch.png"
-                    style={{ width: "25px" }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       {/*
