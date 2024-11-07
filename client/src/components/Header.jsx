@@ -8,7 +8,7 @@ import { signoutSuccess } from "../redux/user/userSlice";
 import { useEffect, useState, useRef } from "react";
 import "../../src/css/bootstrap.min.css";
 import "../../src/css/font-awesome.min.css";
-import "../../src/css/Hamburgers.css";
+// import "../../src/css/Hamburgers.css";
 import "../../src/css/owl.carousel.css";
 import "../../src/css/owl.theme.default.css";
 import "../../src/css/plyr.css";
@@ -144,11 +144,7 @@ export default function Header() {
             </Dropdown>
           ) : (
             <Link to="/sign-in">
-              <Button
-                gradientDuoTone="purpleToBlue"
-                outline
-                className="text-black-500"
-              >
+              <Button gradientDuoTone="purpleToBlue" outline>
                 Sign In
               </Button>
             </Link>
@@ -158,7 +154,7 @@ export default function Header() {
       </Navbar>
 
       <nav
-        className="flex justify-center ml-auto mb-3 navbar navbar-expand-lg navbar-light bg-white border-top border-bottom border-dark sticky-top navbarheight ptnew-0"
+        className="flex justify-center ml-auto mb-3 navbar navbar-expand-lg navbar-light bg-white border-top border-bottom border-dark  navbarheight ptnew-0"
         style={{ zIndex: 1 }}
       >
         <div id="navbarsExample09" ref={dropdownRef}>

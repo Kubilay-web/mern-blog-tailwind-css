@@ -1,6 +1,6 @@
 import "../../src/css/bootstrap.min.css";
 import "../../src/css/font-awesome.min.css";
-import "../../src/css/Hamburgers.css";
+// import "../../src/css/Hamburgers.css";
 import "../../src/css/owl.carousel.css";
 import "../../src/css/owl.theme.default.css";
 import "../../src/css/plyr.css";
