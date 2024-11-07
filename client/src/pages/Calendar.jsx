@@ -627,7 +627,7 @@
 
 // export default Calendar;
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCalendarApp, ScheduleXCalendar } from "@schedule-x/react";
 import "../css/tema.css";
 import {
@@ -641,40 +641,51 @@ import { createEventModalPlugin } from "@schedule-x/event-modal"; // Modal plugi
 import "@schedule-x/theme-default/dist/index.css";
 
 function Calendar() {
+  const [events, setEvents] = useState([]); // State to store events
+
+  // Create the eventsServicePlugin to manage events
+  const eventsServicePlugin = createEventsServicePlugin();
+
   const plugins = [
-    createEventsServicePlugin(),
-    createEventModalPlugin(), // Add the modal plugin here
+    eventsServicePlugin, // Add the events service plugin
+    createEventModalPlugin(), // Add the modal plugin
   ];
 
+  // Initialize the calendar with views and plugins
   const calendar = useCalendarApp(
     {
-      views: [
-        createViewDay(),
-        createViewWeek(),
-        createViewMonthGrid(),
-        createViewMonthAgenda(),
-      ],
-      events: [
-        {
-          id: "1",
-          title: "Long Event Title Example",
-          start: "2024-11-06",
-          end: "2024-11-06",
-          description: "This is an event with a long title.",
-        },
-      ],
+      views: [createViewMonthGrid(), createViewMonthAgenda()],
+      eventsService: eventsServicePlugin, // Attach the events service to the calendar
     },
     plugins
   );
 
+  // Fetch events from an API
   useEffect(() => {
-    // get all events
-    calendar.eventsService.getAll();
-  }, []);
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch("/api/calendar/events"); // Fetch events from the backend
+        const data = await response.json(); // Convert response to JSON
+        console.log("Fetched events:", data);
+
+        // Add each event to the eventsServicePlugin
+        data.forEach((event) => {
+          eventsServicePlugin.add(event); // Add event to events service
+        });
+
+        // Optionally, update state for other purposes (though not necessary for the calendar)
+        setEvents(data);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+
+    fetchEvents();
+  }, []); // Run once when the component mounts
 
   return (
     <div className="w-full">
-      <ScheduleXCalendar calendarApp={calendar} />
+      <ScheduleXCalendar calendarApp={calendar} /> {/* Render the calendar */}
     </div>
   );
 }

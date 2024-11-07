@@ -1,16 +1,19 @@
-// models/event.model.js
 import mongoose from "mongoose";
 
 const eventSchema = new mongoose.Schema({
-  event_date: {
-    type: Date,
-    required: true,
-  },
-  event_title: {
+  title: {
     type: String,
     required: true,
   },
-  event_theme: {
+  start: {
+    type: Date,
+    required: true,
+  },
+  end: {
+    type: Date,
+    required: true,
+  },
+  theme: {
     type: String,
     required: true,
     enum: ["blue", "red", "green", "yellow", "purple"],

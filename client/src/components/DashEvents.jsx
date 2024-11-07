@@ -1,9 +1,8 @@
 import { Modal, Table, Button, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { HiOutlineExclamationCircle } from "react-icons/hi";
 import axios from "axios";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 export default function DashEvents() {
   const { currentUser } = useSelector((state) => state.user);
@@ -13,13 +12,20 @@ export default function DashEvents() {
   const [showEditModal, setShowEditModal] = useState(false);
   const [eventIdToDelete, setEventIdToDelete] = useState("");
   const [eventToEdit, setEventToEdit] = useState({
-    _id: "", // Make sure the event has the _id field
-    event_title: "",
-    event_theme: "",
-    event_date: "",
+    id: "",
+    title: "",
+    theme: "",
+    start: "",
+    end: "",
   });
 
-  // Filter state
+  const [newEvent, setNewEvent] = useState({
+    title: "",
+    start: "",
+    end: "",
+    theme: "",
+  });
+
   const [filters, setFilters] = useState({
     title: "",
     theme: "",
@@ -41,7 +47,28 @@ export default function DashEvents() {
     }
   }, [currentUser._id]);
 
-  // Show more events
+  const handleAddEvent = async () => {
+    try {
+      // Format the new event data to fit the ScheduleX format
+      const eventData = {
+        title: newEvent.title,
+        start: newEvent.start,
+        end: newEvent.end,
+        theme: newEvent.theme,
+      };
+      // POST request to add a new event
+      const res = await axios.post("/api/calendar/events", eventData);
+
+      if (res.status === 201) {
+        setEvents((prev) => [...prev, res.data.event]);
+        setNewEvent({ title: "", start: "", end: "", theme: "" });
+      }
+    } catch (error) {
+      console.error("Error adding event:", error);
+      alert("Error adding event, please try again.");
+    }
+  };
+
   const handleShowMore = async () => {
     const startIndex = events.length;
     try {
@@ -58,14 +85,13 @@ export default function DashEvents() {
     }
   };
 
-  // Delete event
   const handleDeleteEvent = async () => {
     setShowModal(false);
     try {
       const res = await axios.delete(`/api/calendar/events/${eventIdToDelete}`);
       if (res.status === 200) {
         setEvents((prev) =>
-          prev.filter((event) => event._id !== eventIdToDelete)
+          prev.filter((event) => event.id !== eventIdToDelete)
         );
       }
     } catch (error) {
@@ -73,50 +99,47 @@ export default function DashEvents() {
     }
   };
 
-  // Handle filter input changes
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters({ ...filters, [name]: value });
   };
 
-  // Filter events based on title, theme, and date
-  const filteredEvents = (events || []).filter((event) => {
-    const titleMatch = event.event_title
+  const filteredEvents = events.filter((event) => {
+    const titleMatch = event.title
       .toLowerCase()
       .includes(filters.title.toLowerCase());
-    const themeMatch = event.event_theme
+    const themeMatch = event.theme
       .toLowerCase()
       .includes(filters.theme.toLowerCase());
     const dateMatch = filters.date
-      ? new Date(event.event_date).toLocaleDateString() ===
+      ? new Date(event.start).toLocaleDateString() ===
         new Date(filters.date).toLocaleDateString()
       : true;
 
     return titleMatch && themeMatch && dateMatch;
   });
 
-  // Open Edit Modal with event data
   const handleEditEvent = (event) => {
     setEventToEdit({
-      _id: event._id, // Ensure _id is passed here
-      event_title: event.event_title,
-      event_theme: event.event_theme,
-      event_date: event.event_date,
+      id: event.id,
+      title: event.title,
+      theme: event.theme,
+      start: event.start,
+      end: event.end,
     });
     setShowEditModal(true);
   };
 
-  // Handle event update
   const handleUpdateEvent = async () => {
     try {
       const res = await axios.put(
-        `/api/calendar/events/${eventToEdit._id}`,
+        `/api/calendar/events/${eventToEdit.id}`,
         eventToEdit
       );
       if (res.status === 200) {
         setEvents((prev) =>
           prev.map((event) =>
-            event._id === eventToEdit._id ? res.data : event
+            event.id === eventToEdit.id ? res.data.event : event
           )
         );
         setShowEditModal(false);
@@ -127,55 +150,102 @@ export default function DashEvents() {
   };
 
   return (
-    <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
+    <div className="table-auto overflow-x-scroll md:mx-auto p-3">
+      {currentUser.isAdmin && (
+        <div className="mb-4">
+          {/* Event Title */}
+          <TextInput
+            label="Event Title"
+            placeholder="Event Title"
+            value={newEvent.title}
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, title: e.target.value })
+            }
+            className="mr-2 p-2 border border-gray-300 rounded"
+            required
+          />
+
+          {/* Start Date */}
+          <TextInput
+            label="Start Date"
+            type="datetime-local"
+            value={newEvent.start}
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, start: e.target.value })
+            }
+            className="mr-2 p-2 border border-gray-300 rounded"
+            required
+          />
+
+          {/* End Date */}
+          <TextInput
+            label="End Date"
+            type="datetime-local"
+            value={newEvent.end}
+            onChange={(e) => setNewEvent({ ...newEvent, end: e.target.value })}
+            className="mr-2 p-2 border border-gray-300 rounded"
+            required
+          />
+
+          {/* Event Theme */}
+          <TextInput
+            label="Theme"
+            placeholder="Event Theme"
+            value={newEvent.theme}
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, theme: e.target.value })
+            }
+            className="mr-2 p-2 border border-gray-300 rounded"
+            required
+          />
+
+          {/* Add Event Button */}
+          <Button
+            onClick={handleAddEvent}
+            className="mt-2"
+            disabled={
+              !newEvent.title ||
+              !newEvent.start ||
+              !newEvent.end ||
+              !newEvent.theme
+            } // Disable if any field is empty
+          >
+            Add Event
+          </Button>
+        </div>
+      )}
+
       {currentUser.isAdmin && events.length > 0 ? (
         <>
-          <div className="mb-4">
-            <input
-              type="text"
-              name="title"
-              placeholder="Filter by title"
-              value={filters.title}
-              onChange={handleFilterChange}
-              className="mr-2 p-2 border border-gray-300 rounded"
-            />
-            <input
-              type="text"
-              name="theme"
-              placeholder="Filter by theme"
-              value={filters.theme}
-              onChange={handleFilterChange}
-              className="mr-2 p-2 border border-gray-300 rounded"
-            />
-            <input
-              type="date"
-              name="date"
-              value={filters.date}
-              onChange={handleFilterChange}
-              className="mr-2 p-2 border border-gray-300 rounded"
-            />
-          </div>
           <Table hoverable className="shadow-md">
             <Table.Head>
               <Table.HeadCell>Date</Table.HeadCell>
               <Table.HeadCell>Event Title</Table.HeadCell>
               <Table.HeadCell>Event Theme</Table.HeadCell>
+              <Table.HeadCell>Start Time</Table.HeadCell>
+              <Table.HeadCell>End Time</Table.HeadCell>
               <Table.HeadCell>Delete</Table.HeadCell>
               <Table.HeadCell>Edit</Table.HeadCell>
             </Table.Head>
-            {filteredEvents.map((event) => (
-              <Table.Body className="divide-y" key={event._id}>
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Body className="divide-y">
+              {filteredEvents.map((event) => (
+                <Table.Row className="bg-white" key={event.id}>
                   <Table.Cell>
-                    {new Date(event.event_date).toLocaleDateString()}
+                    {new Date(event.start).toLocaleDateString()}
                   </Table.Cell>
-                  <Table.Cell>{event.event_title}</Table.Cell>
-                  <Table.Cell>{event.event_theme}</Table.Cell>
+                  <Table.Cell>{event.title}</Table.Cell>
+                  <Table.Cell>{event.theme}</Table.Cell>
+                  <Table.Cell>
+                    {new Date(event.start).toLocaleTimeString()}
+                  </Table.Cell>
+                  <Table.Cell>
+                    {new Date(event.end).toLocaleTimeString()}
+                  </Table.Cell>
                   <Table.Cell>
                     <span
                       onClick={() => {
                         setShowModal(true);
-                        setEventIdToDelete(event._id);
+                        setEventIdToDelete(event.id);
                       }}
                       className="font-medium text-red-500 hover:underline cursor-pointer"
                     >
@@ -191,8 +261,8 @@ export default function DashEvents() {
                     </span>
                   </Table.Cell>
                 </Table.Row>
-              </Table.Body>
-            ))}
+              ))}
+            </Table.Body>
           </Table>
           {showMore && (
             <button
@@ -207,74 +277,77 @@ export default function DashEvents() {
         <p>You have no events yet!</p>
       )}
 
-      {/* Confirmation Modal for Deleting Event */}
-      <Modal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        popup
-        size="md"
-      >
-        <Modal.Header />
+      {/* Confirmation Modal for Deletion */}
+      <Modal show={showModal} onClose={() => setShowModal(false)}>
+        <Modal.Header>
+          <span className="text-md font-bold">Are you sure?</span>
+        </Modal.Header>
         <Modal.Body>
-          <div className="text-center">
-            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
-            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
+          <div className="flex flex-col items-center justify-center gap-4">
+            <HiOutlineExclamationCircle className="text-red-500 w-14 h-14" />
+            <h3 className="font-normal text-gray-500">
               Are you sure you want to delete this event?
             </h3>
-            <div className="flex justify-center gap-4">
-              <Button color="failure" onClick={handleDeleteEvent}>
-                Yes, I'm sure
-              </Button>
-              <Button color="gray" onClick={() => setShowModal(false)}>
-                No, cancel
-              </Button>
-            </div>
           </div>
         </Modal.Body>
+        <Modal.Footer>
+          <Button color="failure" onClick={handleDeleteEvent}>
+            Yes, I'm sure
+          </Button>
+          <Button color="gray" onClick={() => setShowModal(false)}>
+            No, cancel
+          </Button>
+        </Modal.Footer>
       </Modal>
 
       {/* Edit Event Modal */}
-      <Modal
-        show={showEditModal}
-        onClose={() => setShowEditModal(false)}
-        popup
-        size="md"
-      >
-        <Modal.Header>Edit Event</Modal.Header>
+      <Modal show={showEditModal} onClose={() => setShowEditModal(false)}>
+        <Modal.Header>
+          <span className="text-md font-bold">Edit Event</span>
+        </Modal.Header>
         <Modal.Body>
-          <div className="space-y-4">
-            <TextInput
-              label="Event Title"
-              value={eventToEdit.event_title}
-              onChange={(e) =>
-                setEventToEdit({ ...eventToEdit, event_title: e.target.value })
-              }
-            />
-            <TextInput
-              label="Event Theme"
-              value={eventToEdit.event_theme}
-              onChange={(e) =>
-                setEventToEdit({ ...eventToEdit, event_theme: e.target.value })
-              }
-            />
-            <TextInput
-              label="Event Date"
-              type="date"
-              value={eventToEdit.event_date}
-              onChange={(e) =>
-                setEventToEdit({ ...eventToEdit, event_date: e.target.value })
-              }
-            />
-          </div>
-          <div className="flex justify-center gap-4 mt-4">
-            <Button color="success" onClick={handleUpdateEvent}>
-              Update Event
-            </Button>
-            <Button color="gray" onClick={() => setShowEditModal(false)}>
-              Cancel
-            </Button>
-          </div>
+          <TextInput
+            label="Event Title"
+            placeholder="Event Title"
+            value={eventToEdit.title}
+            onChange={(e) =>
+              setEventToEdit({ ...eventToEdit, title: e.target.value })
+            }
+            className="mr-2 p-2 border border-gray-300 rounded"
+          />
+          <TextInput
+            label="Event Theme"
+            value={eventToEdit.theme}
+            onChange={(e) =>
+              setEventToEdit({ ...eventToEdit, theme: e.target.value })
+            }
+            className="mr-2 p-2 border border-gray-300 rounded"
+          />
+          <TextInput
+            label="Start Date"
+            type="datetime-local"
+            value={eventToEdit.start}
+            onChange={(e) =>
+              setEventToEdit({ ...eventToEdit, start: e.target.value })
+            }
+            className="mr-2 p-2 border border-gray-300 rounded"
+          />
+          <TextInput
+            label="End Date"
+            type="datetime-local"
+            value={eventToEdit.end}
+            onChange={(e) =>
+              setEventToEdit({ ...eventToEdit, end: e.target.value })
+            }
+            className="mr-2 p-2 border border-gray-300 rounded"
+          />
         </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleUpdateEvent}>Save Changes</Button>
+          <Button color="gray" onClick={() => setShowEditModal(false)}>
+            Cancel
+          </Button>
+        </Modal.Footer>
       </Modal>
     </div>
   );
