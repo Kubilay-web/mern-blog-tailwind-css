@@ -654,7 +654,12 @@ function Calendar() {
   // Initialize the calendar with views and plugins
   const calendar = useCalendarApp(
     {
-      views: [createViewMonthGrid(), createViewMonthAgenda()],
+      views: [
+        createViewDay(),
+        createViewWeek(),
+        createViewMonthGrid(),
+        createViewMonthAgenda(),
+      ],
       eventsService: eventsServicePlugin, // Attach the events service to the calendar
     },
     plugins
