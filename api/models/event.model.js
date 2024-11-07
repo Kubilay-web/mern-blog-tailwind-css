@@ -16,7 +16,6 @@ const eventSchema = new mongoose.Schema({
   theme: {
     type: String,
     required: true,
-    enum: ["blue", "red", "green", "yellow", "purple"],
   },
 });
 

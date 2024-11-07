@@ -1,6 +1,6 @@
 import Event from "../models/event.model.js";
 
-// Olayları getirme
+// Olayları getirme (Get Events)
 export const getEvents = async (req, res) => {
   try {
     const events = await Event.find();
@@ -20,9 +20,9 @@ export const getEvents = async (req, res) => {
   }
 };
 
+// Yeni event oluşturma (Create Event)
 export const createEvent = async (req, res) => {
   try {
-    // Destructure event data from request body
     const { title, start, end, theme } = req.body;
 
     // Ensure required fields are present
@@ -54,5 +54,62 @@ export const createEvent = async (req, res) => {
   } catch (error) {
     console.error("Error creating event:", error);
     res.status(500).json({ message: "Error creating event", error });
+  }
+};
+
+// Event güncelleme (Update Event)
+export const updateEvent = async (req, res) => {
+  try {
+    const { eventId } = req.params; // Retrieve eventId from URL parameter
+    const { title, start, end, theme } = req.body;
+
+    // Find the event by ID
+    const event = await Event.findById(eventId);
+
+    if (!event) {
+      return res.status(404).json({ message: "Event not found" });
+    }
+
+    // Update the event fields
+    event.title = title || event.title;
+    event.start = start ? new Date(start) : event.start; // Make sure to handle the date conversion
+    event.end = end ? new Date(end) : event.end;
+    event.theme = theme || event.theme;
+
+    // Save the updated event
+    const updatedEvent = await event.save();
+
+    // Format the updated event for ScheduleXCalendar format
+    const formattedEvent = {
+      id: updatedEvent._id.toString(),
+      title: updatedEvent.title,
+      start: updatedEvent.start.toISOString().split("T")[0], // Format as YYYY-MM-DD
+      end: updatedEvent.end.toISOString().split("T")[0], // Format as YYYY-MM-DD
+      theme: updatedEvent.theme,
+    };
+
+    res.status(200).json({ event: formattedEvent }); // Return the updated event
+  } catch (error) {
+    console.error("Error updating event:", error);
+    res.status(500).json({ message: "Error updating event", error });
+  }
+};
+
+// Event silme (Delete Event)
+export const deleteEvent = async (req, res) => {
+  try {
+    const { eventId } = req.params; // Retrieve eventId from URL parameter
+
+    // Find and delete the event by ID
+    const event = await Event.findByIdAndDelete(eventId);
+
+    if (!event) {
+      return res.status(404).json({ message: "Event not found" });
+    }
+
+    res.status(200).json({ message: "Event deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting event:", error);
+    res.status(500).json({ message: "Error deleting event", error });
   }
 };
