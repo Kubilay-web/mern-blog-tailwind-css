@@ -74,7 +74,7 @@ export default function FooterCom() {
             style={{ backgroundColor: "#eaeaea" }}
           >
             <div className="row align-items-center mt-lg-5 mt-2">
-              <div className="col-md-7 col-sm-8 col-xs-12 col-lg-7  d-flex order-2 order-md-first social-margin-right">
+              <div className="col-md-7 col-sm-8 col-xs-12 col-lg-7 mb-3  d-flex order-2 order-md-first social-margin-right">
                 <ul className="social-network social-circle pt-2 plnew3">
                   <li>
                     <a

@@ -2231,3 +2231,9 @@ div.carousel.carousel-slider {
   word-wrap: break-word !important; /* Kelimelerin taşmasını engeller, gerektiğinde kelimeyi böler */
   height: auto !important;
 }
+
+/* Carousels */
+.carousel-root.carousel {
+  max-width: 1070px;
+  margin: auto;
+}
