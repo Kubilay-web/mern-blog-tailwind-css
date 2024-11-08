@@ -2289,7 +2289,7 @@ select:focus {
 }
 
 /* Seçili dot için stil */
-.carousel .control-dots .dot.active {
+.carousel .control-dots li.dot.selected {
   background: #fff !important; /* Seçili dotun arka plan rengi beyaz */
   opacity: 1 !important; /* Seçili dot tamamen opak */
 }
