@@ -2269,6 +2269,32 @@ select:focus {
   border-color: none !important;
 }
 
+/* ///////////////////////////////////////////////////////// */
 .carousel .control-arrow {
   display: none !important;
+}
+
+/* Dotların genel görünümü */
+.carousel .control-dots .dot {
+  width: 30px !important; /* Dot genişliği */
+  height: 3px !important; /* Dot yüksekliği */
+  background: #fff !important; /* Dot arka plan rengi */
+  opacity: 0.5 !important; /* Dot şeffaflık */
+  transition: opacity 0.6s ease !important; /* Opaklık geçişi */
+  cursor: pointer !important; /* Mouse üzerine geldiğinde tıklanabilir işaretçi */
+  outline: none !important; /* Dış çerçeveyi kaldır */
+  margin: 0 5px !important; /* Dotlar arasındaki mesafe */
+  border-radius: 0 !important; /* Yuvarlatılmış köşeleri kaldır */
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Hafif gölge efekti */
+}
+
+/* Seçili dot için stil */
+.carousel .control-dots .dot.active {
+  background: #fff !important; /* Seçili dotun arka plan rengi beyaz */
+  opacity: 1 !important; /* Seçili dot tamamen opak */
+}
+
+/* Dot üzerine gelindiğinde opaklık değişimi */
+.carousel .control-dots .dot:hover {
+  opacity: 0.8 !important; /* Dot üzerine gelindiğinde opaklık */
 }
