@@ -303,9 +303,11 @@ export default function Header() {
               )}
             </li>
 
+            <span className="bol d-none d-lg-block  bg-dark" />
+
             <li className="nav-item dropdown position-static">
               <a
-                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                className="nav-link dropdown-toggle  nav-link22"
                 href="#"
                 onClick={() => handleDropdownToggle("PERA ÖĞRENME")}
               >
@@ -341,7 +343,7 @@ export default function Header() {
 
             <li className="nav-item dropdown position-static">
               <a
-                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                className="nav-link dropdown-toggle  nav-link22"
                 href="#"
                 onClick={() => handleDropdownToggle("PERA FİLM")}
               >
@@ -377,7 +379,7 @@ export default function Header() {
 
             <li className="nav-item dropdown position-static">
               <a
-                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                className="nav-link dropdown-toggle  nav-link22"
                 href="#"
                 onClick={() => handleDropdownToggle("YAYINLAR")}
               >
@@ -450,7 +452,7 @@ export default function Header() {
 
             <li className="nav-item dropdown position-static">
               <a
-                className="nav-link dropdown-toggle font-weight-bolder nav-link22"
+                className="nav-link dropdown-toggle  nav-link22"
                 href="#"
                 onClick={() => handleDropdownToggle("KEŞFET")}
               >
@@ -504,6 +506,7 @@ export default function Header() {
                 </div>
               )}
             </li>
+            <span className="bol d-none d-lg-block  bg-dark" />
           </ul>
           <div className="topMenuRight text-right">
             <a
