@@ -15,6 +15,7 @@ import "../../src/css/plyr.css";
 import "../../src/css/tema.css";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import CarouselComp from "./CarouselComp";
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -205,7 +206,7 @@ export default function Header() {
 
       <nav
         className="flex justify-center ml-auto mb-3 navbar navbar-expand-lg navbar-light bg-white border-top border-bottom border-dark  navbarheight ptnew-0"
-        style={{ zIndex: 1 }}
+        style={{ zIndex: 3 }}
       >
         <div id="navbarsExample09" ref={dropdownRef}>
           <ul className="navbar-nav gap-4 mr-auto justify-content-between w-100 text-uppercase">
