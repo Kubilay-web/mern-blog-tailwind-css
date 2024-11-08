@@ -86,6 +86,11 @@ export default function Header() {
     setOpenDropdown(null);
   };
 
+  const handleIconClick = (e) => {
+    e.preventDefault(); // Prevent link navigation
+    handleSubmit(e); // Trigger form submission logic
+  };
+
   return (
     <>
       <Navbar className="border-b-2">
@@ -134,7 +139,12 @@ export default function Header() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <a href="#" id="btnSrchDesktop" className="search_icon btnSrch">
+              <a
+                href="#"
+                id="btnSrchDesktop"
+                className="search_icon btnSrch"
+                onClick={handleIconClick}
+              >
                 <img
                   src="images/Home/iconSearch.png"
                   style={{ width: "25px" }}
