@@ -2268,3 +2268,7 @@ select:focus {
     var(--tw-shadow);
   border-color: none !important;
 }
+
+.carousel .control-arrow {
+  display: none !important;
+}

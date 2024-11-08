@@ -11,6 +11,7 @@ export default function Home({ data }) {
   const [carosuels, setCarousels] = useState([]); // Resimlerin state'i
   const [index, setIndex] = useState(0);
   const category = "Genel"; // Buraya istediğiniz kategoriyi yazın.
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
@@ -44,10 +45,40 @@ export default function Home({ data }) {
   //   "https://res.cloudinary.com/demo/image/upload/v1652345874/docs/demo_image1.jpg",
   // ];
 
+  const handlePrevClick = () => {
+    setSelectedIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : carosuels.length - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setSelectedIndex((prevIndex) =>
+      prevIndex < carosuels.length - 1 ? prevIndex + 1 : 0
+    );
+  };
+
   return (
     <div>
-      <div className="box">
+      <div className=" max-w-[1070px] m-auto flex align-middle gap-10">
+        {/* Sol ok butonu */}
+        <button
+          type="button"
+          role="presentation"
+          className="owl-prev"
+          onClick={handlePrevClick}
+        >
+          <img
+            className="left_arrow"
+            src="https://www.peramuzesi.org.tr/assetsv2/img/left-arrow.png"
+            aria-hidden="true"
+            alt="sol"
+          />
+        </button>
+
+        {/* Carousel bileşeni */}
         <Carousel
+          selectedItem={selectedIndex} // Seçili öğeyi kontrol et
+          onChange={setSelectedIndex} // Değişiklik olduğunda seçili öğeyi güncelle
           useKeyboardArrows={true}
           className="carousel"
           style={{
@@ -80,6 +111,21 @@ export default function Home({ data }) {
             </div>
           ))}
         </Carousel>
+
+        {/* Sağ ok butonu */}
+        <button
+          type="button"
+          role="presentation"
+          className="owl-next"
+          onClick={handleNextClick}
+        >
+          <img
+            className="right_arrow"
+            src="https://www.peramuzesi.org.tr/assetsv2/img/right-arrow.png"
+            aria-hidden="true"
+            alt="sağ"
+          />
+        </button>
       </div>
 
       <div className="container">
