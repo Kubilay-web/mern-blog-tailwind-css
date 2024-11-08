@@ -39,12 +39,14 @@ import Yayin15 from "./pages/Yayin15";
 import Yayin13 from "./pages/Yayin13";
 import Yayin20 from "./pages/Yayin20";
 import Blog from "./pages/Blog";
+// import Nav from "./components/Nav";
 
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Header />
+      {/* <Nav /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

@@ -83,7 +83,7 @@ export default function Home({ data }) {
       </div>
 
       <div className="container">
-        <div className="row pt-7">
+        <div className="row tw-mt-10 pt-7">
           {posts && posts.length > 0 ? (
             posts.slice(0, 1000).map((post, index) => {
               let colClass = "col-lg-4 col-md-6"; // Varsayılan üçlü düzen

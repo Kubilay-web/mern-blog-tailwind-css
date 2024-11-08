@@ -103,7 +103,7 @@ export default function Header() {
         <Button className="w-12 h-10 lg:hidden" color="gray" pill>
           <AiOutlineSearch />
         </Button>
-        <div className="flex gap-2 md:order-2">
+        <div className="flex gap-2 justify-center align-middle md:order-2">
           {/* <Button
             className="w-12 h-10 hidden sm:inline"
             color="gray"
@@ -112,7 +112,7 @@ export default function Header() {
           >
             {theme === "light" ? <FaSun /> : <FaMoon />}
           </Button> */}
-          <form onSubmit={handleSubmit}>
+          {/* <form onSubmit={handleSubmit}>
             <TextInput
               type="text"
               placeholder="Search..."
@@ -121,7 +121,47 @@ export default function Header() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
+          </form> */}
+
+          <form onSubmit={handleSubmit}>
+            <div className="searchbar flex align-middle justify-center">
+              <input
+                className="search_input txtSrch1"
+                id="srchBox"
+                type="text"
+                name="txtSrch1"
+                placeholder="Arama..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <a href="#" id="btnSrchDesktop" className="search_icon btnSrch">
+                <img
+                  src="images/Home/iconSearch.png"
+                  style={{ width: "25px" }}
+                  alt="Search Icon"
+                />
+              </a>
+            </div>
           </form>
+
+          <div
+            className="mobileSearchField input-group lg:hidden"
+            style={{ width: "60%" }}
+          >
+            <input
+              type="text"
+              name="txtSrch2"
+              id="srchBoxMobile"
+              className="form-control border border-secondary border-right-0 txtSrch2 h-[45px]"
+              placeholder="Arama ..."
+            />
+            <div className="input-group-append">
+              <span className="input-group-text  border border-secondary border-left-0">
+                <i className="fa fa-angle-right fa-lg" />
+              </span>
+            </div>
+          </div>
+
           {currentUser ? (
             <Dropdown
               arrowIcon={false}
