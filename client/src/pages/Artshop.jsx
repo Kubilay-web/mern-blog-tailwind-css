@@ -1,5 +1,7 @@
 import React from "react";
 
-export default function Artshop() {
-  return <div>Artshop</div>;
-}
+const Artshop = () => {
+  return <div></div>;
+};
+
+export default Artshop;
