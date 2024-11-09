@@ -115,9 +115,44 @@ export default function CreatePost() {
           >
             <option value="uncategorized">Select a category</option>
             <option value="Genel">Genel</option>
-            <option value="Süreli Sergiler">Süreli Sergiler</option>
-            <option value="Koleksiyon Sergileri">Koleksiyon Sergileri</option>
+            <option value="Hakkımızda">Hakkımızda</option>
+            <option value="Güncel-Süreli">Güncel-Süreli</option>
+            <option value="Günceli-Koleksiyon">Günceli-Koleksiyon</option>
             <option value="Koleksiyon">Koleksiyon</option>
+            <option value="Projeler">Projeler</option>
+            <option value="Sergi-2023">Sergi-2023</option>
+            <option value="Sergi-2024"> Sergi-2024</option>
+            <option value="Eğitim-Güncel">Eğitim-Güncel</option>
+            <option value="Eğitim-Programlar">Eğitim-Programlar</option>
+            <option value="Eğitim-2023">Eğitim-2023</option>
+            <option value="Eğiitm-2024">Eğiitm-2024</option>
+            <option value="Dijital-Güncel">Dijital-Güncel</option>
+            <option value="Dijital-2023">Dijital-2023</option>
+            <option value="Dijital-2024">Dijital-2024</option>
+            <option value="Dijital-Tüm-Sergi">Dijital-Tüm-Sergi</option>
+            <option value="Dijital-Tüm-Koleksiyon">
+              Dijital-Tüm-Koleksiyon
+            </option>
+            <option value="Dijital-Tüm-Sempozyum">Dijital-Tüm-Sempozyum</option>
+            <option value="Dijital-Tüm-Küçük Kitaplar">
+              Dijital-Tüm-Küçük Kitaplar
+            </option>
+            <option value="Dijital-Tüm-Dijital Yayınlar">
+              Dijital-Tüm-Dijital Yayınlar
+            </option>
+            <option value="Çağdaş Tarih">Çağdaş Tarih</option>
+            <option value="Kültür-Sanat-Müzik">Kültür-Sanat-Müzik</option>
+
+            <option value="Göç ve Göç Hareketleri">
+              Göç ve Göç Hareketleri
+            </option>
+            <option value="Tarih">Tarih</option>
+            <option value="Tarihsel ve Çağdaş Kişilikler">
+              Tarihsel ve Çağdaş Kişilikler
+            </option>
+            <option value="Soykırım ve Soykırım Araştırmaları">
+              Soykırım ve Soykırım Araştırmaları
+            </option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
