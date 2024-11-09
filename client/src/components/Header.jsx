@@ -100,16 +100,16 @@ export default function Header() {
           className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
         >
           <img
-            src="/images/Home/Dersim im Exile Logosu.png"
+            src="https://www.peramuzesi.org.tr/assetsv2/img/logos/PM-2023logo-tr.svg"
             alt="logo"
-            className="w-[100px] h-auto" // Genişlik ve yükseklik otomatik ayarlanır
+            className="w-[360px] h-auto" // Genişlik ve yükseklik otomatik ayarlanır
           />
         </Link>
 
         <Button className="w-12 h-10 lg:hidden" color="gray" pill>
           <AiOutlineSearch />
         </Button>
-        <div className="flex gap-2 justify-center align-middle md:order-2">
+        <div className="flex gap-2 items-center md:order-2">
           {/* <Button
             className="w-12 h-10 hidden sm:inline"
             color="gray"
@@ -130,7 +130,7 @@ export default function Header() {
           </form> */}
 
           <form onSubmit={handleSubmit}>
-            <div className="searchbar flex align-middle justify-center">
+            <div className="searchbar flex items-center justify-center">
               <input
                 className="search_input txtSrch1"
                 id="srchBox"
@@ -154,6 +154,11 @@ export default function Header() {
               </a>
             </div>
           </form>
+
+          <img
+            src="/images/Home/iconLang.png"
+            style={{ width: 25, height: 25 }}
+          />
 
           <div
             className="mobileSearchField input-group lg:hidden"
@@ -519,10 +524,7 @@ export default function Header() {
             </a>
             <p className="menu-dates-not-scrolled">
               <span className="todaydate">30 Ekim Çarşamba</span>
-              {/* <img
-                src="/images/Home/iconLang.png"
-                style={{ width: 20, margin: "4px 0 0 0" }}
-              /> */}
+
               <span className="todaynote">Ziyaret Saatleri: 10.00 - 19.00</span>
             </p>
           </div>
