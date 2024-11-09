@@ -154,7 +154,7 @@ const Nav = () => {
                   className="dropdown-item text-xl"
                   href="/sergi/dijital-sergiler"
                 >
-                  DİJİTAL SERGİLER
+                  PERA FİLM SERGİLER
                 </a>
                 <a
                   className="dropdown-item text-xl"
@@ -290,7 +290,7 @@ const Nav = () => {
                   KÜÇÜK KİTAPLAR DİZİSİ
                 </a>
                 <a className="dropdown-item text-xl" href="/yayinlar/13">
-                  DİJİTAL YAYINLAR
+                  PERA FİLM YAYINLAR
                 </a>
                 <a className="dropdown-item text-xl" href="/yayinlar/20">
                   SUNA VE İNAN KIRAÇ VAKFI YAYINLARI

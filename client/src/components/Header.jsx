@@ -296,7 +296,7 @@ export default function Header() {
                     to="/sergi/dijital-sergiler"
                     onClick={handleLinkClick}
                   >
-                    DİJİTAL SERGİLER
+                    PERA FİLM SERGİLER
                   </Link>
                   <Link
                     className="dropdown-item"
@@ -317,7 +317,7 @@ export default function Header() {
                 href="#"
                 onClick={() => handleDropdownToggle("PERA ÖĞRENME")}
               >
-                PERA ÖĞRENME
+                EĞİTİM
               </a>
 
               {openDropdown === "PERA ÖĞRENME" && (
@@ -353,7 +353,7 @@ export default function Header() {
                 href="#"
                 onClick={() => handleDropdownToggle("PERA FİLM")}
               >
-                PERA FİLM
+                DİJİTAL
               </a>
 
               {openDropdown === "PERA FİLM" && (
@@ -389,7 +389,7 @@ export default function Header() {
                 href="#"
                 onClick={() => handleDropdownToggle("YAYINLAR")}
               >
-                YAYINLAR
+                KÜTÜPHANE
               </a>
 
               {openDropdown === "YAYINLAR" && (
@@ -434,7 +434,7 @@ export default function Header() {
                     to="/yayinlar/13"
                     onClick={handleLinkClick}
                   >
-                    DİJİTAL YAYINLAR
+                    PERA FİLM YAYINLAR
                   </Link>
                   <Link
                     className="dropdown-item"
@@ -462,7 +462,7 @@ export default function Header() {
                 href="#"
                 onClick={() => handleDropdownToggle("KEŞFET")}
               >
-                KEŞFET
+                BLOG
               </a>
 
               {openDropdown === "KEŞFET" && (
