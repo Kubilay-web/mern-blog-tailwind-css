@@ -2298,3 +2298,8 @@ select:focus {
 .carousel .control-dots .dot:hover {
   opacity: 0.8 !important; /* Dot üzerine gelindiğinde opaklık */
 }
+
+.collapse {
+  visibility: visible !important;
+  margin: 20px 0px 20px 0px;
+}
