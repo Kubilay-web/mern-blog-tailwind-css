@@ -79,13 +79,14 @@ export default function Ziyaret() {
               allowFullScreen
             />
             <p>
-              Meşrutiyet Caddesi No:65&nbsp;34430 <br />
-              Tepebaşı - Beyoğlu - İstanbul
+              Brüdergasse 16-18 53111 <br /> Bonn/Deutschland{" "}
             </p>
             <p>
-              T: +90 212 334 99 00
+              T: 0049/228-69749
               <br />
-              <a href="mailto:info@peramuzesi.org.tr">info@peramuzesi.org.tr</a>
+              <a href="mailto:info@dersim-stiftung.de">
+                info@dersim-stiftung.de
+              </a>
             </p>
           </div>
           <div className="col-md-6">
