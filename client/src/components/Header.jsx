@@ -522,7 +522,7 @@ export default function Header() {
             >
               <img src="images/PM-2023logo-tr.svg" alt="Pera Müzesi Logo" />
             </a>
-            <p className="menu-dates-not-scrolled">
+            <p className="menu-dates-not-scrolled flex items-center gap-2">
               <span className="todaydate">30 Ekim Çarşamba</span>
 
               <span className="todaynote">Ziyaret Saatleri: 10.00 - 19.00</span>
