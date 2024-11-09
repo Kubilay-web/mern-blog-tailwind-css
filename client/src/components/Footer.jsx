@@ -228,7 +228,7 @@ export default function FooterCom() {
             >
               <img
                 className="float-left pr-2"
-                src="https://www.peramuzesi.org.tr/assetsv2/img/logos/svikv-tr-logo.svg"
+                src="/images/Footer/Dersim Stiftung Logosu.jpg"
                 height={40}
                 alt="Suna ve İnan Kıraç Vakfı Logo"
               />
@@ -247,7 +247,7 @@ export default function FooterCom() {
             >
               <img
                 className="float-left pr-2"
-                src="https://www.peramuzesi.org.tr/assetsv2/img/logos/iae-tr-logo.svg"
+                src="/images/Footer/Perspektive.png"
                 height={40}
                 alt="İstanbul Araştırmaları Enstitüsü Logo"
               />
