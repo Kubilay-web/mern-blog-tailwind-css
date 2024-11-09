@@ -4,8 +4,8 @@ export default function Sergi() {
   const [posts, setPosts] = useState([]);
   const [posts2, setPosts2] = useState([]);
   const [index, setIndex] = useState(0);
-  const category = "Süreli Sergiler";
-  const category2 = "Koleksiyon Sergileri";
+  const category = "Güncel-Süreli";
+  const category2 = "Güncel-Koleksiyon";
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);

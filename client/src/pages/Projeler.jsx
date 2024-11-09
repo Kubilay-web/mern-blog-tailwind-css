@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 
 export default function Projeler() {
   const [posts, setPosts] = useState([]);
-  const [posts2, setPosts2] = useState([]);
 
-  const category = "Süreli Sergiler";
-  const category2 = "Koleksiyon Sergileri";
+  const category = "Projeler";
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
@@ -21,8 +19,7 @@ export default function Projeler() {
 
   useEffect(() => {
     fetchPosts(category, setPosts);
-    fetchPosts(category2, setPosts2);
-  }, [category, category2]);
+  }, [category]);
 
   return (
     <div>
@@ -704,8 +701,11 @@ export default function Projeler() {
                     <b
                       id="GspArsiv"
                       className="BitcraftLang fs-40 mb-2"
-                      style={{ "font-family": "'Raleway'" }}
-                    />
+                      style={{ fontFamily: '"Raleway"' }}
+                    >
+                      Koleksiyonlar
+                    </b>
+
                     <a href="/koleksiyon">
                       <img
                         className="bd-placeholder-img card-img-top"
@@ -719,10 +719,12 @@ export default function Projeler() {
                 <div className="col-lg-6 col-md-6 mb-4">
                   <div className="card mb-0 border-0">
                     <b
-                      id="Exhibitions"
+                      id="GspArsiv"
                       className="BitcraftLang fs-40 mb-2"
-                      style={{ "font-family": "'Raleway'" }}
-                    />
+                      style={{ fontFamily: '"Raleway"' }}
+                    >
+                      Sergiler
+                    </b>
                     <a href="/sergi">
                       <img
                         className="bd-placeholder-img card-img-top"

@@ -39,6 +39,8 @@ import Yayin15 from "./pages/Yayin15";
 import Yayin13 from "./pages/Yayin13";
 import Yayin20 from "./pages/Yayin20";
 import Blog from "./pages/Blog";
+import Gecmis2024 from "./pages/Gecmis2024";
+import Gecmis2023 from "./pages/Gecmis2023";
 // import Nav from "./components/Nav";
 
 export default function App() {
@@ -77,6 +79,10 @@ export default function App() {
         <Route path="/yayinlar/15" element={<Yayin15 />} />
         <Route path="/yayinlar/20" element={<Yayin20 />} />
         <Route path="/Blog" element={<Blog />} />
+
+        <Route path="/sergi/gecmis-yillar/2024" element={<Gecmis2024 />} />
+
+        <Route path="/sergi/gecmis-yillar/2023" element={<Gecmis2023 />} />
 
         <Route path="/sergi" element={<Sergi />} />
         <Route path="/Ajanda" element={<Ajanda />} />

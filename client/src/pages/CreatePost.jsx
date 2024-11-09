@@ -117,7 +117,7 @@ export default function CreatePost() {
             <option value="Genel">Genel</option>
             <option value="Hakkımızda">Hakkımızda</option>
             <option value="Güncel-Süreli">Güncel-Süreli</option>
-            <option value="Günceli-Koleksiyon">Günceli-Koleksiyon</option>
+            <option value="Güncel-Koleksiyon">Güncel-Koleksiyon</option>
             <option value="Koleksiyon">Koleksiyon</option>
             <option value="Projeler">Projeler</option>
             <option value="Sergi-2023">Sergi-2023</option>

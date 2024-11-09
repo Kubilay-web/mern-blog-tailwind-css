@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Ziyaret() {
@@ -7,6 +7,26 @@ export default function Ziyaret() {
   const [message, setMessage] = useState("");
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [feedbackType, setFeedbackType] = useState(""); // 'success' or 'fail'
+
+  const [posts, setPosts] = useState([]);
+
+  const category = "Hakkımızda";
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error("Failed to fetch posts:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts(category, setPosts);
+  }, [category]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -64,6 +84,7 @@ export default function Ziyaret() {
             "\n     .fontum2 h1 {\n        font-family: Raleway; \n    } \n    \n",
         }}
       />
+
       <div className="container fontum fontum2 first-row">
         <div className="row mb-md-5 mb-3">
           <div className="col-12 mt-4 mb-4">
@@ -194,9 +215,6 @@ export default function Ziyaret() {
               </div>
             </div>
           </div>
-          <div className="col-md-12 mt-3 ">
-            <p className="border-bottom border-secondary" />
-          </div>
         </div>
         <div className="row mb-md-5 mb-5">
           <div className="col-12 staticcontentbody">
@@ -258,11 +276,64 @@ export default function Ziyaret() {
               </div>
             </div>
           </div>
-          <div className="col-md-12 mt-3 ">
-            <p className="border-bottom border-secondary" />
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts && posts.length > 0 ? (
+                posts.slice(0, 1000).map((post, index) => {
+                  let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
+
+                  if (index === 0) {
+                    // İlk kart 4'lük (yarım genişlik)
+                    colClass = "col-lg-6";
+                  } else if (index === 1) {
+                    // İkinci kart 8'lik (tam genişlik)
+                    colClass = "col-lg-6 col-md-12";
+                  }
+
+                  if (index === 2) {
+                    // İlk kart 4'lük (yarım genişlik)
+                    colClass = "col-lg-6";
+                  } else if (index === 3) {
+                    // İkinci kart 8'lik (tam genişlik)
+                    colClass = "col-lg-6 col-md-12";
+                  }
+
+                  return (
+                    <div key={post._id} className={`${colClass} mb-4`}>
+                      <a
+                        href={`/post/${post.slug}`}
+                        target="_self"
+                        className="no-link"
+                      >
+                        <div className="card mb-4 border-0">
+                          <img
+                            className="bd-placeholder-img card-img-top"
+                            width="100%"
+                            src={post.image}
+                            alt={post.altText}
+                          />
+                          <div className="card-body">
+                            <h3 className="card-title">{post.title}</h3>
+                            <p className="card-text">{post.content}</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small className="text-muted">
+                                {post.author}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  );
+                })
+              ) : (
+                <p>No posts available</p>
+              )}
+            </div>
           </div>
         </div>
-        <div className="row  mb-md-5 mb-3">
+        {/* <div className="row  mb-md-5 mb-3">
           <div className="col-md-6">
             <img
               className="img-fluid w-100"
@@ -308,6 +379,7 @@ export default function Ziyaret() {
             </div>
             <p />
           </div>
+
           <div className="col-md-6">
             <img
               className="img-fluid w-100"
@@ -333,11 +405,8 @@ export default function Ziyaret() {
             </div>
             <p />
           </div>
-          <div className="col-md-12 mt-3 ">
-            <p className="border-bottom border-secondary" />
-          </div>
-        </div>
-        <div className="row mb-3">
+        </div> */}
+        {/* <div className="row mb-3">
           <div className="col-md-6">
             <img
               className="img-fluid w-100"
@@ -448,7 +517,7 @@ export default function Ziyaret() {
             <p />
           </div>
           <div className="col-md-6">&nbsp;</div>
-        </div>
+        </div> */}
       </div>
       {/*captcha için*/}
       {/*captcha için*/}
