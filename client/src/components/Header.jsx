@@ -100,7 +100,7 @@ export default function Header() {
           className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
         >
           <img
-            src="https://www.peramuzesi.org.tr/assetsv2/img/logos/PM-2023logo-tr.svg"
+            src="/images/Home/DERSIM STIFTUNG.png"
             alt="logo"
             className="w-[360px] h-auto" // Genişlik ve yükseklik otomatik ayarlanır
           />
