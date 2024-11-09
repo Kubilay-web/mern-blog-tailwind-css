@@ -4,7 +4,7 @@ export default function Sergi() {
   const [posts, setPosts] = useState([]);
   const [posts2, setPosts2] = useState([]);
   const [index, setIndex] = useState(0);
-  const category = "Süreli Sergiler"; // Buraya istediğiniz kategoriyi yazın.
+  const category = "Süreli Sergiler";
   const category2 = "Koleksiyon Sergileri";
 
   const handleSelect = (selectedIndex) => {
