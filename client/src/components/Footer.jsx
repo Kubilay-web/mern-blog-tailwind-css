@@ -60,9 +60,9 @@ export default function FooterCom() {
               <div className="col-lg-12 col-md-6 m-0">
                 <div className="footer-left-section flex flex-col gap-3 mb-4">
                   <h5 className="font-weight-bold mb-3">GİRİŞ ÜCRETLERİ</h5>
-                  <p>Tam: 200 TL</p>
-                  <p>İndirimli: 100 TL</p>
-                  <p>Grup: 150 TL (toplu 10 bilet ve üstü)</p>
+                  <p>Tam: 5 €</p>
+                  <p>İndirimli: 3 €</p>
+                  <p>Grup: 4 €</p>
                 </div>
               </div>
               <div className="vl h-100 d-none d-lg-block bg-secondary" />
