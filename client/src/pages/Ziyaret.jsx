@@ -214,46 +214,43 @@ export default function Ziyaret() {
                     Özel Günler
                     <br />
                   </strong>
-                  Müze, Ramazan (Şeker) ve Kurban bayramlarının birinci günü ve
-                  her yıl 1 Ocak’ta kapalıdır.
+                  Müzemiz her yıl 1 Ocak'ta kapalıdır.
                 </p>
               </div>
               <div className="col-md-6">
                 <h1 className="mb-3">Giriş Ücretleri</h1>
                 <div className="colAlt2 floatRight">
                   <p>
-                    Tam: 200 TL
+                    Tam: 5 €
                     <br />
-                    İndirimli: 100 TL
+                    İndirimli: 3 €
                     <br />
                     (12 yaş üstü öğrenciler, öğretim görevlileri, 60 yaş ve
-                    üstü)
+                    üstü) Grup: 4 € (tek seferde 10 bilet ve üstü)
                     <br />
                     Grup: 150 TL (tek seferde 10 bilet ve üstü)
                   </p>
                   <p>
                     <strong>Ücretsiz:</strong>
-                    <strong>&nbsp;</strong>Pera Müzesi Dostları, gaziler, şehit
-                    ve gazilerin eşleri ve çocukları, engelliler ve her
-                    engelliye refakat eden bir kişi, 12 yaş ve altı çocuklar,
-                    ICOM kart sahipleri, MMKD üyeleri ve basın mensupları,
-                    çarşamba günleri öğrenciler, cuma günleri saat 18.00'dan
-                    sonra herkes Pera Müzesi’ni ücretsiz ziyaret edebilir.
+                    <strong>&nbsp;</strong> Engelliler ve her engelliye refakat
+                    eden bir kişi, 12 yaş ve altı çocuklar, basın mensupları,
+                    çarşamba günleri öğrenciler, Cuma günleri saat 18.00'dan
+                    sonra herkes Dersim Müzesi’ni ücretsiz ziyaret edebilir.
                   </p>
                   <p>
                     <strong>
                       Uzun Cuma
                       <br />
                     </strong>
-                    Pera Müzesi her cuma 18.00-22.00 saatleri arasında ücretsiz
-                    olarak ziyaret edilebilir.
+                    Dersim Müzesi her cuma 18.00-22.00 saatleri arasında
+                    ücretsiz olarak ziyaret edilebilir.
                   </p>
                   <p>
                     <strong>
                       Genç Çarşamba
                       <br />
                     </strong>
-                    Pera Müzesi ziyareti ve Pera Film gösterimleri çarşamba
+                    Dersim Müzesi ziyareti ve Dersim Film gösterimleri çarşamba
                     günleri tüm öğrencilere ücretsiz.
                   </p>
                 </div>
@@ -471,14 +468,14 @@ export default function Ziyaret() {
                 <h5>İletişim Bilgileri</h5>
                 <p />
                 <p>
-                  Meşrutiyet Caddesi No:65&nbsp;34430 <br />
-                  Tepebaşı - Beyoğlu - İstanbul
+                  Brüdergasse 16-18 53111 <br />
+                  Bonn/Deutschland
                 </p>
                 <p>
-                  T: +90 212 334 99 00
+                  Tel.: 0049/228-69749
                   <br />
-                  <a href="mailto:info@peramuzesi.org.tr">
-                    info@peramuzesi.org.tr
+                  <a href="mailto:info@dersim-stiftung.de">
+                    info@dersim-stiftung.de
                   </a>
                 </p>
                 <p />
