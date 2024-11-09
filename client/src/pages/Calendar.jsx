@@ -656,8 +656,8 @@ function Calendar() {
     {
       views: [
         createViewDay(),
-        createViewWeek(),
         createViewMonthGrid(),
+        createViewWeek(),
         createViewMonthAgenda(),
       ],
       eventsService: eventsServicePlugin, // Attach the events service to the calendar

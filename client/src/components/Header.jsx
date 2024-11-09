@@ -100,9 +100,9 @@ export default function Header() {
           className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
         >
           <img
-            src="https://www.peramuzesi.org.tr/assetsv2/img/logos/PM-2023logo-tr.svg"
+            src="/images/Home/Dersim im Exile Logosu.png"
             alt="logo"
-            className="w-[360px] h-auto" // Genişlik ve yükseklik otomatik ayarlanır
+            className="w-[100px] h-auto" // Genişlik ve yükseklik otomatik ayarlanır
           />
         </Link>
 
@@ -519,6 +519,10 @@ export default function Header() {
             </a>
             <p className="menu-dates-not-scrolled">
               <span className="todaydate">30 Ekim Çarşamba</span>
+              {/* <img
+                src="/images/Home/iconLang.png"
+                style={{ width: 20, margin: "4px 0 0 0" }}
+              /> */}
               <span className="todaynote">Ziyaret Saatleri: 10.00 - 19.00</span>
             </p>
           </div>
