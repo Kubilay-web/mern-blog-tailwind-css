@@ -79,7 +79,7 @@ export default function FooterCom() {
                   <li>
                     <a
                       target="_blank"
-                      href="https://www.facebook.com/PeraMuzesi.Museum"
+                      href="https://www.facebook.com"
                       className="icoFacebook"
                       title="Facebook"
                       rel="noreferrer nofollow"
@@ -90,7 +90,7 @@ export default function FooterCom() {
                   <li>
                     <a
                       target="_blank"
-                      href="https://twitter.com/PeraMuzesi"
+                      href="https://twitter.com"
                       className="icoTwitter"
                       title="Twitter"
                       rel="noreferrer nofollow"
@@ -101,7 +101,7 @@ export default function FooterCom() {
                   <li>
                     <a
                       target="_blank"
-                      href="https://www.instagram.com/peramuzesi/"
+                      href="https://www.instagram.com"
                       className="icoInstagram"
                       title="Instagram"
                       rel="noreferrer nofollow"
@@ -112,7 +112,7 @@ export default function FooterCom() {
                   <li>
                     <a
                       target="_blank"
-                      href="https://www.youtube.com/user/PeraMuzesi"
+                      href="https://www.youtube.com"
                       className="icoYoutube"
                       title="Youtube"
                       rel="noreferrer nofollow"
@@ -123,7 +123,7 @@ export default function FooterCom() {
                   <li>
                     <a
                       target="_blank"
-                      href="https://open.spotify.com/user/peram%C3%BCzesi"
+                      href="https://open.spotify.com"
                       className="icoRss"
                       title="Spotify"
                       rel="noreferrer nofollow"
@@ -134,7 +134,7 @@ export default function FooterCom() {
                   <li>
                     <a
                       target="_blank"
-                      href="https://artsandculture.google.com/partner/pera-museum?hl=tr"
+                      href="/"
                       className="icoGoogleArtsCulture"
                       title="Google Arts & Culture"
                       rel="noreferrer nofollow"
