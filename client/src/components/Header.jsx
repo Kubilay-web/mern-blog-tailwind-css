@@ -106,9 +106,9 @@ export default function Header() {
           />
         </Link>
 
-        <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+        {/* <Button className="w-12 h-10 lg:hidden" color="gray" pill>
           <AiOutlineSearch />
-        </Button>
+        </Button> */}
         <div className="flex gap-2 items-center md:order-2">
           {/* <Button
             className="w-12 h-10 hidden sm:inline"
