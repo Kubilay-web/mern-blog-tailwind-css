@@ -107,7 +107,6 @@ export default function Hakkimizda() {
           </div>
 
           <div className="col-12 text-justify">
-            <p />
             <p>
               Dersim, politik ve kültürel birikimiyle hemen her zaman bir tür
               “üniversite” şehri olmuştur. Her yaş grubundan insanlarının
@@ -257,7 +256,6 @@ export default function Hakkimizda() {
               BIC: COLSDE33XXX <br />
               Stichwort: Dersimmuseum
             </p>
-            <p />
           </div>
         </div>
       </div>
