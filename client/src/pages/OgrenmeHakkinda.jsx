@@ -59,7 +59,7 @@ export default function OgrenmeHakkinda() {
           <div className="col-md-12">
             <img
               className="img-fluid"
-              src="/images/OgrenmeHakkinda/pera-ogrenme-hakkinda.jpg"
+              src="/images/OgrenmeHakkinda/dersim-ogrenme-hakkinda.jpg"
               title="Pera Öğrenme Hakkında"
             />
           </div>

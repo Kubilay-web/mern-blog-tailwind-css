@@ -115,14 +115,14 @@ export default function Film() {
                     className="BitcraftLang fs-40 mb-2"
                     style={{ fontFamily: '"Raleway"' }}
                   >
-                    Pera Film Hakkında
+                    Dersim Film Hakkında
                   </b>
 
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-film-hakkinda">
+                  <a href="/dersim-film-hakkinda">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Film/pera-film-hakkinda.jpg"
+                      src="/images/Film/dersim-film-hakkinda.jpg"
                       alt="Pera Film Hakkında"
                     />
                   </a>

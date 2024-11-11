@@ -197,7 +197,7 @@ export default function OgrenmeGuncel() {
               >
                 <div className="card mb-0 border-0">
                  
-                  <a href="/pera-ogrenme/program/ara-tatil-atolyeleri/4399">
+                  <a href="/dersim-ogrenme/program/ara-tatil-atolyeleri/4399">
                     <img
                       className="bd-placeholder-img card-img-top"
                       width="100%"
@@ -231,7 +231,7 @@ export default function OgrenmeGuncel() {
                 style={{ margin: "0 0 30px 0" }}
               >
                 <div className="card mb-0 border-0">
-                  <a href="/pera-ogrenme/program/tahayyulden-olasiliga/4397">
+                  <a href="/dersim-ogrenme/program/tahayyulden-olasiliga/4397">
                     <img
                       className="bd-placeholder-img card-img-top"
                       width="100%"
@@ -269,7 +269,7 @@ export default function OgrenmeGuncel() {
               >
                 <div className="card mb-0 border-0">
 
-                  <a href="/pera-ogrenme/program/rastlantinin-duzeni/4395">
+                  <a href="/dersim-ogrenme/program/rastlantinin-duzeni/4395">
                     <img
                       className="bd-placeholder-img card-img-top"
                       width="100%"
@@ -304,7 +304,7 @@ export default function OgrenmeGuncel() {
               >
                 <div className="card mb-0 border-0">
               
-                  <a href="/pera-ogrenme/program/koleksiyon-ogrenme-programlari/1273">
+                  <a href="/dersim-ogrenme/program/koleksiyon-ogrenme-programlari/1273">
                     <img
                       className="bd-placeholder-img card-img-top"
                       width="100%"
@@ -352,7 +352,7 @@ export default function OgrenmeGuncel() {
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-ogrenme/grup/okul-gruplari/5">
+                  <a href="/dersim-ogrenme/grup/okul-gruplari/5">
                     <img
                       className="bd-placeholder-img card-img-top"
                       src="/images/OgrenmeGuncel/peraokulgruplari.jpg"
@@ -371,7 +371,7 @@ export default function OgrenmeGuncel() {
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-ogrenme/grup/ogretmenler/4">
+                  <a href="/dersim-ogrenme/grup/ogretmenler/4">
                     <img
                       className="bd-placeholder-img card-img-top"
                       src="/images/OgrenmeGuncel/peraogretmenler.jpg"
@@ -392,7 +392,7 @@ export default function OgrenmeGuncel() {
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-ogrenme/grup/pera-engelsiz/6">
+                  <a href="/dersim-ogrenme/grup/pera-engelsiz/6">
                     <img
                       className="bd-placeholder-img card-img-top"
                       src="/images/OgrenmeGuncel/engelsiz.jpg"
@@ -414,7 +414,7 @@ export default function OgrenmeGuncel() {
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-ogrenme/grup/pera-cocuk/1">
+                  <a href="/dersim-ogrenme/grup/pera-cocuk/1">
                     <img
                       className="bd-placeholder-img card-img-top"
                       src="/images/OgrenmeGuncel/cocuk.jpg"
@@ -436,7 +436,7 @@ export default function OgrenmeGuncel() {
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-ogrenme/grup/pera-genc/2">
+                  <a href="/dersim-ogrenme/grup/pera-genc/2">
                     <img
                       className="bd-placeholder-img card-img-top"
                       src="/images/OgrenmeGuncel/genc.jpg"
@@ -457,7 +457,7 @@ export default function OgrenmeGuncel() {
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-ogrenme/grup/pera-yetiskin/3">
+                  <a href="/dersim-ogrenme/grup/pera-yetiskin/3">
                     <img
                       className="bd-placeholder-img card-img-top"
                       src="/images/OgrenmeGuncel/yetiskin.jpg"

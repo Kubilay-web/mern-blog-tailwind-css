@@ -89,7 +89,7 @@ const Nav = () => {
                 </a>
                 <a
                   className="dropdown-item text-xl"
-                  href="/pera-muzesi-hakkinda"
+                  href="/dersim-muzesi-hakkinda"
                 >
                   HAKKIMIZDA
                 </a>
@@ -191,18 +191,18 @@ const Nav = () => {
               </a>
               <div className="top-11/12 rounded-none">
                 <hr className=" mt-0 pt-0 d-md-none d-sm-block" />
-                <a className="dropdown-item text-xl" href="/pera-ogrenme">
+                <a className="dropdown-item text-xl" href="/dersim-ogrenme">
                   GÜNCEL PROGRAMLAR
                 </a>
                 <a
                   className="dropdown-item text-xl"
-                  href="/pera-ogrenme/gecmis-programlar"
+                  href="/dersim-ogrenme/gecmis-programlar"
                 >
                   GEÇMİŞ PROGRAMLAR
                 </a>
                 <a
                   className="dropdown-item text-xl"
-                  href="/pera-ogrenme-hakkinda"
+                  href="/dersim-ogrenme-hakkinda"
                 >
                   DERSİM EĞİTİM HAKKINDA
                 </a>
@@ -243,7 +243,10 @@ const Nav = () => {
                 >
                   GEÇMİŞ PROGRAMLAR
                 </a>
-                <a className="dropdown-item text-xl" href="/pera-film-hakkinda">
+                <a
+                  className="dropdown-item text-xl"
+                  href="/dersim-film-hakkinda"
+                >
                   DERSİM FİLM HAKKINDA
                 </a>
                 <img

@@ -238,7 +238,7 @@ export default function Header() {
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/pera-muzesi-hakkinda"
+                    to="/dersim-muzesi-hakkinda"
                     onClick={handleLinkClick}
                   >
                     HAKKIMIZDA
@@ -328,21 +328,21 @@ export default function Header() {
                 <div className="dropdown-menu show">
                   <Link
                     className="dropdown-item"
-                    to="/pera-ogrenme"
+                    to="/dersim-ogrenme"
                     onClick={handleLinkClick}
                   >
                     GÜNCEL PROGRAMLAR
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/pera-ogrenme/gecmis-programlar"
+                    to="/dersim-ogrenme/gecmis-programlar"
                     onClick={handleLinkClick}
                   >
                     GEÇMİŞ PROGRAMLAR
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/pera-ogrenme-hakkinda"
+                    to="/dersim-ogrenme-hakkinda"
                     onClick={handleLinkClick}
                   >
                     DERSİM EĞİTİM HAKKINDA
@@ -378,7 +378,7 @@ export default function Header() {
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/pera-film-hakkinda"
+                    to="/dersim-film-hakkinda"
                     onClick={handleLinkClick}
                   >
                     DERSİM FİLM HAKKINDA

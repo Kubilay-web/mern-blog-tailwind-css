@@ -178,7 +178,7 @@ export default function FooterCom() {
             <div className="altmenu row justify-content-between pt-sm-1 pt-lg-5 pt-md-2 mt-lg-2 mt-5">
               <div className="col-md-3 col-6">
                 <h5>
-                  <a href="/pera-muzesi-hakkinda">Hakkımızda</a>
+                  <a href="/dersim-muzesi-hakkinda">Hakkımızda</a>
                 </h5>
                 <h5>
                   <a href="/basin-bultenleri">Basın</a>

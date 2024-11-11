@@ -59,7 +59,7 @@ const FilmHakkinda = () => {
           <div className="col-md-12 mb-2">
             <img
               className="img-fluid"
-              src="/images/FilmHakkında/pera-film-hakkinda-large.jpg"
+              src="/images/FilmHakkında/dersim-film-hakkinda-large.jpg"
               title="Hakkımızda"
               alt="Hakkımızda"
             />

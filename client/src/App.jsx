@@ -66,16 +66,16 @@ export default function App() {
         <Route path="/projeler" element={<Projeler />} />
         <Route path="/sergi/dijital-sergiler" element={<DijitalSergi />} />
         <Route path="/sergi/gecmis-yillar" element={<GecmisSergi />} />
-        <Route path="/pera-ogrenme" element={<OgrenmeGuncel />} />
+        <Route path="/dersim-ogrenme" element={<OgrenmeGuncel />} />
         <Route
-          path="/pera-ogrenme/gecmis-programlar"
+          path="/dersim-ogrenme/gecmis-programlar"
           element={<OgrenmeGecmis />}
         />
-        <Route path="/pera-ogrenme-hakkinda" element={<OgrenmeHakkinda />} />
+        <Route path="/dersim-ogrenme-hakkinda" element={<OgrenmeHakkinda />} />
 
         <Route path="/film" element={<Film />} />
         <Route path="/film/gecmis-programlar" element={<FilmGecmis />} />
-        <Route path="/pera-film-hakkinda" element={<FilmHakkinda />} />
+        <Route path="/dersim-film-hakkinda" element={<FilmHakkinda />} />
 
         <Route path="/yayinlar" element={<Yayin />} />
         <Route path="/yayinlar/2" element={<Yayin2 />} />
@@ -99,7 +99,7 @@ export default function App() {
 
         <Route path="/sergi" element={<Sergi />} />
         <Route path="/Ajanda" element={<Ajanda />} />
-        <Route path="/pera-muzesi-hakkinda" element={<Hakkimizda />} />
+        <Route path="/dersim-muzesi-hakkinda" element={<Hakkimizda />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
         <Route element={<PrivateRoute />}>

@@ -435,10 +435,10 @@ const FilmGecmis = () => {
                     style={{ "font-family": "'Raleway'" }}
                   />
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-film-hakkinda">
+                  <a href="/dersim-film-hakkinda">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/FilmGecmis/pera-film-hakkinda.jpg"
+                      src="/images/FilmGecmis/dersim-film-hakkinda.jpg"
                       alt="Pera Film Hakkında"
                     />
                   </a>

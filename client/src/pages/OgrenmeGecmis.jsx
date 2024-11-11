@@ -76,10 +76,10 @@ export default function OgrenmeGecmis() {
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <div
                     className="card-img-overlay d-flex align-items-center"
-                    onclick="javascript:window.location = '/pera-ogrenme/yillar/2024' ;"
+                    onclick="javascript:window.location = '/dersim-ogrenme/yillar/2024' ;"
                   >
                     <a
-                      href="/pera-ogrenme/yillar/2024"
+                      href="/dersim-ogrenme/yillar/2024"
                       style={{
                         color: "white",
                         "font-size": "40px",
@@ -111,10 +111,10 @@ export default function OgrenmeGecmis() {
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <div
                     className="card-img-overlay d-flex align-items-center"
-                    onclick="javascript:window.location = '/pera-ogrenme/yillar/2023' ;"
+                    onclick="javascript:window.location = '/dersim-ogrenme/yillar/2023' ;"
                   >
                     <a
-                      href="/pera-ogrenme/yillar/2023"
+                      href="/dersim-ogrenme/yillar/2023"
                       style={{
                         color: "white",
                         "font-size": "40px",
@@ -146,10 +146,10 @@ export default function OgrenmeGecmis() {
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <div
                     className="card-img-overlay d-flex align-items-center"
-                    onclick="javascript:window.location = '/pera-ogrenme/yillar/2022' ;"
+                    onclick="javascript:window.location = '/dersim-ogrenme/yillar/2022' ;"
                   >
                     <a
-                      href="/pera-ogrenme/yillar/2022"
+                      href="/dersim-ogrenme/yillar/2022"
                       style={{
                         color: "white",
                         "font-size": "40px",
@@ -181,10 +181,10 @@ export default function OgrenmeGecmis() {
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <div
                     className="card-img-overlay d-flex align-items-center"
-                    onclick="javascript:window.location = '/pera-ogrenme/yillar/2021' ;"
+                    onclick="javascript:window.location = '/dersim-ogrenme/yillar/2021' ;"
                   >
                     <a
-                      href="/pera-ogrenme/yillar/2021"
+                      href="/dersim-ogrenme/yillar/2021"
                       style={{
                         color: "white",
                         "font-size": "40px",
@@ -216,10 +216,10 @@ export default function OgrenmeGecmis() {
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <div
                     className="card-img-overlay d-flex align-items-center"
-                    onclick="javascript:window.location = '/pera-ogrenme/yillar/2020' ;"
+                    onclick="javascript:window.location = '/dersim-ogrenme/yillar/2020' ;"
                   >
                     <a
-                      href="/pera-ogrenme/yillar/2020"
+                      href="/dersim-ogrenme/yillar/2020"
                       style={{
                         color: "white",
                         "font-size": "40px",
@@ -250,10 +250,10 @@ export default function OgrenmeGecmis() {
                     style={{ "font-family": "'Raleway'" }}
                   />
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-ogrenme-hakkinda">
+                  <a href="/dersim-ogrenme-hakkinda">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/OgrenmeGecmis/pera-ogrenme-hakkinda.jpg"
+                      src="/images/OgrenmeGecmis/dersim-ogrenme-hakkinda.jpg"
                       alt="Pera Öğrenme Hakkında"
                     />
                   </a>
@@ -267,10 +267,10 @@ export default function OgrenmeGecmis() {
                     style={{ "font-family": "'Raleway'" }}
                   />
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/pera-ogrenme/arsiv">
+                  <a href="/dersim-ogrenme/arsiv">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/OgrenmeGecmis/pera-ogrenme-arsiv.jpg"
+                      src="/images/OgrenmeGecmis/dersim-ogrenme-arsiv.jpg"
                       alt="Pera Öğrenme Arşiv"
                     />
                   </a>
