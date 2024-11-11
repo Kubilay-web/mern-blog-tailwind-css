@@ -91,6 +91,21 @@ export default function Hakkimizda() {
               alt="Pera Müzesi Ön Cephe"
             />
           </div> */}
+
+          <div className="col-12 text-justify mb-4 mt-4">
+            <h3>
+              <b
+                id="DigitalExhibitions"
+                className="BitcraftLang fs-30 mb-2"
+                style={{ fontFamily: "Raleway" }}
+              >
+                Sürgünde
+                <br />
+                Dersim Etnografya ve Tarih Müzesi
+              </b>
+            </h3>
+          </div>
+
           <div className="col-12 text-justify">
             <p />
             <p>
@@ -98,90 +113,149 @@ export default function Hakkimizda() {
               “üniversite” şehri olmuştur. Her yaş grubundan insanlarının
               okumaya, anlamaya, tartışmaya, öğrenmeye meraklı olduğu bu şehir,
               sadece Türkiye’de değil, dünyada da büyük ölçüde bu özelliğiyle
-              bilinmektedir. Bunun yanısıra Türkiye genelinde de ençok göç veren
-              bölge yine Dersim olmuştur. Günümüz Tunceli ilinin tamamı ve
-              tarihi Dersim Coğrafyası‘ndan Almanya’ya göç edenlerin aile
-              bireyleriyle birlikte sayısı 460 binin üzerindedir. Yaklaşık onbeş
-              yıldan beri Türkiye’de başlayan Dersim’li akademisyenlerin bir
-              araya gelme girişimi, biz Avrupa’da yaşayan ve çalışan
-              akademisyenleri de kapsayarak, iş insanlarının ve kültür
-              emekçilerinin katkılarıyla 2014 yılında akademik bir Vakfın
-              kurulmasıyla sonuçlanmıştır. Avrupa’da ve Federal Almanya’da
-              Dersim kökenli akademik bir potansiyele sahip olduğumuz gibi çok
-              büyük bir oranda da kültür emekçileri ve iş insanı potansiyeline
-              sahibiz. Bu durum hem Türkiye’de hem de Türkiye dışında birçok
-              alanda mevcut olan akademik birikimin yanısıra iş ve kültür
-              dünyasını da kapsayan bir örgütlenmenin kalıcı bir kurumsallaşmaya
-              yönelik arayışlarını da beraberinde getirmiştir. Yaptığımız
-              araştırmalar Avrupa’da en uygun ve kalıcı bir kurumsallaşmanın
-              Müze çalışmasıyla sağlanabileceğini göstermektedir. Bu bağlamda
-              kamuoyuna bir grup girişimci (akademisyenler, kültür emekçileri,
-              iş insanları) olarak Almanya’da, sürgünde ilk etapta dijital bir
-              Ennografya ve Tarih Müzesi kurmak için çalışmalara başladığımızı
-              duyuruyoruz. Bu çağrıyla “Sürgünde Dersim Etnografya ve Tarih
-              Müzesi” kuruluş çalışmalarını kamuoyuna duyurarak sadece Dersim’li
+              bilinmektedir.
+              <br />
+              <br />
+              Bunun yanısıra Türkiye genelinde de ençok göç veren bölge yine
+              Dersim olmuştur. Günümüz Tunceli ilinin tamamı ve tarihi Dersim
+              Coğrafyası‘ndan Almanya’ya göç edenlerin aile bireyleriyle
+              birlikte sayısı 460 binin üzerindedir. <br />
+              <br />
+              Yaklaşık onbeş yıldan beri Türkiye’de başlayan Dersim’li
+              akademisyenlerin bir araya gelme girişimi, biz Avrupa’da yaşayan
+              ve çalışan akademisyenleri de kapsayarak, iş insanlarının ve
+              kültür emekçilerinin katkılarıyla 2014 yılında akademik bir Vakfın
+              kurulmasıyla sonuçlanmıştır. <br />
+              <br />
+              Avrupa’da ve Federal Almanya’da Dersim kökenli akademik bir
+              potansiyele sahip olduğumuz gibi çok büyük bir oranda da kültür
+              emekçileri ve iş insanı potansiyeline sahibiz. <br />
+              <br />
+              Bu durum hem Türkiye’de hem de Türkiye dışında birçok alanda
+              mevcut olan akademik birikimin yanısıra iş ve kültür dünyasını da
+              kapsayan bir örgütlenmenin kalıcı bir kurumsallaşmaya yönelik
+              arayışlarını da beraberinde getirmiştir. <br />
+              <br />
+              Yaptığımız araştırmalar Avrupa’da en uygun ve kalıcı bir
+              kurumsallaşmanın Müze çalışmasıyla sağlanabileceğini
+              göstermektedir. <br />
+              <br />
+              Bu bağlamda kamuoyuna bir grup girişimci (akademisyenler, kültür
+              emekçileri, iş insanları) olarak Almanya’da, sürgünde ilk etapta
+              dijital bir Ennografya ve Tarih Müzesi kurmak için çalışmalara
+              başladığımızı duyuruyoruz. <br />
+              <br />
+              Bu çağrıyla “Sürgünde Dersim Etnografya ve Tarih Müzesi” kuruluş
+              çalışmalarını kamuoyuna duyurarak sadece Dersim’li
               akademisyenlerden, kültür emekçilerinden ve iş insanlarından
               değil, aynı zamanda Dersim dostlarından ve çok kültürlülüğü
-              önemseyen kesimlerden de ciddi bir destek bekliyoruz. Bizler,
-              Türkiye dışında değişik ülkelerde yaşayan Dersimliler olarak,
-              insan potansiyelimiz, kültürel-sosyal yaşamdaki birikimlerimizle
-              müze gibi daha kalıcı bir kurumu inşa etmek, istiyoruz. Böylece
-              Dersim’in tarihi kültürel ve sosyal yaşamını dijital ortamda da
-              olsa gelecek kuşaklara miras bırakarak tarihimizin tümden
-              kaybolmasının önüne geçebileceğimize inanıyoruz. Kuracağımız
-              müzede sergilerin yanı sıra tarihi ve güncel belgeleri
+              önemseyen kesimlerden de ciddi bir destek bekliyoruz. <br />
+              <br />
+              Bizler, Türkiye dışında değişik ülkelerde yaşayan Dersimliler
+              olarak, insan potansiyelimiz, kültürel-sosyal yaşamdaki
+              birikimlerimizle müze gibi daha kalıcı bir kurumu inşa etmek,
+              istiyoruz. Böylece Dersim’in tarihi kültürel ve sosyal yaşamını
+              dijital ortamda da olsa gelecek kuşaklara miras bırakarak
+              tarihimizin tümden kaybolmasının önüne geçebileceğimize
+              inanıyoruz.
+              <br />
+              <br />
+              Kuracağımız müzede sergilerin yanı sıra tarihi ve güncel belgeleri
               (fotoğraflar, objeler, metinler, vb.) toplayarak dijital ortamda
               korumaya alacağız. Müzede, birçok kültür ve inancın bir arada
               yaşadığı Dersim Bölgesi’nin tarihi ile yaşatılan soykırımları
               bilim dünyasının sunarak, öncelikle akademik ortamda işlenmesi ve
-              korunmasını amaçlıyoruz. Bunun yanısıra Tarihi Dersim Bölgesi’nden
-              göç ve göçün tarihi de müzede yerini alacaktır. Bulunduğumuz
-              Federal Almanya’da Dersim coğrafyasından gelen birinci kuşak
-              göçmenlerin tarihi tüm yönleriyle işlenip kamuoyuna sunulacaktır.
+              korunmasını amaçlıyoruz. <br />
+              <br />
+              Bunun yanısıra Tarihi Dersim Bölgesi’nden göç ve göçün tarihi de
+              müzede yerini alacaktır. Bulunduğumuz Federal Almanya’da Dersim
+              coğrafyasından gelen birinci kuşak göçmenlerin tarihi tüm
+              yönleriyle işlenip kamuoyuna sunulacaktır.
+              <br />
+              <br />
               İlk etapta dijital olarak kurulacak olan Müze aktif bir web
               platformu, bir dizi film ve kitap belgeselinin yanı sıra gezici
               bir sergiyle de desteklenecektir. Dijital ortamda korunmaya
-              alınacak tarihi ve çağdaş eserler halka sunulacaktır. Müze aynı
-              zamanda bir eğitim kurumu işlevi de görecektir. Web sunumu
-              aracılığıyla Dersim Bölgesi’nden Almanya’ya göçün tarihini temel
-              alan bir eğitim programı, fotoğraflar, video sekansları,
+              alınacak tarihi ve çağdaş eserler halka sunulacaktır.
+              <br />
+              <br />
+              Müze aynı zamanda bir eğitim kurumu işlevi de görecektir. Web
+              sunumu aracılığıyla Dersim Bölgesi’nden Almanya’ya göçün tarihini
+              temel alan bir eğitim programı, fotoğraflar, video sekansları,
               animasyonlar ve metinlerle desteklenerek sanal bir kütüphanenin
               oluşturulması sağlanarak, akademilerin,bilim insanlarının,
-              öğrencilerin ve gençlerin kullanımına sunulacktır. Metinler ve
-              objeler dijital müzede Kırmanci-Zazaki ve Kırdaski-Kürtçe’den
-              Türkçe, Almanca ve İngilizceye transkript edilip çevrilecek ve
-              dijitalleştirilerek daha ileri düzeyde işlenip yeniden
-              değerlendirilebilmesi için araştırmacıların ve diğer kurumların
-              kullanımına sunulacaktır. Böylece 1960’lı yıllarda Almanya’ya
-              göçmen işçi olarak gelen ve bugün dördüncü nesille ulaşmış bulunan
-              Dersimlilerin farklı ve çok yönlü tarihi görünür ve elle tutulur
-              kılınacaktır. Bulunduğumuz Federal Almanya’da çok kültürlü yaşamı
-              evrensel değerlerle, proje ve etkinlikler bazında destekleyip, din
-              ve inanç topluluklarının ortak değerlerde buluşması için çaba
-              harcıyacağız. Tarihimizin bir parçası olun. Bize vereceğiniz
-              destekle, Almanya gibi demokratik bir hukuk devletinde, bir
-              bölgenin tarihine hayat vererek kaybolup gitmesini önleyecek,
-              demokrasinin güçlenmesine katkıda bulunacaksınız. “Sürgünde Dersim
-              Müzesi” projesine araştırmacılar ve sponsorlar eşlik etmekte ve
-              destek vermektedir. “Sürgündeki Dersim Müzesi”, ” Perspektive
-              Vielfalt gGmbH – Kültürlerarası Araştırma ve Sosyal Hizmet
-              Enstitüsü” tarafından kurulmaktadır. Projenin daha da
+              öğrencilerin ve gençlerin kullanımına sunulacktır. <br />
+              <br />
+              Metinler ve objeler dijital müzede Kırmanci-Zazaki ve
+              Kırdaski-Kürtçe’den Türkçe, Almanca ve İngilizceye transkript
+              edilip çevrilecek ve dijitalleştirilerek daha ileri düzeyde
+              işlenip yeniden değerlendirilebilmesi için araştırmacıların ve
+              diğer kurumların kullanımına sunulacaktır. <br />
+              <br />
+              Böylece 1960’lı yıllarda Almanya’ya göçmen işçi olarak gelen ve
+              bugün dördüncü nesille ulaşmış bulunan Dersimlilerin farklı ve çok
+              yönlü tarihi görünür ve elle tutulur kılınacaktır. <br />
+              <br />
+              Bulunduğumuz Federal Almanya’da çok kültürlü yaşamı evrensel
+              değerlerle, proje ve etkinlikler bazında destekleyip, din ve inanç
+              topluluklarının ortak değerlerde buluşması için çaba harcıyacağız.{" "}
+              <br />
+              <br />
+              Tarihimizin bir parçası olun. <br />
+              <br />
+              Bize vereceğiniz destekle, Almanya gibi demokratik bir hukuk
+              devletinde, bir bölgenin tarihine hayat vererek kaybolup gitmesini
+              önleyecek, demokrasinin güçlenmesine katkıda bulunacaksınız.
+              “Sürgünde Dersim Müzesi” projesine araştırmacılar ve sponsorlar
+              eşlik etmekte ve destek vermektedir. “Sürgündeki Dersim Müzesi”, ”
+              Perspektive Vielfalt gGmbH – Kültürlerarası Araştırma ve Sosyal
+              Hizmet Enstitüsü” tarafından kurulmaktadır. Projenin daha da
               geliştirilmesi için bağımsız olarak çalışan, özgürce karar veren
-              bir koordinasyon ve planlama ekibi olacaktır. Bağışlar, objeler,
-              belgeler, resimler, kitaplar vb. ile bize destek olmak isterseniz,
-              lütfen bizimle iletişime geçin. Bütün bunlara paralel olarak
-              NRW’de (Kuzey Ren-Vestfalya Eyaleti) müzeye uygun bir bina bulmaya
-              çalışıyoruz. Fikir Sizin hikayeniz bizim hikayemiz oldu, bizim ki
-              de sizin hikayeniz olacak. Şimdi hep birlikte geleceği yazacağız.
-              Hıdır Eren Çelik Iletişim Adresi: info@dersim-museum.de
+              bir koordinasyon ve planlama ekibi olacaktır. <br />
+              <br />
+              Bağışlar, objeler, belgeler, resimler, kitaplar vb. ile bize
+              destek olmak isterseniz, lütfen bizimle iletişime geçin. <br />
+              <br />
+              Bütün bunlara paralel olarak NRW’de (Kuzey Ren-Vestfalya Eyaleti)
+              müzeye uygun bir bina bulmaya çalışıyoruz. <br />
+              <br />
+              Fikir <br />
+              <br />
+              Sizin hikayeniz bizim hikayemiz oldu, bizim ki de sizin hikayeniz
+              olacak. Şimdi hep birlikte geleceği yazacağız.
+              <br />
+              <br />
+              Hıdır Eren Çelik <br />
+              <br />
+              Iletişim Adresi: info@dersim-museum.de
+              <br />
+              <br />
               Perspektive Vielfalt gGmbH –Institut für transkulturelle Forschung
-              und Soziale Arbeit Kalker Hauptstraße 165 | 51103 Köln | Mail:
+              und Soziale Arbeit <br />
+              <br />
+              Kalker Hauptstraße 165 | 51103 Köln | Mail:
+              <br />
               info@perspektive-vielfalt.com Internet:
-              www.perspektive-veilfalt.com Handelsregister Amtsgericht Köln HRB
-              108207 | USt.-IdNr. DE Bankverbindung: Sparkasse KölnBonn IBAN:
-              DE18 3705 0198 1936 0389 99 BIC: COLSDE33XXX Bağışlar için hesap
-              nr.: Perspektive -Vielfalt Sparkasse KölnBonn IBAN: DE18 3705 0198
-              1936 0389 99 BIC: COLSDE33XXX Stichwort: Dersimmuseum
+              <br />
+              www.perspektive-veilfalt.com <br />
+              Handelsregister Amtsgericht Köln HRB
+              <br />
+              108207 | USt.-IdNr. DE <br />
+              Bankverbindung: Sparkasse KölnBonn IBAN:
+              <br />
+              DE18 3705 0198 1936 0389 99
+              <br />
+              <br />
+              BIC: COLSDE33XXX <br />
+              <br />
+              Bağışlar için hesap nr.: <br />
+              Perspektive -Vielfalt
+              <br />
+              Sparkasse KölnBonn <br />
+              IBAN: DE18 3705 0198 1936 0389 99
+              <br />
+              BIC: COLSDE33XXX <br />
+              Stichwort: Dersimmuseum
             </p>
             <p />
           </div>
