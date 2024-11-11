@@ -445,7 +445,7 @@ export default function Header() {
                     to="/yayinlar/20"
                     onClick={handleLinkClick}
                   >
-                    SUNA VE İNAN KIRAÇ VAKFI YAYINLARI
+                    DERSİM VAKFI YAYINLARI
                   </Link>
                 </div>
               )}

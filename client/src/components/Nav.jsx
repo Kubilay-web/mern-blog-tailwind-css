@@ -293,7 +293,7 @@ const Nav = () => {
                   PERA FİLM YAYINLAR
                 </a>
                 <a className="dropdown-item text-xl" href="/yayinlar/20">
-                  SUNA VE İNAN KIRAÇ VAKFI YAYINLARI
+                  DERSİM VAKFI YAYINLARI
                 </a>
                 <img
                   className="d-none d-lg-none subImg float-right ml-auto mb-3"

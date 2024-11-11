@@ -206,7 +206,7 @@ export default function Home({ data }) {
         )}
       </div> */}
 
-      <div class="col-lg-12 col-md-6">
+      <div class="col-lg-12 col-md-6 mb-4">
         <div
           style={{
             position: "relative",
@@ -220,8 +220,9 @@ export default function Home({ data }) {
           <iframe
             style={{
               border: 0,
-              width: "100vw",
+              width: "80vw",
               height: "100vh",
+              margin: "auto",
               overflow: "hidden",
             }}
             allowFullScreen=""
@@ -242,7 +243,7 @@ export default function Home({ data }) {
         )}
       </div> */}
 
-      <div class="col-lg-12 col-md-6 mt-4">
+      {/* <div class="col-lg-12 col-md-6 mt-4">
         <a
           href="https://www.peramuzesi.org.tr/etkinlik/324-constantinus%E2%80%99un-secimi-ve-yeni-roma%E2%80%99nin-kurulusu/6451"
           target="_self"
@@ -257,7 +258,7 @@ export default function Home({ data }) {
             />
           </div>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }
