@@ -1,29 +1,4 @@
-import { useState, useEffect } from "react";
-
 const Yayin14 = () => {
-  const [posts, setPosts] = useState([]);
-  const [posts2, setPosts2] = useState([]);
-
-  const category = "Süreli Sergiler";
-  const category2 = "Koleksiyon Sergileri";
-
-  const fetchPosts = async (category, setPostFunc) => {
-    try {
-      const res = await fetch(
-        `/api/post/getposts/category?category=${category}`
-      );
-      const data = await res.json();
-      setPostFunc(data.posts);
-    } catch (error) {
-      console.error("Failed to fetch posts:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPosts(category, setPosts);
-    fetchPosts(category2, setPosts2);
-  }, [category, category2]);
-
   return (
     <div>
       <style
@@ -78,60 +53,6 @@ const Yayin14 = () => {
         }}
       />
 
-      <div className="container">
-        <div className="row pt-7">
-          {posts && posts.length > 0 ? (
-            posts.slice(0, 1000).map((post, index) => {
-              let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
-
-              if (index === 0) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 1) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              if (index === 2) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 3) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              return (
-                <div key={post._id} className={`${colClass} mb-4`}>
-                  <a
-                    href={`/post/${post.slug}`}
-                    target="_self"
-                    className="no-link"
-                  >
-                    <div className="card mb-4 border-0">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        src={post.image}
-                        alt={post.altText}
-                      />
-                      <div className="card-body">
-                        <h3 className="card-title">{post.title}</h3>
-                        <p className="card-text">{post.content}</p>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <small className="text-muted">{post.author}</small>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              );
-            })
-          ) : (
-            <p>No posts available</p>
-          )}
-        </div>
-      </div>
-
       <div className="container first-row">
         <div className="row">
           <div className="col-md-12 ">
@@ -155,17 +76,13 @@ const Yayin14 = () => {
                   <a href="/yayin/mekanin-poetikasi-mekanin-politikasi/134">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın14/mekanin-poetikasi-mekanin-politikasi.jpg"
+                      src="/images/Yayın14/19-Kış Sporları.jpg"
                       alt="Mekanın Poetikası, Mekanın Politikası"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">
-                      Mekanın Poetikası, Mekanın Politikası
-                    </h3>
-                    <p className="card-text">
-                      Osmanlı İstanbulu ve Britanya Oryantalizmi
-                    </p>
+                    <h3 className="card-title">Kış Sporları</h3>
+                    <p className="card-text">Kış Sporları</p>
                   </div>
                 </div>
               </div>
