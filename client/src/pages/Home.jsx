@@ -207,6 +207,15 @@ export default function Home({ data }) {
       </div> */}
 
       <div class="col-lg-12 col-md-6 mb-4">
+        <div className="card-body flex items-center justify-center w-full">
+          <h3 id="ters-yuz-pera" className="card-title">
+            Dersim 360 Panoramik
+          </h3>
+          <p className="card-text" />
+        </div>
+      </div>
+
+      <div class="col-lg-12 col-md-6 mb-4">
         <div
           style={{
             position: "relative",
