@@ -64,7 +64,7 @@ const Yayin20 = () => {
                 className="col-md-12 fs-40"
                 style={{ "font-family": "'Raleway'" }}
               >
-                <h1>Suna ve İnan Kıraç Vakfı Yayınları</h1>
+                <h1>Dersim Vakfı Yayınları</h1>
               </div>
             </div>
           </div>

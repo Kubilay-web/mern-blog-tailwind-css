@@ -396,7 +396,7 @@ const Yayin = () => {
                 className="col-md-10 fs-40"
                 style={{ "font-family": "'Raleway'" }}
               >
-                <p>Suna ve İnan Kıraç Vakfı Yayınları</p>
+                <p>Dersim Vakfı Yayınları</p>
               </div>
               <div className="col-md-2 dontshowonmobile">
                 <a

@@ -204,7 +204,7 @@ const Nav = () => {
                   className="dropdown-item text-xl"
                   href="/pera-ogrenme-hakkinda"
                 >
-                  PERA ÖĞRENME HAKKINDA
+                  DERSİM EĞİTİM HAKKINDA
                 </a>
                 <img
                   className="d-none d-lg-none subImg float-right mb-3"
@@ -244,7 +244,7 @@ const Nav = () => {
                   GEÇMİŞ PROGRAMLAR
                 </a>
                 <a className="dropdown-item text-xl" href="/pera-film-hakkinda">
-                  PERA FİLM HAKKINDA
+                  DERSİM FİLM HAKKINDA
                 </a>
                 <img
                   className="d-none d-lg-none subImg float-right mb-3"

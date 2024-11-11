@@ -345,7 +345,7 @@ export default function Header() {
                     to="/pera-ogrenme-hakkinda"
                     onClick={handleLinkClick}
                   >
-                    PERA ÖĞRENME HAKKINDA
+                    DERSİM EĞİTİM HAKKINDA
                   </Link>
                 </div>
               )}
@@ -381,7 +381,7 @@ export default function Header() {
                     to="/pera-film-hakkinda"
                     onClick={handleLinkClick}
                   >
-                    PERA FİLM HAKKINDA
+                    DERSİM FİLM HAKKINDA
                   </Link>
                 </div>
               )}
@@ -438,7 +438,7 @@ export default function Header() {
                     to="/yayinlar/13"
                     onClick={handleLinkClick}
                   >
-                    PERA FİLM YAYINLAR
+                    DERSİM FİLM YAYINLAR
                   </Link>
                   <Link
                     className="dropdown-item"
@@ -527,7 +527,7 @@ export default function Header() {
               <img src="images/PM-2023logo-tr.svg" alt="Pera Müzesi Logo" />
             </a>
             <p className="menu-dates-not-scrolled flex items-center gap-2">
-              <span className="todaydate">30 Ekim Çarşamba</span>
+              <span className="todaydate">11 Kasım Çarşamba</span>
 
               <span className="todaynote">Ziyaret Saatleri: 10.00 - 19.00</span>
             </p>

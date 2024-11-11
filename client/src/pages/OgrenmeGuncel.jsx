@@ -400,7 +400,7 @@ export default function OgrenmeGuncel() {
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">Pera Engelsiz</h3>
+                    <h3 className="card-title">Dersim Engelsiz</h3>
                     <p className="card-text">
                       {" "}
                       Özel gereksinimli bireylerin ihtiyaçlarına yönelik
@@ -422,7 +422,7 @@ export default function OgrenmeGuncel() {
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">Pera Çocuk</h3>
+                    <h3 className="card-title">Dersim Çocuk</h3>
                     <p className="card-text">
                       {" "}
                       Sergilerimizden ilhamla tasarlanan çevrimiçi ve yüz yüze
@@ -444,7 +444,7 @@ export default function OgrenmeGuncel() {
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">Pera Genç</h3>
+                    <h3 className="card-title">Dersim Genç</h3>
                     <p className="card-text">
                       {" "}
                       13–17 yaşlarındakilere yönelik sergi turları ve
@@ -465,12 +465,11 @@ export default function OgrenmeGuncel() {
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">Pera Yetişkin</h3>
+                    <h3 className="card-title">Dersim Yetişkin</h3>
                     <p className="card-text">
-                      {" "}
                       18 yaş ve üzerindeki herkesin katılabildiği atölyelerde
                       katılımcılar, farklı konularda uzmanlaşmış eğitmenler
-                      eşliğinde Pera Müzesi’nin koleksiyon ve süreli
+                      eşliğinde Dersim Müzesi'nin koleksiyon ve süreli
                       sergilerinden ilhamla yaratıcılıklarını ortaya çıkarıyor.
                     </p>
                   </div>

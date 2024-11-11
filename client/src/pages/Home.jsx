@@ -207,21 +207,27 @@ export default function Home({ data }) {
       </div> */}
 
       <div class="col-lg-12 col-md-6">
-        <a
-          href="https://www.peramuzesi.org.tr/etkinlik/324-constantinus%E2%80%99un-secimi-ve-yeni-roma%E2%80%99nin-kurulusu/6451"
-          target="_self"
-          class="no-link"
+        <div
+          style={{
+            position: "relative",
+            overflow: "hidden",
+            maxWidth: "100vw",
+            marginTop: 10,
+            height: "100vh",
+          }}
+          id="ta-reviews"
         >
-          <div class="card mb-4 border-0 flex justify-center align-items-center">
-            <img
-              class="bd-placeholder-img card-img-top"
-              width="1070px"
-              height="auto"
-              src="/images/Home/324-banner-tr.jpg"
-              alt="Constantinus’un Seçimi ve Yeni Roma’nın Kuruluşu"
-            />
-          </div>
-        </a>
+          <iframe
+            style={{
+              border: 0,
+              width: "100vw",
+              height: "100vh",
+              overflow: "hidden",
+            }}
+            allowFullScreen=""
+            src="https://www.google.com/maps/embed?pb=!4v1693050723186!6m8!1m7!1sJesj_mVAwp0AAARiXGL73A!2m2!1d39.1045651!2d39.5473264!3f239.89!4f-0.11!5f0.7820865974627469"
+          ></iframe>
+        </div>
       </div>
 
       {/* <div className="flex justify-center mt-3 flex-wrap">
@@ -236,7 +242,7 @@ export default function Home({ data }) {
         )}
       </div> */}
 
-      <div class="col-lg-12 col-md-6">
+      <div class="col-lg-12 col-md-6 mt-4">
         <a
           href="https://www.peramuzesi.org.tr/etkinlik/324-constantinus%E2%80%99un-secimi-ve-yeni-roma%E2%80%99nin-kurulusu/6451"
           target="_self"

@@ -16,9 +16,9 @@ const FilmHakkinda = () => {
             <a className="navbar-brand" href="/" title="Home">
               <div className="hidden">
                 <img
-                  className="pera-logo component state2 state1-to-state2"
+                  className="Dersim-logo component state2 state1-to-state2"
                   src="/images/FilmHakkında/PM-2023logo-tr.svg"
-                  alt="Pera Müzesi Logo"
+                  alt="Dersim Müzesi Logo"
                 />
               </div>
             </a>
@@ -66,7 +66,7 @@ const FilmHakkinda = () => {
           </div>
           <div className="col-12 mb-2">
             <h1 className="fs-40" style={{ "font-family": "'Raleway'" }}>
-              Pera Film Hakkında
+              Dersim Film Hakkında
             </h1>
           </div>
         </div>
@@ -76,30 +76,30 @@ const FilmHakkinda = () => {
             style={{ "font-family": "'Raleway'" }}
           >
             <p>
-              Etkinliklerine Ekim 2008'de başlayan Pera Müzesi Film ve Video
-              Bölümü, Pera Film, aylık dönemler halinde düzenlenen, sinema
+              Etkinliklerine Ocak 2025'de başlayan Dersim Müzesi Film ve Video
+              Bölümü, Dersim Film, aylık dönemler halinde düzenlenen, sinema
               klasiklerinden deneysel film-video örneklerine, animasyon,
               belgesel ve kısa film türlerine kadar uzanan kapsamlı bir
               programdır.
             </p>
             <p>
-              Pera Müzesi'nde açılan sergilere paralel programlar da sunan Pera
-              Film, sinemanın önemini ve çeşitliliğini vurgulayan
-              etkinlikleriyle, Pera Müzesi ziyaretçilerine ve sinema
+              Dersim Müzesi'nde açılan sergilere paralel programlar da sunan
+              Dersim Film, sinemanın önemini ve çeşitliliğini vurgulayan
+              etkinlikleriyle, Dersim Müzesi ziyaretçilerine ve sinema
               meraklılarına farklı bir deneyim sunmayı amaçlamaktadır.
             </p>
             <p>
-              <strong>Yer:</strong>&nbsp; Pera Müzesi Oditoryumu
+              <strong>Yer:</strong>&nbsp; Dersim Müzesi Oditoryumu
             </p>
             <p>
-              <strong>Ücret:</strong>&nbsp;Pera Film ücretli gösterimleri
+              <strong>Ücret:</strong>&nbsp;Dersim Film ücretli gösterimleri
               indirimli müze giriş biletiyle izlenebilir.&nbsp;
               <br />
               Ücretsiz gösterimler için de resepsiyondan bilet alınması
               gerekmektedir.
               <br />
-              Pera Müzesi ziyareti ve Pera Film gösterimleri çarşamba günleri
-              tüm öğrencilere ücretsizdir.
+              Dersim Müzesi ziyareti ve Dersim Film gösterimleri çarşamba
+              günleri tüm öğrencilere ücretsizdir.
             </p>
             <p>
               <em>Filmler Türkçe altyazılıdır.</em>

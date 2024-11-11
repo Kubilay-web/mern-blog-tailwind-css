@@ -65,7 +65,7 @@ export default function OgrenmeHakkinda() {
           </div>
           <div className="col-12 text-justify" style={{ margin: "20px 0 0 0" }}>
             <h1 className="fs-40" style={{ "font-family": "'Raleway'" }}>
-              Pera Öğrenme Hakkında
+              Dersim Eğitim Hakkında
             </h1>
           </div>
         </div>
@@ -75,29 +75,20 @@ export default function OgrenmeHakkinda() {
             style={{ "font-family": "'Raleway'" }}
           >
             <p>
-              Pera Müzesi’nde öğrenme, çocuklar, gençler ve yetişkinleri sanatla
-              buluşturmak, bir müze bilinci oluşturmak, sanatı ulaşılabilir
-              kılmak ve izleyiciyle sergilenen eserler arasında iletişim kurmak
-              amacıyla yapılan çalışmaları kapsıyor. Yorum ve yaratıcılığa
-              dayanan bu etkinliklerde, eserler üzerinde değerlendirmeler
-              yapılırken yaratıcılık da destekleniyor. Atölyede uygulamalı
-              çalışmalarla pekiştirilen öğrenme programı, müzeyi sosyal hayatın
-              bir parçası kılmayı da amaçlıyor. Bu amaç doğrultusunda
-              oluşturulan “Pera Öğrenme” programları, koleksiyon sergilerinin
-              yanı sıra, süreli sergiler için de, farklı yaş gruplarına ve özel
-              eğitim öğrencilerine hazırlanan birbirinden renkli ve yaratıcı
-              etkinlikleriyle yıl boyunca sürdürülüyor.
+              Dersim Müzesi’nde öğrenme, çocuklar, gençler ve yetişkinleri
+              sanatla buluşturmak, bir müze bilinci oluşturmak, sanatı
+              ulaşılabilir kılmak ve izleyiciyle sergilenen eserler arasında
+              iletişim kurmak amacıyla yapılan çalışmaları kapsıyor. Yorum ve
+              yaratıcılığa dayanan bu etkinliklerde, eserler üzerinde
+              değerlendirmeler yapılırken yaratıcılık da destekleniyor. Atölyede
+              uygulamalı çalışmalarla pekiştirilen öğrenme programı, müzeyi
+              sosyal hayatın bir parçası kılmayı da amaçlıyor. Bu amaç
+              doğrultusunda oluşturulan Dersim eğitim programları, koleksiyon
+              sergilerinin yanı sıra, süreli sergiler için de, farklı yaş
+              gruplarına ve özel eğitim öğrencilerine hazırlanan birbirinden
+              renkli ve yaratıcı etkinlikleriyle yıl boyunca sürdürülüyor.
             </p>
-            <p>
-              Pera Öğrenme programlarına katılmak PERAkart aile ile %50
-              indirimli! <br />
-              Pera Öğrenme, süreli sergiler kapsamında düzenlenen atölyelerin
-              malzeme destekçisi&nbsp;
-              <a href="http://www.faber-castell.com.tr/tr" target="_out">
-                Faber-Castell
-              </a>
-              'e teşekkür eder.
-            </p>
+
             <p>&nbsp;</p>
           </div>
         </div>

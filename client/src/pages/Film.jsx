@@ -1,29 +1,4 @@
-import { useState, useEffect } from "react";
-
 export default function Film() {
-  const [posts, setPosts] = useState([]);
-  const [posts2, setPosts2] = useState([]);
-
-  const category = "Süreli Sergiler";
-  const category2 = "Koleksiyon Sergileri";
-
-  const fetchPosts = async (category, setPostFunc) => {
-    try {
-      const res = await fetch(
-        `/api/post/getposts/category?category=${category}`
-      );
-      const data = await res.json();
-      setPostFunc(data.posts);
-    } catch (error) {
-      console.error("Failed to fetch posts:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPosts(category, setPosts);
-    fetchPosts(category2, setPosts2);
-  }, [category, category2]);
-
   return (
     <div>
       <style
@@ -71,60 +46,6 @@ export default function Film() {
         </div>
       </div>
 
-      <div className="container">
-        <div className="row pt-7">
-          {posts && posts.length > 0 ? (
-            posts.slice(0, 1000).map((post, index) => {
-              let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
-
-              if (index === 0) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 1) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              if (index === 2) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 3) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              return (
-                <div key={post._id} className={`${colClass} mb-4`}>
-                  <a
-                    href={`/post/${post.slug}`}
-                    target="_self"
-                    className="no-link"
-                  >
-                    <div className="card mb-4 border-0">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        src={post.image}
-                        alt={post.altText}
-                      />
-                      <div className="card-body">
-                        <h3 className="card-title">{post.title}</h3>
-                        <p className="card-text">{post.content}</p>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <small className="text-muted">{post.author}</small>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              );
-            })
-          ) : (
-            <p>No posts available</p>
-          )}
-        </div>
-      </div>
-
       <div className="container pb-3 first-row">
         <div className="row">
           <div className="col-md-12 mt-3">
@@ -139,7 +60,7 @@ export default function Film() {
               <div className="col-lg-12 col-md-12">
                 <div className="card mb-1 border-0">
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/film-program/dijital/3535">
+                  {/* <a href="/film-program/dijital/3535">
                     <img
                       className="bd-placeholder-img card-img-top"
                       width="100%"
@@ -147,21 +68,35 @@ export default function Film() {
                       src="/images/Film/program-gorseli-dijital.jpg"
                       alt="dijital"
                     />
-                  </a>
+                  </a> */}
+
+                  <div
+                    style={{
+                      position: "relative",
+                      overflow: "hidden",
+                      maxWidth: "100vw",
+                      marginTop: 10,
+                      height: "100vh",
+                    }}
+                    id="ta-reviews"
+                  >
+                    <iframe
+                      style={{
+                        border: 0,
+                        width: "100vw",
+                        height: "100vh",
+                        overflow: "hidden",
+                      }}
+                      allowFullScreen=""
+                      src="https://www.google.com/maps/embed?pb=!4v1693050723186!6m8!1m7!1sJesj_mVAwp0AAARiXGL73A!2m2!1d39.1045651!2d39.5473264!3f239.89!4f-0.11!5f0.7820865974627469"
+                    ></iframe>
+                  </div>
+
                   <div className="card-body">
-                    <h3 className="card-title listtitle">dijital</h3>
-                    <h3 className="card-title listtarih">
-                      22 Kasım - 22 Aralık 2024
+                    <h3 className="card-title listtitle">
+                      Dersim Müzesi 360 Panoramik
                     </h3>
-                    <p className="card-text" style={{ "font-size": "20px" }} />
-                    <p>
-                      Vera Molnár’ın bilgisayarla çalışmaya başladığı yıllarda
-                      izleyiciyle buluşan bilimkurgu başyapıtları{" "}
-                      <em>2001: Bir Uzay Macerası</em>, <em>Yalan Dünya</em> ve{" "}
-                      <em>Bıçak Sırtı</em>, teknolojinin geleceğin toplumsal
-                      yapıları ve bireysel kimlikleri üzerindeki etkilerine dair
-                      güçlü hayaller kuruyor.
-                    </p>
+
                     <p />
                   </div>
                 </div>
@@ -178,8 +113,11 @@ export default function Film() {
                   <b
                     id="FIAboutPeraFilm"
                     className="BitcraftLang fs-40 mb-2"
-                    style={{ "font-family": "'Raleway'" }}
-                  />
+                    style={{ fontFamily: '"Raleway"' }}
+                  >
+                    Pera Film Hakkında
+                  </b>
+
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/pera-film-hakkinda">
                     <img
@@ -195,8 +133,11 @@ export default function Film() {
                   <b
                     id="FIPastPrograms"
                     className="BitcraftLang fs-40 mb-2"
-                    style={{ "font-family": "'Raleway'" }}
-                  />
+                    style={{ fontFamily: '"Raleway"' }}
+                  >
+                    Geçmiş Programlar
+                  </b>
+
                   {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/film/gecmis-programlar">
                     <img

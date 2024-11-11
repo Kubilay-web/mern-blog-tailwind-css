@@ -92,13 +92,14 @@ export default function Ziyaret() {
           </div>
           <div className="col-md-6">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11695.76810137832!2d28.97656638287721!3d41.0335665077011!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd94762797dd716c9!2sPera+Museum!5e0!3m2!1sen!2sus!4v1470124543562"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10655.091263705178!2d7.0989074!3d50.7343637!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b204466e4f0d07%3A0x67dffb9b2422907c!2sBr%C3%BCdergasse+16-18%2C+53111+Bonn%2C+Germany!5e0!3m2!1sen!2sus!4v1699654547105"
               width="100%"
               height={337}
               frameBorder={0}
-              style={{ border: "0" }}
-              allowFullScreen
+              style={{ border: 0 }}
+              allowFullScreen=""
             />
+
             <p>
               Brüdergasse 16-18 53111 <br /> Bonn/Deutschland{" "}
             </p>
@@ -131,14 +132,14 @@ export default function Ziyaret() {
               </div>
               <div className="col-md-12">
                 <p className="fs-22 collapseTitle">
-                  Yenikapı - Hacıosman (M2) hattında, Şişhane durağında...
+                  Berlin - Münih (B2) hattında, Bonn durağında...
                 </p>
               </div>
               <div className="collapse" id="collapseOne">
                 <div className="col-md-12 staticcontentbody">
-                  Yenikapı - Hacıosman (M2) hattında, Şişhane durağında inin.
-                  Şişhane çıkışını kullanın ve Meşrutiyet Caddesi üzerinde
-                  ilerleyin. Pera Müzesi 10 dakika yürüme mesafesinde.
+                  Berlin - Münih (B2) hattında, Bonn durağında inin. Frankfurt
+                  çıkışını kullanın ve Dresden Caddesi üzerinde ilerleyin.
+                  Dersim Müzesi 10 dakika yürüme mesafesinde.
                 </div>
               </div>
             </div>
@@ -163,14 +164,14 @@ export default function Ziyaret() {
               </div>
               <div className="col-md-12">
                 <p className="fs-20 collapseTitle">
-                  Tarlabaşı Bulvarı, İngiltere Başkonsolosluğu önündeki...
+                  Essen Bulvarı, Türkiye Başkonsolosluğu önündeki...
                 </p>
               </div>
               <div className="collapse" id="collapseTwo">
                 <div className="col-md-12 staticcontentbody">
-                  Tarlabaşı Bulvarı, İngiltere Başkonsolosluğu önündeki
-                  Tepebaşı-Beyoğlu otobüs durağında inin. Pera Müzesi 5 dakika
-                  yürüme mesafesinde.
+                  Essen Bulvarı, Türkiye Başkonsolosluğu önündeki Münih-İstanbul
+                  otobüs durağında inin. Dersim Müzesi 5 dakika yürüme
+                  mesafesinde.
                   <br />
                   <br />
                   Bu duraktan geçen otobüs hatlarını{" "}
@@ -204,12 +205,12 @@ export default function Ziyaret() {
               </div>
               <div className="col-md-12">
                 <p className="fs-20 collapseTitle">
-                  Pera Müzesi’ne aracınızla geliyorsanız...
+                  Dersim Müzesi’ne aracınızla geliyorsanız...
                 </p>
               </div>
               <div className="collapse" id="collapseThree">
                 <div className="col-md-12 staticcontentbody">
-                  Pera Müzesi’ne aracınızla geliyorsanız, Beyoğlu Tepebaşı
+                  Dersim Müzesi’ne aracınızla geliyorsanız, Beyoğlu Tepebaşı
                   İSPARK’ı kullanabilirsiniz.
                 </div>
               </div>
