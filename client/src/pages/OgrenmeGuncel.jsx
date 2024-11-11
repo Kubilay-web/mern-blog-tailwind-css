@@ -395,7 +395,7 @@ export default function OgrenmeGuncel() {
                   <a href="/pera-ogrenme/grup/pera-engelsiz/6">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/OgrenmeGuncel/peraengelsiz.jpg"
+                      src="/images/OgrenmeGuncel/engelsiz.jpg"
                       alt="Pera Engelsiz"
                     />
                   </a>
@@ -417,7 +417,7 @@ export default function OgrenmeGuncel() {
                   <a href="/pera-ogrenme/grup/pera-cocuk/1">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/OgrenmeGuncel/peracocuk.jpg"
+                      src="/images/OgrenmeGuncel/cocuk.jpg"
                       alt="Pera Çocuk"
                     />
                   </a>
@@ -439,7 +439,7 @@ export default function OgrenmeGuncel() {
                   <a href="/pera-ogrenme/grup/pera-genc/2">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/OgrenmeGuncel/peragenc.jpg"
+                      src="/images/OgrenmeGuncel/genc.jpg"
                       alt="Pera Genç"
                     />
                   </a>
@@ -460,7 +460,7 @@ export default function OgrenmeGuncel() {
                   <a href="/pera-ogrenme/grup/pera-yetiskin/3">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/OgrenmeGuncel/perayetiskin.jpg"
+                      src="/images/OgrenmeGuncel/yetiskin.jpg"
                       alt="Pera Yetişkin"
                     />
                   </a>
