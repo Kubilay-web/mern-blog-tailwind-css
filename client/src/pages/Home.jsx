@@ -221,7 +221,7 @@ export default function Home({ data }) {
             style={{
               border: 0,
               width: "75vw",
-              height: "100vh",
+              height: "75vh",
               margin: "auto",
               overflow: "hidden",
             }}
