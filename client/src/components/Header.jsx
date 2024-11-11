@@ -473,42 +473,42 @@ export default function Header() {
                 <div className="dropdown-menu show">
                   <Link
                     className="dropdown-item"
-                    to="/Blog"
+                    to="/cagdas-tarih"
                     onClick={handleLinkClick}
                   >
                     ÇAĞDAŞ TARİH
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/Blog"
+                    to="/kultur"
                     onClick={handleLinkClick}
                   >
                     KÜLTÜR / SANAT / MÜZİK
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/Blog"
+                    to="/goc-hareketleri"
                     onClick={handleLinkClick}
                   >
                     GÖÇ VE GÖÇ HAREKETLERİ
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/Blog"
+                    to="/tarih"
                     onClick={handleLinkClick}
                   >
                     TARİH
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/Blog"
+                    to="/tarihsel-kisilikler"
                     onClick={handleLinkClick}
                   >
                     TARİHSEL VE ÇAĞDAŞ KİŞİLİKLER
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/Blog"
+                    to="/soykirim-arastirma"
                     onClick={handleLinkClick}
                   >
                     SOYKIRIM VE SOYKIRIM ARAŞTIRMALARI

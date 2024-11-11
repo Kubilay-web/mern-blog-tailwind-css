@@ -41,6 +41,12 @@ import Yayin20 from "./pages/Yayin20";
 import Blog from "./pages/Blog";
 import Gecmis2024 from "./pages/Gecmis2024";
 import Gecmis2023 from "./pages/Gecmis2023";
+import Cagdas from "./pages/Cagdas";
+import Kultur from "./pages/Kultur";
+import Goc from "./pages/Goc";
+import Tarih from "./pages/Tarih";
+import TarihselKisilikler from "./pages/TarihselKisilikler";
+import Soykirim from "./pages/Soykirim";
 // import Nav from "./components/Nav";
 
 export default function App() {
@@ -79,6 +85,13 @@ export default function App() {
         <Route path="/yayinlar/15" element={<Yayin15 />} />
         <Route path="/yayinlar/20" element={<Yayin20 />} />
         <Route path="/Blog" element={<Blog />} />
+
+        <Route path="/cagdas-tarih" element={<Cagdas />} />
+        <Route path="/kultur" element={<Kultur />} />
+        <Route path="/goc-hareketleri" element={<Goc />} />
+        <Route path="/tarih" element={<Tarih />} />
+        <Route path="/tarihsel-kisilikler" element={<TarihselKisilikler />} />
+        <Route path="/soykirim-arastirma" element={<Soykirim />} />
 
         <Route path="/sergi/gecmis-yillar/2024" element={<Gecmis2024 />} />
 
