@@ -1,26 +1,6 @@
 import { useEffect, useState } from "react";
 
 const Gecmis2024 = () => {
-  const [posts, setPosts] = useState([]);
-
-  const category = "Sergi-2024";
-
-  const fetchPosts = async (category, setPostFunc) => {
-    try {
-      const res = await fetch(
-        `/api/post/getposts/category?category=${category}`
-      );
-      const data = await res.json();
-      setPostFunc(data.posts);
-    } catch (error) {
-      console.error("Failed to fetch posts:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPosts(category, setPosts);
-  }, [category]);
-
   return (
     <div>
       <div>
@@ -109,67 +89,11 @@ const Gecmis2024 = () => {
               </div>
             </div>
 
-            <div className="container">
-              <div className="row pt-7">
-                {posts && posts.length > 0 ? (
-                  posts.slice(0, 1000).map((post, index) => {
-                    let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
-
-                    if (index === 0) {
-                      // İlk kart 4'lük (yarım genişlik)
-                      colClass = "col-lg-6";
-                    } else if (index === 1) {
-                      // İkinci kart 8'lik (tam genişlik)
-                      colClass = "col-lg-6 col-md-12";
-                    }
-
-                    if (index === 2) {
-                      // İlk kart 4'lük (yarım genişlik)
-                      colClass = "col-lg-6";
-                    } else if (index === 3) {
-                      // İkinci kart 8'lik (tam genişlik)
-                      colClass = "col-lg-6 col-md-12";
-                    }
-
-                    return (
-                      <div key={post._id} className={`${colClass} mb-4`}>
-                        <a
-                          href={`/post/${post.slug}`}
-                          target="_self"
-                          className="no-link"
-                        >
-                          <div className="card mb-4 border-0">
-                            <img
-                              className="bd-placeholder-img card-img-top"
-                              width="100%"
-                              src={post.image}
-                              alt={post.altText}
-                            />
-                            <div className="card-body">
-                              <h3 className="card-title">{post.title}</h3>
-                              <p className="card-text">{post.content}</p>
-                              <div className="d-flex justify-content-between align-items-center">
-                                <small className="text-muted">
-                                  {post.author}
-                                </small>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    );
-                  })
-                ) : (
-                  <p>No posts available</p>
-                )}
-              </div>
-            </div>
-
-            <div className="col-md-12 mt-3 ">
+            {/* <div className="col-md-12 mt-3 ">
               <div className="row">
                 <div className="col-lg-6 col-md-6 mb-3">
                   <div className="card mb-0 border-0">
-                    {/*shadow-sm eklenince güzel duruyor*/}
+                  
                     <a href="/sergi/ters-yuz-pǝrɐ/1302">
                       <img
                         className="bd-placeholder-img card-img-top"
@@ -231,7 +155,7 @@ const Gecmis2024 = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
