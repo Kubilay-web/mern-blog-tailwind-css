@@ -245,7 +245,7 @@ export default function Header() {
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="https://artshop.peramuzesi.org.tr/"
+                    to="/"
                     onClick={handleLinkClick}
                   >
                     ARTSHOP

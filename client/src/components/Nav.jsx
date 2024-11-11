@@ -95,7 +95,7 @@ const Nav = () => {
                 </a>
                 <a
                   className="dropdown-item text-xl"
-                  href="https://artshop.peramuzesi.org.tr"
+                  href="/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
