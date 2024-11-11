@@ -220,7 +220,7 @@ export default function Home({ data }) {
           <iframe
             style={{
               border: 0,
-              width: "80vw",
+              width: "75vw",
               height: "100vh",
               margin: "auto",
               overflow: "hidden",
