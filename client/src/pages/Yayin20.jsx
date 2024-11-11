@@ -1,29 +1,6 @@
 import { useState, useEffect } from "react";
 
 const Yayin20 = () => {
-  const [posts, setPosts] = useState([]);
-  const [posts2, setPosts2] = useState([]);
-
-  const category = "Süreli Sergiler";
-  const category2 = "Koleksiyon Sergileri";
-
-  const fetchPosts = async (category, setPostFunc) => {
-    try {
-      const res = await fetch(
-        `/api/post/getposts/category?category=${category}`
-      );
-      const data = await res.json();
-      setPostFunc(data.posts);
-    } catch (error) {
-      console.error("Failed to fetch posts:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPosts(category, setPosts);
-    fetchPosts(category2, setPosts2);
-  }, [category, category2]);
-
   return (
     <div>
       <style
@@ -79,60 +56,6 @@ const Yayin20 = () => {
         }}
       />
 
-      <div className="container">
-        <div className="row pt-7">
-          {posts && posts.length > 0 ? (
-            posts.slice(0, 1000).map((post, index) => {
-              let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
-
-              if (index === 0) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 1) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              if (index === 2) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 3) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              return (
-                <div key={post._id} className={`${colClass} mb-4`}>
-                  <a
-                    href={`/post/${post.slug}`}
-                    target="_self"
-                    className="no-link"
-                  >
-                    <div className="card mb-4 border-0">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        src={post.image}
-                        alt={post.altText}
-                      />
-                      <div className="card-body">
-                        <h3 className="card-title">{post.title}</h3>
-                        <p className="card-text">{post.content}</p>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <small className="text-muted">{post.author}</small>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              );
-            })
-          ) : (
-            <p>No posts available</p>
-          )}
-        </div>
-      </div>
-
       <div className="container first-row">
         <div className="row">
           <div className="col-md-12 ">
@@ -156,16 +79,13 @@ const Yayin20 = () => {
                   <a href="/yayin/ataturk’un-ziraat-muhendisi-ali-numan-kirac/2276">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/ali-numan-kirac.jpg"
-                      alt="Atatürk’ün Ziraat Mühendisi<br> Ali Numan Kıraç"
+                      src="/images/Yayın20/13-Soğan Aşı.jpg"
+                      alt="Soğan Aşı"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">
-                      Atatürk’ün Ziraat Mühendisi
-                      <br /> Ali Numan Kıraç
-                    </h3>
-                    <p className="card-text">Hulûsi Turgut</p>
+                    <h3 className="card-title">Soğan Aşı</h3>
+                    <p className="card-text">Soğan Aşı</p>
                   </div>
                 </div>
               </div>
@@ -175,13 +95,13 @@ const Yayin20 = () => {
                   <a href="/yayin/fotograflarla-ataturk-/214">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/fotograflarla-ataturk.jpg"
+                      src="/images/Yayın20/14-Şir.jpg"
                       alt="Fotoğraflarla Atatürk "
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">Fotoğraflarla Atatürk </h3>
-                    <p className="card-text" />
+                    <h3 className="card-title">Şir</h3>
+                    <p className="card-text">Şir</p>
                   </div>
                 </div>
               </div>
@@ -191,16 +111,13 @@ const Yayin20 = () => {
                   <a href="/yayin/idealler-gerceklesirken…/204">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/idealler-gerceklesirken.jpg"
+                      src="/images/Yayın20/15-Rafting.webp"
                       alt="İdealler Gerçekleşirken…"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">İdealler Gerçekleşirken…</h3>
-                    <p className="card-text">
-                      Suna Kıraç’ın izinde 10 yılın öyküsü <br />
-                      Rıdvan Akar
-                    </p>
+                    <h3 className="card-title">Rafting</h3>
+                    <p className="card-text">Rafting</p>
                   </div>
                 </div>
               </div>
@@ -210,13 +127,13 @@ const Yayin20 = () => {
                   <a href="/yayin/omrumden-uzun-ideallerim-var/189">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/omrumden-uzun-ideallerim-var.jpg"
+                      src="/images/Yayın20/16-Kaya Tırmanışı.jpg"
                       alt="Ömrümden Uzun İdeallerim Var"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">Ömrümden Uzun İdeallerim Var</h3>
-                    <p className="card-text" />
+                    <h3 className="card-title">Kaya Tırmanışı</h3>
+                    <p className="card-text">Kaya Tırmanışı</p>
                   </div>
                 </div>
               </div>
@@ -226,18 +143,13 @@ const Yayin20 = () => {
                   <a href="/yayin/konstantiniyyeden-istanbula-/142">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/konstantiniyyeden-istanbula-iii-iv.jpg"
-                      alt="Konstantiniyye'den İstanbul'a "
+                      src="/images/Yayın20/17-Kampçılık.jfif"
+                      alt="Kampçılık"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">
-                      Konstantiniyye'den İstanbul'a{" "}
-                    </h3>
-                    <p className="card-text">
-                      XIX.Yüzyıl Ortalarından XX.Yüzyıla Boğaziçi'nin Anadolu
-                      Yakası Fotoğrafları
-                    </p>
+                    <h3 className="card-title">Kampçılık</h3>
+                    <p className="card-text">Kampçılık</p>
                   </div>
                 </div>
               </div>
@@ -247,71 +159,13 @@ const Yayin20 = () => {
                   <a href="/yayin/konstantiniyyeden-istanbula-/141">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/konstantiniyyeden-istanbula-i-ii.jpg"
-                      alt="Konstantiniyye'den İstanbul'a "
+                      src="/images/Yayın20/18-Zipline.jpg"
+                      alt="Zipline"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="card-title">
-                      Konstantiniyye'den İstanbul'a{" "}
-                    </h3>
-                    <p className="card-text">
-                      XIX. Yüzyıl Ortalarından XX. Yüzyıla Boğaziçi'nin Rumeli
-                      Yakası Fotoğrafları
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/pierre-willemart-sikke-koleksiyonu/212">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/pierre-willemart-sikke-koleksiyonu.jpg"
-                      alt="Pierre Willemart Sikke Koleksiyonu"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">
-                      Pierre Willemart Sikke Koleksiyonu
-                    </h3>
-                    <p className="card-text" />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/1892-lykia-gunlugu/1254">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/lykia-g-1.jpg"
-                      alt="1892 Lykia Günlüğü"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">1892 Lykia Günlüğü</h3>
-                    <p className="card-text">Ernst Krickl</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/toprak-ates-sir-/1257">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın20/toprak-ates-sir-kapak.jpg"
-                      alt="Toprak, Ateş, Sır "
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Toprak, Ateş, Sır </h3>
-                    <p className="card-text">
-                      Tarihsel Gelişimi, Atölyeleri ve Ustalarıyla Kütahya Çini
-                      ve Seramikleri
-                    </p>
+                    <h3 className="card-title">Zipline</h3>
+                    <p className="card-text">Zipline</p>
                   </div>
                 </div>
               </div>
