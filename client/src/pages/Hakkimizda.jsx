@@ -94,164 +94,96 @@ export default function Hakkimizda() {
           <div className="col-12 text-justify">
             <p />
             <p>
-              Kapılarını 2005 Haziran ayı başlarında açan Pera Müzesi, Suna ve
-              İnan Kıraç Vakfı’nın, kentin bu seçkin noktasında kültür-sanat
-              hizmeti vermek amacıyla hayata geçirdiği geniş kapsamlı bir kültür
-              girişiminin ilk adımıdır. Bu projede bir ‘müze-kültür merkezi’
-              işlevini üstlenen Pera Müzesi için, 1893 yılında mimar Achille
-              Manoussos’un İstanbul’un gözde semti Tepebaşı’nda inşa ettiği
-              yapı, Mimar M. Sinan Genim tarafından tümüyle elden geçirilerek
-              çağdaş donanımlı bir müzeye dönüştürülmüş ve hizmete sunulmuştur.
-              <br />
-              <br />
-              Suna ve İnan Kıraç Vakfı’na ait “Oryantalist Resim”, “Anadolu
-              Ağırlık ve Ölçüleri” ve “Kütahya Çini ve Seramikleri”
-              koleksiyonlarını ve bu koleksiyonların temsil ettiği değerleri;
-              sergiler, yayıncılık ürünleri, sözlü etkinlikler, film
-              gösterimleri, öğrenme programları ve bilimsel çalışmalar
-              aracılığıyla kamuyla paylaşan, gelecek kuşaklara aktarmayı
-              amaçlayan Pera Müzesi, süreli sergileriyle de dünya sanatının
-              önemli isimlerini ağırlamaktadır.
-              <br />
-              <br />
-              Aralarında Tate Britain, Victoria ve Albert Müzesi, St. Petersburg
-              Rus Devlet Müzesi, JP Morgan Chase Koleksiyonu, New York School of
-              Visual Arts, Maeght Vakfı gibi dünyanın önde gelen müze,
-              koleksiyon ve vakıflarıyla ortak projeler üreten Pera Müzesi,
-              düzenlediği dönemli sergilerle, Jean Dubuffet, Henri
-              Cartier-Bresson, Rembrandt, Niko Pirosmani, Josef Koudelka, Joan
-              Miró, Akira Kurosawa, Marc Chagall, Pablo Picasso, Fernando
-              Botero, Frida Kahlo, Diego Rivera, Goya, Manolo Valdés, Andy
-              Warhol, Cecil Beaton, Alberto Giacometti, Giorgio de Chirico,
-              Sergey Parajanov gibi dünyanın usta sanatçılarının yapıtlarını
-              ülkemiz sanatseverleriyle buluşturmuştur. Açıldığından bugüne her
-              yıl ulusal ve uluslararası eğitim ve sanat kurumlarıyla işbirliği
-              yaparak genç sanatçıları destekleyen sergiler de düzenleyen Pera
-              Müzesi, tüm sergilerini kitaplar, sözel etkinlikler ve öğrenme
-              programlarıyla da zenginleştirmektedir. Dönemsel programları ve
-              etkinlikleriyle dikkat çeken Pera Film ise ziyaretçilere ve sinema
-              meraklılarına, klasiklerden bağımsız filmlere, animasyon ve
-              belgesellere uzanan, kimi zaman sergilere paralel kapsamlı
-              gösterimler düzenlemektedir.
-              <br />
-              <br />
-              Kuruluşundan günümüze gerçekleştirdiği etkinliklerle Türkiye’nin
-              en nitelikli, öncü ve sevilen müzelerinden biri haline gelen Pera
-              Müzesi kentin bu çok canlı bölgesinde kapsamlı ve çağdaş bir
-              müze-kültür merkezi olarak hizmet vermektedir.
+              Dersim, politik ve kültürel birikimiyle hemen her zaman bir tür
+              “üniversite” şehri olmuştur. Her yaş grubundan insanlarının
+              okumaya, anlamaya, tartışmaya, öğrenmeye meraklı olduğu bu şehir,
+              sadece Türkiye’de değil, dünyada da büyük ölçüde bu özelliğiyle
+              bilinmektedir. Bunun yanısıra Türkiye genelinde de ençok göç veren
+              bölge yine Dersim olmuştur. Günümüz Tunceli ilinin tamamı ve
+              tarihi Dersim Coğrafyası‘ndan Almanya’ya göç edenlerin aile
+              bireyleriyle birlikte sayısı 460 binin üzerindedir. Yaklaşık onbeş
+              yıldan beri Türkiye’de başlayan Dersim’li akademisyenlerin bir
+              araya gelme girişimi, biz Avrupa’da yaşayan ve çalışan
+              akademisyenleri de kapsayarak, iş insanlarının ve kültür
+              emekçilerinin katkılarıyla 2014 yılında akademik bir Vakfın
+              kurulmasıyla sonuçlanmıştır. Avrupa’da ve Federal Almanya’da
+              Dersim kökenli akademik bir potansiyele sahip olduğumuz gibi çok
+              büyük bir oranda da kültür emekçileri ve iş insanı potansiyeline
+              sahibiz. Bu durum hem Türkiye’de hem de Türkiye dışında birçok
+              alanda mevcut olan akademik birikimin yanısıra iş ve kültür
+              dünyasını da kapsayan bir örgütlenmenin kalıcı bir kurumsallaşmaya
+              yönelik arayışlarını da beraberinde getirmiştir. Yaptığımız
+              araştırmalar Avrupa’da en uygun ve kalıcı bir kurumsallaşmanın
+              Müze çalışmasıyla sağlanabileceğini göstermektedir. Bu bağlamda
+              kamuoyuna bir grup girişimci (akademisyenler, kültür emekçileri,
+              iş insanları) olarak Almanya’da, sürgünde ilk etapta dijital bir
+              Ennografya ve Tarih Müzesi kurmak için çalışmalara başladığımızı
+              duyuruyoruz. Bu çağrıyla “Sürgünde Dersim Etnografya ve Tarih
+              Müzesi” kuruluş çalışmalarını kamuoyuna duyurarak sadece Dersim’li
+              akademisyenlerden, kültür emekçilerinden ve iş insanlarından
+              değil, aynı zamanda Dersim dostlarından ve çok kültürlülüğü
+              önemseyen kesimlerden de ciddi bir destek bekliyoruz. Bizler,
+              Türkiye dışında değişik ülkelerde yaşayan Dersimliler olarak,
+              insan potansiyelimiz, kültürel-sosyal yaşamdaki birikimlerimizle
+              müze gibi daha kalıcı bir kurumu inşa etmek, istiyoruz. Böylece
+              Dersim’in tarihi kültürel ve sosyal yaşamını dijital ortamda da
+              olsa gelecek kuşaklara miras bırakarak tarihimizin tümden
+              kaybolmasının önüne geçebileceğimize inanıyoruz. Kuracağımız
+              müzede sergilerin yanı sıra tarihi ve güncel belgeleri
+              (fotoğraflar, objeler, metinler, vb.) toplayarak dijital ortamda
+              korumaya alacağız. Müzede, birçok kültür ve inancın bir arada
+              yaşadığı Dersim Bölgesi’nin tarihi ile yaşatılan soykırımları
+              bilim dünyasının sunarak, öncelikle akademik ortamda işlenmesi ve
+              korunmasını amaçlıyoruz. Bunun yanısıra Tarihi Dersim Bölgesi’nden
+              göç ve göçün tarihi de müzede yerini alacaktır. Bulunduğumuz
+              Federal Almanya’da Dersim coğrafyasından gelen birinci kuşak
+              göçmenlerin tarihi tüm yönleriyle işlenip kamuoyuna sunulacaktır.
+              İlk etapta dijital olarak kurulacak olan Müze aktif bir web
+              platformu, bir dizi film ve kitap belgeselinin yanı sıra gezici
+              bir sergiyle de desteklenecektir. Dijital ortamda korunmaya
+              alınacak tarihi ve çağdaş eserler halka sunulacaktır. Müze aynı
+              zamanda bir eğitim kurumu işlevi de görecektir. Web sunumu
+              aracılığıyla Dersim Bölgesi’nden Almanya’ya göçün tarihini temel
+              alan bir eğitim programı, fotoğraflar, video sekansları,
+              animasyonlar ve metinlerle desteklenerek sanal bir kütüphanenin
+              oluşturulması sağlanarak, akademilerin,bilim insanlarının,
+              öğrencilerin ve gençlerin kullanımına sunulacktır. Metinler ve
+              objeler dijital müzede Kırmanci-Zazaki ve Kırdaski-Kürtçe’den
+              Türkçe, Almanca ve İngilizceye transkript edilip çevrilecek ve
+              dijitalleştirilerek daha ileri düzeyde işlenip yeniden
+              değerlendirilebilmesi için araştırmacıların ve diğer kurumların
+              kullanımına sunulacaktır. Böylece 1960’lı yıllarda Almanya’ya
+              göçmen işçi olarak gelen ve bugün dördüncü nesille ulaşmış bulunan
+              Dersimlilerin farklı ve çok yönlü tarihi görünür ve elle tutulur
+              kılınacaktır. Bulunduğumuz Federal Almanya’da çok kültürlü yaşamı
+              evrensel değerlerle, proje ve etkinlikler bazında destekleyip, din
+              ve inanç topluluklarının ortak değerlerde buluşması için çaba
+              harcıyacağız. Tarihimizin bir parçası olun. Bize vereceğiniz
+              destekle, Almanya gibi demokratik bir hukuk devletinde, bir
+              bölgenin tarihine hayat vererek kaybolup gitmesini önleyecek,
+              demokrasinin güçlenmesine katkıda bulunacaksınız. “Sürgünde Dersim
+              Müzesi” projesine araştırmacılar ve sponsorlar eşlik etmekte ve
+              destek vermektedir. “Sürgündeki Dersim Müzesi”, ” Perspektive
+              Vielfalt gGmbH – Kültürlerarası Araştırma ve Sosyal Hizmet
+              Enstitüsü” tarafından kurulmaktadır. Projenin daha da
+              geliştirilmesi için bağımsız olarak çalışan, özgürce karar veren
+              bir koordinasyon ve planlama ekibi olacaktır. Bağışlar, objeler,
+              belgeler, resimler, kitaplar vb. ile bize destek olmak isterseniz,
+              lütfen bizimle iletişime geçin. Bütün bunlara paralel olarak
+              NRW’de (Kuzey Ren-Vestfalya Eyaleti) müzeye uygun bir bina bulmaya
+              çalışıyoruz. Fikir Sizin hikayeniz bizim hikayemiz oldu, bizim ki
+              de sizin hikayeniz olacak. Şimdi hep birlikte geleceği yazacağız.
+              Hıdır Eren Çelik Iletişim Adresi: info@dersim-museum.de
+              Perspektive Vielfalt gGmbH –Institut für transkulturelle Forschung
+              und Soziale Arbeit Kalker Hauptstraße 165 | 51103 Köln | Mail:
+              info@perspektive-vielfalt.com Internet:
+              www.perspektive-veilfalt.com Handelsregister Amtsgericht Köln HRB
+              108207 | USt.-IdNr. DE Bankverbindung: Sparkasse KölnBonn IBAN:
+              DE18 3705 0198 1936 0389 99 BIC: COLSDE33XXX Bağışlar için hesap
+              nr.: Perspektive -Vielfalt Sparkasse KölnBonn IBAN: DE18 3705 0198
+              1936 0389 99 BIC: COLSDE33XXX Stichwort: Dersimmuseum
             </p>
             <p />
-          </div>
-        </div>
-        <hr style={{ "margin-top": "40px" }} />
-        <div className="row">
-          <div className="col-md-12">
-            <h4
-              className="fs-40"
-              style={{ "font-weight": "600", "margin-top": "40px" }}
-            >
-              Bina Tarihçesi
-            </h4>
-          </div>
-          <div className="col-md-12">
-            <img
-              className="img-fluid"
-              src="/images/Hakkımızda/202201-bina-tarihcesi.jpg"
-              title="About Us"
-              alt="Binanın Tarihçesi"
-            />
-          </div>
-          <div className="col-md-12  text-justify">
-            <span className="staticcontentbody">
-              <p>
-                <br />
-                Mimar Achille Manoussos’un, dönemin genel mimari karakterine
-                uygun olarak tasarladığı ve Ermeni Katolik Patrikhanesi’nin
-                mülkü olan Bristol Oteli’nin inşası 1893 yılında tamamlanır.
-              </p>
-              <p>
-                Şehrin önemli otelleri arasında sayılan ve üst düzey yabancı
-                konukları misafir eden Bristol Oteli, 1980’li yılların başına
-                kadar hizmette kalır.
-              </p>
-              <p>
-                Tuğla malzeme ile kâgir sistemde inşa edilen ve neoklasik
-                özellikler taşıyan Bristol Oteli’nin geniş bir lobisi, mermer
-                merdivenleri, asansörü, rahat süitleri, salonları ve müstakil
-                masa düzenine sahip ferah bir yemek salonu vardır.
-              </p>
-              <p>
-                Bristol Oteli’nin yıllar içinde Logothetti, Adamapoulos, Ciras
-                ve Hacara gibi meşhur işletmecileri olur, bölgenin değişen
-                demografik yapısını yansıtır biçimde 1930’ların başında binayı
-                satın alan Ömer Lütfi Bengü, oteli işletmeye 1980’lere kadar
-                devam eder.
-              </p>
-              <p>
-                Bristol Oteli 1980’li yıllarda yeni otellerle rekabet edemez
-                hale gelir. Otelin son sahibi Ömer Lütfi Bengü’nün 1983’teki
-                vefatından sonra, mirasçılarının satışa çıkardığı binayı önce
-                Yıldız Lastikçilik, ardından Esbank satın alır.
-              </p>
-              <p>
-                Bristol Oteli’ni Esbank’ın genel müdürlük binasına dönüştürmek
-                üzere, mimar Doğan Hasol yapıyı yeniler. Otel ile hemen
-                yanındaki beş katlı konut binasının Meşrutiyet Caddesi’ne bakan
-                cepheleri korunur ve iki parsel birleştirilir.
-              </p>
-              <p>
-                Bina 2002 yılına kadar Esbank Genel Müdürlüğü olarak hizmet
-                verir. Manoussos’un orijinal cephesi ve Hasol’un birleştirdiği
-                parseller korunarak, mimar Sinan Genim’in hazırladığı proje
-                doğrultusunda çağdaş ve donanımlı bir müze olarak yeniden
-                tasarlanır.
-              </p>
-            </span>
-          </div>
-        </div>
-        <hr style={{ "margin-top": "40px" }} />
-        <div className="row">
-          <div className="col-md-12 text-justify">
-            <h4
-              className="fs-40"
-              style={{ "font-weight": "600", "margin-top": "40px" }}
-            >
-              Suna ve İnan Kıraç Vakfı
-            </h4>
-            <span className="staticcontentbody">
-              <p>
-                Suna ve İnan Kıraç Vakfı; Suna Kıraç, İnan Kıraç ve İpek Kıraç
-                tarafindan 27 Ekim 2003 tarihinde, Türk toplumuna yararlı ve
-                yurtsever vatandaşlar yetiştirilmesi için, kişi ve kurumlara
-                maddi ve manevi imkanlar sağlamak, toplumsal hayata katkıda
-                bulunmak ve bu dogrultuda eğitim, kültür, sanat ve sağlık
-                alanlarında faaliyetlerde bulunmak amacıyla kurulmuştur.
-              </p>
-              <p>
-                Vakıf, eğitim alanındaki hedeflerini gerçekleştirmek üzere;
-                yardıma ihtiyacı olan yetenekli öğrenciler ile eğitim ve öğretim
-                kurumlarına gerekli görülecek her türlü yardımı yapmakta, burs
-                eğitim ve araştırma gibi imkanlar sağlayarak destek vermektedir.
-              </p>
-              <p>
-                Vakıf, kültür ve sanat alanında; tarih, sanat, kültür ve bilim
-                müzeleri ile her türlü sergi mekanları, araştırma ve uygulama
-                merkezleri, kütüphaneler ve enstitüler açmaya ve işletmeye,
-                koleksiyonlar oluşturmaya ve bunları sergilemeye yönelik
-                faaliyetlerde bulunmaktadır. Vakıf’ın bu alandaki faaliyetleri
-                arasında inceleme, araştırma ve kamuoyu yoklamaları yapmak veya
-                yaptırmak, dünyadaki çeşitli müzeler, vakıflar, sergi
-                merkezleri, araştırma ve uygulama merkezleri, kütüphaneler,
-                enstitü ve kuruluşlarla iş birligi yapmak da yer almaktadır.
-              </p>
-              <p>
-                <b>
-                  <a href="http://sunaveinankiracvakfi.org.tr" target="_out">
-                    sunaveinankiracvakfi.org.tr
-                  </a>
-                </b>
-              </p>
-            </span>
           </div>
         </div>
       </div>
