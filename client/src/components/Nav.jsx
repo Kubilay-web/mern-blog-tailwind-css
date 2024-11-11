@@ -154,7 +154,7 @@ const Nav = () => {
                   className="dropdown-item text-xl"
                   href="/sergi/dijital-sergiler"
                 >
-                  PERA FİLM SERGİLER
+                  DERSİM FİLM SERGİLER
                 </a>
                 <a
                   className="dropdown-item text-xl"

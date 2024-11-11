@@ -300,7 +300,7 @@ export default function Header() {
                     to="/sergi/dijital-sergiler"
                     onClick={handleLinkClick}
                   >
-                    PERA FİLM SERGİLER
+                    DERSİM FİLM SERGİLER
                   </Link>
                   <Link
                     className="dropdown-item"
