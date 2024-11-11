@@ -1,29 +1,6 @@
 import { useState, useEffect } from "react";
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
-  const [posts2, setPosts2] = useState([]);
-
-  const category = "Süreli Sergiler";
-  const category2 = "Koleksiyon Sergileri";
-
-  const fetchPosts = async (category, setPostFunc) => {
-    try {
-      const res = await fetch(
-        `/api/post/getposts/category?category=${category}`
-      );
-      const data = await res.json();
-      setPostFunc(data.posts);
-    } catch (error) {
-      console.error("Failed to fetch posts:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPosts(category, setPosts);
-    fetchPosts(category2, setPosts2);
-  }, [category, category2]);
-
   return (
     <div>
       <style
@@ -84,60 +61,6 @@ const Blog = () => {
         }}
       />
 
-      <div className="container">
-        <div className="row pt-7">
-          {posts && posts.length > 0 ? (
-            posts.slice(0, 1000).map((post, index) => {
-              let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
-
-              if (index === 0) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 1) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              if (index === 2) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 3) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              return (
-                <div key={post._id} className={`${colClass} mb-4`}>
-                  <a
-                    href={`/post/${post.slug}`}
-                    target="_self"
-                    className="no-link"
-                  >
-                    <div className="card mb-4 border-0">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        src={post.image}
-                        alt={post.altText}
-                      />
-                      <div className="card-body">
-                        <h3 className="card-title">{post.title}</h3>
-                        <p className="card-text">{post.content}</p>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <small className="text-muted">{post.author}</small>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              );
-            })
-          ) : (
-            <p>No posts available</p>
-          )}
-        </div>
-      </div>
-
       <div className="container pb-3 first-row">
         <div className="row">
           <div
@@ -152,21 +75,28 @@ const Blog = () => {
                     className="bd-placeholder-img card-img-top"
                     width="100%"
                     height="100%"
-                    src="/images/Blog/blog-1-0.jpg"
+                    src="/images/Blog/1-Ana Fatma.jpg"
                     alt="Gelecek Hatıraları"
                   />
                 </a>
                 <div className="card-body">
-                  <h3 className="bloglisttitle">Gelecek Hatıraları</h3>
+                  <h3 className="bloglisttitle">Ana Fatma</h3>
                   <p className="bloglistsummary"></p>
                   <p>
-                    Geleceği hatırlamaya çalışıyorsun. Tarihi bir saraydaki çini
-                    panoya resmedilen kuş duvarda yerini almış. Bir kilise ve
-                    caminin çinileri tuvallere boyanmış. Yüzlerce yıllık bir
-                    seramik tabağın deseni kadife bir perdede karşına çıkıyor.
-                    Eski bir vazonun kırık çiçekleri artık birer heykel. Yeşil
-                    bir bitki yapraklarını gündüz açıp gece kapatıyor.
-                  </p>{" "}
+                    Alevinin kültürünün en önemli sembolleri arasında yer alan
+                    ve her daim bereketi simgeleyen Ana Fatma'nın sırlarla dolu
+                    hikayesi burayı ziyarete gelenleri kendisine bağlamaktadır.
+                    Dersim-Ovacık yolu üzerinde bulunan ve Alevi kültürünün en
+                    önemli sembolleri arasında gösterilen Ana Fatma, her yıl
+                    binlerce ziyaretçiyi kendisine çekerek çıra yakılıp dua
+                    edilen yerlerdendir. Alevilik inancının merkezi kabul edilen
+                    Dersim’deki bu yer Munzur Vadisi üzerindedir. Kerbela’da
+                    katledilen Hz. Hasan ile Hüseyin’in anneleri olan Ana
+                    Fatma’nın her daim bereketi temsil ettiğine inanılmaktadır.
+                    Ana Fatma ziyaretgahı esasen bir su kaynağıdır. Daha
+                    sonrasında üzerine türbe yapılan bu yer her yıl binlerce
+                    kişi tarafından ziyaret edilmektedir.
+                  </p>
                   <p />
                 </div>
               </div>
@@ -227,23 +157,29 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/blog-4-1.jpg"
+                      src="/images/Blog/2-Munzur Baba.webp"
                       alt="Bölgenin Hafızası"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">Bölgenin Hafızası</h3>
+                    <h3 className="bloglisttitle">Munzur Baba</h3>
                     <p className="bloglistsummary"></p>
                     <p>
-                      Hafıza nesneleri ilişkilendikleri coğrafyanın da
-                      hafızasını taşır. Temel maddesi toprak olan seramikler
-                      üretildikleri coğrafyaya doğrudan bağlanır: Toprakla
-                      birebir ilişki kuran seramik, üretildiği toprağın
-                      hafızasını da barındırır. Kütahya’nın kaolini bol,
-                      dolayısıyla da seramik üretimine elverişli toprağı burada
-                      çeşitli tekniklerin gelişmesine ve seramik atölyelerinin
-                      kurulmasına sebep olmuştur.
-                    </p>{" "}
+                      Munzur Baba, Alevi inanç sisteminde önemli bir yeri olan
+                      ve özellikle Munzur Dağları çevresindeki halk tarafından
+                      büyük saygı gören bir halk erenidir. Munzur Baba, halk
+                      arasında sevgi, hoşgörü ve adaletin simgesi olarak kabul
+                      edilir. Özellikle Tunceli ilinin Munzur Dağları'nda
+                      yaşayan köylüler, ona olan derin bağlılıkları ve
+                      saygılarıyla tanınır. Munzur Baba'nın hayatı ve
+                      öğretileri, genellikle dostane bir yaklaşım, insanlara
+                      yardım etme ve doğayla uyum içinde yaşama üzerine
+                      şekillenmiştir. Efsanelere göre, o, zor zamanlarda halkını
+                      koruyan, onları adaletli bir şekilde yönlendiren ve ruhsal
+                      huzur arayışına katkı sunan bir kişilik olarak anlatılır.
+                      İnançlarına göre, Munzur Baba, hem bir mürşit hem de bir
+                      halk kahramanı olarak halkının manevi rehberi olmuştur.
+                    </p>
                     <p />
                   </div>
                 </div>
@@ -256,19 +192,28 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/blog-3-1.jpg"
+                      src="/images/Blog/4-Kureyş Baba.jpg"
                       alt="Nesnelerin Hafızası"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">Nesnelerin Hafızası</h3>
+                    <h3 className="bloglisttitle">Kureyş Baba</h3>
                     <p className="bloglistsummary"></p>
                     <p>
-                      Hediyelik eşyaların kültürel tarihini ele aldığı kitabında
-                      Rolf Potts bu tür nesnelerin kişisel hikâyelerle anlam
-                      kazandığından bahseder: Nesneler sakladıkları hikâyelerle
-                      hatıralara dönüşür. Hatıraları dünyayı değerlendirmek için
-                      değil, kendi hikâyemizi anlatmak için toplarız.
+                      Kureyş Baba, Türk halk inançlarında önemli bir yer tutan,
+                      özellikle Alevi ve Bektaşi geleneğinde saygı gören bir
+                      halk erenidir. Yaşamı hakkında çok fazla ayrıntılı bilgi
+                      bulunmamakla birlikte, Kureyş Baba'nın ismi genellikle
+                      "Kureyş" kabilesine mensup olduğuna ve İslam'ın ilk
+                      yıllarında yaşamış bir kişi olduğuna işaret eder. Ancak
+                      bazı kaynaklar, onun Anadolu'ya yerleşmiş bir halk önderi
+                      ve mürşit olduğunu ve özellikle Alevi-Bektaşi toplulukları
+                      arasında manevi bir lider olarak kabul edildiğini
+                      belirtir. Kureyş Baba'nın adı, onun hem soyu hem de halk
+                      arasında kazandığı yüksek manevi kimlik nedeniyle
+                      önemlidir. O, insanlara hoşgörü, adalet ve eşitlik gibi
+                      değerleri öğretmiş, halkı bir arada tutmak için çeşitli
+                      manevi yol göstericiliklerde bulunmuştur.
                       <sup>
                         <br />
                       </sup>
@@ -285,24 +230,144 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/rego-blog-kapak1.jpg"
+                      src="/images/Blog/5-Doğa Sporları.jpg"
                       alt="Akışkan Rego"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">Akışkan Rego</h3>
+                    <h3 className="bloglisttitle">Doğa Sporları</h3>
                     <p className="bloglistsummary"></p>
                     <p>
-                      Her ne kadar Rego, geç de olsa, çağının öncü
-                      feministlerinden biri olarak kabul edilmişse de, cinsel
-                      akışkanlığı ele alışıyla ilgili çok az şey yazılmıştır.
-                      Hatta çizim ve resimlerindeki sado-mazoşist akım,
-                      partiarka ile sömürülen kadın arasındaki klasik çatışmanın
-                      bir okuması olarak anlaşılmıştır. Türkiye ve Almanya’daki
-                      ilk müze sergileri, Rego’nun toplumsal cinsiyet ve kimlik
-                      hakkında sanıldığının çok ötesinde akışkan bir anlayışa
-                      sahip olduğunu gösteriyor.&nbsp;&nbsp;
+                      Rafting, zipline, yamaç paraşütü, kamping, at safari,
+                      trekking, dağcılık, doğa yürüyüşü, kaya tırmanışı, kayak,
+                      kış kampçılığı, yüzme… ve daha bir çok aktivitenin
+                      yapılabildiği bir merkezdir Tunceli. Doğa sporları
+                      turizminde ilk sırada olan Antalya'ya rakip olabilecek
+                      düzeydedir. Bütün bu aktivitelerden faydalanabilirsiniz.
+                      Tunceli önemli rafting bölgelerimizden bir tanesidir.
+                    </p>
+                    <p />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-12 mt-3">
+            <div className="row">
+              <div className="col-lg-3   col-md-4">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/blog/bolgenin-hafizasi/1610">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      width="100%"
+                      height="100%"
+                      src="/images/Blog/6-Munzur Extreme.jpg"
+                      alt="Bölgenin Hafızası"
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h3 className="bloglisttitle">Munzur Extreme</h3>
+                    <p className="bloglistsummary"></p>
+                    <p>
+                      Tunceli – Ovacık yolu 5.km ‘sinde, Ana Fatma Ziyareti
+                      yanında yer almaktadır. Eğer sizde hayatın
+                      koşuşturmasından kaçmak ve eğlenceli zaman geçirmek
+                      istiyorsanız Munzur Extrem Aktivite merkezi tam size göre.
+                      Güler yüzlü personeli eşliğinde rafting, zipline, yamaç
+                      paraşütü, kamping ve at safari yapabileceğiniz bir yer.
+                    </p>
+                    <p />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-4">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/blog/nesnelerin-hafizasi/1609">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      width="100%"
+                      height="100%"
+                      src="/images/Blog/7-Zirve Dağcılık.jpg"
+                      alt="Nesnelerin Hafızası"
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h3 className="bloglisttitle">Dağcılık</h3>
+                    <p className="bloglistsummary"></p>
+                    <p>
+                      Zirve Dağcılık Kulübü’nün, Tunceli Şubesi’nde size
+                      aradığınız adrenalini, eğlenceyi ve gerçek doğayı
+                      sunabilecek profesyonel bir ekip bulunmaktadır.
+                      Tunceli’deyseniz eğer, mutlaka yapılması gereken doğa
+                      sporlarının hemen hemen hepsi bu kulübün profesyonel ekibi
+                      tarafından sizlere sunulmakta.
+                      <sup>
+                        <br />
+                      </sup>
                     </p>{" "}
+                    <p />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3  col-md-4">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/blog/akiskan-rego/1599">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      width="100%"
+                      height="100%"
+                      src="/images/Blog/8-Kaplıcalar.jpg"
+                      alt="Akışkan Rego"
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h3 className="bloglisttitle">Kaplıcalar</h3>
+                    <p className="bloglistsummary"></p>
+                    <p>
+                      Kaplıca ve İçme Kaynakları Dedebağ (Bağın) Kaplıcası
+                      Mazgirt İlçesi, Dedebağ Köyündeki kaplıca, ilçe merkezine
+                      65 Km. uzaklıkta, Peri Suyu kenarındadır. III. öncelikli
+                      kaplıca sınıfına giren Bağın Kaplıcasında tek kaynaktan
+                      çıkan suyun akım değeri 5 lt/sn, sıcaklığı 35 oC, PH
+                      değeri 5.0’dır. Kaplıca suyu kalsiyum sülfatlı, sodyum
+                      sülfatlı ve klorür bikarbonatlı sular grubundandır. Banyo
+                      uygulamalarına elverişli olan bu sular, romatizmal
+                      hastalıklar, kırık-çıkık sekelleri ve kadın hastalıkları
+                      tedavisinde olumlu etki yapmaktadır.
+                    </p>
+                    <p />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3  col-md-4">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/blog/akiskan-rego/1599">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      width="100%"
+                      height="100%"
+                      src="/images/Blog/9-El Sanatları.jpg"
+                      alt="Akışkan Rego"
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h3 className="bloglisttitle">El Sanatları</h3>
+                    <p className="bloglistsummary"></p>
+                    <p>
+                      Tunceli’de geleneksel el sanatları arasında en yaygın
+                      olanlar halı, kilim, cicim ve palaz dokumacılığı,
+                      dericilik ve çanak-çömlek yapımıdır. Günümüzde halı ve
+                      kilim dokumacılığı ilçe merkezlerinde; çanak-çömlek yapımı
+                      ise daha çok köylerde yaygındır. Dokumacılık İlde temel
+                      ekonomik faaliyetin hayvancılık olması, geleneksel el
+                      sanatları arasında dokumacılığın ön plana çıkmasını
+                      sağlamıştır.
+                    </p>
                     <p />
                   </div>
                 </div>
@@ -314,7 +379,7 @@ const Blog = () => {
         <div className="row">
           <div className="col-12 mt-3">
             <div className="row">
-              <div className="col-md-2">
+              <div className="col-md-2 mb-3">
                 <span className="btn btn-block btn-outline-dark btn-rezerve BitcraftLang">
                   En Yeniler
                 </span>
@@ -751,21 +816,36 @@ const Blog = () => {
                           className="bd-placeholder-img card-img-top"
                           width="100%"
                           height="100%"
-                          src="/images/Blog/mk_cfa_000332_before_dsf4324-1-copy.jpg"
+                          src="/images/Blog/3-Sarı Saltuk.jpg"
                           alt="İstanbul: Öncesi & Sonrası"
                         />
                       </a>
                       <div className="card-body">
-                        <h3 className="bloglisttitle">
-                          İstanbul: Öncesi &amp; Sonrası
-                        </h3>
+                        <h3 className="bloglisttitle">Sarı Saltuk</h3>
                         <p className="bloglistsummary"></p>
                         <p>
-                          Suna ve İnan Kıraç Vakfı Fotoğraf Koleksiyonu’ndan
-                          seçtiğimiz, 1850’lerden 1980’lere tarihlenen İstanbul
-                          fotoğraflarındaki manzara ve mekanları, bu yerlerin
-                          günümüzdeki görünümleriyle birlikte sunuyoruz!
-                        </p>{" "}
+                          Sarı Saltuk, Anadolu'nun en önemli halk erenlerinden
+                          biri olarak, özellikle Alevi ve Bektaşi geleneğinde
+                          derin bir yer edinmiştir. Doğum yeri ve hayatı
+                          hakkında kesin bilgiler bulunmamakla birlikte, Sarı
+                          Saltuk'un, 13. yüzyılda, Osmanlı'nın ilk yıllarına
+                          yakın bir dönemde yaşamış bir halk önderi ve dini
+                          mürşit olduğu kabul edilir. Efsanelere göre, Sarı
+                          Saltuk, Osmanlı topraklarında İslam'ı yaymaya çalışan
+                          önemli bir mutasavvıftır. Adı, “sarı” sıfatıyla anılsa
+                          da, bu ismin kesin kökeni hakkında farklı rivayetler
+                          vardır. Bazı kaynaklar, onun sarı renkte bir elbise
+                          giymesinden dolayı bu adı aldığını söylerken, bazıları
+                          da onun ruhani özelliği ve bilgelik ışığını simgeleyen
+                          bir adlandırma olduğunu öne sürer. Sarı Saltuk'un
+                          öğretileri, sevgi, hoşgörü, insan hakları ve adalet
+                          üzerine odaklanır. O, halkı doğru yola yönlendirmek
+                          için sürekli olarak birleştirici bir rol oynamış ve
+                          özellikle zenginle fakir arasındaki sınıf farklarına
+                          karşı durmuştur. Kendisinin gönül yolu, insanları bir
+                          arada tutmayı ve birlikte yaşamanın gücünü kutlamayı
+                          amaçlar.
+                        </p>
                         <p />
                       </div>
                     </div>
