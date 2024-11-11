@@ -111,13 +111,13 @@ const Blog = () => {
                     className="bd-placeholder-img card-img-top"
                     width="100%"
                     height="100%"
-                    src="/images/Blog/blog-5-1.jpg"
+                    src="/images/Blog/31-Saz ve Bağlama.jpg"
                     alt="Geleceği Hatırlamak"
                   />
                 </a>
                 <div className="card-body">
                   <h3 className="bloglisttitle font-weight-bold">
-                    Geleceği Hatırlamak
+                    Saz ve Bağlama
                   </h3>
                 </div>
               </div>
@@ -131,13 +131,13 @@ const Blog = () => {
                     className="bd-placeholder-img card-img-top"
                     width="100%"
                     height="100%"
-                    src="/images/Blog/blog-2-1.jpg"
+                    src="/images/Blog/33-İnanç ve Toplum.jpg"
                     alt="Motiflerin Hatırlattıkları"
                   />
                 </a>
                 <div className="card-body">
                   <h3 className="bloglisttitle font-weight-bold">
-                    Motiflerin Hatırlattıkları
+                    İnanç ve Toplum
                   </h3>
                 </div>
               </div>
@@ -430,14 +430,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/mk_cfa_000332_before_dsf4324-1-copy.jpg"
+                                src="/images/Blog/3-Dövme Pilav.jpg"
                                 alt="İstanbul: Öncesi & Sonrası"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                İstanbul: Öncesi &amp; Sonrası
-                              </h3>
+                              <h3 className="bloglisttitle">Dövme Pilav</h3>
                             </div>
                           </div>
                         </div>
@@ -449,15 +447,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/carol.jpg"
-                                alt="Yılbaşının Öteki Yüzü: <br> Pera Film'den Alternatif Yılbaşı İzleme Listesi"
+                                src="/images/Blog/4-Dut Tatlısı.jpg"
+                                alt="Dut Tatlısı"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Yılbaşının Öteki Yüzü: <br /> Pera Film'den
-                                Alternatif Yılbaşı İzleme Listesi
-                              </h3>
+                              <h3 className="bloglisttitle">Dut Tatlısı</h3>
                             </div>
                           </div>
                         </div>
@@ -469,15 +464,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/blog-kapak-gorseli-in.jpg"
-                                alt="Isabel Muñoz ile Söyleşi<br> Merve Akar Akgün"
+                                src="/images/Blog/5-Gulik.jpeg"
+                                alt="Gulik"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Isabel Muñoz ile Söyleşi
-                                <br /> Merve Akar Akgün
-                              </h3>
+                              <h3 className="bloglisttitle">Gulik</h3>
                             </div>
                           </div>
                         </div>
@@ -489,13 +481,13 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/leyla-gediz-rego-3.jpg"
+                                src="/images/Blog/6-Halbur Hurması Tatlısı.jpg"
                                 alt="Paula Rego İstanbul’da!"
                               />
                             </a>
                             <div className="card-body">
                               <h3 className="bloglisttitle">
-                                Paula Rego İstanbul’da!
+                                Halbur Hurması Tatlısı
                               </h3>
                             </div>
                           </div>
@@ -508,14 +500,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/hafta3-4.jpg"
-                                alt="Zamane Öyküleri: Felis <br> Hande Ortaç"
+                                src="/images/Blog/7-Haşıl.jpg"
+                                alt="Haşıl"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Zamane Öyküleri: Felis <br /> Hande Ortaç
-                              </h3>
+                              <h3 className="bloglisttitle">Haşıl</h3>
                             </div>
                           </div>
                         </div>
@@ -527,15 +517,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/zamane-oykuleri-blog-2-2.jpg"
+                                src="/images/Blog/8-Mantar Yemeği.jpg"
                                 alt="Zamane Öyküleri: Cihangir <br>Özge Baykan Calafato"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Zamane Öyküleri: Cihangir <br />
-                                Özge Baykan Calafato
-                              </h3>
+                              <h3 className="bloglisttitle">Mantar Yemeği</h3>
                             </div>
                           </div>
                         </div>
@@ -551,14 +538,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/aftersun-blog-11-2.jpg"
+                                src="/images/Blog/9-İmam Çorbası.jpg"
                                 alt="Charlotte Wells’ten Bir Not"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Charlotte Wells’ten Bir Not
-                              </h3>
+                              <h3 className="bloglisttitle">İmam Çorbası</h3>
                             </div>
                           </div>
                         </div>
@@ -570,14 +555,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/cover2.jpg"
+                                src="/images/Blog/10-Mumbar Dolması.jpg"
                                 alt="Geceye Doğru: Cadılar Bayramı Özel"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Geceye Doğru: Cadılar Bayramı Özel
-                              </h3>
+                              <h3 className="bloglisttitle">Mumbar Dolması</h3>
                             </div>
                           </div>
                         </div>
@@ -589,14 +572,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/kahvemolasikapak.jpg"
+                                src="/images/Blog/11-Pekmez Helvası.jpg"
                                 alt="Osmanlı’da Kahve İkramı"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Osmanlı’da Kahve İkramı
-                              </h3>
+                              <h3 className="bloglisttitle">Pekmez Helvası</h3>
                             </div>
                           </div>
                         </div>
@@ -608,14 +589,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/kucuksaridaire_0013-1.jpeg"
+                                src="/images/Blog/12-Kabak Dolması.jpg"
                                 alt="Küçük Sarı Daire ile müzede keşifler!"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Küçük Sarı Daire ile müzede keşifler!
-                              </h3>
+                              <h3 className="bloglisttitle">Kabak Dolması</h3>
                             </div>
                           </div>
                         </div>
@@ -627,14 +606,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/superflex2.jpg"
+                                src="/images/Blog/13-Soğan Aşı.jpg"
                                 alt="Kopyalıyorum Öyleyse Varım"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Kopyalıyorum Öyleyse Varım
-                              </h3>
+                              <h3 className="bloglisttitle">Soğan Aşı</h3>
                             </div>
                           </div>
                         </div>
@@ -646,15 +623,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/blog-kruger-gorsel2.jpeg"
+                                src="/images/Blog/14-Şir.jpg"
                                 alt="Barbara Kruger’ın İktidar, Kapitalizm,  Kimlik ve Toplumsal Cinsiyete Odaklanan Pratiği Üzerine"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Barbara Kruger’ın İktidar, Kapitalizm, Kimlik ve
-                                Toplumsal Cinsiyete Odaklanan Pratiği Üzerine
-                              </h3>
+                              <h3 className="bloglisttitle">Şir</h3>
                             </div>
                           </div>
                         </div>
@@ -670,14 +644,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/seramik-blog-kapak.jpg"
+                                src="/images/Blog/15-Rafting.webp"
                                 alt="Gökyüzünden İyi Haberler"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Gökyüzünden İyi Haberler
-                              </h3>
+                              <h3 className="bloglisttitle">Rafting</h3>
                             </div>
                           </div>
                         </div>
@@ -689,14 +661,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/seramik-blog07.jpg"
+                                src="/images/Blog/16-Kaya Tırmanışı.jpg"
                                 alt="Dünyadan Güncel Seramikler: 10 Sanatçı, 10 Yapıt"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Dünyadan Güncel Seramikler: 10 Sanatçı, 10 Yapıt
-                              </h3>
+                              <h3 className="bloglisttitle">Kaya Tırmanışı</h3>
                             </div>
                           </div>
                         </div>
@@ -708,15 +678,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/kahin-serenatlari-3.jpeg"
+                                src="/images/Blog/17-Kampçılık.jfif"
                                 alt="Kâhin Serenatları | Güneşe Serenatlar, Kornelia Binicewicz"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Kâhin Serenatları | Güneşe Serenatlar, Kornelia
-                                Binicewicz
-                              </h3>
+                              <h3 className="bloglisttitle">Kampçılık</h3>
                             </div>
                           </div>
                         </div>
@@ -728,14 +695,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/kahin-02-2.jpeg"
+                                src="/images/Blog/18-Zipline.jpg"
                                 alt="Kâhin Serenatları I Güzel İnsanlar, Sarp Dakni"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Kâhin Serenatları I Güzel İnsanlar, Sarp Dakni
-                              </h3>
+                              <h3 className="bloglisttitle">Zipline</h3>
                             </div>
                           </div>
                         </div>
@@ -747,14 +712,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/kahin-serenatlari-04.jpeg"
+                                src="/images/Blog/19-Kış Sporları.jpg"
                                 alt="Kâhin Serenatları I İki Elli, Kübra Uzun"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Kâhin Serenatları I İki Elli, Kübra Uzun
-                              </h3>
+                              <h3 className="bloglisttitle">Kış Sporları</h3>
                             </div>
                           </div>
                         </div>
@@ -766,14 +729,12 @@ const Blog = () => {
                                 className="bd-placeholder-img card-img-top"
                                 width="100%"
                                 height="100%"
-                                src="/images/Blog/zonaro-05.jpg"
+                                src="/images/Blog/20-Dağcılık.webp"
                                 alt="Zamanının Tanığı: Fausto Zonaro"
                               />
                             </a>
                             <div className="card-body">
-                              <h3 className="bloglisttitle">
-                                Zamanının Tanığı: Fausto Zonaro
-                              </h3>
+                              <h3 className="bloglisttitle">Dağcılık</h3>
                             </div>
                           </div>
                         </div>
@@ -792,10 +753,7 @@ const Blog = () => {
               <div className="col-lg-4 col-md-4 mb-3">
                 <div className="card mb-0 border-0">
                   {/*shadow-sm eklenince güzel duruyor*/}
-                  <a
-                    href="https://www.youtube.com/user/PeraMuzesi?sub_confirmation=1"
-                    target="_blank"
-                  >
+                  <a href="https://www.youtube.com" target="_blank">
                     <img
                       className="bd-placeholder-img card-img-top"
                       width="100%"
@@ -893,12 +851,12 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/blog-1-0.jpg"
+                      src="/images/Blog/21-Sosyal.webp"
                       alt="Gelecek Hatıraları"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">Gelecek Hatıraları</h3>
+                    <h3 className="bloglisttitle">Sosyal</h3>
                   </div>
                 </div>
               </div>
@@ -910,12 +868,12 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/bruce-nauman-bana-bak.jpg"
+                      src="/images/Blog/22-Kültür.jpg"
                       alt="Bruce Nauman Bana Bak!"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">Bruce Nauman Bana Bak!</h3>
+                    <h3 className="bloglisttitle">Kültür</h3>
                   </div>
                 </div>
               </div>
@@ -927,14 +885,12 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/katherine-behar-12.jpg"
+                      src="/images/Blog/23-Pir Sultan.jpg"
                       alt="Gece Yarısı Hikâyeleri: Ruh <br> Aşkın Güngör"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">
-                      Gece Yarısı Hikâyeleri: Ruh <br /> Aşkın Güngör
-                    </h3>
+                    <h3 className="bloglisttitle">Pir Sultan</h3>
                   </div>
                 </div>
               </div>
@@ -946,12 +902,12 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/kapakson-2.jpg"
+                      src="/images/Blog/24-Çocuk Sokağı.webp"
                       alt="Pera Müzesi’nde Bir Gece"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">Pera Müzesi’nde Bir Gece</h3>
+                    <h3 className="bloglisttitle">Çocuk Sokağı</h3>
                   </div>
                 </div>
               </div>
@@ -963,14 +919,12 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/grayson-perry-1.jpg"
+                      src="/images/Blog/25-Seyit Rıza.webp"
                       alt="Mütevazı Bir Evrenin Ontolojisi"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">
-                      Mütevazı Bir Evrenin Ontolojisi
-                    </h3>
+                    <h3 className="bloglisttitle">Seyit Rıza</h3>
                   </div>
                 </div>
               </div>
@@ -982,12 +936,12 @@ const Blog = () => {
                       className="bd-placeholder-img card-img-top"
                       width="100%"
                       height="100%"
-                      src="/images/Blog/chlebowski1873mp705-2.jpg"
+                      src="/images/Blog/26-Kütüphane Durağı.jpeg"
                       alt="Chlebowski'nin Sultanı"
                     />
                   </a>
                   <div className="card-body">
-                    <h3 className="bloglisttitle">Chlebowski'nin Sultanı</h3>
+                    <h3 className="bloglisttitle">Kütüphane Durağı</h3>
                   </div>
                 </div>
               </div>
