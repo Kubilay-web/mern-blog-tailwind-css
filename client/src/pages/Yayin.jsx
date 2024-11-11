@@ -1,29 +1,6 @@
 import { useState, useEffect } from "react";
 
 const Yayin = () => {
-  const [posts, setPosts] = useState([]);
-  const [posts2, setPosts2] = useState([]);
-
-  const category = "Süreli Sergiler";
-  const category2 = "Koleksiyon Sergileri";
-
-  const fetchPosts = async (category, setPostFunc) => {
-    try {
-      const res = await fetch(
-        `/api/post/getposts/category?category=${category}`
-      );
-      const data = await res.json();
-      setPostFunc(data.posts);
-    } catch (error) {
-      console.error("Failed to fetch posts:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPosts(category, setPosts);
-    fetchPosts(category2, setPosts2);
-  }, [category, category2]);
-
   return (
     <div>
       <style
@@ -91,60 +68,6 @@ const Yayin = () => {
         }}
       />
 
-      <div className="container">
-        <div className="row pt-7">
-          {posts && posts.length > 0 ? (
-            posts.slice(0, 1000).map((post, index) => {
-              let colClass = "col-lg-6 col-md-6"; // Varsayılan üçlü düzen
-
-              if (index === 0) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 1) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              if (index === 2) {
-                // İlk kart 4'lük (yarım genişlik)
-                colClass = "col-lg-6";
-              } else if (index === 3) {
-                // İkinci kart 8'lik (tam genişlik)
-                colClass = "col-lg-6 col-md-12";
-              }
-
-              return (
-                <div key={post._id} className={`${colClass} mb-4`}>
-                  <a
-                    href={`/post/${post.slug}`}
-                    target="_self"
-                    className="no-link"
-                  >
-                    <div className="card mb-4 border-0">
-                      <img
-                        className="bd-placeholder-img card-img-top"
-                        width="100%"
-                        src={post.image}
-                        alt={post.altText}
-                      />
-                      <div className="card-body">
-                        <h3 className="card-title">{post.title}</h3>
-                        <p className="card-text">{post.content}</p>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <small className="text-muted">{post.author}</small>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              );
-            })
-          ) : (
-            <p>No posts available</p>
-          )}
-        </div>
-      </div>
-
       <div className="container first-row">
         <div className="row">
           <div className="col-md-12 mt-1">
@@ -185,16 +108,18 @@ const Yayin = () => {
                   <a href="/yayin/hesaplar-ve-tesadufler/3276">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/hesaplar-ve-tesadufler-katolog-2.jpg"
+                      src="/images/Yayınlar/1-Bişi.jpg"
                       alt="Hesaplar ve Tesadüfler"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Hesaplar ve Tesadüfler</h3>
+                    <h3 className="card-title">Bişi</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Bişi
+                    </p>
                   </div>
                 </div>
               </div>
@@ -204,17 +129,17 @@ const Yayin = () => {
                   <a href="/yayin/ters-yuz-pǝrɐ/1276">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/ters-yuz-pera-katolog.jpg"
+                      src="/images/Yayınlar/2-Dövme Çorba.jpg"
                       alt="Ters Yüz PƎRⱯ"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Ters Yüz PƎRⱯ</h3>
+                    <h3 className="card-title">Dövme Çorba</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Mekânlar ve Metinlerde Denemeler{" "}
+                      Dövme Çorba
                     </p>
                   </div>
                 </div>
@@ -225,16 +150,18 @@ const Yayin = () => {
                   <a href="/yayin/gelecek-hatiralari/1273">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/gelecek-hatiralari-yayin-kapak-gorseli.jpg"
+                      src="/images/Yayınlar/3-Dövme Pilav.jpg"
                       alt="Gelecek Hatıraları"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Gelecek Hatıraları</h3>
+                    <h3 className="card-title">Dövme Pilav</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Dövme Pilav
+                    </p>
                   </div>
                 </div>
               </div>
@@ -244,17 +171,17 @@ const Yayin = () => {
                   <a href="/yayin/tam-yerinden-/1272">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/tam-yerinden-cover.jpg"
+                      src="/images/Yayınlar/4-Dut Tatlısı.jpg"
                       alt="Tam Yerinden "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Tam Yerinden </h3>
+                    <h3 className="card-title">Dut Tatlısı</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      İstanbul’a Panoramik Bakışın Tarihi
+                      Dut Tatlısı
                     </p>
                   </div>
                 </div>
@@ -265,19 +192,17 @@ const Yayin = () => {
                   <a href="/yayin/isabel-munoz-yeni-bir-hikaye/1271">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/isabel-munoz-cover.jpg"
+                      src="/images/Yayınlar/5-Gulik.jpeg"
                       alt="Isabel Muñoz: Yeni Bir Hikâye"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">
-                      Isabel Muñoz: Yeni Bir Hikâye
-                    </h3>
+                    <h3 className="card-title">Gulik</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Göbeklitepe ve Çevresinden Fotoğraflar
+                      Gulik
                     </p>
                   </div>
                 </div>
@@ -288,16 +213,18 @@ const Yayin = () => {
                   <a href="/yayin/zamane-istanbullari/1267">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/zamane-ist-cover.jpg"
+                      src="/images/Yayınlar/6-Halbur Hurması Tatlısı.jpg"
                       alt="Zamane İstanbulları"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Zamane İstanbulları</h3>
+                    <h3 className="card-title">Halbur Hurması Tatlısı</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Halbur Hurması Tatlısı
+                    </p>
                   </div>
                 </div>
               </div>
@@ -341,16 +268,18 @@ const Yayin = () => {
                   <a href="/yayin/agirlik-ve-olcu-sanati-/1264">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/simdi-iyi-haberler-cover.jpg"
+                      src="/images/Yayınlar/7-Haşıl.jpg"
                       alt="Ağırlık ve Ölçü Sanatı "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Ağırlık ve Ölçü Sanatı </h3>
+                    <h3 className="card-title">Haşıl</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Haşıl
+                    </p>
                   </div>
                 </div>
               </div>
@@ -360,17 +289,17 @@ const Yayin = () => {
                   <a href="/yayin/kesisen-dunyalar-/165">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/kesisen-dunyalar.jpg"
+                      src="/images/Yayınlar/8-Mantar Yemeği.jpg"
                       alt="Kesişen Dünyalar "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Kesişen Dünyalar </h3>
+                    <h3 className="card-title">Mantar Yemeği</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Elçiler ve Ressamlar
+                      Mantar Yemeği
                     </p>
                   </div>
                 </div>
@@ -381,16 +310,18 @@ const Yayin = () => {
                   <a href="/yayin/anadolu-agirlik-ve-olculeri/130">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/aavo-kapak.jpg"
+                      src="/images/Yayınlar/9-İmam Çorbası.jpg"
                       alt="Anadolu Ağırlık ve Ölçüleri"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Anadolu Ağırlık ve Ölçüleri</h3>
+                    <h3 className="card-title">İmam Çorbası</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      İmam Çorbası
+                    </p>
                   </div>
                 </div>
               </div>
@@ -400,16 +331,18 @@ const Yayin = () => {
                   <a href="/yayin/duslerin-kenti-istanbul/131">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/duslerin-kenti-istanbul.jpg"
+                      src="/images/Yayınlar/10-Mumbar Dolması.jpg"
                       alt="Düşlerin Kenti: İstanbul"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Düşlerin Kenti: İstanbul</h3>
+                    <h3 className="card-title">Mumbar Dolması</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Mumbar Dolması
+                    </p>
                   </div>
                 </div>
               </div>
@@ -419,16 +352,18 @@ const Yayin = () => {
                   <a href="/yayin/imparatorluktan-portreler/132">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/imparatorluktan-portreler.jpg"
+                      src="/images/Yayınlar/11-Pekmez Helvası.jpg"
                       alt="İmparatorluktan Portreler"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">İmparatorluktan Portreler</h3>
+                    <h3 className="card-title">Pekmez Helvası</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Pekmez Helvası
+                    </p>
                   </div>
                 </div>
               </div>
@@ -438,16 +373,18 @@ const Yayin = () => {
                   <a href="/yayin/kutahya-cini-ve-seramikleri/133">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/kutahya-cini-ve-seramikleri.jpg"
+                      src="/images/Yayınlar/12-Kabak Dolması.jpg"
                       alt="Kütahya Çini ve Seramikleri"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Kütahya Çini ve Seramikleri</h3>
+                    <h3 className="card-title">Kabak Dolması</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Kabak Dolması
+                    </p>
                   </div>
                 </div>
               </div>
@@ -491,20 +428,17 @@ const Yayin = () => {
                   <a href="/yayin/ataturk’un-ziraat-muhendisi-ali-numan-kirac/2276">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/ali-numan-kirac.jpg"
+                      src="/images/Yayınlar/13-Soğan Aşı.jpg"
                       alt="Atatürk’ün Ziraat Mühendisi<br> Ali Numan Kıraç"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">
-                      Atatürk’ün Ziraat Mühendisi
-                      <br /> Ali Numan Kıraç
-                    </h3>
+                    <h3 className="card-title">Soğan Aşı</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Hulûsi Turgut
+                      Soğan Aşı
                     </p>
                   </div>
                 </div>
@@ -515,16 +449,18 @@ const Yayin = () => {
                   <a href="/yayin/fotograflarla-ataturk-/214">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/fotograflarla-ataturk.jpg"
+                      src="/images/Yayınlar/14-Şir.jpg"
                       alt="Fotoğraflarla Atatürk "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Fotoğraflarla Atatürk </h3>
+                    <h3 className="card-title">Şir </h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Şir
+                    </p>
                   </div>
                 </div>
               </div>
@@ -534,18 +470,17 @@ const Yayin = () => {
                   <a href="/yayin/idealler-gerceklesirken…/204">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/idealler-gerceklesirken.jpg"
+                      src="/images/Yayınlar/15-Rafting.webp"
                       alt="İdealler Gerçekleşirken…"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">İdealler Gerçekleşirken…</h3>
+                    <h3 className="card-title">Rafting</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Suna Kıraç’ın izinde 10 yılın öyküsü <br />
-                      Rıdvan Akar
+                      Rafting
                     </p>
                   </div>
                 </div>
@@ -556,16 +491,18 @@ const Yayin = () => {
                   <a href="/yayin/omrumden-uzun-ideallerim-var/189">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/omrumden-uzun-ideallerim-var.jpg"
+                      src="/images/Yayınlar/16-Kaya Tırmanışı.jpg"
                       alt="Ömrümden Uzun İdeallerim Var"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Ömrümden Uzun İdeallerim Var</h3>
+                    <h3 className="card-title">Kaya Tırmanışı</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
-                    />
+                    >
+                      Kaya Tırmanışı
+                    </p>
                   </div>
                 </div>
               </div>
@@ -575,20 +512,17 @@ const Yayin = () => {
                   <a href="/yayin/konstantiniyyeden-istanbula-/142">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/konstantiniyyeden-istanbula-iii-iv.jpg"
+                      src="/images/Yayınlar/17-Kampçılık.jfif"
                       alt="Konstantiniyye'den İstanbul'a "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">
-                      Konstantiniyye'den İstanbul'a{" "}
-                    </h3>
+                    <h3 className="card-title">Kampçılık</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      XIX.Yüzyıl Ortalarından XX.Yüzyıla Boğaziçi'nin Anadolu
-                      Yakası Fotoğrafları
+                      Kampçılık
                     </p>
                   </div>
                 </div>
@@ -599,20 +533,17 @@ const Yayin = () => {
                   <a href="/yayin/konstantiniyyeden-istanbula-/141">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/konstantiniyyeden-istanbula-i-ii.jpg"
+                      src="/images/Yayınlar/18-Zipline.jpg"
                       alt="Konstantiniyye'den İstanbul'a "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">
-                      Konstantiniyye'den İstanbul'a{" "}
-                    </h3>
+                    <h3 className="card-title">Zipline</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      XIX. Yüzyıl Ortalarından XX. Yüzyıla Boğaziçi'nin Rumeli
-                      Yakası Fotoğrafları
+                      Zipline
                     </p>
                   </div>
                 </div>
@@ -657,19 +588,17 @@ const Yayin = () => {
                   <a href="/yayin/mekanin-poetikasi-mekanin-politikasi/134">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/mekanin-poetikasi-mekanin-politikasi.jpg"
+                      src="/images/Yayınlar/19-Kış Sporları.jpg"
                       alt="Mekanın Poetikası, Mekanın Politikası"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">
-                      Mekanın Poetikası, Mekanın Politikası
-                    </h3>
+                    <h3 className="card-title">Kış Sporları</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Osmanlı İstanbulu ve Britanya Oryantalizmi
+                      Kış Sporları
                     </p>
                   </div>
                 </div>
@@ -714,17 +643,17 @@ const Yayin = () => {
                   <a href="/yayin/osman-hamdi-bey-/234">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/osman-hamdi-bey-kucuk-kitap.jpg"
+                      src="/images/Yayınlar/20-Dağcılık.webp"
                       alt="Osman Hamdi Bey "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Osman Hamdi Bey </h3>
+                    <h3 className="card-title">Dağcılık </h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Bir Osmanlı Aydını{" "}
+                      Dağcılık
                     </p>
                   </div>
                 </div>
@@ -735,17 +664,17 @@ const Yayin = () => {
                   <a href="/yayin/kahve-molasi/159">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/kahve-molasi.jpg"
+                      src="/images/Yayınlar/21-Sosyal.webp"
                       alt="Kahve Molası"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Kahve Molası</h3>
+                    <h3 className="card-title">Sosyal</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Kütahya Çini ve Seramiklerinde Kahvenin Serüveni{" "}
+                      Sosyal
                     </p>
                   </div>
                 </div>
@@ -756,17 +685,17 @@ const Yayin = () => {
                   <a href="/yayin/elgar-turkiye’de/157">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/elgar-turkiyede.jpg"
+                      src="/images/Yayınlar/22-Kültür.jpg"
                       alt="Elgar Türkiye’de"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Elgar Türkiye’de</h3>
+                    <h3 className="card-title">Kültür</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      İngiliz Bestecinin İstanbul ve İzmir Günleri
+                      Kültür
                     </p>
                   </div>
                 </div>
@@ -777,17 +706,17 @@ const Yayin = () => {
                   <a href="/yayin/yusuf-agah-efendi-/143">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/yusuf-agah-efendi.jpg"
+                      src="/images/Yayınlar/23-Pir Sultan.jpg"
                       alt="Yusuf Agâh Efendi "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Yusuf Agâh Efendi </h3>
+                    <h3 className="card-title">Pir Sultan </h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      18. Yüzyıl Londrası’nda İlk Türk Büyükelçi
+                      Pir Sultan
                     </p>
                   </div>
                 </div>
@@ -832,17 +761,17 @@ const Yayin = () => {
                   <a href="/yayin/bu-bir-ask-sarkisi-degil-/180">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/this-is-not-a-love-song.jpg"
+                      src="/images/Yayınlar/24-Çocuk Sokağı.webp"
                       alt="Bu Bir Aşk Şarkısı Değil "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Bu Bir Aşk Şarkısı Değil </h3>
+                    <h3 className="card-title">Çocuk Sokağı</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Video Sanatı ve Pop Müzik İlişkisi
+                      Çocuk Sokağı
                     </p>
                   </div>
                 </div>
@@ -853,17 +782,17 @@ const Yayin = () => {
                   <a href="/yayin/uryan-ciplak-nu/179">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/uryan-ciplak-nu.jpg"
+                      src="/images/Yayınlar/25-Seyit Rıza.webp"
                       alt="Üryan, Çıplak, Nü"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Üryan, Çıplak, Nü</h3>
+                    <h3 className="card-title">Seyit Rıza</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Türk Resminde Bir Modernleşme Öyküsü
+                      Seyit Rıza
                     </p>
                   </div>
                 </div>
@@ -874,17 +803,17 @@ const Yayin = () => {
                   <a href="/yayin/gunumuz-imgeleri/177">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/gunumuz-imgeleri.jpg"
+                      src="/images/Yayınlar/26-Kütüphane Durağı.jpeg"
                       alt="Günümüz İmgeleri"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Günümüz İmgeleri</h3>
+                    <h3 className="card-title">Kütüphane Durağı</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Saraybosna Güzel Sanatlar Akademisi’nden Yapıtlar
+                      Kütüphane Durağı
                     </p>
                   </div>
                 </div>
@@ -895,17 +824,17 @@ const Yayin = () => {
                   <a href="/yayin/kesisen-dunyalar-/165">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/kesisen-dunyalar.jpg"
+                      src="/images/Yayınlar/28-Dokumacılık.jpg"
                       alt="Kesişen Dünyalar "
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Kesişen Dünyalar </h3>
+                    <h3 className="card-title">Dokumacılık </h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Elçiler ve Ressamlar
+                      Dokumacılık
                     </p>
                   </div>
                 </div>
@@ -916,17 +845,17 @@ const Yayin = () => {
                   <a href="/yayin/col-ve-deniz-arasinda/18">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/col-ve-deniz-arasinda.jpg"
+                      src="/images/Yayınlar/29-Çanak Çömlek.jpg"
                       alt="Çöl ve Deniz Arasında"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Çöl ve Deniz Arasında</h3>
+                    <h3 className="card-title">Çanak Çömlek</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Ürdün Güzel Sanatlar Galerisi’nden Bir Seçki
+                      Çanak Çömlek
                     </p>
                   </div>
                 </div>
@@ -937,24 +866,224 @@ const Yayin = () => {
                   <a href="/yayin/deneyimin-otesi/21">
                     <img
                       className="bd-placeholder-img card-img-top"
-                      src="/images/Yayınlar/deneyimin-otesi.jpg"
+                      src="/images/Yayınlar/30-Ahşap.jpg"
                       alt="Deneyimin Ötesi"
                     />
                   </a>
                   <div className="card-body" align="center">
-                    <h3 className="card-title">Deneyimin Ötesi</h3>
+                    <h3 className="card-title">Ahşap</h3>
                     <p
                       className="card-text"
                       style={{ "font-size": "18px !important" }}
                     >
-                      Dokuz Eylül Üniversitesi Güzel Sanatlar Fakültesi Öğrenci
-                      Projeleri
+                      Ahşap
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* ///////////////////////// */}
+          <div className="col-md-12 mt-3">
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/bu-bir-ask-sarkisi-degil-/180">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/30-Cacım Sanatı.jpg"
+                      alt="Bu Bir Aşk Şarkısı Değil "
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">Cacım Sanatı</h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      Cacım Sanatı
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/uryan-ciplak-nu/179">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/30-Dericilik.jpg"
+                      alt="Üryan, Çıplak, Nü"
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">Dericilik</h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      Dericilik
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/gunumuz-imgeleri/177">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/31-Saz ve Bağlama.jpg"
+                      alt="Günümüz İmgeleri"
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">Saz ve Bağlama</h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      Saz ve Bağlama
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/kesisen-dunyalar-/165">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/32-İnanç ve Gelenek.jpg"
+                      alt="Kesişen Dünyalar "
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">İnanç ve Gelenek </h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      İnanç ve Gelenek
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/col-ve-deniz-arasinda/18">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/32-İnancımız.jpg"
+                      alt="Çöl ve Deniz Arasında"
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">İnancımız</h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      İnancımız
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/deneyimin-otesi/21">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/33-İnanç ve Toplum.jpg"
+                      alt="Deneyimin Ötesi"
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">İnanç ve Toplum</h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      İnanç ve Toplum
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-12 mt-3">
+            <div className="row">
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/kesisen-dunyalar-/165">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/34-Cemevi.jpg"
+                      alt="Kesişen Dünyalar "
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">Cemevi</h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      Cemevi
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/col-ve-deniz-arasinda/18">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/34-İnanç ve Kültür.jfif"
+                      alt="Çöl ve Deniz Arasında"
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">İnanç ve Kültür</h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      İnanç ve Kültür
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
+                <div className="card mb-0 border-0">
+                  {/*shadow-sm eklenince güzel duruyor*/}
+                  <a href="/yayin/deneyimin-otesi/21">
+                    <img
+                      className="bd-placeholder-img card-img-top"
+                      src="/images/Yayınlar/35-İnanç ve Hayat.webp"
+                      alt="Deneyimin Ötesi"
+                    />
+                  </a>
+                  <div className="card-body" align="center">
+                    <h3 className="card-title">İnanç ve Hayat</h3>
+                    <p
+                      className="card-text"
+                      style={{ "font-size": "18px !important" }}
+                    >
+                      İnanç ve Hayat
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div
             className="col-md-12 mt-3"
             style={{ margin: "0 0 40px 0" }}
