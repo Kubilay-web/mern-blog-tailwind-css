@@ -83,14 +83,14 @@ export default function Hakkimizda() {
         style={{ "margin-bottom": "50px" }}
       >
         <div className="row">
-          <div className="col-md-12">
+          {/* <div className="col-md-12">
             <img
               className="img-fluid"
               src="/images/Hakkımızda/pera-muzesi-hakkimizda.jpg"
               title="Hakkımızda"
               alt="Pera Müzesi Ön Cephe"
             />
-          </div>
+          </div> */}
           <div className="col-12 text-justify">
             <p />
             <p>
