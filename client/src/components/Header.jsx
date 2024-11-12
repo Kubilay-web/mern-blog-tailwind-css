@@ -403,7 +403,7 @@ export default function Header() {
                 aria-expanded="false"
                 data-bc={3}
               >
-                PERA ÖĞRENME
+                DERSİM ÖĞRENME
                 <img
                   style={{ display: "none" }}
                   className="d-lg-none d-md-none topImg"
@@ -429,7 +429,7 @@ export default function Header() {
                   className="dropdown-item dropdown-menuitem"
                   href="/pera-ogrenme-hakkinda"
                 >
-                  PERA ÖĞRENME HAKKINDA
+                  DERSİM ÖĞRENME HAKKINDA
                 </a>
                 <img
                   className="d-none d-lg-none subImg float-right mb-3"
@@ -449,7 +449,7 @@ export default function Header() {
                 aria-expanded="false"
                 data-bc={4}
               >
-                PERA FİLM
+                DERSİM FİLM
                 <img
                   style={{ display: "none" }}
                   className="d-lg-none d-md-none topImg"
@@ -472,7 +472,7 @@ export default function Header() {
                   className="dropdown-item dropdown-menuitem"
                   href="/pera-film-hakkinda"
                 >
-                  PERA FİLM HAKKINDA
+                  DERSİM FİLM HAKKINDA
                 </a>
                 <img
                   className="d-none d-lg-none subImg float-right mb-3"
@@ -688,12 +688,12 @@ export default function Header() {
               <a
                 className="nav-link dropdown-toggle  nav-link22"
                 href="#"
-                onClick={() => handleDropdownToggle("PERA ÖĞRENME")}
+                onClick={() => handleDropdownToggle("DERSİM ÖĞRENME")}
               >
                 EĞİTİM
               </a>
 
-              {openDropdown === "PERA ÖĞRENME" && (
+              {openDropdown === "DERSİM ÖĞRENME" && (
                 <div className="dropdown-menu show">
                   <Link
                     className="dropdown-item"
@@ -724,12 +724,12 @@ export default function Header() {
               <a
                 className="nav-link dropdown-toggle  nav-link22"
                 href="#"
-                onClick={() => handleDropdownToggle("PERA FİLM")}
+                onClick={() => handleDropdownToggle("DERSİM FİLM")}
               >
                 DİJİTAL
               </a>
 
-              {openDropdown === "PERA FİLM" && (
+              {openDropdown === "DERSİM FİLM" && (
                 <div className="dropdown-menu show">
                   <Link
                     className="dropdown-item"
