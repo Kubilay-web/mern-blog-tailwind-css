@@ -2321,7 +2321,7 @@ select:focus {
 
   nav.ml-auto.mb-3.navbar.navbar-expand-lg.navbar-light.border-top.border-bottom.border-dark.sticky-top.navbarheight.ptnew-0 {
     visibility: visible !important;
-    padding: 0px 30px 0px 30px !important;
+    padding: 10px 10px 0px 10px !important;
   }
 
   .navbar-collapse.collapse.show {

@@ -299,7 +299,6 @@ export default function Header() {
                 <a className="dropdown-item dropdown-menuitem" href="/ziyaret">
                   ZİYARETİNİZİ PLANLAYIN
                 </a>
-                {/*<a class="dropdown-item dropdown-menuitem" href="#">PERA MÜZESİ DOSTLUK PROGRAMI</a>*/}
                 <a
                   className="dropdown-item dropdown-menuitem"
                   href="/pera-muzesi-hakkinda"
@@ -313,13 +312,7 @@ export default function Header() {
                 >
                   ARTSHOP
                 </a>
-                <a
-                  className="dropdown-item dropdown-menuitem"
-                  href="/perakart"
-                  target="_out"
-                >
-                  PERA MÜZESİ DOSTLUK PROGRAMI
-                </a>
+
                 <img
                   className="d-none d-lg-none subImg float-right mb-3"
                   style={{ marginTop: "-40px" }}
