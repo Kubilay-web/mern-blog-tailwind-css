@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 
 const Yayin = () => {
   const [posts, setPosts] = useState([]);
-
-  const category = "Yayin-Süreli-Sergi";
+  const [posts2, setPosts2] = useState([]);
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
@@ -11,16 +10,22 @@ const Yayin = () => {
         `/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
-      setPostFunc(data.posts);
+      setPostFunc(data.posts); // Doğru veriyi ayarlamak için `data.posts` kullanılır
     } catch (error) {
-      console.error("Failed to fetch posts:", error);
+      console.error(`Failed to fetch posts for category ${category}:`, error);
     }
   };
 
   useEffect(() => {
-    // Fetch posts for the first category
-    fetchPosts(category, setPosts);
-  }, [category]);
+    const category1 = "Yayin-Süreli-Sergi";
+    const category2 = "Yayin-Koleksiyon-Sergi";
+
+    // İlk kategori için postları çek
+    fetchPosts(category1, setPosts);
+
+    // İkinci kategori için postları çek
+    fetchPosts(category2, setPosts2);
+  }, []);
 
   return (
     <div>
@@ -288,6 +293,7 @@ const Yayin = () => {
               >
                 <p>Koleksiyon Sergi Katalogları</p>
               </div>
+
               <div className="col-md-2 dontshowonmobile">
                 <a
                   className="text-dark"
@@ -310,11 +316,45 @@ const Yayin = () => {
               </div>
             </div>
           </div>
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts2 && posts2.length > 0 ? (
+                posts2.slice(0, 6).map((post2) => (
+                  <div key={post2._id} className="col-lg-2 col-md-4 mb-4">
+                    <a
+                      href={`/post/${post2.slug}`}
+                      target="_self"
+                      className="no-link"
+                    >
+                      <div className="card mb-4 border-0">
+                        <img
+                          className="bd-placeholder-img card-img-top"
+                          width="100%"
+                          src={post2.image}
+                          alt={post2.altText || "Post image"}
+                        />
+                        <div className="card-body">
+                          <h3 className="card-title">{post2.title}</h3>
+                          <p className="card-text">{post2.content}</p>
+                          <div className="d-flex justify-content-between align-items-center">
+                            <small className="text-muted">{post2.author}</small>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                ))
+              ) : (
+                <p>No posts available</p>
+              )}
+            </div>
+          </div>
+          {/* 
           <div className="col-md-12 mt-3">
             <div className="row">
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/yayin/agirlik-ve-olcu-sanati-/1264">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -335,7 +375,6 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/yayin/kesisen-dunyalar-/165">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -356,7 +395,6 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/yayin/anadolu-agirlik-ve-olculeri/130">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -377,7 +415,6 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/yayin/duslerin-kenti-istanbul/131">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -398,7 +435,6 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/yayin/imparatorluktan-portreler/132">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -419,7 +455,6 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/yayin/kutahya-cini-ve-seramikleri/133">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -439,7 +474,7 @@ const Yayin = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="col-md-12 mt-5">
             <div className="row justify-content-center align-items-center">
               <div
