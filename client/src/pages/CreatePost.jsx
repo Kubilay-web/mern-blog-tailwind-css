@@ -166,6 +166,9 @@ export default function CreatePost() {
             </option>
 
             <option value="Cagdas-Tarih">Cagdas-Tarih</option>
+            <option value="Cagdas-Tarih-En-Yeniler">
+              Cagdas-Tarih-En-Yeniler
+            </option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">

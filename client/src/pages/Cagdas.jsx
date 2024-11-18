@@ -18,10 +18,13 @@ const Cagdas = () => {
 
   useEffect(() => {
     const category1 = "Cagdas-Tarih";
-    const category2 = "Cagdas-En-Yeniler";
+    const category2 = "Cagdas-Tarih-En-Yeniler";
 
     // İlk kategori için postları çek
     fetchPosts(category1, setPosts);
+
+    // İkinci kategori için postları çek
+    fetchPosts(category2, setPosts2);
   }, []);
 
   return (
@@ -465,6 +468,7 @@ const Cagdas = () => {
         </div>
 
         <div className="blogHorizontalDivider" />
+
         <div className="row">
           <div className="col-12 mt-3">
             <div className="row">
@@ -473,6 +477,7 @@ const Cagdas = () => {
                   En Yeniler
                 </span>
               </div>
+
               <div className="col-md-10 float-right ml-auto dontshowonmobile">
                 <ul
                   className="pagination justify-content-end"
@@ -504,6 +509,43 @@ const Cagdas = () => {
               </div>
             </div>
             <div className="hideondesktop mt-3"></div>
+
+            <div className="container">
+              <div className="row pt-7">
+                {posts2 && posts.length > 0 ? (
+                  posts2.slice(0, 1000).map((post2, index) => (
+                    <div key={posts2._id} className="col-lg-4 col-md-4 mb-4">
+                      <a
+                        href={`/post/${post2.slug}`}
+                        target="_self"
+                        className="no-link"
+                      >
+                        <div className="card mb-4 border-0">
+                          <img
+                            className="bd-placeholder-img card-img-top"
+                            width="100%"
+                            src={post2.image}
+                            alt={post2.altText}
+                          />
+                          <div className="card-body">
+                            <h3 className="card-title">{post2.title}</h3>
+                            <p className="card-text">{post2.content}</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small className="text-muted">
+                                {post2.author}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  ))
+                ) : (
+                  <p>No posts available</p>
+                )}
+              </div>
+            </div>
+
             <div className="row">
               <div className="col-md-12">
                 {/*<div id="carouselNewest" class="carousel slide" data-ride="carousel"> data-ride silindi, animasyon kapatıldı. */}
