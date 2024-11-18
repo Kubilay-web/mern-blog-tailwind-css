@@ -9,12 +9,10 @@ const postSchema = new mongoose.Schema(
     content: {
       type: String,
       required: true,
-      unique: true,
     },
     blogContent: {
       type: String,
       required: true,
-      unique: true,
     },
     title: {
       type: String,

@@ -510,42 +510,6 @@ const Cagdas = () => {
             </div>
             <div className="hideondesktop mt-3"></div>
 
-            <div className="container">
-              <div className="row pt-7">
-                {posts2 && posts.length > 0 ? (
-                  posts2.slice(0, 1000).map((post2, index) => (
-                    <div key={posts2._id} className="col-lg-4 col-md-4 mb-4">
-                      <a
-                        href={`/post/${post2.slug}`}
-                        target="_self"
-                        className="no-link"
-                      >
-                        <div className="card mb-4 border-0">
-                          <img
-                            className="bd-placeholder-img card-img-top"
-                            width="100%"
-                            src={post2.image}
-                            alt={post2.altText}
-                          />
-                          <div className="card-body">
-                            <h3 className="card-title">{post2.title}</h3>
-                            <p className="card-text">{post2.content}</p>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <small className="text-muted">
-                                {post2.author}
-                              </small>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  ))
-                ) : (
-                  <p>No posts available</p>
-                )}
-              </div>
-            </div>
-
             <div className="row">
               <div className="col-md-12">
                 {/*<div id="carouselNewest" class="carousel slide" data-ride="carousel"> data-ride silindi, animasyon kapatıldı. */}
@@ -553,6 +517,49 @@ const Cagdas = () => {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <div className="container">
+                        <div className="row pt-7">
+                          {posts2 && posts.length > 0 ? (
+                            posts2.slice(0, 6).map((post2, index) => (
+                              <div
+                                key={posts2._id}
+                                className="col-lg-2 col-md-12 mb-4"
+                              >
+                                <a
+                                  href={`/post/${post2.slug}`}
+                                  target="_self"
+                                  className="no-link"
+                                >
+                                  <div className="card mb-4 border-0">
+                                    <img
+                                      className="bd-placeholder-img card-img-top"
+                                      width="100%"
+                                      src={post2.image}
+                                      alt={post2.altText}
+                                    />
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        {post2.title}
+                                      </h3>
+                                      <p className="card-text">
+                                        {post2.content}
+                                      </p>
+                                      <div className="d-flex justify-content-between align-items-center">
+                                        <small className="text-muted">
+                                          {post2.author}
+                                        </small>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            ))
+                          ) : (
+                            <p>No posts available</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* <div className="container">
                         <div className="row pt-7">
                           {posts && posts.length > 0 ? (
                             posts.slice(3, 1000).map((post, index) => (
@@ -593,7 +600,7 @@ const Cagdas = () => {
                             <p>No posts available</p>
                           )}
                         </div>
-                      </div>
+                      </div> */}
                       {/* 
                       <div className="row">
                         <div className="col-lg-2   col-md-2">
@@ -706,14 +713,14 @@ const Cagdas = () => {
                     <div className="carousel-item">
                       <div className="container">
                         <div className="row pt-7">
-                          {posts && posts.length > 0 ? (
-                            posts.slice(3, 1000).map((post, index) => (
+                          {posts2 && posts2.length > 0 ? (
+                            posts2.slice(6, 12).map((post2, index) => (
                               <div
-                                key={post._id}
+                                key={post2._id}
                                 className="col-lg-3 col-md-3 mb-4"
                               >
                                 <a
-                                  href={`/post/${post.slug}`}
+                                  href={`/post/${post2.slug}`}
                                   target="_self"
                                   className="no-link"
                                 >
@@ -721,19 +728,19 @@ const Cagdas = () => {
                                     <img
                                       className="bd-placeholder-img card-img-top"
                                       width="100%"
-                                      src={post.image}
-                                      alt={post.altText}
+                                      src={post2.image}
+                                      alt={post2.altText}
                                     />
                                     <div className="card-body">
                                       <h3 className="card-title">
-                                        {post.title}
+                                        {post2.title}
                                       </h3>
                                       <p className="card-text">
-                                        {post.content}
+                                        {post2.content}
                                       </p>
                                       <div className="d-flex justify-content-between align-items-center">
                                         <small className="text-muted">
-                                          {post.author}
+                                          {post2.author}
                                         </small>
                                       </div>
                                     </div>
