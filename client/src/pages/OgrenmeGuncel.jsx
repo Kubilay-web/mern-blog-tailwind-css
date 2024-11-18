@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 
 export default function OgrenmeGuncel() {
   const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
 
   const category = "Eğitim-Güncel";
+  const category2 = "Eğitim-Güncel-Ogrenme";
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
@@ -18,18 +20,15 @@ export default function OgrenmeGuncel() {
   };
 
   useEffect(() => {
+    // Fetch posts for the first category
     fetchPosts(category, setPosts);
-  }, [category]);
+
+    // Fetch posts for the second category
+    fetchPosts(category2, setPosts2);
+  }, [category, category2]);
 
   return (
     <div>
-      <style
-        dangerouslySetInnerHTML={{
-          __html:
-            "\n        .ptnew-0 {\n            padding-left: 0rem !important;\n            padding-right: 0rem !important;\n        }\n\n        .ptnew-1 {\n            padding-left: 1rem !important;\n            padding-right: 1rem !important;\n        }\n    ",
-        }}
-      />
-
       <div className="container">
         <div className="row ptnew">
           <div className="col-lg-8 col-md-7 col-sm-12 align-self-center ptnew2">
@@ -347,11 +346,68 @@ export default function OgrenmeGuncel() {
               </div>
             </div>
           </div> */}
-          <div className="col-md-12 mt-3">
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts2 && posts2.length > 0 ? (
+                posts2.slice(0, 4).map((post2, index) => {
+                  let colClass = "col-lg-4 col-md-12"; // Varsayılan üçlü düzen
+
+                  if (index === 0) {
+                    // İlk kart 4'lük (yarım genişlik)
+                    colClass = "col-lg-4";
+                  } else if (index === 1) {
+                    // İkinci kart 8'lik (tam genişlik)
+                    colClass = "col-lg-4 col-md-12";
+                  }
+
+                  if (index === 2) {
+                    // İlk kart 4'lük (yarım genişlik)
+                    colClass = "col-lg-4";
+                  } else if (index === 3) {
+                    // İkinci kart 8'lik (tam genişlik)
+                    colClass = "col-lg-4 col-md-12";
+                  }
+
+                  return (
+                    <div key={post2._id} className={`${colClass} mb-4`}>
+                      <a
+                        href={`/post/${post2.slug}`}
+                        target="_self"
+                        className="no-link"
+                      >
+                        <div className="card mb-4 border-0">
+                          <img
+                            className="bd-placeholder-img card-img-top"
+                            width="100%"
+                            src={post2.image}
+                            alt={post2.altText}
+                          />
+                          <div className="card-body">
+                            <h3 className="card-title">{post2.title}</h3>
+                            <p className="card-text">{post2.content}</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small className="text-muted">
+                                {post2.author}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  );
+                })
+              ) : (
+                <p>No posts available</p>
+              )}
+            </div>
+          </div>
+
+          {/* <div className="col-md-12 mt-3">
             <div className="row">
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+              
                   <a href="/dersim-ogrenme/grup/okul-gruplari/5">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -370,7 +426,7 @@ export default function OgrenmeGuncel() {
               </div>
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+               
                   <a href="/dersim-ogrenme/grup/ogretmenler/4">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -391,7 +447,7 @@ export default function OgrenmeGuncel() {
               </div>
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                
                   <a href="/dersim-ogrenme/grup/pera-engelsiz/6">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -413,7 +469,7 @@ export default function OgrenmeGuncel() {
               </div>
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+               
                   <a href="/dersim-ogrenme/grup/pera-cocuk/1">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -435,7 +491,7 @@ export default function OgrenmeGuncel() {
               </div>
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+             
                   <a href="/dersim-ogrenme/grup/pera-genc/2">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -456,7 +512,7 @@ export default function OgrenmeGuncel() {
               </div>
               <div className="col-lg-4 mt-3  col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                 
                   <a href="/dersim-ogrenme/grup/pera-yetiskin/3">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -476,7 +532,7 @@ export default function OgrenmeGuncel() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div
             className="col-md-12 mt-3"
             style={{ margin: "0 0 40px 0" }}

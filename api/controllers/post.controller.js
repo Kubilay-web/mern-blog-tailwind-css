@@ -1,30 +1,17 @@
 import Post from "../models/post.model.js";
 import { errorHandler } from "../utils/error.js";
 
-// export const create = async (req, res, next) => {
-//   if (!req.user.isAdmin) {
-//     return next(errorHandler(403, "You are not allowed to create a post"));
-//   }
-//   if (!req.body.title || !req.body.content || !req.body.blogContent) {
-//     return next(errorHandler(400, "Please provide all required fields"));
-//   }
-//   const slug = req.body.title
-//     .split(" ")
-//     .join("-")
-//     .toLowerCase()
-//     .replace(/[^a-zA-Z0-9-]/g, "");
-//   const newPost = new Post({
-//     ...req.body,
-//     slug,
-//     userId: req.user.id,
-//   });
-//   try {
-//     const savedPost = await newPost.save();
-//     res.status(201).json(savedPost);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+const createSlug = (title, userId) => {
+  const baseSlug = title
+    .trim()
+    .split(" ")
+    .join("-")
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9-]/g, "");
+
+  const timestamp = Date.now(); // Benzersiz zaman damgası
+  return `${baseSlug}-${timestamp}`;
+};
 
 export const create = async (req, res, next) => {
   if (!req.user.isAdmin) {
@@ -34,26 +21,51 @@ export const create = async (req, res, next) => {
     return next(errorHandler(400, "Please provide all required fields"));
   }
 
-  // Generate the slug from the title without checking for uniqueness
-  const slug = req.body.title
-    .split(" ")
-    .join("-")
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9-]/g, "");
-
-  const newPost = new Post({
-    ...req.body,
-    slug,
-    userId: req.user.id,
-  });
-
   try {
+    // Benzersiz slug oluştur
+    const slug = await createSlug(req.body.title);
+
+    const newPost = new Post({
+      ...req.body,
+      slug,
+      userId: req.user.id,
+    });
+
     const savedPost = await newPost.save();
     res.status(201).json(savedPost);
   } catch (error) {
     next(error);
   }
 };
+
+// export const create = async (req, res, next) => {
+//   if (!req.user.isAdmin) {
+//     return next(errorHandler(403, "You are not allowed to create a post"));
+//   }
+//   if (!req.body.title || !req.body.content || !req.body.blogContent) {
+//     return next(errorHandler(400, "Please provide all required fields"));
+//   }
+
+//   // Generate the slug from the title without checking for uniqueness
+//   const slug = req.body.title
+//     .split(" ")
+//     .join("-")
+//     .toLowerCase()
+//     .replace(/[^a-zA-Z0-9-]/g, "");
+
+//   const newPost = new Post({
+//     ...req.body,
+//     slug,
+//     userId: req.user.id,
+//   });
+
+//   try {
+//     const savedPost = await newPost.save();
+//     res.status(201).json(savedPost);
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 export const getposts = async (req, res, next) => {
   try {
@@ -75,7 +87,7 @@ export const getposts = async (req, res, next) => {
         ],
       }),
     })
-      .sort({ createdAt: 1 }) // Artan sıraya göre (en eski postlar önce)
+      .sort({ createdAt: 1 })
       .skip(startIndex)
       .limit(limit);
 
