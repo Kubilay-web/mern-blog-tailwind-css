@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 const Yayin = () => {
   const [posts, setPosts] = useState([]);
   const [posts2, setPosts2] = useState([]);
+  const [posts3, setPosts3] = useState([]);
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
@@ -19,12 +20,14 @@ const Yayin = () => {
   useEffect(() => {
     const category1 = "Yayin-Süreli-Sergi";
     const category2 = "Yayin-Koleksiyon-Sergi";
+    const category3 = "Yayin-Dersim-Vakfi";
 
     // İlk kategori için postları çek
     fetchPosts(category1, setPosts);
 
     // İkinci kategori için postları çek
     fetchPosts(category2, setPosts2);
+    fetchPosts(category3, setPosts3);
   }, []);
 
   return (
@@ -505,11 +508,46 @@ const Yayin = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-12 mt-3">
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts3 && posts3.length > 0 ? (
+                posts3.slice(0, 1000).map((post3) => (
+                  <div key={post3._id} className="col-lg-2 col-md-4 mb-4">
+                    <a
+                      href={`/post/${post3.slug}`}
+                      target="_self"
+                      className="no-link"
+                    >
+                      <div className="card mb-4 border-0">
+                        <img
+                          className="bd-placeholder-img card-img-top"
+                          width="100%"
+                          src={post3.image}
+                          alt={post3.altText || "Post image"}
+                        />
+                        <div className="card-body">
+                          <h3 className="card-title">{post3.title}</h3>
+                          <p className="card-text">{post3.content}</p>
+                          <div className="d-flex justify-content-between align-items-center">
+                            <small className="text-muted">{post3.author}</small>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                ))
+              ) : (
+                <p>No posts available</p>
+              )}
+            </div>
+          </div>
+
+          {/* <div className="col-md-12 mt-3">
             <div className="row">
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+         
                   <a href="/yayin/ataturk’un-ziraat-muhendisi-ali-numan-kirac/2276">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -530,7 +568,7 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+             
                   <a href="/yayin/fotograflarla-ataturk-/214">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -551,7 +589,7 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+  
                   <a href="/yayin/idealler-gerceklesirken…/204">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -572,7 +610,7 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+      
                   <a href="/yayin/omrumden-uzun-ideallerim-var/189">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -593,7 +631,7 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+             
                   <a href="/yayin/konstantiniyyeden-istanbula-/142">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -614,7 +652,7 @@ const Yayin = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+              
                   <a href="/yayin/konstantiniyyeden-istanbula-/141">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -634,7 +672,7 @@ const Yayin = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="col-md-12 mt-5">
             <div className="row justify-content-center align-items-center">
               <div
