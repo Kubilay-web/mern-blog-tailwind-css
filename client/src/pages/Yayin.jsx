@@ -136,7 +136,7 @@ const Yayin = () => {
           <div className="container">
             <div className="row pt-7">
               {posts && posts.length > 0 ? (
-                posts.slice(0, 6).map((post, index) => (
+                posts.slice(0, 1000).map((post, index) => (
                   <div key={post._id} className="col-lg-2 col-md-4 mb-4">
                     <a
                       href={`/post/${post.slug}`}

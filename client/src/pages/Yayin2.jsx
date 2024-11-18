@@ -1,6 +1,27 @@
 import { useState, useEffect } from "react";
 
 const Yayin2 = () => {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts); // Doğru veriyi ayarlamak için `data.posts` kullanılır
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Yayin-Süreli-Sergi";
+
+    // İlk kategori için postları çek
+    fetchPosts(category1, setPosts);
+  }, []);
+
   return (
     <div>
       <style
@@ -70,109 +91,44 @@ const Yayin2 = () => {
           <div className="col-md-12">
             <p className="border-bottom border-secondary" />
           </div>
-          <div className="col-md-12 mt-3">
-            <div className="row">
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/hesaplar-ve-tesadufler/3276">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın2/1-Bişi.jpg"
-                      alt="Bişi"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Bişi</h3>
-                    <p className="card-text">Bişi</p>
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts && posts.length > 0 ? (
+                posts.slice(0, 1000).map((post, index) => (
+                  <div key={post._id} className="col-lg-2 col-md-4 mb-4">
+                    <a
+                      href={`/post/${post.slug}`}
+                      target="_self"
+                      className="no-link"
+                    >
+                      <div className="card mb-4 border-0">
+                        <img
+                          className="bd-placeholder-img card-img-top"
+                          width="100%"
+                          src={post.image}
+                          alt={post.altText}
+                        />
+                        <div className="card-body">
+                          <h3 className="card-title">{post.title}</h3>
+                          <p className="card-text">{post.content}</p>
+                          <div className="d-flex justify-content-between align-items-center">
+                            <small className="text-muted">{post.author}</small>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
                   </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/ters-yuz-pǝrɐ/1276">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın2/2-Dövme Çorba.jpg"
-                      alt="Ters Yüz PƎRⱯ"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Dövme Çorba</h3>
-                    <p className="card-text">Dövme Çorba</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/gelecek-hatiralari/1273">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın2/3-Dövme Pilav.jpg"
-                      alt="Dövme Pilav"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Dövme Pilav</h3>
-                    <p className="card-text">Dövme Pilav</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/tam-yerinden-/1272">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın2/4-Dut Tatlısı.jpg"
-                      alt="Tam Yerinden "
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Dut Tatlısı </h3>
-                    <p className="card-text">Dut Tatlısı</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/isabel-munoz-yeni-bir-hikaye/1271">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın2/5-Gulik.jpeg"
-                      alt="Isabel Muñoz: Yeni Bir Hikâye"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Gulik</h3>
-                    <p className="card-text">Gulik</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/zamane-istanbullari/1267">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın2/6-Halbur Hurması Tatlısı.jpg"
-                      alt="Zamane İstanbulları"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Halbur Hurması Tatlısı</h3>
-                    <p className="card-text" />
-                  </div>
-                </div>
-              </div>
+                ))
+              ) : (
+                <p>No posts available</p>
+              )}
             </div>
           </div>
+
           <div
             className="col-md-12 mt-3"
-            style={{ margin: "0 0 40px 0" }}
+            style={{ margin: "0 0 30px 0" }}
           ></div>
         </div>
       </div>

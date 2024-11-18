@@ -1,6 +1,26 @@
 import { useState, useEffect } from "react";
 
 const Yayin13 = () => {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts); // Doğru veriyi ayarlamak için `data.posts` kullanılır
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Yayin-Dijital";
+
+    // İlk kategori için postları çek
+    fetchPosts(category1, setPosts);
+  }, []);
   return (
     <div>
       <style
@@ -70,11 +90,47 @@ const Yayin13 = () => {
           <div className="col-md-12">
             <p className="border-bottom border-secondary" />
           </div>
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts && posts.length > 0 ? (
+                posts.slice(0, 1000).map((post, index) => (
+                  <div key={post._id} className="col-lg-2 col-md-4 mb-4">
+                    <a
+                      href={`/post/${post.slug}`}
+                      target="_self"
+                      className="no-link"
+                    >
+                      <div className="card mb-4 border-0">
+                        <img
+                          className="bd-placeholder-img card-img-top"
+                          width="100%"
+                          src={post.image}
+                          alt={post.altText}
+                        />
+                        <div className="card-body">
+                          <h3 className="card-title">{post.title}</h3>
+                          <p className="card-text">{post.content}</p>
+                          <div className="d-flex justify-content-between align-items-center">
+                            <small className="text-muted">{post.author}</small>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                ))
+              ) : (
+                <p>No posts available</p>
+              )}
+            </div>
+          </div>
+
+          {/* 
           <div className="col-md-12 mt-3">
             <div className="row">
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                
                   <a href="/yayin/bu-bir-ask-sarkisi-degil-/180">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -90,7 +146,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                
                   <a href="/">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -106,7 +162,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                 
                   <a href="/yayin/gunumuz-imgeleri/177">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -122,7 +178,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+       
                   <a href="/yayin/kesisen-dunyalar-/165">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -138,7 +194,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+          
                   <a href="/yayin/col-ve-deniz-arasinda/18">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -154,7 +210,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+         
                   <a href="/yayin/deneyimin-otesi/21">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -170,7 +226,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+            
                   <a href="/yayin/temelde-insan/31">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -186,7 +242,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+             
                   <a href="/yayin/ihsan-cemal-karaburcak/28">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -202,7 +258,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+             
                   <a href="/yayin/csontvary-/32">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -218,7 +274,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+            
                   <a href="/yayin/osmanli-donanmasinin-seyir-defteri/43">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -234,7 +290,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+          
                   <a href="/yayin/isleyen-mekan/113">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -250,7 +306,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                
                   <a href="/yayin/pirosmani/114">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -266,7 +322,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+               
                   <a href="/yayin/el-le/124">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -282,7 +338,7 @@ const Yayin13 = () => {
               </div>
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+        
                   <a href="/yayin/avci-mehmed’in-alay-i-humayunu/126">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -299,7 +355,7 @@ const Yayin13 = () => {
 
               <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+           
                   <a href="/yayin/kadinlar-resimler-oykuler/122">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -314,7 +370,8 @@ const Yayin13 = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+
           <div
             className="col-md-12 mt-3"
             style={{ margin: "0 0 40px 0" }}

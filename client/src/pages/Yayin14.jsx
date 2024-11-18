@@ -1,4 +1,26 @@
+import { useState, useEffect } from "react";
+
 const Yayin14 = () => {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts); // Doğru veriyi ayarlamak için `data.posts` kullanılır
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Yayin-Sempozyum";
+
+    // İlk kategori için postları çek
+    fetchPosts(category1, setPosts);
+  }, []);
   return (
     <div>
       <style
@@ -68,26 +90,41 @@ const Yayin14 = () => {
           <div className="col-md-12">
             <p className="border-bottom border-secondary" />
           </div>
-          <div className="col-md-12 mt-3">
-            <div className="row">
-              <div className="col-lg-2 col-md-2 col-6 mr10 mb-5">
-                <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
-                  <a href="/yayin/mekanin-poetikasi-mekanin-politikasi/134">
-                    <img
-                      className="bd-placeholder-img card-img-top"
-                      src="/images/Yayın14/19-Kış Sporları.jpg"
-                      alt="Mekanın Poetikası, Mekanın Politikası"
-                    />
-                  </a>
-                  <div className="card-body">
-                    <h3 className="card-title">Kış Sporları</h3>
-                    <p className="card-text">Kış Sporları</p>
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts && posts.length > 0 ? (
+                posts.slice(0, 1000).map((post, index) => (
+                  <div key={post._id} className="col-lg-2 col-md-4 mb-4">
+                    <a
+                      href={`/post/${post.slug}`}
+                      target="_self"
+                      className="no-link"
+                    >
+                      <div className="card mb-4 border-0">
+                        <img
+                          className="bd-placeholder-img card-img-top"
+                          width="100%"
+                          src={post.image}
+                          alt={post.altText}
+                        />
+                        <div className="card-body">
+                          <h3 className="card-title">{post.title}</h3>
+                          <p className="card-text">{post.content}</p>
+                          <div className="d-flex justify-content-between align-items-center">
+                            <small className="text-muted">{post.author}</small>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
                   </div>
-                </div>
-              </div>
+                ))
+              ) : (
+                <p>No posts available</p>
+              )}
             </div>
           </div>
+
           <div
             className="col-md-12 mt-3"
             style={{ margin: "0 0 40px 0" }}
