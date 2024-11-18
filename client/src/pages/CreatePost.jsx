@@ -127,6 +127,9 @@ export default function CreatePost() {
             <option value="Yayin-Süreli-Sergi">Yayin-Süreli-Sergi</option>
             <option value="Yayin-Dersim-Vakfi">Yayin-Dersim-Vakfi</option>
             <option value="Yayin-Sempozyum">Yayin-Sempozyum</option>
+            <option value="Yayin-Küçük-Kitaplar-Dizisi">
+              Yayin-Küçük-Kitaplar-Dizisi
+            </option>
             <option value="Yayin-Koleksiyon-Sergi">
               Yayin-Koleksiyon-Sergi
             </option>
@@ -137,6 +140,7 @@ export default function CreatePost() {
             <option value="Dijital-2023">Dijital-2023</option>
             <option value="Dijital-2024">Dijital-2024</option>
             <option value="Dijital-Tüm-Sergi">Dijital-Tüm-Sergi</option>
+            <option value="Yayin-Dijital">Yayin-Dijital</option>
             <option value="Dijital-Tüm-Koleksiyon">
               Dijital-Tüm-Koleksiyon
             </option>
