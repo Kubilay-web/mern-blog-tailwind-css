@@ -160,6 +160,15 @@ export default function UpdatePost() {
             <option value="Sergi-2024"> Sergi-2024</option>
             <option value="Eğitim-Güncel">Eğitim-Güncel</option>
             <option value="Eğitim-Güncel-Ogrenme">Eğitim-Güncel-Ogrenme</option>
+            <option value="Yayin-Süreli-Sergi">Yayin-Süreli-Sergi</option>
+            <option value="Yayin-Dersim-Vakfi">Yayin-Dersim-Vakfi</option>
+            <option value="Yayin-Sempozyum">Yayin-Sempozyum</option>
+            <option value="Yayin-Küçük-Kitaplar-Dizisi">
+              Yayin-Küçük-Kitaplar-Dizisi
+            </option>
+            <option value="Yayin-Koleksiyon-Sergi">
+              Yayin-Koleksiyon-Sergi
+            </option>
             <option value="Eğitim-Programlar">Eğitim-Programlar</option>
             <option value="Eğitim-2023">Eğitim-2023</option>
             <option value="Eğiitm-2024">Eğiitm-2024</option>
@@ -167,6 +176,7 @@ export default function UpdatePost() {
             <option value="Dijital-2023">Dijital-2023</option>
             <option value="Dijital-2024">Dijital-2024</option>
             <option value="Dijital-Tüm-Sergi">Dijital-Tüm-Sergi</option>
+            <option value="Yayin-Dijital">Yayin-Dijital</option>
             <option value="Dijital-Tüm-Koleksiyon">
               Dijital-Tüm-Koleksiyon
             </option>
@@ -190,6 +200,8 @@ export default function UpdatePost() {
             <option value="Soykırım ve Soykırım Araştırmaları">
               Soykırım ve Soykırım Araştırmaları
             </option>
+
+            <option value="Cagdas-Tarih">Cagdas-Tarih</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">

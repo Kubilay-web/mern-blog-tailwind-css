@@ -164,6 +164,8 @@ export default function CreatePost() {
             <option value="Soykırım ve Soykırım Araştırmaları">
               Soykırım ve Soykırım Araştırmaları
             </option>
+
+            <option value="Cagdas-Tarih">Cagdas-Tarih</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
