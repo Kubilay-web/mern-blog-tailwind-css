@@ -552,10 +552,53 @@ const Cagdas = () => {
                 <div id="carouselNewest" className="carousel slide">
                   <div className="carousel-inner">
                     <div className="carousel-item active">
+                      <div className="container">
+                        <div className="row pt-7">
+                          {posts && posts.length > 0 ? (
+                            posts.slice(3, 1000).map((post, index) => (
+                              <div
+                                key={post._id}
+                                className="col-lg-3 col-md-3 mb-4"
+                              >
+                                <a
+                                  href={`/post/${post.slug}`}
+                                  target="_self"
+                                  className="no-link"
+                                >
+                                  <div className="card mb-4 border-0">
+                                    <img
+                                      className="bd-placeholder-img card-img-top"
+                                      width="100%"
+                                      src={post.image}
+                                      alt={post.altText}
+                                    />
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        {post.title}
+                                      </h3>
+                                      <p className="card-text">
+                                        {post.content}
+                                      </p>
+                                      <div className="d-flex justify-content-between align-items-center">
+                                        <small className="text-muted">
+                                          {post.author}
+                                        </small>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            ))
+                          ) : (
+                            <p>No posts available</p>
+                          )}
+                        </div>
+                      </div>
+                      {/* 
                       <div className="row">
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                 
                             <a href="/blog/istanbul-oncesi-sonrasi/1605">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -572,7 +615,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                        
                             <a href="/blog/yilbasinin-oteki-yuzu-pera-filmden-alternatif-yilbasi-izleme-listesi/1603">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -589,7 +632,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                      
                             <a href="/blog/isabel-munoz-ile-soylesi-merve-akar-akgun/1601">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -606,7 +649,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                         
                             <a href="/blog/paula-rego-istanbul’da/1597">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -625,7 +668,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                         
                             <a href="/blog/zamane-oykuleri-felis-hande-ortac/1595">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -642,7 +685,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                            
                             <a href="/blog/zamane-oykuleri-cihangir-ozge-baykan-calafato/1593">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -657,13 +700,57 @@ const Cagdas = () => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
+
                     <div className="carousel-item">
-                      <div className="row">
+                      <div className="container">
+                        <div className="row pt-7">
+                          {posts && posts.length > 0 ? (
+                            posts.slice(3, 1000).map((post, index) => (
+                              <div
+                                key={post._id}
+                                className="col-lg-3 col-md-3 mb-4"
+                              >
+                                <a
+                                  href={`/post/${post.slug}`}
+                                  target="_self"
+                                  className="no-link"
+                                >
+                                  <div className="card mb-4 border-0">
+                                    <img
+                                      className="bd-placeholder-img card-img-top"
+                                      width="100%"
+                                      src={post.image}
+                                      alt={post.altText}
+                                    />
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        {post.title}
+                                      </h3>
+                                      <p className="card-text">
+                                        {post.content}
+                                      </p>
+                                      <div className="d-flex justify-content-between align-items-center">
+                                        <small className="text-muted">
+                                          {post.author}
+                                        </small>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            ))
+                          ) : (
+                            <p>No posts available</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* <div className="row">
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                  
                             <a href="/blog/charlotte-wells’ten-bir-not/1590">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -680,7 +767,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                          
                             <a href="/blog/geceye-dogru-cadilar-bayrami-ozel/1589">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -697,7 +784,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                       
                             <a href="/blog/osmanli’da-kahve-ikrami/1587">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -714,7 +801,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                      
                             <a href="/blog/kucuk-sari-daire-ile-muzede-kesifler/1585">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -731,7 +818,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                          
                             <a href="/blog/kopyaliyorum-oyleyse-varim/1583">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -748,7 +835,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                         
                             <a href="/blog/barbara-kruger’in-iktidar-kapitalizm-kimlik-ve-toplumsal-cinsiyete-odaklanan-pratigi-uzerine/1581">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -763,13 +850,57 @@ const Cagdas = () => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
+
                     <div className="carousel-item">
-                      <div className="row">
+                      <div className="container">
+                        <div className="row pt-7">
+                          {posts && posts.length > 0 ? (
+                            posts.slice(3, 1000).map((post, index) => (
+                              <div
+                                key={post._id}
+                                className="col-lg-3 col-md-3 mb-4"
+                              >
+                                <a
+                                  href={`/post/${post.slug}`}
+                                  target="_self"
+                                  className="no-link"
+                                >
+                                  <div className="card mb-4 border-0">
+                                    <img
+                                      className="bd-placeholder-img card-img-top"
+                                      width="100%"
+                                      src={post.image}
+                                      alt={post.altText}
+                                    />
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        {post.title}
+                                      </h3>
+                                      <p className="card-text">
+                                        {post.content}
+                                      </p>
+                                      <div className="d-flex justify-content-between align-items-center">
+                                        <small className="text-muted">
+                                          {post.author}
+                                        </small>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            ))
+                          ) : (
+                            <p>No posts available</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* <div className="row">
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                          
                             <a href="/blog/gokyuzunden-iyi-haberler/1578">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -786,7 +917,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                     
                             <a href="/blog/dunyadan-guncel-seramikler-10-sanatci-10-yapit/1576">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -803,7 +934,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                          
                             <a href="/blog/kahin-serenatlari-gunese-serenatlar-kornelia-binicewicz/1574">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -820,7 +951,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                       
                             <a href="/blog/kahin-serenatlari-i-guzel-insanlar-sarp-dakni/1572">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -837,7 +968,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                 
                             <a href="/blog/kahin-serenatlari-i-iki-elli-kubra-uzun/1570">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -854,7 +985,7 @@ const Cagdas = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
+                           
                             <a href="/blog/zamaninin-tanigi-fausto-zonaro/1568">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -869,7 +1000,7 @@ const Cagdas = () => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -973,10 +1104,46 @@ const Cagdas = () => {
                 </a>
               </div>
             </div>
-            <div className="row  mt-3">
+
+            <div className="container">
+              <div className="row pt-7">
+                {posts && posts.length > 0 ? (
+                  posts.slice(3, 1000).map((post, index) => (
+                    <div key={post._id} className="col-lg-3 col-md-3 mb-4">
+                      <a
+                        href={`/post/${post.slug}`}
+                        target="_self"
+                        className="no-link"
+                      >
+                        <div className="card mb-4 border-0">
+                          <img
+                            className="bd-placeholder-img card-img-top"
+                            width="100%"
+                            src={post.image}
+                            alt={post.altText}
+                          />
+                          <div className="card-body">
+                            <h3 className="card-title">{post.title}</h3>
+                            <p className="card-text">{post.content}</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small className="text-muted">
+                                {post.author}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  ))
+                ) : (
+                  <p>No posts available</p>
+                )}
+              </div>
+            </div>
+
+            {/* <div className="row  mt-3">
               <div className="col-lg-2 col-md-2  ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/gelecek-hatiralari/1607">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -993,7 +1160,6 @@ const Cagdas = () => {
               </div>
               <div className="col-lg-2 col-md-2  ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/bruce-nauman-bana-bak/1240">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -1010,7 +1176,6 @@ const Cagdas = () => {
               </div>
               <div className="col-lg-2 col-md-2  ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/gece-yarisi-hikayeleri-ruh-askin-gungor/1410">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -1027,7 +1192,6 @@ const Cagdas = () => {
               </div>
               <div className="col-lg-2 col-md-2 hideonmobile ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/pera-muzesi’nde-bir-gece/1516">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -1044,7 +1208,6 @@ const Cagdas = () => {
               </div>
               <div className="col-lg-2 col-md-2 hideonmobile ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/mutevazi-bir-evrenin-ontolojisi/1436">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -1061,7 +1224,6 @@ const Cagdas = () => {
               </div>
               <div className="col-lg-2 col-md-2 hideonmobile ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/chlebowskinin-sultani/1274">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -1076,7 +1238,8 @@ const Cagdas = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+
             <div className="row mt-3 hideondesktop">
               <div className="col-md-2">
                 <a target="_blank" href="/blog/yillar/2024">
