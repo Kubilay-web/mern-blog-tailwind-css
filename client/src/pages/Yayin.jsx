@@ -4,6 +4,7 @@ const Yayin = () => {
   const [posts, setPosts] = useState([]);
   const [posts2, setPosts2] = useState([]);
   const [posts3, setPosts3] = useState([]);
+  const [posts4, setPosts4] = useState([]);
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
@@ -21,6 +22,7 @@ const Yayin = () => {
     const category1 = "Yayin-Süreli-Sergi";
     const category2 = "Yayin-Koleksiyon-Sergi";
     const category3 = "Yayin-Dersim-Vakfi";
+    const category4 = "Yayin-Sempozyum";
 
     // İlk kategori için postları çek
     fetchPosts(category1, setPosts);
@@ -28,6 +30,7 @@ const Yayin = () => {
     // İkinci kategori için postları çek
     fetchPosts(category2, setPosts2);
     fetchPosts(category3, setPosts3);
+    fetchPosts(category4, setPosts4);
   }, []);
 
   return (
@@ -323,7 +326,7 @@ const Yayin = () => {
           <div className="container">
             <div className="row pt-7">
               {posts2 && posts2.length > 0 ? (
-                posts2.slice(0, 6).map((post2) => (
+                posts2.slice(0, 1000).map((post2) => (
                   <div key={post2._id} className="col-lg-2 col-md-4 mb-4">
                     <a
                       href={`/post/${post2.slug}`}
@@ -703,11 +706,46 @@ const Yayin = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-12 mt-3">
+
+          <div className="container">
+            <div className="row pt-7">
+              {posts4 && posts4.length > 0 ? (
+                posts4.slice(0, 1000).map((post4) => (
+                  <div key={post4._id} className="col-lg-2 col-md-4 mb-4">
+                    <a
+                      href={`/post/${post4.slug}`}
+                      target="_self"
+                      className="no-link"
+                    >
+                      <div className="card mb-4 border-0">
+                        <img
+                          className="bd-placeholder-img card-img-top"
+                          width="100%"
+                          src={post4.image}
+                          alt={post4.altText || "Post image"}
+                        />
+                        <div className="card-body">
+                          <h3 className="card-title">{post4.title}</h3>
+                          <p className="card-text">{post4.content}</p>
+                          <div className="d-flex justify-content-between align-items-center">
+                            <small className="text-muted">{post4.author}</small>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                ))
+              ) : (
+                <p>No posts available</p>
+              )}
+            </div>
+          </div>
+
+          {/* <div className="col-md-12 mt-3">
             <div className="row">
               <div className="col-lg-2 col-md-2 col-6 mobile-spacing">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+             
                   <a href="/yayin/mekanin-poetikasi-mekanin-politikasi/134">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -727,7 +765,8 @@ const Yayin = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+
           <div className="col-md-12 mt-5">
             <div className="row justify-content-center align-items-center">
               <div

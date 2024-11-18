@@ -126,6 +126,7 @@ export default function CreatePost() {
             <option value="Eğitim-Güncel-Ogrenme">Eğitim-Güncel-Ogrenme</option>
             <option value="Yayin-Süreli-Sergi">Yayin-Süreli-Sergi</option>
             <option value="Yayin-Dersim-Vakfi">Yayin-Dersim-Vakfi</option>
+            <option value="Yayin-Sempozyum">Yayin-Sempozyum</option>
             <option value="Yayin-Koleksiyon-Sergi">
               Yayin-Koleksiyon-Sergi
             </option>
