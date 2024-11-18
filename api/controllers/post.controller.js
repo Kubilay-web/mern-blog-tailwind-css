@@ -1,15 +1,14 @@
 import Post from "../models/post.model.js";
 import { errorHandler } from "../utils/error.js";
 
-const createSlug = (title, userId) => {
+const createSlug = (title) => {
   const baseSlug = title
     .trim()
-    .split(" ")
-    .join("-")
     .toLowerCase()
-    .replace(/[^a-zA-Z0-9-]/g, "");
+    .replace(/[^a-zA-Z0-9ğüşöçıİĞÜŞÖÇ\s-]/g, "") // Türkçe karakterlere izin ver
+    .replace(/\s+/g, "-"); // Boşlukları tireye çevir
 
-  const timestamp = Date.now(); // Benzersiz zaman damgası
+  const timestamp = Date.now(); // Benzersiz zaman damgası ekle
   return `${baseSlug}-${timestamp}`;
 };
 

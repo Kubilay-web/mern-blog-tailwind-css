@@ -124,6 +124,7 @@ export default function CreatePost() {
             <option value="Sergi-2024"> Sergi-2024</option>
             <option value="Eğitim-Güncel">Eğitim-Güncel</option>
             <option value="Eğitim-Güncel-Ogrenme">Eğitim-Güncel-Ogrenme</option>
+            <option value="Yayin-Süreli-Sergi">Yayin-Süreli-Sergi</option>
             <option value="Eğitim-Programlar">Eğitim-Programlar</option>
             <option value="Eğitim-2023">Eğitim-2023</option>
             <option value="Eğiitm-2024">Eğiitm-2024</option>
