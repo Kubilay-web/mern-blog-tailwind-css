@@ -1,6 +1,44 @@
 import { useState, useEffect } from "react";
 
 const Soykirim = () => {
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+  const [posts3, setPosts3] = useState([]);
+  const [posts4, setPosts4] = useState([]);
+  const [posts5, setPosts5] = useState([]);
+  const [posts6, setPosts6] = useState([]);
+  const [posts7, setPosts7] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Soykırım-Ana-Yazı";
+    const category2 = "Soykırım-Yan-Yazı-1";
+    const category3 = "Soykırım-Yan-Yazı-2";
+    const category4 = "Soykırım";
+    const category5 = "Soykırım-En-Yeniler";
+    const category6 = "Soykırım-Alt-Yazı";
+    const category7 = "Soykırım-İlginizi-Çekebilir";
+
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+    fetchPosts(category3, setPosts3);
+    fetchPosts(category4, setPosts4);
+    fetchPosts(category5, setPosts5);
+    fetchPosts(category6, setPosts6);
+    fetchPosts(category7, setPosts7);
+  }, []);
+
   return (
     <div>
       <style
@@ -63,13 +101,45 @@ const Soykirim = () => {
 
       <div className="container pb-3 first-row">
         <div className="row">
-          <div
+          {posts && posts.length > 0 ? (
+            posts.slice(0, 10).map((post, index) => (
+              <div
+                key={post._id}
+                className="col-md-8 border-right border-secondary"
+                id="firstpost"
+              >
+                <div className="card mb-0 border-0">
+                  <div className="card mb-0 border-0">
+                    <a href={`/post/${post.slug}`}>
+                      <img
+                        className="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="100%"
+                        src={post.image}
+                        alt={post.altText}
+                      />
+                    </a>
+                    <div className="card-body">
+                      <h3 className="bloglisttitle">{post.title}</h3>
+                      <p className="bloglistsummary"></p>
+                      <p>{post.content}</p>
+                      <p />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p>No posts available</p>
+          )}
+
+          {/* <div
             className="col-md-8 border-right border-secondary"
             id="firstpost"
           >
             <div className="card mb-0 border-0">
               <div className="card mb-0 border-0">
-                {/*shadow-sm eklenince güzel duruyor*/}
+       
                 <a href="/blog/gelecek-hatiralari/1607">
                   <img
                     className="bd-placeholder-img card-img-top"
@@ -101,57 +171,141 @@ const Soykirim = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+
           <div className="col-md-4 dontshowonmobile">
-            <div className="card mb-0 border-0">
-              <div className="card mb-0 border-0">
-                {/*shadow-sm eklenince güzel duruyor*/}
-                <a href="/blog/gelecegi-hatirlamak/1611">
-                  <img
-                    className="bd-placeholder-img card-img-top"
-                    width="100%"
-                    height="100%"
-                    src="/images/Blog/31-Saz ve Bağlama.jpg"
-                    alt="Geleceği Hatırlamak"
-                  />
-                </a>
-                <div className="card-body">
-                  <h3 className="bloglisttitle font-weight-bold">
-                    Saz ve Bağlama
-                  </h3>
+            {posts2 && posts.length > 0 ? (
+              posts2.slice(0, 10).map((post2, index) => (
+                <div key={post2._id} className="card mb-0 border-0">
+                  <div className="card mb-0 border-0">
+                    <a href={`/post/${post2.slug}`}>
+                      <img
+                        className="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="100%"
+                        src={post2.image}
+                        alt={post2.altText}
+                      />
+                    </a>
+                    <div className="card-body">
+                      <h3 className="bloglisttitle font-weight-bold">
+                        {post2.title}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              ))
+            ) : (
+              <p>No posts available</p>
+            )}
+
             <div className="w-100" />
-            <div className="card mb-0 border-0">
-              <div className="card mb-0 border-0">
-                {/*shadow-sm eklenince güzel duruyor*/}
-                <a href="/blog/motiflerin-hatirlattiklari/1608">
-                  <img
-                    className="bd-placeholder-img card-img-top"
-                    width="100%"
-                    height="100%"
-                    src="/images/Blog/33-İnanç ve Toplum.jpg"
-                    alt="Motiflerin Hatırlattıkları"
-                  />
-                </a>
-                <div className="card-body">
-                  <h3 className="bloglisttitle font-weight-bold">
-                    İnanç ve Toplum
-                  </h3>
+
+            {posts3 && posts.length > 0 ? (
+              posts3.slice(0, 10).map((post3, index) => (
+                <div key={post3._id} className="card mb-0 border-0">
+                  <div className="card mb-0 border-0">
+                    <a href={`/post/${post3.slug}`}>
+                      <img
+                        className="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="100%"
+                        src={post3.image}
+                        alt={post3.altText}
+                      />
+                    </a>
+                    <div className="card-body">
+                      <h3 className="bloglisttitle font-weight-bold">
+                        {post3.title}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              ))
+            ) : (
+              <p>No posts available</p>
+            )}
+
             <div className="w-100" />
           </div>
         </div>
+
         <div className="blogHorizontalDivider" />
-        <div className="row">
+
+        <div className="container">
+          <div className="row pt-7">
+            {posts4 && posts4.length > 0 ? (
+              posts4.slice(0, 3).map((post4, index) => (
+                <div key={post4._id} className="col-lg-4 col-md-4 mb-4">
+                  <a
+                    href={`/post/${post4.slug}`}
+                    target="_self"
+                    className="no-link"
+                  >
+                    <div className="card mb-4 border-0">
+                      <img
+                        className="bd-placeholder-img card-img-top"
+                        width="100%"
+                        src={post4.image}
+                        alt={post4.altText}
+                      />
+                      <div className="card-body">
+                        <h3 className="card-title">{post4.title}</h3>
+                        <p className="card-text">{post4.content}</p>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <small className="text-muted">{post4.author}</small>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              ))
+            ) : (
+              <p>No posts available</p>
+            )}
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="row pt-7">
+            {posts4 && posts4.length > 0 ? (
+              posts4.slice(3, 10).map((post4, index) => (
+                <div key={post4._id} className="col-lg-3 col-md-12 mb-4">
+                  <a
+                    href={`/post/${post4.slug}`}
+                    target="_self"
+                    className="no-link"
+                  >
+                    <div className="card mb-4 border-0">
+                      <img
+                        className="bd-placeholder-img card-img-top"
+                        width="100%"
+                        src={post4.image}
+                        alt={post4.altText}
+                      />
+                      <div className="card-body">
+                        <h3 className="card-title">{post4.title}</h3>
+                        <p className="card-text">{post4.content}</p>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <small className="text-muted">{post4.author}</small>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              ))
+            ) : (
+              <p>No posts available</p>
+            )}
+          </div>
+        </div>
+
+        {/* <div className="row">
           <div className="col-md-12 mt-3">
             <div className="row">
               <div className="col-lg-4   col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                 
                   <a href="/blog/bolgenin-hafizasi/1610">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -186,7 +340,7 @@ const Soykirim = () => {
               </div>
               <div className="col-lg-4   col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                 
                   <a href="/blog/nesnelerin-hafizasi/1609">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -224,7 +378,7 @@ const Soykirim = () => {
               </div>
               <div className="col-lg-4   col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+       
                   <a href="/blog/akiskan-rego/1599">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -257,7 +411,7 @@ const Soykirim = () => {
             <div className="row">
               <div className="col-lg-3   col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+              
                   <a href="/blog/bolgenin-hafizasi/1610">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -284,7 +438,7 @@ const Soykirim = () => {
               </div>
               <div className="col-lg-3 col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+              
                   <a href="/blog/nesnelerin-hafizasi/1609">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -314,7 +468,7 @@ const Soykirim = () => {
               </div>
               <div className="col-lg-3  col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                
                   <a href="/blog/akiskan-rego/1599">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -345,7 +499,7 @@ const Soykirim = () => {
               </div>
               <div className="col-lg-3  col-md-4">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
+                 
                   <a href="/blog/akiskan-rego/1599">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -374,7 +528,8 @@ const Soykirim = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
         <div className="blogHorizontalDivider" />
         <div className="row">
           <div className="col-12 mt-3">
@@ -421,10 +576,52 @@ const Soykirim = () => {
                 <div id="carouselNewest" className="carousel slide">
                   <div className="carousel-inner">
                     <div className="carousel-item active">
-                      <div className="row">
+                      <div className="container">
+                        <div className="row pt-7">
+                          {posts5 && posts5.length > 0 ? (
+                            posts5.slice(0, 6).map((post5, index) => (
+                              <div
+                                key={post5._id}
+                                className="col-lg-2 col-md-4 mb-4"
+                              >
+                                <a
+                                  href={`/post/${post5.slug}`}
+                                  target="_self"
+                                  className="no-link"
+                                >
+                                  <div className="card mb-4 border-0">
+                                    <img
+                                      className="bd-placeholder-img card-img-top"
+                                      width="100%"
+                                      src={post5.image}
+                                      alt={post5.altText}
+                                    />
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        {post5.title}
+                                      </h3>
+                                      <p className="card-text">
+                                        {post5.content}
+                                      </p>
+                                      <div className="d-flex justify-content-between align-items-center">
+                                        <small className="text-muted">
+                                          {post5.author}
+                                        </small>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            ))
+                          ) : (
+                            <p>No posts available</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* <div className="row">
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/istanbul-oncesi-sonrasi/1605">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -441,7 +638,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/yilbasinin-oteki-yuzu-pera-filmden-alternatif-yilbasi-izleme-listesi/1603">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -458,7 +654,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/isabel-munoz-ile-soylesi-merve-akar-akgun/1601">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -475,7 +670,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/paula-rego-istanbul’da/1597">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -494,7 +688,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/zamane-oykuleri-felis-hande-ortac/1595">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -511,7 +704,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-5 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/zamane-oykuleri-cihangir-ozge-baykan-calafato/1593">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -526,13 +718,56 @@ const Soykirim = () => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
+
                     <div className="carousel-item">
-                      <div className="row">
+                      <div className="container">
+                        <div className="row pt-7">
+                          {posts5 && posts5.length > 0 ? (
+                            posts5.slice(6, 12).map((post5, index) => (
+                              <div
+                                key={post5._id}
+                                className="col-lg-2 col-md-4 mb-4"
+                              >
+                                <a
+                                  href={`/post/${post5.slug}`}
+                                  target="_self"
+                                  className="no-link"
+                                >
+                                  <div className="card mb-4 border-0">
+                                    <img
+                                      className="bd-placeholder-img card-img-top"
+                                      width="100%"
+                                      src={post5.image}
+                                      alt={post5.altText}
+                                    />
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        {post5.title}
+                                      </h3>
+                                      <p className="card-text">
+                                        {post5.content}
+                                      </p>
+                                      <div className="d-flex justify-content-between align-items-center">
+                                        <small className="text-muted">
+                                          {post5.author}
+                                        </small>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            ))
+                          ) : (
+                            <p>No posts available</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* <div className="row">
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/charlotte-wells’ten-bir-not/1590">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -549,7 +784,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/geceye-dogru-cadilar-bayrami-ozel/1589">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -566,7 +800,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/osmanli’da-kahve-ikrami/1587">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -583,7 +816,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/kucuk-sari-daire-ile-muzede-kesifler/1585">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -600,7 +832,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/kopyaliyorum-oyleyse-varim/1583">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -617,7 +848,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/barbara-kruger’in-iktidar-kapitalizm-kimlik-ve-toplumsal-cinsiyete-odaklanan-pratigi-uzerine/1581">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -632,13 +862,55 @@ const Soykirim = () => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                     <div className="carousel-item">
-                      <div className="row">
+                      <div className="container">
+                        <div className="row pt-7">
+                          {posts5 && posts5.length > 0 ? (
+                            posts5.slice(12, 30).map((post5, index) => (
+                              <div
+                                key={post5._id}
+                                className="col-lg-2 col-md-4 mb-4"
+                              >
+                                <a
+                                  href={`/post/${post5.slug}`}
+                                  target="_self"
+                                  className="no-link"
+                                >
+                                  <div className="card mb-4 border-0">
+                                    <img
+                                      className="bd-placeholder-img card-img-top"
+                                      width="100%"
+                                      src={post5.image}
+                                      alt={post5.altText}
+                                    />
+                                    <div className="card-body">
+                                      <h3 className="card-title">
+                                        {post5.title}
+                                      </h3>
+                                      <p className="card-text">
+                                        {post5.content}
+                                      </p>
+                                      <div className="d-flex justify-content-between align-items-center">
+                                        <small className="text-muted">
+                                          {post5.author}
+                                        </small>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            ))
+                          ) : (
+                            <p>No posts available</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* <div className="row">
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/gokyuzunden-iyi-haberler/1578">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -655,7 +927,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/dunyadan-guncel-seramikler-10-sanatci-10-yapit/1576">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -672,7 +943,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/kahin-serenatlari-gunese-serenatlar-kornelia-binicewicz/1574">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -689,7 +959,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/kahin-serenatlari-i-guzel-insanlar-sarp-dakni/1572">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -706,7 +975,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/kahin-serenatlari-i-iki-elli-kubra-uzun/1570">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -723,7 +991,6 @@ const Soykirim = () => {
                         </div>
                         <div className="col-lg-2   col-md-2">
                           <div className="card mb-0 border-0 slytdtl">
-                            {/*shadow-sm eklenince güzel duruyor*/}
                             <a href="/blog/zamaninin-tanigi-fausto-zonaro/1568">
                               <img
                                 className="bd-placeholder-img card-img-top"
@@ -738,7 +1005,7 @@ const Soykirim = () => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -747,12 +1014,12 @@ const Soykirim = () => {
           </div>
         </div>
         <div className="blogHorizontalDivider" />
+
         <div className="row">
           <div className="col-md-12 mt-3">
             <div className="row">
               <div className="col-lg-4 col-md-4 mb-3">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="https://www.youtube.com" target="_blank">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -764,52 +1031,36 @@ const Soykirim = () => {
                   </a>
                 </div>
               </div>
-              <div className="col-lg-8 col-md-8">
-                <div className="row">
-                  <div className="col-lg-12 col-md-12">
-                    <div className="card mb-0 border-0">
-                      {/*shadow-sm eklenince güzel duruyor*/}
-                      <a href="/blog/istanbul-oncesi-sonrasi/1605">
-                        <img
-                          className="bd-placeholder-img card-img-top"
-                          width="100%"
-                          height="100%"
-                          src="/images/Blog/3-Sarı Saltuk.jpg"
-                          alt="İstanbul: Öncesi & Sonrası"
-                        />
-                      </a>
-                      <div className="card-body">
-                        <h3 className="bloglisttitle">Sarı Saltuk</h3>
-                        <p className="bloglistsummary"></p>
-                        <p>
-                          Sarı Saltuk, Anadolu'nun en önemli halk erenlerinden
-                          biri olarak, özellikle Alevi ve Bektaşi geleneğinde
-                          derin bir yer edinmiştir. Doğum yeri ve hayatı
-                          hakkında kesin bilgiler bulunmamakla birlikte, Sarı
-                          Saltuk'un, 13. yüzyılda, Osmanlı'nın ilk yıllarına
-                          yakın bir dönemde yaşamış bir halk önderi ve dini
-                          mürşit olduğu kabul edilir. Efsanelere göre, Sarı
-                          Saltuk, Osmanlı topraklarında İslam'ı yaymaya çalışan
-                          önemli bir mutasavvıftır. Adı, “sarı” sıfatıyla anılsa
-                          da, bu ismin kesin kökeni hakkında farklı rivayetler
-                          vardır. Bazı kaynaklar, onun sarı renkte bir elbise
-                          giymesinden dolayı bu adı aldığını söylerken, bazıları
-                          da onun ruhani özelliği ve bilgelik ışığını simgeleyen
-                          bir adlandırma olduğunu öne sürer. Sarı Saltuk'un
-                          öğretileri, sevgi, hoşgörü, insan hakları ve adalet
-                          üzerine odaklanır. O, halkı doğru yola yönlendirmek
-                          için sürekli olarak birleştirici bir rol oynamış ve
-                          özellikle zenginle fakir arasındaki sınıf farklarına
-                          karşı durmuştur. Kendisinin gönül yolu, insanları bir
-                          arada tutmayı ve birlikte yaşamanın gücünü kutlamayı
-                          amaçlar.
-                        </p>
-                        <p />
+
+              {posts6 && posts6.length > 0 ? (
+                posts6.slice(0, 3).map((post6, index) => (
+                  <div className="col-lg-8 col-md-8">
+                    <div className="row">
+                      <div className="col-lg-12 col-md-12">
+                        <div className="card mb-0 border-0">
+                          <a href="/blog/istanbul-oncesi-sonrasi/1605">
+                            <img
+                              className="bd-placeholder-img card-img-top"
+                              width="100%"
+                              height="100%"
+                              src={post6.image}
+                              alt={post6.altText}
+                            />
+                          </a>
+                          <div className="card-body">
+                            <h3 className="bloglisttitle">{post6.title}</h3>
+                            <p className="bloglistsummary"></p>
+                            <p>{post6.content}</p>
+                            <p />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                ))
+              ) : (
+                <p>No posts available</p>
+              )}
             </div>
           </div>
         </div>
@@ -843,9 +1094,44 @@ const Soykirim = () => {
               </div>
             </div>
             <div className="row  mt-3">
-              <div className="col-lg-2 col-md-2  ">
+              <div className="container">
+                <div className="row pt-7">
+                  {posts7 && posts5.length > 0 ? (
+                    posts7.slice(0, 6).map((post7, index) => (
+                      <div key={post7._id} className="col-lg-2 col-md-4 mb-4">
+                        <a
+                          href={`/post/${post7.slug}`}
+                          target="_self"
+                          className="no-link"
+                        >
+                          <div className="card mb-4 border-0">
+                            <img
+                              className="bd-placeholder-img card-img-top"
+                              width="100%"
+                              src={post7.image}
+                              alt={post7.altText}
+                            />
+                            <div className="card-body">
+                              <h3 className="card-title">{post7.title}</h3>
+                              <p className="card-text">{post7.content}</p>
+                              <div className="d-flex justify-content-between align-items-center">
+                                <small className="text-muted">
+                                  {post7.author}
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    ))
+                  ) : (
+                    <p>No posts available</p>
+                  )}
+                </div>
+              </div>
+
+              {/* <div className="col-lg-2 col-md-2  ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/gelecek-hatiralari/1607">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -859,10 +1145,9 @@ const Soykirim = () => {
                     <h3 className="bloglisttitle">Sosyal</h3>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-2 col-md-2  ">
+              </div> */}
+              {/* <div className="col-lg-2 col-md-2  ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/bruce-nauman-bana-bak/1240">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -876,10 +1161,9 @@ const Soykirim = () => {
                     <h3 className="bloglisttitle">Kültür</h3>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-2 col-md-2  ">
+              </div> */}
+              {/* <div className="col-lg-2 col-md-2  ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/gece-yarisi-hikayeleri-ruh-askin-gungor/1410">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -893,10 +1177,9 @@ const Soykirim = () => {
                     <h3 className="bloglisttitle">Pir Sultan</h3>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-2 col-md-2 hideonmobile ">
+              </div> */}
+              {/* <div className="col-lg-2 col-md-2 hideonmobile ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/pera-muzesi’nde-bir-gece/1516">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -910,10 +1193,9 @@ const Soykirim = () => {
                     <h3 className="bloglisttitle">Çocuk Sokağı</h3>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-2 col-md-2 hideonmobile ">
+              </div> */}
+              {/* <div className="col-lg-2 col-md-2 hideonmobile ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/mutevazi-bir-evrenin-ontolojisi/1436">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -927,10 +1209,9 @@ const Soykirim = () => {
                     <h3 className="bloglisttitle">Seyit Rıza</h3>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-2 col-md-2 hideonmobile ">
+              </div> */}
+              {/* <div className="col-lg-2 col-md-2 hideonmobile ">
                 <div className="card mb-0 border-0">
-                  {/*shadow-sm eklenince güzel duruyor*/}
                   <a href="/blog/chlebowskinin-sultani/1274">
                     <img
                       className="bd-placeholder-img card-img-top"
@@ -944,8 +1225,9 @@ const Soykirim = () => {
                     <h3 className="bloglisttitle">Kütüphane Durağı</h3>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
+
             <div className="row mt-3 hideondesktop">
               <div className="col-md-2">
                 <a target="_blank" href="/blog/yillar/2024">

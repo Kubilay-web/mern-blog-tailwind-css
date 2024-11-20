@@ -10,8 +10,11 @@ export default function DashPosts() {
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState("");
-
-  // Filter state
+  const [showCopyModal, setShowCopyModal] = useState(false); // Kopyalama modalı
+  const [showCreateCategoryModal, setShowCreateCategoryModal] = useState(false); // Kategori oluşturma modalı
+  const [oldCategory, setOldCategory] = useState(""); // Eski kategori
+  const [newCategory, setNewCategory] = useState(""); // Yeni kategori
+  const [newCategoryName, setNewCategoryName] = useState(""); // Yeni kategori adı
   const [filters, setFilters] = useState({
     title: "",
     category: "",
@@ -21,7 +24,6 @@ export default function DashPosts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // If the user is admin, fetch all posts; otherwise, fetch only their own posts
         const res = await fetch(
           currentUser.isAdmin
             ? `/api/post/getposts`
@@ -82,13 +84,11 @@ export default function DashPosts() {
     }
   };
 
-  // Handle filter input changes
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters({ ...filters, [name]: value });
   };
 
-  // Filtered posts based on filters
   const filteredPosts = userPosts.filter((post) => {
     const titleMatch = post.title
       .toLowerCase()
@@ -103,6 +103,29 @@ export default function DashPosts() {
 
     return titleMatch && categoryMatch && dateMatch;
   });
+
+  const handleCopyPosts = async () => {
+    try {
+      const res = await fetch(
+        `/api/post/copy?oldCategory=${oldCategory}&newCategory=${newCategory}`,
+        {
+          method: "GET", // Veriyi query string olarak gönderiyoruz
+        }
+      );
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Posts successfully copied!");
+        setShowCopyModal(false);
+        setUserPosts((prev) => [...prev, ...data.copiedPosts]);
+      } else {
+        alert(data.message || "Error copying posts.");
+      }
+    } catch (error) {
+      console.log("Error copying posts:", error);
+    }
+  };
 
   return (
     <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
@@ -133,6 +156,15 @@ export default function DashPosts() {
               className="mr-2 p-2 border border-gray-300 rounded"
             />
           </div>
+
+          <Button
+            color="teal"
+            onClick={() => setShowCopyModal(true)}
+            className="mb-4"
+          >
+            Copy Posts to New Category
+          </Button>
+
           <Table hoverable className="shadow-md">
             <Table.Head>
               <Table.HeadCell>Date updated</Table.HeadCell>
@@ -191,6 +223,7 @@ export default function DashPosts() {
               </Table.Body>
             ))}
           </Table>
+
           {showMore && (
             <button
               onClick={handleShowMore}
@@ -203,6 +236,67 @@ export default function DashPosts() {
       ) : (
         <p>You have no posts yet!</p>
       )}
+
+      {/* Create Category Modal */}
+      <Modal
+        show={showCreateCategoryModal}
+        onClose={() => setShowCreateCategoryModal(false)}
+        popup
+        size="md"
+      >
+        <Modal.Header />
+      </Modal>
+
+      {/* Copy Posts Modal */}
+      <Modal
+        show={showCopyModal}
+        onClose={() => setShowCopyModal(false)}
+        popup
+        size="md"
+      >
+        <Modal.Header />
+        <Modal.Body>
+          <div className="text-center">
+            <h3 className="mb-5 text-lg font-medium text-gray-900 dark:text-white">
+              Copy Posts to New Category
+            </h3>
+            <div className="mb-4">
+              <label className="block text-gray-700 dark:text-white">
+                Old Category
+              </label>
+              <input
+                type="text"
+                className="p-2 w-full border border-gray-300 rounded"
+                placeholder="Old category"
+                value={oldCategory}
+                onChange={(e) => setOldCategory(e.target.value)}
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 dark:text-white">
+                New Category
+              </label>
+              <input
+                type="text"
+                className="p-2 w-full border border-gray-300 rounded"
+                placeholder="New category"
+                value={newCategory}
+                onChange={(e) => setNewCategory(e.target.value)}
+              />
+            </div>
+            <div className="mt-4 flex justify-center gap-4">
+              <Button color="gray" onClick={() => setShowCopyModal(false)}>
+                Cancel
+              </Button>
+              <Button color="teal" onClick={handleCopyPosts}>
+                Copy
+              </Button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
+
+      {/* Delete Post Modal */}
       <Modal
         show={showModal}
         onClose={() => setShowModal(false)}
@@ -212,16 +306,16 @@ export default function DashPosts() {
         <Modal.Header />
         <Modal.Body>
           <div className="text-center">
-            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
-            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
+            <HiOutlineExclamationCircle className="w-14 h-14 text-red-500 mx-auto mb-4" />
+            <h3 className="mb-5 text-lg font-medium text-gray-900 dark:text-white">
               Are you sure you want to delete this post?
             </h3>
             <div className="flex justify-center gap-4">
-              <Button color="failure" onClick={handleDeletePost}>
-                Yes, I'm sure
-              </Button>
               <Button color="gray" onClick={() => setShowModal(false)}>
-                No, cancel
+                Cancel
+              </Button>
+              <Button color="red" onClick={handleDeletePost}>
+                Yes, Delete
               </Button>
             </div>
           </div>

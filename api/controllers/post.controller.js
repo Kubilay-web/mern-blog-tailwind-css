@@ -188,3 +188,66 @@ export const updatepost = async (req, res, next) => {
     next(error);
   }
 };
+
+export const copyPostsToNewCategory = async (req, res, next) => {
+  try {
+    const { oldCategory, newCategory } = req.query;
+
+    if (!oldCategory || !newCategory) {
+      return res.status(400).json({
+        message: "Eski kategori ve yeni kategori parametreleri gereklidir",
+      });
+    }
+
+    // Eski kategorideki postları bul
+    const posts = await Post.find({ category: oldCategory });
+
+    if (posts.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "Eski kategoride hiç post bulunamadı" });
+    }
+
+    // Yeni kategoriye ait postların olup olmadığını kontrol et
+    const copiedPosts = [];
+    for (const post of posts) {
+      // Post'un mevcut slug bilgisini al
+      let baseSlug = post.slug;
+
+      // Benzersiz numara eklemek için zaman damgası kullan
+      const uniqueId = Date.now(); // Benzersiz sayısal ID (zaman damgası)
+
+      // Dinamik slug oluştur (post slug + benzersiz ID)
+      let newSlug = `${baseSlug}-${uniqueId}`;
+
+      // Slug'ın benzersizliğini kontrol et
+      let existingPost = await Post.findOne({ slug: newSlug });
+      while (existingPost) {
+        // Eğer slug benzersiz değilse, yeni bir benzersiz ID ekle
+        const uniqueId = Date.now();
+        newSlug = `${baseSlug}-${uniqueId}`;
+        existingPost = await Post.findOne({ slug: newSlug });
+      }
+
+      // Yeni postu oluştur
+      const newPost = new Post({
+        ...post.toObject(),
+        category: newCategory, // Yeni kategori
+        slug: newSlug, // Benzersiz slug
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+        _id: undefined, // Yeni bir ID atanır
+      });
+
+      const savedPost = await newPost.save();
+      copiedPosts.push(savedPost);
+    }
+
+    res.status(201).json({
+      message: "Posts successfully copied to the new category.",
+      copiedPosts,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
