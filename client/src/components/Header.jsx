@@ -588,8 +588,8 @@ export default function Header() {
       </nav>
 
       <nav
-        className="flex justify-center ml-auto mb-3 navbar navbar-expand-lg navbar-light bg-white border-top border-bottom border-dark  navbarheight ptnew-0 h-[80]"
-        style={{ zIndex: 3 }}
+        className="flex justify-center ml-auto mb-3 navbar navbar-expand-lg navbar-light bg-white border-top border-bottom border-dark navbarheight ptnew-0 h-[80]"
+        style={{ zIndex: 3, maxWidth: 1100, margin: "auto" }}
       >
         <div id="navbarsExample09" ref={dropdownRef}>
           <ul className="navbar-nav gap-4 mr-auto justify-content-between w-100 text-uppercase">

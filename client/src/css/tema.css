@@ -2322,9 +2322,86 @@ select:focus {
   nav.ml-auto.mb-3.navbar.navbar-expand-lg.navbar-light.border-top.border-bottom.border-dark.sticky-top.navbarheight.ptnew-0 {
     visibility: visible !important;
     padding: 10px 10px 0px 10px !important;
+    max-width: 1100px !important;
+    margin: auto !important;
   }
 
   .navbar-collapse.collapse.show {
     flex-direction: column !important;
   }
 }
+
+span.items-center.flex.justify-center.bg-white.text-gray-900.transition-all.duration-75.ease-in.group-enabled\:group-hover\:bg-opacity-0.group-enabled\:group-hover\:text-inherit.dark\:bg-gray-900.dark\:text-white.w-full.rounded-md.text-sm.px-4.py-2.border.border-transparent {
+  background-color: #fff !important;
+  border: none !important;
+  outline: none !important;
+}
+
+span.items-center.flex.justify-center.bg-white.text-gray-900.transition-all.duration-75.ease-in.group-enabled\:group-hover\:bg-opacity-0.group-enabled\:group-hover\:text-inherit.dark\:bg-gray-900.dark\:text-white.w-full.rounded-md.text-sm.px-4.py-2.border.border-transparent:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+span.flex.items-center.transition-all.duration-200.rounded-md.text-sm.px-4.py-2:hover {
+  text-decoration: none !important;
+}
+
+/* Header */
+
+@media (max-width: 1600px) {
+  .container {
+    max-width: 1100px !important;
+  }
+}
+
+.border-b-2 {
+  border: none !important;
+}
+
+div.mx-auto.flex.flex-wrap.items-center.justify-between.container {
+  padding: 0px !important;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+@media only screen and (min-device-width: 1400px) {
+  .navbar-nav {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  .navbar-nav {
+    margin: 0px !important;
+  }
+}
+
+div.dropdown-menu.show {
+  margin-top: 9px !important;
+  border: none !important;
+  padding: 0px !important;
+  box-shadow: none !important;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0rem !important;
+  color: #333333 !important;
+  font-weight: bold !important;
+  font-family: "Raleway", sans-serif;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+/* Header */
