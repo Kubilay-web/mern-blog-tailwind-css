@@ -92,6 +92,18 @@ export default function Header() {
     handleSubmit(e); // Trigger form submission logic
   };
 
+  // Bugünün tarihini al
+  const today = new Date();
+
+  // Tarihi Türkçe formatında yaz
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+  const formattedDate = today.toLocaleDateString("tr-TR", options);
+
   return (
     <>
       <Navbar className="border-b-2">
@@ -147,7 +159,7 @@ export default function Header() {
                 onClick={handleIconClick}
               >
                 <img
-                  src="images/Home/iconSearch.png"
+                  src="/images/Home/iconSearch.png"
                   style={{ width: "25px" }}
                   alt="Search Icon"
                 />
@@ -253,7 +265,7 @@ export default function Header() {
               <img src="images/en_img.svg" alt="" className="imgnew" />
             </a>
             <a className="linkSearch btnSrch" id="btnSrchMobile" href="#">
-              <img src="images/search.svg" alt="" className="imgnew" />
+              <img src="/images/Home/search.svg" alt="" className="imgnew" />
             </a>
           </div>
         </div>
@@ -567,7 +579,7 @@ export default function Header() {
             </a>
             {/*@todo: replace with company social media details*/}
             <p className="menu-dates-not-scrolled">
-              <span className="todaydate">12 Kasım Salı</span>
+              <span className="todaydate">{formattedDate}</span>
               <br />
               <span className="todaynote">Ziyaret Saatleri: 10.00 - 19.00</span>
             </p>
@@ -889,7 +901,7 @@ export default function Header() {
               <img src="images/PM-2023logo-tr.svg" alt="Pera Müzesi Logo" />
             </a>
             <p className="menu-dates-not-scrolled flex items-center gap-2">
-              <span className="todaydate">11 Kasım Çarşamba</span>
+              <span className="todaydate">{formattedDate}</span>
 
               <span className="todaynote">Ziyaret Saatleri: 10.00 - 19.00</span>
             </p>
