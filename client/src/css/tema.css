@@ -2411,4 +2411,15 @@ div.dropdown-menu.show {
   border: 0;
 }
 
+div.pull-right.mr-0.pr-4.d-md-none.border-right.border-dark {
+  display: flex !important;
+  align-items: center !important;
+}
+
+@media (max-width: 426px) {
+  div.mobileSearchField.input-group {
+    display: none !important;
+  }
+}
+
 /* Header */

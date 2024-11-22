@@ -59,7 +59,7 @@ export default function Home({ data }) {
 
   return (
     <div>
-      <div className=" max-w-[1070px] m-auto flex align-middle gap-4">
+      <div className=" max-w-[1200px] m-auto flex align-middle gap-1">
         {/* Sol ok butonu */}
         <button
           type="button"
