@@ -2426,4 +2426,9 @@ ul.navbar-nav.gap-4.mr-auto.justify-content-between.w-100.text-uppercase {
   margin: 0px !important;
 }
 
+.row {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
 /* Header */
