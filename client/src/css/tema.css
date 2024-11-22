@@ -2422,4 +2422,8 @@ div.pull-right.mr-0.pr-4.d-md-none.border-right.border-dark {
   }
 }
 
+ul.navbar-nav.gap-4.mr-auto.justify-content-between.w-100.text-uppercase {
+  margin: 0px !important;
+}
+
 /* Header */

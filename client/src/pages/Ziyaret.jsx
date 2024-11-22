@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../css/tema.css";
 
 export default function Ziyaret() {
   const [nameSurname, setNameSurname] = useState("");
