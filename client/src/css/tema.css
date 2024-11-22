@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "RalewayBold";
+  src: url("/fonts/raleway.bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -73,7 +80,7 @@ body {
 .dropdown-item {
   color: #333333 !important;
   font-size: 19px !important;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway";
   /* margin: 13px; */
   /*  font-weight: 600 !important;<!-- Menü yazıları için-->*/
 }
@@ -1079,12 +1086,12 @@ div.row {
   }
 
   .w-100new {
-    width: 200%;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
-    height: 7px;
-    margin-left: -50%;
-    background-color: white;
-    border-color: white;
+    width: 200% !important;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5) !important;
+    height: 7px !important;
+    margin-left: -50% !important;
+    background-color: white !important;
+    border-color: white !important;
   }
 
   .fontum p {

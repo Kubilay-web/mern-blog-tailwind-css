@@ -331,7 +331,6 @@ export default function Header() {
                   src="images/xButton.svg"
                   alt="kapat"
                 />
-                <div className="w-100new" />
               </div>
             </li>
             <li className="nav-item dropdown  position-static">
@@ -577,6 +576,7 @@ export default function Header() {
                 alt="Pera Müzesi Logo"
               />
             </a>
+
             {/*@todo: replace with company social media details*/}
             <p className="menu-dates-not-scrolled">
               <span className="todaydate">{formattedDate}</span>
@@ -624,6 +624,7 @@ export default function Header() {
                   >
                     ARTSHOP
                   </Link>
+                  <div className="w-100new" />
                 </div>
               )}
             </li>
@@ -683,6 +684,7 @@ export default function Header() {
                   >
                     GEÇMİŞ SERGİLER
                   </Link>
+                  <div className="w-100new" />
                 </div>
               )}
             </li>
@@ -721,6 +723,7 @@ export default function Header() {
                   >
                     DERSİM EĞİTİM HAKKINDA
                   </Link>
+                  <div className="w-100new" />
                 </div>
               )}
             </li>
@@ -757,6 +760,7 @@ export default function Header() {
                   >
                     DERSİM FİLM HAKKINDA
                   </Link>
+                  <div className="w-100new" />
                 </div>
               )}
             </li>
@@ -821,6 +825,7 @@ export default function Header() {
                   >
                     DERSİM VAKFI YAYINLARI
                   </Link>
+                  <div className="w-100new" />
                 </div>
               )}
             </li>
@@ -887,6 +892,7 @@ export default function Header() {
                   >
                     SOYKIRIM VE SOYKIRIM ARAŞTIRMALARI
                   </Link>
+                  <div className="w-100new" />
                 </div>
               )}
             </li>
