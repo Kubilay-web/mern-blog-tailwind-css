@@ -150,6 +150,7 @@ export default function UpdatePost() {
             value={formData.category}
           >
             <option value="uncategorized">Select a category</option>
+
             <option value="Genel">Genel</option>
             <option value="Hakkımızda">Hakkımızda</option>
             <option value="Güncel-Süreli">Güncel-Süreli</option>
@@ -189,7 +190,6 @@ export default function UpdatePost() {
             </option>
             <option value="Çağdaş Tarih">Çağdaş Tarih</option>
             <option value="Kültür-Sanat-Müzik">Kültür-Sanat-Müzik</option>
-
             <option value="Göç ve Göç Hareketleri">
               Göç ve Göç Hareketleri
             </option>
@@ -200,8 +200,87 @@ export default function UpdatePost() {
             <option value="Soykırım ve Soykırım Araştırmaları">
               Soykırım ve Soykırım Araştırmaları
             </option>
-
             <option value="Cagdas-Tarih">Cagdas-Tarih</option>
+            <option value="Cagdas-Tarih-En-Yeniler">
+              Cagdas-Tarih-En-Yeniler
+            </option>
+            <option value="Cagdas-Tarih-İlginizi-Çekebilir">
+              Cagdas-Tarih-İlginizi-Çekebilir
+            </option>
+
+            <option value="Çağdaş-Ana-Yazı">Çağdaş-Ana-Yazı</option>
+            <option value="Çağdaş-Yan-Yazı-1">Çağdaş-Yan-Yazı-1</option>
+            <option value="Çağdaş-Yan-Yazı-2">Çağdaş-Yan-Yazı-2</option>
+            <option value="Çağdaş">Çağdaş</option>
+            <option value="Çağdaş-En-Yeniler">Çağdaş-En-Yeniler</option>
+            <option value="Çağdaş-Alt-Yazı">Çağdaş-Alt-Yazı</option>
+            <option value="Çağdaş-İlginizi-Çekebilir">
+              Kültür-İlginizi-Çekebilir
+            </option>
+
+            <option value="Kültür-Ana-Yazı">Kültür-Ana-Yazı</option>
+            <option value="Kültür-Yan-Yazı-1">Kültür-Yan-Yazı-1</option>
+            <option value="Kültür-Yan-Yazı-2">Kültür-Yan-Yazı-2</option>
+            <option value="Kültür">Kültür</option>
+            <option value="Kültür-En-Yeniler">Kültür-En-Yeniler</option>
+            <option value="Kültür-Alt-Yazı">Kültür-Alt-Yazı</option>
+            <option value="Kültür-İlginizi-Çekebilir">
+              Kültür-İlginizi-Çekebilir
+            </option>
+
+            <option value="Göç-Ana-Yazı">Göç-Ana-Yazı</option>
+            <option value="Göç-Yan-Yazı-1">Göç-Yan-Yazı-1</option>
+            <option value="Göç-Yan-Yazı-2">Göç-Yan-Yazı-2</option>
+            <option value="Göç">Göç</option>
+            <option value="Göç-En-Yeniler">Göç-En-Yeniler</option>
+            <option value="Göç-Alt-Yazı">Göç-Alt-Yazı</option>
+            <option value="Göç-İlginizi-Çekebilir">
+              Göç-İlginizi-Çekebilir
+            </option>
+
+            <option value="Tarih-Ana-Yazı">Tarih-Ana-Yazı</option>
+            <option value="Tarih-Yan-Yazı-1">Tarih-Yan-Yazı-1</option>
+            <option value="Tarih-Yan-Yazı-2">Tarih-Yan-Yazı-2</option>
+            <option value="Tarih-Yan-Yazı-2">Tarihsel-Kisilikler</option>
+            <option value="Tarih-En-Yeniler">
+              Tarihsel-Kisilikler-En-Yeniler
+            </option>
+            <option value="Tarih-Alt-Yazı">Tarihsel-Kisilikler-Alt-Yazı</option>
+            <option value="Tarih-İlginizi-Çekebilir">
+              Tarihsel-Kisilikler-İlginizi-Çekebilir
+            </option>
+
+            <option value="Tarihsel-Kisilikler-Ana-Yazı">
+              Tarihsel-Kisilikler-Ana-Yazı
+            </option>
+            <option value="Tarihsel-Kisilikler-Yan-Yazı-1">
+              Tarihsel-Kisilikler-Yan-Yazı-1
+            </option>
+            <option value="Tarihsel-Kisilikler-Yan-Yazı-2">
+              Tarihsel-Kisilikler-Yan-Yazı-2
+            </option>
+            <option value="Tarihsel-Kisilikler-Yan-Yazı-2">
+              Tarihsel-Kisilikler
+            </option>
+            <option value="Tarihsel-Kisilikler-En-Yeniler">
+              Tarihsel-Kisilikler-En-Yeniler
+            </option>
+            <option value="Tarihsel-Kisilikler-Alt-Yazı">
+              Tarihsel-Kisilikler-Alt-Yazı
+            </option>
+            <option value="Tarihsel-Kisilikler-İlginizi-Çekebilir">
+              Tarihsel-Kisilikler-İlginizi-Çekebilir
+            </option>
+
+            <option value="Soykırım-Ana-Yazı">Soykırım-Ana-Yazı</option>
+            <option value="Soykırım">Soykırım</option>
+            <option value="Soykırım-En-Yeniler">Soykırım-En-Yeniler</option>
+            <option value="Soykırım-Alt-Yazı">Soykırım-Alt-Yazı</option>
+            <option value="Soykırım-Yan-Yazı-1">Soykırım-Yan-Yazı-1</option>
+            <option value="Soykırım-Yan-Yazı-2">Soykırım-Yan-Yazı-2</option>
+            <option value="Soykırım-İlginizi-Çekebilir">
+              Soykırım-İlginizi-Çekebilir
+            </option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">

@@ -171,8 +171,6 @@ export default function CreatePost() {
               Cagdas-Tarih-İlginizi-Çekebilir
             </option>
 
-            {/* 
-            /////////////////////////////////////// */}
             <option value="Çağdaş-Ana-Yazı">Çağdaş-Ana-Yazı</option>
             <option value="Çağdaş-Yan-Yazı-1">Çağdaş-Yan-Yazı-1</option>
             <option value="Çağdaş-Yan-Yazı-2">Çağdaş-Yan-Yazı-2</option>
@@ -182,10 +180,7 @@ export default function CreatePost() {
             <option value="Çağdaş-İlginizi-Çekebilir">
               Kültür-İlginizi-Çekebilir
             </option>
-            {/* 
-            /////////////////////////////////////// */}
-            {/* 
-            /////////////////////////////////////// */}
+
             <option value="Kültür-Ana-Yazı">Kültür-Ana-Yazı</option>
             <option value="Kültür-Yan-Yazı-1">Kültür-Yan-Yazı-1</option>
             <option value="Kültür-Yan-Yazı-2">Kültür-Yan-Yazı-2</option>
@@ -195,10 +190,7 @@ export default function CreatePost() {
             <option value="Kültür-İlginizi-Çekebilir">
               Kültür-İlginizi-Çekebilir
             </option>
-            {/* 
-            /////////////////////////////////////// */}
-            {/* 
-            /////////////////////////////////////// */}
+
             <option value="Göç-Ana-Yazı">Göç-Ana-Yazı</option>
             <option value="Göç-Yan-Yazı-1">Göç-Yan-Yazı-1</option>
             <option value="Göç-Yan-Yazı-2">Göç-Yan-Yazı-2</option>
@@ -208,10 +200,7 @@ export default function CreatePost() {
             <option value="Göç-İlginizi-Çekebilir">
               Göç-İlginizi-Çekebilir
             </option>
-            {/* 
-            /////////////////////////////////////// */}
-            {/* 
-            /////////////////////////////////////// */}
+
             <option value="Tarih-Ana-Yazı">Tarih-Ana-Yazı</option>
             <option value="Tarih-Yan-Yazı-1">Tarih-Yan-Yazı-1</option>
             <option value="Tarih-Yan-Yazı-2">Tarih-Yan-Yazı-2</option>
@@ -223,10 +212,7 @@ export default function CreatePost() {
             <option value="Tarih-İlginizi-Çekebilir">
               Tarihsel-Kisilikler-İlginizi-Çekebilir
             </option>
-            {/* 
-            /////////////////////////////////////// */}
-            {/* 
-            /////////////////////////////////////// */}
+
             <option value="Tarihsel-Kisilikler-Ana-Yazı">
               Tarihsel-Kisilikler-Ana-Yazı
             </option>
@@ -248,10 +234,7 @@ export default function CreatePost() {
             <option value="Tarihsel-Kisilikler-İlginizi-Çekebilir">
               Tarihsel-Kisilikler-İlginizi-Çekebilir
             </option>
-            {/* 
-            /////////////////////////////////////// */}
-            {/* 
-            /////////////////////////////////////// */}
+
             <option value="Soykırım-Ana-Yazı">Soykırım-Ana-Yazı</option>
             <option value="Soykırım">Soykırım</option>
             <option value="Soykırım-En-Yeniler">Soykırım-En-Yeniler</option>
@@ -261,8 +244,6 @@ export default function CreatePost() {
             <option value="Soykırım-İlginizi-Çekebilir">
               Soykırım-İlginizi-Çekebilir
             </option>
-            {/* 
-            /////////////////////////////////////// */}
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
