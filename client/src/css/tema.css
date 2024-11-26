@@ -2486,6 +2486,32 @@ div#ta-reviews {
     align-items: center;
     justify-content: center;
   }
+
+  .col-md-2.col-6.text-right {
+    padding-top: 10px !important;
+  }
+
+  .fontum p {
+    font-size: 18px !important;
+  }
+
+  .col-lg-8.col-md-7.col-sm-12.align-self-center.ptnew2 {
+    display: none !important;
+  }
+
+  .img-fluid {
+    margin: 40px auto 0px auto !important;
+  }
+
+  .col-md-12.text-justify.fs-20 {
+    margin: 0px auto 30px auto !important;
+  }
+}
+
+@media (min-width: 426px) {
+  .col-md-12.text-justify.fs-20 {
+    margin: 0px auto 30px auto !important;
+  }
 }
 
 /* Header */
