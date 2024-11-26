@@ -104,6 +104,12 @@ export default function Header() {
   };
   const formattedDate = today.toLocaleDateString("tr-TR", options);
 
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  const toggleSearch = () => {
+    setIsSearchVisible(!isSearchVisible);
+  };
+
   return (
     <>
       <Navbar className="border-b-2">
@@ -121,7 +127,7 @@ export default function Header() {
         {/* <Button className="w-12 h-10 lg:hidden" color="gray" pill>
           <AiOutlineSearch />
         </Button> */}
-        <div className="flex gap-2 items-center md:order-2">
+        <div class="flex gap-2 items-center md:order-2 max-[426px]:hidden max-[974px]:hidden">
           {/* <Button
             className="w-12 h-10 hidden sm:inline"
             color="gray"
@@ -159,6 +165,7 @@ export default function Header() {
                 onClick={handleIconClick}
               >
                 <img
+                  className="desktop-search"
                   src="/images/Home/iconSearch.png"
                   style={{ width: "25px" }}
                   alt="Search Icon"
@@ -168,11 +175,12 @@ export default function Header() {
           </form>
 
           <img
+            className="desktop-lang"
             src="/images/Home/iconLang.png"
             style={{ width: 25, height: 25 }}
           />
 
-          <div
+          {/* <div
             className="mobileSearchField input-group lg:hidden"
             style={{ width: "60%" }}
           >
@@ -183,12 +191,13 @@ export default function Header() {
               className="form-control border border-secondary border-right-0 txtSrch2 h-[45px]"
               placeholder="Arama ..."
             />
+
             <div className="input-group-append">
               <span className="input-group-text  border border-secondary border-left-0">
                 <i className="fa fa-angle-right fa-lg" />
               </span>
             </div>
-          </div>
+          </div> */}
 
           {currentUser ? (
             <Dropdown
@@ -226,34 +235,45 @@ export default function Header() {
 
       <nav className="ml-auto mb-3 navbar navbar-expand-lg navbar-light border-top border-bottom border-dark sticky-top navbarheight ptnew-0">
         <div
-          className="container m-0 p-0   d-lg-none"
+          className="container m-0 p-0 d-lg-none"
           style={{ width: "85%" }}
           id="mobilMenuTopRow"
         >
-          <a
-            className="navbar-brand  d-lg-none font-weight-bolder mobileSearchHideField"
-            style={{ width: "40%" }}
-            href="#"
-          >
-            MENÜ
-          </a>
-          <div
-            className="mobileSearchField input-group d-none"
-            style={{ width: "60%" }}
-          >
-            <input
-              type="text"
-              name="txtSrch2"
-              id="srchBoxMobile"
-              className="form-control border border-secondary border-right-0 txtSrch2"
-              placeholder="Arama ..."
-            />
-            <div className="input-group-append">
-              <span className="input-group-text bg-white border border-secondary border-left-0">
-                <i className="fa fa-angle-right fa-lg" />
-              </span>
-            </div>
-          </div>
+          {!isSearchVisible && (
+            <a
+              className="navbar-brand d-lg-none font-weight-bolder mobileSearchHideField"
+              style={{ width: "40%" }}
+              href="#"
+            >
+              MENÜ
+            </a>
+          )}
+
+          {/* Arama çubuğu */}
+          {isSearchVisible && (
+            <form style={{ width: "60%" }} onSubmit={handleSubmit}>
+              <div className="input-group" style={{ width: "60%" }}>
+                <input
+                  type="text"
+                  name="txtSrch2"
+                  id="srchBoxMobile"
+                  className="form-control border border-secondary border-right-0 txtSrch2"
+                  placeholder="Arama ..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <div className="input-group-append">
+                  <span
+                    onClick={handleIconClick}
+                    className="input-group-text bg-white border border-secondary border-left-0"
+                  >
+                    <i className="fa fa-angle-right fa-lg" />
+                  </span>
+                </div>
+              </div>
+            </form>
+          )}
+
           <div
             className="pull-right mr-0 pr-4 d-md-none  border-right border-dark"
             id="mobile-search-language"
@@ -264,9 +284,55 @@ export default function Header() {
             >
               <img src="images/en_img.svg" alt="" className="imgnew" />
             </a>
-            <a className="linkSearch btnSrch" id="btnSrchMobile" href="#">
-              <img src="/images/Home/search.svg" alt="" className="imgnew" />
+
+            <a
+              className="linkSearch btnSrch"
+              id="btnSrchMobile"
+              href="#"
+              onClick={toggleSearch}
+            >
+              <img
+                src="/images/Home/iconSearch.png"
+                alt="Search Icon"
+                style={{ width: 25, marginRight: 10 }}
+              />
             </a>
+
+            <img
+              src="/images/Home/iconLang.png"
+              style={{ width: 25, height: 25, marginRight: 10 }}
+            />
+            {currentUser ? (
+              <Dropdown
+                arrowIcon={false}
+                inline
+                label={
+                  <Avatar alt="user" img={currentUser.profilePicture} rounded />
+                }
+              >
+                <Dropdown.Header>
+                  <span className="block text-sm">@{currentUser.username}</span>
+                  <span className="block text-sm font-medium truncate">
+                    {currentUser.email}
+                  </span>
+                </Dropdown.Header>
+                <Link to={"/dashboard?tab=profile"}>
+                  <Dropdown.Item>Profile</Dropdown.Item>
+                </Link>
+                <Dropdown.Divider />
+                <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+              </Dropdown>
+            ) : (
+              <Link to="/sign-in">
+                <Button
+                  gradientDuoTone="Red"
+                  outline
+                  className="bg-red-500 border-transparent hover:bg-red-600 focus:ring-0 focus:border-transparent"
+                >
+                  Sign In
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
         <div

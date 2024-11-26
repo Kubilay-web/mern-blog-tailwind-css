@@ -2172,7 +2172,7 @@ p.carousel-status {
 div.carousel.carousel-slider {
   max-width: 1070px;
   height: auto;
-  margin: auto;
+  margin: 20px auto 20px auto !important;
 }
 
 .carousel {
@@ -2328,7 +2328,7 @@ select:focus {
 
   nav.ml-auto.mb-3.navbar.navbar-expand-lg.navbar-light.border-top.border-bottom.border-dark.sticky-top.navbarheight.ptnew-0 {
     visibility: visible !important;
-    padding: 10px 10px 0px 10px !important;
+    padding: 10px 10px 10px 10px !important;
     max-width: 1100px !important;
     margin: auto !important;
   }
@@ -2369,6 +2369,7 @@ span.flex.items-center.transition-all.duration-200.rounded-md.text-sm.px-4.py-2:
 
 div.mx-auto.flex.flex-wrap.items-center.justify-between.container {
   padding: 0px !important;
+  margin: auto;
 }
 
 .dropdown-toggle::after {
@@ -2429,6 +2430,62 @@ ul.navbar-nav.gap-4.mr-auto.justify-content-between.w-100.text-uppercase {
 .row {
   padding-left: 0px !important;
   padding-right: 0px !important;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0rem 0.5rem 0rem !important;
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1100px !important;
+  }
+}
+
+.mapsConsumerUiSceneCoreScene__root {
+  width: 100% !important;
+  max-width: 1100px !important;
+  height: auto !important;
+  overflow: hidden;
+  position: absolute;
+  z-index: 0;
+  background-color: #000;
+}
+
+canvas {
+  width: 100vh !important;
+  max-width: 1100px !important;
+  height: auto !important;
+}
+
+div#ta-reviews {
+  height: 70vh !important;
+  margin-bottom: 100px !important;
+}
+
+@media (max-width: 426px) {
+  img.desktop-search {
+    display: none !important;
+  }
+
+  img.desktop-lang {
+    display: none !important;
+  }
+
+  div.flex.gap-2.items-center.md:order-2 {
+    display: none !important;
+  }
+
+  div.mx-auto.flex.flex-wrap.items-center.justify-between.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* Header */
