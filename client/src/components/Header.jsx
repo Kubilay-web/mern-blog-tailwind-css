@@ -609,7 +609,7 @@ export default function Header() {
                   className="dropdown-item dropdown-menuitem"
                   href="/yayinlar/20"
                 >
-                  SUNA VE İNAN KIRAÇ VAKFI YAYINLARI
+                  DERSİM VAKFI YAYINLARI
                 </a>
                 <img
                   className="d-none d-lg-none subImg float-right ml-auto mb-3"
