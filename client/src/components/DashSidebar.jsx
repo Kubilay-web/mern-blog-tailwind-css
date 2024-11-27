@@ -116,6 +116,16 @@ export default function DashSidebar() {
                   Events
                 </Sidebar.Item>
               </Link>
+
+              <Link to="/dashboard?tab=contacts">
+                <Sidebar.Item
+                  active={tab === "contacts"}
+                  icon={HiAnnotation}
+                  as="div"
+                >
+                  Contacts
+                </Sidebar.Item>
+              </Link>
             </>
           )}
 

@@ -41,3 +41,13 @@ export const submitContactForm = async (req, res) => {
     res.status(500).json({ message: "Error.Please try again." });
   }
 };
+
+export const getContactForms = async (req, res) => {
+  try {
+    const contactForms = await Contact.find().sort({ createdAt: -1 });
+    res.status(200).json(contactForms);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error fetching contact forms." });
+  }
+};

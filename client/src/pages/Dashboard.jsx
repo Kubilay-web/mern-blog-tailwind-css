@@ -8,6 +8,7 @@ import DashComments from "../components/DashComments";
 import DashboardComp from "../components/DashboardComp";
 import CarouselComp from "../components/CarouselComp";
 import DashEvents from "../components/DashEvents";
+import DashContact from "../components/DashContact";
 
 export default function Dashboard() {
   const location = useLocation();
@@ -39,6 +40,8 @@ export default function Dashboard() {
       {tab === "carousel" && <CarouselComp />}
 
       {tab === "events" && <DashEvents />}
+
+      {tab === "contacts" && <DashContact />}
     </div>
   );
 }
