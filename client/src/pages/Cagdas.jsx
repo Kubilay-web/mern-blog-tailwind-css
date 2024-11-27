@@ -1518,6 +1518,7 @@ const Cagdas = () => {
                   >
                     <div className="card mb-4 border-0">
                       <img
+                        style={{ height: "200px" }}
                         className="bd-placeholder-img card-img-top"
                         width="100%"
                         src={post4.image}
@@ -1552,6 +1553,7 @@ const Cagdas = () => {
                   >
                     <div className="card mb-4 border-0">
                       <img
+                        style={{ height: "200px" }}
                         className="bd-placeholder-img card-img-top"
                         width="100%"
                         src={post4.image}
@@ -1865,6 +1867,7 @@ const Cagdas = () => {
                                 >
                                   <div className="card mb-4 border-0">
                                     <img
+                                      style={{ height: "100px" }}
                                       className="bd-placeholder-img card-img-top"
                                       width="100%"
                                       src={post5.image}
@@ -2011,6 +2014,7 @@ const Cagdas = () => {
                                 >
                                   <div className="card mb-4 border-0">
                                     <img
+                                      style={{ height: "100px" }}
                                       className="bd-placeholder-img card-img-top"
                                       width="100%"
                                       src={post5.image}
@@ -2138,6 +2142,7 @@ const Cagdas = () => {
                         </div>
                       </div> */}
                     </div>
+
                     <div className="carousel-item">
                       <div className="container">
                         <div className="row pt-7">
@@ -2154,6 +2159,7 @@ const Cagdas = () => {
                                 >
                                   <div className="card mb-4 border-0">
                                     <img
+                                      style={{ height: "100px" }}
                                       className="bd-placeholder-img card-img-top"
                                       width="100%"
                                       src={post5.image}
@@ -2367,7 +2373,8 @@ const Cagdas = () => {
                 </a>
               </div>
             </div>
-            <div className="row  mt-3">
+
+            <div className="row mt-3">
               <div className="container">
                 <div className="row pt-7">
                   {posts7 && posts5.length > 0 ? (
@@ -2380,6 +2387,7 @@ const Cagdas = () => {
                         >
                           <div className="card mb-4 border-0">
                             <img
+                              style={{ height: "100px" }}
                               className="bd-placeholder-img card-img-top"
                               width="100%"
                               src={post7.image}

@@ -2193,13 +2193,6 @@ div.carousel.carousel-slider {
   pointer-events: none; /* Resimlerin fare olaylarını almasını engeller */
 }
 
-.card-img-top {
-  width: 1070px !important;
-  height: auto !important;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
-}
-
 /* ScheduleXCalendar etkinlik başlıkları için stil */
 .sx__month-agenda-event {
   padding: var(--sx-spacing-padding2);
@@ -2512,13 +2505,6 @@ div#ta-reviews {
   .col-md-12.text-justify.fs-20 {
     margin: 0px auto 30px auto !important;
   }
-}
-
-.card-img-top {
-  width: 100%;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
-  height: auto !important;
 }
 
 /* Header */

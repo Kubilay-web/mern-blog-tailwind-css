@@ -114,6 +114,7 @@ export default function Koleksiyon() {
                         >
                           <div className="card mb-4 border-0">
                             <img
+                              style={{ height: "390px" }}
                               className="bd-placeholder-img card-img-top"
                               width="100%"
                               src={post.image}

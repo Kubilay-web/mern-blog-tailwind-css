@@ -118,6 +118,7 @@ export default function Sergi() {
                       >
                         <div className="card mb-4 border-0">
                           <img
+                            style={{ height: "340px" }}
                             className="bd-placeholder-img card-img-top"
                             width="100%"
                             src={post.image}
@@ -188,6 +189,7 @@ export default function Sergi() {
                       >
                         <div className="card mb-4 border-0">
                           <img
+                            style={{ height: "340px" }}
                             className="bd-placeholder-img card-img-top"
                             width="100%"
                             src={post2.image}
