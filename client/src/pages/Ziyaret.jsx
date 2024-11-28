@@ -64,6 +64,22 @@ export default function Ziyaret() {
     }
   };
 
+  const [isTitleVisible, setIsTitleVisible] = useState(true);
+  const [isTitleVisible2, setIsTitleVisible2] = useState(true);
+  const [isTitleVisible3, setIsTitleVisible3] = useState(true);
+
+  const titleHandler = () => {
+    setIsTitleVisible((prevState) => !prevState);
+  };
+
+  const titleHandler2 = () => {
+    setIsTitleVisible2((prevState) => !prevState);
+  };
+
+  const titleHandler3 = () => {
+    setIsTitleVisible3((prevState) => !prevState);
+  };
+
   return (
     <div>
       <style
@@ -113,7 +129,7 @@ export default function Ziyaret() {
             </p>
           </div>
           <div className="col-md-6">
-            <div className="row">
+            <div className="row mb-3">
               <div className="col-md-10 col-6 fs-30 h3">Metro</div>
               <div className="col-md-2 col-6 text-right">
                 <a
@@ -125,6 +141,7 @@ export default function Ziyaret() {
                   aria-controls="collapseOne"
                 >
                   <img
+                    onClick={titleHandler}
                     src="/images/Ziyaret/plusIcon.png"
                     style={{ width: "40px" }}
                     alt="Metro Alanını Genişlet"
@@ -132,9 +149,11 @@ export default function Ziyaret() {
                 </a>
               </div>
               <div className="col-md-12">
-                <p className="fs-22 collapseTitle">
-                  Berlin - Münih (B2) hattında, Bonn durağında...
-                </p>
+                {isTitleVisible && (
+                  <p className="fs-22 collapseTitle">
+                    Berlin - Münih (B2) hattında, Bonn durağında...
+                  </p>
+                )}
               </div>
               <div className="collapse" id="collapseOne">
                 <div className="col-md-12 staticcontentbody">
@@ -145,7 +164,7 @@ export default function Ziyaret() {
               </div>
             </div>
             <hr />
-            <div className="row">
+            <div className="row mt-3 mb-3">
               <div className="col-md-10 col-6 fs-30 h3">Otobüs</div>
               <div className="col-md-2 col-6 text-right">
                 <a
@@ -157,6 +176,7 @@ export default function Ziyaret() {
                   aria-controls="collapseTwo"
                 >
                   <img
+                    onClick={titleHandler2}
                     src="/images/Ziyaret/plusIcon.png"
                     style={{ width: "40px" }}
                     alt="Otobüs Alanını Genişlet"
@@ -164,9 +184,11 @@ export default function Ziyaret() {
                 </a>
               </div>
               <div className="col-md-12">
-                <p className="fs-20 collapseTitle">
-                  Essen Bulvarı, Türkiye Başkonsolosluğu önündeki...
-                </p>
+                {isTitleVisible2 && (
+                  <p className="fs-20 collapseTitle">
+                    Essen Bulvarı, Türkiye Başkonsolosluğu önündeki...
+                  </p>
+                )}
               </div>
               <div className="collapse" id="collapseTwo">
                 <div className="col-md-12 staticcontentbody">
@@ -184,7 +206,7 @@ export default function Ziyaret() {
               </div>
             </div>
             <hr />
-            <div className="row">
+            <div className="row mt-3">
               <div className="col-md-10 col-6 fs-30 h3">
                 Yakındaki Otoparklar
               </div>
@@ -198,6 +220,7 @@ export default function Ziyaret() {
                   aria-controls="collapseThree"
                 >
                   <img
+                    onClick={titleHandler3}
                     src="/images/Ziyaret/plusIcon.png"
                     style={{ width: "40px" }}
                     alt="Otopark Alanını Genişlet"
@@ -205,9 +228,11 @@ export default function Ziyaret() {
                 </a>
               </div>
               <div className="col-md-12">
-                <p className="fs-20 collapseTitle">
-                  Dersim Müzesi’ne aracınızla geliyorsanız...
-                </p>
+                {isTitleVisible3 && (
+                  <p className="fs-20 collapseTitle">
+                    Dersim Müzesi’ne aracınızla geliyorsanız...
+                  </p>
+                )}
               </div>
               <div className="collapse" id="collapseThree">
                 <div className="col-md-12 staticcontentbody">

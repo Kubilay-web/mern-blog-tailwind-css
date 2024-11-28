@@ -655,10 +655,10 @@ function Calendar() {
   const calendar = useCalendarApp(
     {
       views: [
-        createViewDay(),
-        createViewMonthGrid(),
-        createViewWeek(),
-        createViewMonthAgenda(),
+        createViewDay(), // Day view
+        createViewMonthGrid(), // Month grid view
+        createViewWeek(), // Week view
+        createViewMonthAgenda(), // Month agenda view
       ],
       eventsService: eventsServicePlugin, // Attach the events service to the calendar
     },
@@ -673,20 +673,24 @@ function Calendar() {
         const data = await response.json(); // Convert response to JSON
         console.log("Fetched events:", data);
 
-        // Add each event to the eventsServicePlugin
+        // Ensure the events are in the correct format and add to the events service
         data.forEach((event) => {
-          eventsServicePlugin.add(event); // Add event to events service
+          eventsServicePlugin.add({
+            ...event,
+            start: new Date(event.start).toISOString(), // Ensure start date is ISO formatted
+            end: new Date(event.end).toISOString(), // Ensure end date is ISO formatted
+          });
         });
 
-        // Optionally, update state for other purposes (though not necessary for the calendar)
+        // Optionally, update state for other purposes
         setEvents(data);
       } catch (error) {
         console.error("Error fetching events:", error);
       }
     };
 
-    fetchEvents();
-  }, []); // Run once when the component mounts
+    if (eventsServicePlugin) fetchEvents();
+  }, [eventsServicePlugin]); // Dependency array includes the plugin
 
   return (
     <div className="w-full">

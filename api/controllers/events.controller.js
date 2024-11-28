@@ -9,8 +9,8 @@ export const getEvents = async (req, res) => {
     const formattedEvents = events.map((event) => ({
       id: event._id.toString(), // Ensure id is a string
       title: event.title,
-      start: event.start.toISOString().split("T")[0], // Format as YYYY-MM-DD
-      end: event.end.toISOString().split("T")[0], // Format as YYYY-MM-DD
+      start: event.start.toISOString(), // Format as YYYY-MM-DDTHH:mm:ss.sssZ
+      end: event.end.toISOString(), // Format as YYYY-MM-DDTHH:mm:ss.sssZ
       theme: event.theme,
     }));
 
@@ -45,8 +45,8 @@ export const createEvent = async (req, res) => {
     const formattedEvent = {
       id: savedEvent._id.toString(), // Ensure id is a string
       title: savedEvent.title,
-      start: savedEvent.start.toISOString().split("T")[0], // Format as YYYY-MM-DD
-      end: savedEvent.end.toISOString().split("T")[0], // Format as YYYY-MM-DD
+      start: savedEvent.start.toISOString(), // Format as YYYY-MM-DDTHH:mm:ss.sssZ
+      end: savedEvent.end.toISOString(), // Format as YYYY-MM-DDTHH:mm:ss.sssZ
       theme: savedEvent.theme,
     };
 
@@ -83,8 +83,8 @@ export const updateEvent = async (req, res) => {
     const formattedEvent = {
       id: updatedEvent._id.toString(),
       title: updatedEvent.title,
-      start: updatedEvent.start.toISOString().split("T")[0], // Format as YYYY-MM-DD
-      end: updatedEvent.end.toISOString().split("T")[0], // Format as YYYY-MM-DD
+      start: updatedEvent.start.toISOString(), // Format as YYYY-MM-DDTHH:mm:ss.sssZ
+      end: updatedEvent.end.toISOString(), // Format as YYYY-MM-DDTHH:mm:ss.sssZ
       theme: updatedEvent.theme,
     };
 
