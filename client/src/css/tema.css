@@ -2507,4 +2507,10 @@ div#ta-reviews {
   }
 }
 
+@media (max-width: 950px) {
+  img.bd-placeholder-img.card-img-top {
+    height: auto !important;
+  }
+}
+
 /* Header */
