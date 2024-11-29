@@ -9,6 +9,7 @@ import carouselRoutes from "./routes/carousel.route.js";
 import subscribeRoutes from "./routes/subscribe.route.js";
 import contactRoutes from "./routes/contact.route.js";
 import eventRoutes from "./routes/event.route.js";
+import cors from "cors";
 
 import cookieParser from "cookie-parser";
 import path from "path";
@@ -25,6 +26,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 app.listen(3000, () => {
   console.log("Server is running on 3000");
