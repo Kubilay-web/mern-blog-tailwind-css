@@ -43,7 +43,10 @@ const CheckoutSuccess = () => {
       ) : (
         <>
           <h2>Ödeme Başarısız</h2>
-          <p>Ödeme işlemi başarısız oldu. Lütfen tekrar deneyin.</p>
+          <p>
+            Ödeme işlemi başarısız oldu. Lütfen girdiğiniz bilgileri kontrol
+            edin ve tekrar deneyin.
+          </p>
           <div className="mt-3">
             <Link to="/checkout">
               <b>Ödemeyi Tekrar Yap</b>
