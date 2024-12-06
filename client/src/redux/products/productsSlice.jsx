@@ -12,9 +12,7 @@ export const productsFetch = createAsyncThunk(
   "products/productsFetch",
   async (id = null, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/products`
-      );
+      const response = await axios.get("http://localhost:3000/products");
       return response?.data;
     } catch (error) {
       console.error(error.response?.data);

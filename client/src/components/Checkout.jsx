@@ -3,9 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getTotals } from "../redux/products/cartSlice";
 import "../commerce.css";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const Checkout = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -130,7 +127,7 @@ const Checkout = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    const apiUrl = `${import.meta.env.VITE_API_URL}/api/payments/crate`; // API endpoint
+    const apiUrl = "http://localhost:3000/api/payments/create"; // API endpoint
 
     try {
       // Ödeme verilerini API'ye gönderiyoruz
