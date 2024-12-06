@@ -1,8 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const initialState = {
   items: [],
@@ -16,7 +13,7 @@ export const productsFetch = createAsyncThunk(
   async (id = null, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/products`
+        `${import.meta.env.REACT_APP_API_URL}/products`
       );
       return response?.data;
     } catch (error) {

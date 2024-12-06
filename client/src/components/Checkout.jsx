@@ -130,7 +130,7 @@ const Checkout = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    const apiUrl = `${process.env.REACT_APP_API_URL / api / payments / create}`; // API endpoint
+    const apiUrl = `${import.meta.env.REACT_APP_API_URL}/api/payments/crate`; // API endpoint
 
     try {
       // Ödeme verilerini API'ye gönderiyoruz
