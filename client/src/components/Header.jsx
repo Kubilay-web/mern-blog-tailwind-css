@@ -388,7 +388,7 @@ export default function Header() {
                 </a>
                 <a
                   className="dropdown-item dropdown-menuitem"
-                  href="https://artshop.peramuzesi.org.tr"
+                  href="/homecommerce"
                   target="_out"
                 >
                   ARTSHOP
@@ -688,7 +688,7 @@ export default function Header() {
                   </Link>
                   <Link
                     className="dropdown-item"
-                    to="/"
+                    to="/homecommerce"
                     onClick={handleLinkClick}
                   >
                     ARTSHOP

@@ -95,7 +95,7 @@ const Nav = () => {
                 </a>
                 <a
                   className="dropdown-item text-xl"
-                  href="/"
+                  href="/homecommerce"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
