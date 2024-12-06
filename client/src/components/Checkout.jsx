@@ -54,7 +54,7 @@ const Checkout = () => {
     },
     shippingAddress: {
       contactName: currentUser?.name || "", // Teslimat adı
-      city: currentUser?.city || "Istanbul", // Şehir
+      city: currentUser?.city || "", // Şehir
       country: "Turkey", // Ülke
       address: "", // Teslimat adresi
       zipCode: "", // Posta kodu
