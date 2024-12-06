@@ -49,7 +49,7 @@ const CheckoutSuccess = () => {
           </p>
           <div className="mt-3">
             <Link to="/checkout">
-              <b>Ödemeyi Tekrar Yap</b>
+              <b>Ödeme Sayfasına Git</b>
             </Link>
           </div>
         </>
