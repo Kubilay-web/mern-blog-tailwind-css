@@ -265,7 +265,7 @@ const Checkout = () => {
 
               <div className="cart-product-price">{cartItem.price}TL</div>
               <div className="cart-product-quantity">
-                <div className="count">{cartItem.cartQuantity}</div>
+                <div className="count">x{cartItem.cartQuantity}</div>
               </div>
 
               <div className="cart-product-total-price">
