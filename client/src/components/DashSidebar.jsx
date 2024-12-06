@@ -126,6 +126,26 @@ export default function DashSidebar() {
                   Contacts
                 </Sidebar.Item>
               </Link>
+
+              <Link to="/dashboard?tab=products">
+                <Sidebar.Item
+                  active={tab === "products"}
+                  icon={HiAnnotation}
+                  as="div"
+                >
+                  Products
+                </Sidebar.Item>
+              </Link>
+
+              <Link to="/dashboard?tab=orders">
+                <Sidebar.Item
+                  active={tab === "orders"}
+                  icon={HiAnnotation}
+                  as="div"
+                >
+                  Orders
+                </Sidebar.Item>
+              </Link>
             </>
           )}
 

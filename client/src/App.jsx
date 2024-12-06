@@ -49,70 +49,496 @@ import TarihselKisilikler from "./pages/TarihselKisilikler";
 import Soykirim from "./pages/Soykirim";
 // import Nav from "./components/Nav";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import NavbarCommerce from "./components/NavbarCommerce";
+import CartCommerce from "./components/CartCommerce";
+import HomeCommerce from "./components/HomeCommerce";
+import NotFound from "./components/NotFound";
+import CheckoutSuccess from "./components/CheckoutSuccess";
+import Checkout from "./components/Checkout";
+
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <Header />
-      {/* <Nav /> */}
+      <ToastContainer autoClose={1500} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/ziyaret" element={<Ziyaret />} />
-        <Route path="/artshop" element={<Artshop />} />
-        <Route path="/koleksiyon" element={<Koleksiyon />} />
-        <Route path="/projeler" element={<Projeler />} />
-        <Route path="/sergi/dijital-sergiler" element={<DijitalSergi />} />
-        <Route path="/sergi/gecmis-yillar" element={<GecmisSergi />} />
-        <Route path="/dersim-ogrenme" element={<OgrenmeGuncel />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Home />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Header />
+              <About />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <>
+              <Header />
+              <Projects />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/sign-in"
+          element={
+            <>
+              <Header />
+              <SignIn />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/ziyaret"
+          element={
+            <>
+              <Header />
+              <Ziyaret />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/artshop"
+          element={
+            <>
+              <Header />
+              <Artshop />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/koleksiyon"
+          element={
+            <>
+              <Header />
+              <Koleksiyon />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/projeler"
+          element={
+            <>
+              <Header />
+              <Projeler />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/sergi/dijital-sergiler"
+          element={
+            <>
+              <Header />
+              <DijitalSergi />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/sergi/gecmis-yillar"
+          element={
+            <>
+              <Header />
+              <GecmisSergi />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/dersim-ogrenme"
+          element={
+            <>
+              <Header />
+              <OgrenmeGuncel />
+              <FooterCom />
+            </>
+          }
+        />
         <Route
           path="/dersim-ogrenme/gecmis-programlar"
-          element={<OgrenmeGecmis />}
+          element={
+            <>
+              <Header />
+              <OgrenmeGecmis />
+              <FooterCom />
+            </>
+          }
         />
-        <Route path="/dersim-ogrenme-hakkinda" element={<OgrenmeHakkinda />} />
+        <Route
+          path="/dersim-ogrenme-hakkinda"
+          element={
+            <>
+              <Header />
+              <OgrenmeHakkinda />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/film"
+          element={
+            <>
+              <Header />
+              <Film />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/film/gecmis-programlar"
+          element={
+            <>
+              <Header />
+              <FilmGecmis />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/dersim-film-hakkinda"
+          element={
+            <>
+              <Header />
+              <FilmHakkinda />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/yayinlar"
+          element={
+            <>
+              <Header />
+              <Yayin />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/yayinlar/2"
+          element={
+            <>
+              <Header />
+              <Yayin2 />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/yayinlar/3"
+          element={
+            <>
+              <Header />
+              <Yayin3 />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/yayinlar/13"
+          element={
+            <>
+              <Header />
+              <Yayin13 />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/yayinlar/14"
+          element={
+            <>
+              <Header />
+              <Yayin14 />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/yayinlar/15"
+          element={
+            <>
+              <Header />
+              <Yayin15 />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/yayinlar/20"
+          element={
+            <>
+              <Header />
+              <Yayin20 />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/Blog"
+          element={
+            <>
+              <Header />
+              <Blog />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/cagdas-tarih"
+          element={
+            <>
+              <Header />
+              <Cagdas />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/kultur"
+          element={
+            <>
+              <Header />
+              <Kultur />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/goc-hareketleri"
+          element={
+            <>
+              <Header />
+              <Goc />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/tarih"
+          element={
+            <>
+              <Header />
+              <Tarih />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/tarihsel-kisilikler"
+          element={
+            <>
+              <Header />
+              <TarihselKisilikler />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/soykirim-arastirma"
+          element={
+            <>
+              <Header />
+              <Soykirim />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/sergi/gecmis-yillar/2024"
+          element={
+            <>
+              <Header />
+              <Gecmis2024 />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/sergi/gecmis-yillar/2023"
+          element={
+            <>
+              <Header />
+              <Gecmis2023 />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/sergi"
+          element={
+            <>
+              <Header />
+              <Sergi />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/Ajanda"
+          element={
+            <>
+              <Header />
+              <Ajanda />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/dersim-muzesi-hakkinda"
+          element={
+            <>
+              <Header />
+              <Hakkimizda />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/sign-up"
+          element={
+            <>
+              <Header />
+              <SignUp />
+              <FooterCom />
+            </>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <>
+              <Header />
+              <Search />
+              <FooterCom />
+            </>
+          }
+        />
 
-        <Route path="/film" element={<Film />} />
-        <Route path="/film/gecmis-programlar" element={<FilmGecmis />} />
-        <Route path="/dersim-film-hakkinda" element={<FilmHakkinda />} />
+        <Route
+          path="*"
+          element={
+            <>
+              <Header />
+              <NotFound />
+              <FooterCom />
+            </>
+          }
+        />
 
-        <Route path="/yayinlar" element={<Yayin />} />
-        <Route path="/yayinlar/2" element={<Yayin2 />} />
-        <Route path="/yayinlar/3" element={<Yayin3 />} />
-        <Route path="/yayinlar/13" element={<Yayin13 />} />
-        <Route path="/yayinlar/14" element={<Yayin14 />} />
-        <Route path="/yayinlar/15" element={<Yayin15 />} />
-        <Route path="/yayinlar/20" element={<Yayin20 />} />
-        <Route path="/Blog" element={<Blog />} />
+        <Route
+          path="/cart"
+          element={
+            <>
+              <NavbarCommerce />
+              <CartCommerce />
+            </>
+          }
+        />
 
-        <Route path="/cagdas-tarih" element={<Cagdas />} />
-        <Route path="/kultur" element={<Kultur />} />
-        <Route path="/goc-hareketleri" element={<Goc />} />
-        <Route path="/tarih" element={<Tarih />} />
-        <Route path="/tarihsel-kisilikler" element={<TarihselKisilikler />} />
-        <Route path="/soykirim-arastirma" element={<Soykirim />} />
+        <Route
+          path="/cart/:id"
+          element={
+            <>
+              <NavbarCommerce />
+              <CartCommerce />
+            </>
+          }
+        />
 
-        <Route path="/sergi/gecmis-yillar/2024" element={<Gecmis2024 />} />
+        <Route
+          path="/homecommerce"
+          element={
+            <>
+              <NavbarCommerce />
+              <HomeCommerce />
+            </>
+          }
+        />
 
-        <Route path="/sergi/gecmis-yillar/2023" element={<Gecmis2023 />} />
+        <Route
+          path="/checkout"
+          element={
+            <>
+              <Checkout />
+            </>
+          }
+        />
 
-        <Route path="/sergi" element={<Sergi />} />
-        <Route path="/Ajanda" element={<Ajanda />} />
-        <Route path="/dersim-muzesi-hakkinda" element={<Hakkimizda />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/search" element={<Search />} />
+        <Route
+          path="/checkout-success"
+          element={
+            <>
+              <CheckoutSuccess />
+            </>
+          }
+        />
+
         <Route element={<PrivateRoute />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <>
+                <Header />
+                <Dashboard />
+                <FooterCom />
+              </>
+            }
+          />
         </Route>
         <Route element={<OnlyAdminPrivateRoute />}>
-          <Route path="/create-post" element={<CreatePost />} />
-          <Route path="/update-post/:postId" element={<UpdatePost />} />
+          <Route
+            path="/create-post"
+            element={
+              <>
+                <Header />
+                <CreatePost />
+                <FooterCom />
+              </>
+            }
+          />
+          <Route
+            path="/update-post/:postId"
+            element={
+              <>
+                <Header />
+                <UpdatePost />
+                <FooterCom />
+              </>
+            }
+          />
         </Route>
-
-        <Route path="/post/:postSlug" element={<PostPage />} />
+        <Route
+          path="/post/:postSlug"
+          element={
+            <>
+              <Header />
+              <PostPage />
+              <FooterCom />
+            </>
+          }
+        />
       </Routes>
-      <FooterCom />
     </BrowserRouter>
   );
 }
