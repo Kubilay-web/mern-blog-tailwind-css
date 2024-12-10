@@ -58,6 +58,7 @@ import HomeCommerce from "./components/HomeCommerce";
 import NotFound from "./components/NotFound";
 import CheckoutSuccess from "./components/CheckoutSuccess";
 import Checkout from "./components/Checkout";
+import ProductDetails from "./components/ProductDetails";
 
 export default function App() {
   return (
@@ -475,6 +476,8 @@ export default function App() {
             </>
           }
         />
+
+        <Route path="/product/:id" element={<ProductDetails />} />
 
         <Route
           path="/checkout"

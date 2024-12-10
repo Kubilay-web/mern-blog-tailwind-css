@@ -4,6 +4,7 @@ import {
   getAllProducts,
   updateProduct,
   deleteProduct,
+  getProductById,
   upload,
 } from "../controllers/productController.js";
 
@@ -20,5 +21,8 @@ router.put("/products/:id", upload, updateProduct);
 
 // Route for deleting a product by ID
 router.delete("/products/:id", deleteProduct);
+
+// Route to get product by ID
+router.get("/product/:id", getProductById);
 
 export default router;
