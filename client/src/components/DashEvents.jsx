@@ -104,11 +104,12 @@ export default function DashEvents() {
     setFilters({ ...filters, [name]: value });
   };
 
+  // Filtering the events based on the title, theme, and date filters
   const filteredEvents = events.filter((event) => {
-    const titleMatch = event.title
+    const titleMatch = (event.title || "")
       .toLowerCase()
       .includes(filters.title.toLowerCase());
-    const themeMatch = event.theme
+    const themeMatch = (event.theme || "")
       .toLowerCase()
       .includes(filters.theme.toLowerCase());
     const dateMatch = filters.date
