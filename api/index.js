@@ -10,6 +10,7 @@ import subscribeRoutes from "./routes/subscribe.route.js";
 import contactRoutes from "./routes/contact.route.js";
 import eventRoutes from "./routes/event.route.js";
 import paymentRoutes from "./routes/paymentRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
 
 import cors from "cors";
 
@@ -36,39 +37,39 @@ app.listen(3000, () => {
 
 // Mock Database
 
-let products = [
-  {
-    _id: 1,
-    name: "iPhone 12 Pro",
-    brand: "Apple",
-    desc: "6.1-inch display",
-    price: 999,
-    image:
-      "https://res.cloudinary.com/dqqynqpwp/image/upload/v1733219632/dfbe0tmvhrcrgaczzrhn.jpg",
-  },
-  {
-    _id: 2,
-    name: "iPhone 12",
-    brand: "Apple",
-    desc: "5.4-inch mini display",
-    price: 699,
-    image:
-      "https://res.cloudinary.com/dqqynqpwp/image/upload/v1733219631/lqnvvrzkxpoxbnjhcafd.png",
-  },
-  {
-    _id: 3,
-    name: "Galaxy S",
-    brand: "Samsung",
-    desc: "6.5-inch display",
-    price: 399,
-    image:
-      "https://res.cloudinary.com/dqqynqpwp/image/upload/v1733219631/z6szavdiejzso9d9pj2n.jpg",
-  },
-];
+// let products = [
+//   {
+//     _id: 1,
+//     name: "iPhone 12 Pro",
+//     brand: "Apple",
+//     desc: "6.1-inch display",
+//     price: 999,
+//     image:
+//       "https://res.cloudinary.com/dqqynqpwp/image/upload/v1733219632/dfbe0tmvhrcrgaczzrhn.jpg",
+//   },
+//   {
+//     _id: 2,
+//     name: "iPhone 12",
+//     brand: "Apple",
+//     desc: "5.4-inch mini display",
+//     price: 699,
+//     image:
+//       "https://res.cloudinary.com/dqqynqpwp/image/upload/v1733219631/lqnvvrzkxpoxbnjhcafd.png",
+//   },
+//   {
+//     _id: 3,
+//     name: "Galaxy S",
+//     brand: "Samsung",
+//     desc: "6.5-inch display",
+//     price: 399,
+//     image:
+//       "https://res.cloudinary.com/dqqynqpwp/image/upload/v1733219631/z6szavdiejzso9d9pj2n.jpg",
+//   },
+// ];
 
-app.get("/products", (req, res) => {
-  res.json(products);
-});
+// app.get("/products", (req, res) => {
+//   res.json(products);
+// });
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
@@ -80,6 +81,7 @@ app.use("/api/form", contactRoutes);
 app.use("/api/calendar", eventRoutes);
 
 app.use("/api/payments", paymentRoutes);
+app.use("/api", productRoutes);
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 

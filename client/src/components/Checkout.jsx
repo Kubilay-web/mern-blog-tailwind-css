@@ -127,7 +127,7 @@ const Checkout = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    const apiUrl = "https://mern-blog-0lv8.onrender.com/api/payments/create"; // API endpoint
+    const apiUrl = "http://localhost:3000/api/payments/create"; // API endpoint
 
     try {
       // Ödeme verilerini API'ye gönderiyoruz
