@@ -6,6 +6,11 @@ import {
   HiOutlineUserGroup,
   HiAnnotation,
   HiChartPie,
+  HiOutlineCollection,
+  HiOutlineCalendar,
+  HiOutlineMail,
+  HiOutlineShoppingBag,
+  HiOutlineShoppingCart,
 } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -18,6 +23,7 @@ export default function DashSidebar() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const [tab, setTab] = useState("");
+
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const tabFromUrl = urlParams.get("tab");
@@ -25,6 +31,7 @@ export default function DashSidebar() {
       setTab(tabFromUrl);
     }
   }, [location.search]);
+
   const handleSignout = async () => {
     try {
       const res = await fetch("/api/user/signout", {
@@ -40,6 +47,7 @@ export default function DashSidebar() {
       console.log(error.message);
     }
   };
+
   return (
     <Sidebar className="w-full md:w-56">
       <Sidebar.Items>
@@ -55,6 +63,7 @@ export default function DashSidebar() {
               </Sidebar.Item>
             </Link>
           )}
+
           <Link to="/dashboard?tab=profile">
             <Sidebar.Item
               active={tab === "profile"}
@@ -66,6 +75,7 @@ export default function DashSidebar() {
               Profile
             </Sidebar.Item>
           </Link>
+
           {currentUser.isAdmin && (
             <Link to="/dashboard?tab=posts">
               <Sidebar.Item
@@ -77,6 +87,7 @@ export default function DashSidebar() {
               </Sidebar.Item>
             </Link>
           )}
+
           {currentUser.isAdmin && (
             <>
               <Link to="/dashboard?tab=users">
@@ -97,10 +108,11 @@ export default function DashSidebar() {
                   Comments
                 </Sidebar.Item>
               </Link>
+
               <Link to="/dashboard?tab=carousel">
                 <Sidebar.Item
                   active={tab === "carousel"}
-                  icon={HiAnnotation}
+                  icon={HiOutlineCollection}
                   as="div"
                 >
                   Carousel
@@ -110,7 +122,7 @@ export default function DashSidebar() {
               <Link to="/dashboard?tab=events">
                 <Sidebar.Item
                   active={tab === "events"}
-                  icon={HiAnnotation}
+                  icon={HiOutlineCalendar}
                   as="div"
                 >
                   Events
@@ -120,7 +132,7 @@ export default function DashSidebar() {
               <Link to="/dashboard?tab=contacts">
                 <Sidebar.Item
                   active={tab === "contacts"}
-                  icon={HiAnnotation}
+                  icon={HiOutlineMail}
                   as="div"
                 >
                   Contacts
@@ -130,7 +142,7 @@ export default function DashSidebar() {
               <Link to="/dashboard?tab=products">
                 <Sidebar.Item
                   active={tab === "products"}
-                  icon={HiAnnotation}
+                  icon={HiOutlineShoppingBag}
                   as="div"
                 >
                   Products
@@ -140,7 +152,7 @@ export default function DashSidebar() {
               <Link to="/dashboard?tab=orders">
                 <Sidebar.Item
                   active={tab === "orders"}
-                  icon={HiAnnotation}
+                  icon={HiOutlineShoppingCart}
                   as="div"
                 >
                   Orders
