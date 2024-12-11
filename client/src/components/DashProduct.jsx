@@ -17,7 +17,9 @@ const DashProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/products");
+        const response = await axios.get(
+          "https://mern-blog-0lv8.onrender.com/api/products"
+        );
         setProducts(response.data);
       } catch (error) {
         console.error("Ürünler alınırken hata oluştu:", error);
@@ -52,7 +54,7 @@ const DashProduct = () => {
       if (editingProduct) {
         // Mevcut ürünü güncelle
         response = await axios.put(
-          `http://localhost:3000/api/products/${editingProduct._id}`,
+          `https://mern-blog-0lv8.onrender.com/api/products/${editingProduct._id}`,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -71,7 +73,7 @@ const DashProduct = () => {
       } else {
         // Yeni ürün ekle
         response = await axios.post(
-          "http://localhost:3000/api/products",
+          "https://mern-blog-0lv8.onrender.com/api/products",
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -114,7 +116,9 @@ const DashProduct = () => {
   // Ürünü silme işlemi
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/products/${id}`);
+      await axios.delete(
+        `https://mern-blog-0lv8.onrender.com/api/products/${id}`
+      );
       setProducts(products.filter((product) => product._id !== id));
       alert("Ürün başarıyla silindi!");
     } catch (error) {
